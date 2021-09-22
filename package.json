@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "nodemon ./server/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "build-ci": "webpack",
     "build-app": "webpack --watch",
     "build-style": "sass --watch public/assets/styles/input.scss:public/assets/styles/output.css",
     "fix-lock": "npm install --package-lock-only"
