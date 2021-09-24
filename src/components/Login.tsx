@@ -7,6 +7,12 @@ interface OverviewProps extends RouteComponentProps<{name:string}> {
 }
 
 function Login(props:OverviewProps) {
+  const login = () => {
+    auth.login(() => {
+      props.history.go(-1);
+    });
+  };
+
   return (
     <div>
       Please Log in
@@ -17,9 +23,7 @@ function Login(props:OverviewProps) {
       <button
         type="button"
         onClick={() => {
-          auth.login(() => {
-            props.history.go(-1);
-          });
+          login();
         }}
       >
         {' '}

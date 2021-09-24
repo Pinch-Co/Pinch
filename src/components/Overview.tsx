@@ -7,15 +7,19 @@ interface OverviewProps extends RouteComponentProps<{name:string}> {
 }
 
 function Overview(props:OverviewProps) {
+  const logout = () => {
+    auth.logout(() => {
+      props.history.push('');
+    });
+  };
+
   return (
     <div>
       This is the overview component
       <button
         type="button"
         onClick={() => {
-          auth.logout(() => {
-            props.history.push('');
-          });
+          logout();
         }}
       >
         {' '}

@@ -7,8 +7,6 @@ import {
 } from 'react-router-dom';
 import Auth from '../auth/auth';
 
-/* eslint-disable react/jsx-props-no-spreading */
-
 type ProtectedRouteProps = {
   path: RouteProps['path'];
   component: React.ElementType;
