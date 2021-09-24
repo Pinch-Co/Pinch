@@ -1,5 +1,6 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
+// eslint-disable-next-line no-use-before-define
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Overview from './Overview.jsx';
