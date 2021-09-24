@@ -18,7 +18,7 @@ function ProtectedRoute({ component: Component, ...rest }: ProtectedRouteProps) 
   return (
     <Route
       {...rest}
-      render={(props: RouteComponentProps) => (Auth.authenticated === true
+      render={(props: RouteComponentProps) => (Auth.isAuthenticated() === true
         ? <Component {...props} />
         : (
           <Redirect to={

@@ -13,6 +13,7 @@ import NotFound from './NotFound';
 import Navbar from './Navbar';
 import ProtectedRoute from './ProtectedRoute';
 import Login from './Login';
+import Settings from './Settings';
 
 function App() {
   // eslint-disable-next-line
@@ -25,8 +26,10 @@ function App() {
         <Navbar />
         <Switch>
           <ProtectedRoute path="/home/overview" component={Overview} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
+          <ProtectedRoute path="/home/settings" component={Settings} />
           <Route exact path="*" component={NotFound} />
         </Switch>
       </div>
