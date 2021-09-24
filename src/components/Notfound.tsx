@@ -3,7 +3,7 @@ import * as React from 'react';
 function NotFound() {
   return (
     <div>
-      404 not found.
+      404 NOT FOUND.
     </div>
   );
 }
