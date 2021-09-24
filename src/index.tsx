@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 // eslint-disable-next-line

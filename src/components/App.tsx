@@ -1,14 +1,18 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
-// eslint-disable-next-line no-use-before-define
 import * as React from 'react';
 import { useState } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+} from 'react-router-dom';
 import Overview from './Overview';
 import Home from './Home';
 import NotFound from './NotFound';
 import Navbar from './Navbar';
-// import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './ProtectedRoute';
+import Login from './Login';
 
 function App() {
   // eslint-disable-next-line
@@ -20,8 +24,9 @@ function App() {
         <h1>Welcome to our Application!</h1>
         <Navbar />
         <Switch>
-          {/* <ProtectedRoute exact path="/home/overview" component={Overview} /> */}
+          <ProtectedRoute path="/home/overview" component={Overview} />
           <Route exact path="/home" component={Home} />
+          <Route exact path="/login" component={Login} />
           <Route exact path="*" component={NotFound} />
         </Switch>
       </div>
