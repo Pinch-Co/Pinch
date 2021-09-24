@@ -6,6 +6,14 @@ const port = 3000;
 
 app.use('/', express.static(path.join(__dirname, '../public')));
 
+app.get('/*', function(req: any, res: any) {
+  res.sendFile(path.join(__dirname, '../public/index.html'), function(err: Error) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+})
+
 app.listen(port, () => {
   // eslint-disable-next-line no-console
   console.log(`This app is now listening at http://localhost:${port}`);
