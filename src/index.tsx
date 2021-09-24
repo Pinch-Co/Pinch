@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-use-before-define
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 // eslint-disable-next-line
-import App from './components/App.jsx';
+import App from './components/App';
 
 ReactDOM.render(
   <App />,
