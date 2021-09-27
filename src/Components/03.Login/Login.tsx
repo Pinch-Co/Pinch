@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import auth from '../auth/auth';
+import auth from '../../auth/auth';
 
 interface OverviewProps extends RouteComponentProps<{name:string}> {
 

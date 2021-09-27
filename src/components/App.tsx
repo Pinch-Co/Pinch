@@ -5,13 +5,13 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Overview from './Overview';
-import Home from './Home';
+import Overview from './05.Overview/Overview';
+import Home from './01.Homepage/Home';
 import NotFound from './NotFound';
-import Navbar from './Navbar';
+import Navbar from './SharedComponents/02.Navbar/Navbar';
 import ProtectedRoute from './ProtectedRoute';
-import Login from './Login';
-import Settings from './Settings';
+import Login from './03.Login/Login';
+import Settings from './04.Settings/Settings';
 
 function App() {
   // eslint-disable-next-line
