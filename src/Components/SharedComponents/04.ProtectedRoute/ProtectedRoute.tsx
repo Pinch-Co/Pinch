@@ -5,7 +5,7 @@ import {
   RouteComponentProps,
   RouteProps,
 } from 'react-router-dom';
-import Auth from '../auth/auth';
+import Auth from '../../../auth/auth';
 
 type ProtectedRouteProps = {
   path: RouteProps['path'];
