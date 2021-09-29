@@ -17,7 +17,7 @@ const users = [
     id: '3',
     firstName: 'Sugma',
     lastName: 'Trenneman',
-    email: 'sguma@gmail.com',
+    email: 'sugma@gmail.com',
     password: 'ligma',
   },
   {
@@ -31,5 +31,5 @@ const users = [
 
 module.exports = {
   getUsers: () => users,
-  addUser: (user: any) => users.push(user),
+  addUser: (user) => users.push(user),
 };
