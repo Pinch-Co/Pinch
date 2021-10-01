@@ -1,0 +1,22 @@
+$font-stack: 'Roboto';
+$light-color: #f4f4f4;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.tools-offered {
+  background-color: $light-color;
+  font-family: $font-stack;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}

@@ -9,6 +9,7 @@ interface OverviewProps extends RouteComponentProps<{ name: string }> {
 
 }
 
+// eslint-disable-next-line no-unused-vars
 function Login(props: OverviewProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,8 +41,9 @@ function Login(props: OverviewProps) {
     setPassword(passwrd);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    console.log(loginQuery);
+    // console.log(loginQuery);
     fetch('http://localhost:4000/graphql', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

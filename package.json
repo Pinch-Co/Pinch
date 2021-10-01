@@ -6,6 +6,7 @@
   "scripts": {
     "start": "nodemon ./server/index.js",
     "test": "jest",
+    "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
     "build-ci": "webpack",
     "build-app": "webpack --watch",
     "build-style": "sass --watch public/assets/styles/input.scss:public/assets/styles/output.css",

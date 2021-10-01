@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAGA,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAU;EACtB,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;CACX;;AAED,AAAA,aAAa,CAAC;EACZ,gBAAgB,EATJ,OAAO;EAUnB,WAAW,EAXA,QAAQ;CAgBpB;;AAPD,AAGE,aAHW,CAGX,aAAa,CAAC;EACZ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CACb",
+    "sources": [
+        "ToolsOffered.scss"
+    ],
+    "names": [],
+    "file": "ToolsOffered.css"
+}

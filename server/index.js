@@ -37,6 +37,7 @@ passport.use(
 // express related code
 const app = express();
 app.use(session({
+  // eslint-disable-next-line no-unused-vars
   genid: (req) => uuid(),
   secret: SESSION_SECRECT,
   resave: false,

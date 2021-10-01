@@ -1,0 +1,17 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+tools-offered {
+  background-color: #f4f4f4;
+  font-family: "Roboto";
+}
+
+tools-offered example-image {
+  width: 50px;
+  height: 50px;
+}
+/*# sourceMappingURL=ToolsOffered.css.map */
