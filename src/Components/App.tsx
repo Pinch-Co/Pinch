@@ -1,10 +1,14 @@
 import * as React from 'react';
-import { useState } from 'react';
+import {
+  useState,
+  useEffect,
+} from 'react';
 import {
   BrowserRouter,
   Route,
   Switch,
 } from 'react-router-dom';
+import Auth from '../auth/auth';
 import Overview from './05.Overview/Overview';
 import Home from './01.Homepage/Home';
 import NotFound from './SharedComponents/NotFound/NotFound';
@@ -20,12 +24,26 @@ import CreditPayments from './09.CreditPayments/CreditPayments';
 function App() {
   // eslint-disable-next-line
   const [state, setState] = useState({ state: ' ' });
+  const [showNav, setNav] = useState<boolean>(false);
 
+  useEffect(() => {
+    console.log('fired');
+    if (Auth.isAuthenticated()) {
+      setNav(true);
+    } else {
+      setNav(false);
+    }
+  }, [Auth.authenticated]);
+
+  console.log('are we looged in', Auth.authenticated);
   return (
     <BrowserRouter>
       <div>
         <h1>Welcome to our Application!</h1>
         <Navbar />
+        {showNav
+          ? <Navbar />
+          : null }
         <Switch>
           <ProtectedRoute path="/home/overview" component={Overview} />
           <Route exact path="/" component={Home} />

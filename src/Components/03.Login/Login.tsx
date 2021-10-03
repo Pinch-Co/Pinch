@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import auth from '../../auth/auth';
+import Auth from '../../auth/auth';
 
 interface OverviewProps extends RouteComponentProps<{name:string}> {
 
@@ -8,7 +8,7 @@ interface OverviewProps extends RouteComponentProps<{name:string}> {
 
 function Login(props:OverviewProps) {
   const login = () => {
-    auth.login(() => {
+    Auth.login(() => {
       props.history.go(-1);
     });
   };
