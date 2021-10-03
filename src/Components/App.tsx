@@ -8,7 +8,6 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Auth from '../auth/auth';
 import Overview from './05.Overview/Overview';
 import Home from './01.Homepage/Home';
 import NotFound from './SharedComponents/NotFound/NotFound';
@@ -27,20 +26,16 @@ function App() {
   const [showNav, setNav] = useState<boolean>(false);
 
   useEffect(() => {
-    console.log('fired');
-    if (Auth.isAuthenticated()) {
+    const authenticated = (localStorage.getItem('authenticated'));
+    if (authenticated === 'true') {
       setNav(true);
-    } else {
-      setNav(false);
     }
-  }, [Auth.authenticated]);
+  }, []);
 
-  console.log('are we looged in', Auth.authenticated);
   return (
     <BrowserRouter>
       <div>
         <h1>Welcome to our Application!</h1>
-        <Navbar />
         {showNav
           ? <Navbar />
           : null }

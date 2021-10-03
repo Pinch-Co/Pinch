@@ -18,4 +18,6 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
   },
+  // CHANGE THIS WHEN DEPLOYING
+  mode: 'development',
 };
