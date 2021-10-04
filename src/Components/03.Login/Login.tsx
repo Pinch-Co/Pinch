@@ -14,6 +14,8 @@ interface OverviewProps extends RouteComponentProps<{ name: string }> {
 function Login(props: OverviewProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [currentUser, setUser] = useState({});
+  const [err, setErr] = useState([]);
 
   const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
     const emailInput: string = event.target.value;
@@ -43,7 +45,12 @@ function Login(props: OverviewProps) {
     }), { headers })
       .then((response) => {
         // eslint-disable-next-line no-console
-        console.log('it worked', JSON.stringify(response.data));
+        // console.log('Login auth response,', response.data.login.user);
+        // console.log('error', response.data.errors);
+        const current = response.data.login.user;
+        const error = response.data.errors;
+        setUser(current);
+        setErr(error);
       })
       .catch((error) => {
         // eslint-disable-next-line no-console
