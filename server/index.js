@@ -8,6 +8,7 @@ const { uuid } = require('uuidv4');
 const passport = require('passport');
 const { ApolloServer } = require('apollo-server-express');
 const { GraphQLLocalStrategy, buildContext } = require('graphql-passport');
+// const graphqlHTTP = require('express-graphql');
 const User = require('./User.js');
 const typeDefs = require('./typeDefs.js');
 const resolvers = require('./resolvers.js');
@@ -15,6 +16,21 @@ const resolvers = require('./resolvers.js');
 // variables for port and session
 const PORT = 4000;
 const SESSION_SECRECT = 'bad secret';
+
+// express related code
+const app = express();
+app.use(express.json());
+app.use(session({
+  // eslint-disable-next-line no-unused-vars
+  genid: (req) => uuid(),
+  secret: SESSION_SECRECT,
+  resave: false,
+  saveUninitialized: false,
+}));
+app.use(cors());
+app.use('/', express.static(path.join(__dirname, '../public')));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // passport related code
 passport.serializeUser((user, done) => {
@@ -33,20 +49,6 @@ passport.use(
     done(error, matchingUser);
   }),
 );
-
-// express related code
-const app = express();
-app.use(session({
-  // eslint-disable-next-line no-unused-vars
-  genid: (req) => uuid(),
-  secret: SESSION_SECRECT,
-  resave: false,
-  saveUninitialized: false,
-}));
-app.use(cors());
-app.use('/', express.static(path.join(__dirname, '../public')));
-app.use(passport.initialize());
-app.use(passport.session());
 
 // apollo server connection
 const server = new ApolloServer({
