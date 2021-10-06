@@ -14,7 +14,6 @@ interface OverviewProps extends RouteComponentProps<{ name: string }> {
 function Login(props: OverviewProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [currentUser, setUser] = useState({});
   const [err, setErr] = useState([]);
 
   const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,11 +44,8 @@ function Login(props: OverviewProps) {
     }), { headers })
       .then((response) => {
         // eslint-disable-next-line no-console
-        // console.log('Login auth response,', response.data.login.user);
-        // console.log('error', response.data.errors);
-        const current = response.data.login.user;
+        console.log('response', response);
         const error = response.data.errors;
-        setUser(current);
         setErr(error);
       })
       .catch((error) => {
@@ -71,11 +67,5 @@ function Login(props: OverviewProps) {
     </div>
   );
 }
-
-// const login = () => {
-//   auth.login(() => {
-//     props.history.go(-1);
-//   });
-// };
 
 export default Login;

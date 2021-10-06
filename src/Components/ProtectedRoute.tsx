@@ -5,18 +5,18 @@ import {
   RouteComponentProps,
   RouteProps,
 } from 'react-router-dom';
-import Auth from '../auth/auth';
 
 type ProtectedRouteProps = {
+  authenticated: boolean
   path: RouteProps['path'];
   component: React.ElementType;
 }
 
-function ProtectedRoute({ component: Component, ...rest }: ProtectedRouteProps) {
+function ProtectedRoute({ authenticated, component: Component, ...rest }: ProtectedRouteProps) {
   return (
     <Route
       {...rest}
-      render={(props: RouteComponentProps) => (Auth.isAuthenticated() === true
+      render={(props: RouteComponentProps) => (authenticated === true
         ? <Component {...props} />
         : (
           <Redirect to={

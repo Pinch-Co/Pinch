@@ -34,18 +34,13 @@ app.use(cors());
 app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(passport.initialize());
 app.use(passport.session());
-// app.use(bodyParser.urlencoded({ extended: true }));
-// app.post('/login', passport.authenticate('local', {
-//   successRedirect: '/',
-//   failureRedirect: '/login',
-//   failureFlash: true,
-// }));
 
 // passport related code
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 passport.deserializeUser((id, done) => {
+  console.log('deserialize', id);
   const users = User.getUsers();
   const matchingUser = users.find((user) => user.id === id);
   done(null, matchingUser);
