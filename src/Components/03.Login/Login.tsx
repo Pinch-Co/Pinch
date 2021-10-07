@@ -14,6 +14,7 @@ interface OverviewProps extends RouteComponentProps<{ name: string }> {
 function Login(props: OverviewProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  // eslint-disable-next-line no-unused-vars
   const [err, setErr] = useState([]);
 
   const handleEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
