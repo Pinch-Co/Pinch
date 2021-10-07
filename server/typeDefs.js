@@ -9,7 +9,7 @@ type User {
 }
 type Query {
   currentUser: User
-  hello: String
+  authenticated: User
 }
 type AuthPayload {
   user: User
