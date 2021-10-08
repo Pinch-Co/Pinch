@@ -23,12 +23,12 @@ import CreditPayments from './09.CreditPayments/CreditPayments';
 function App() {
   // eslint-disable-next-line
   const [state, setState] = useState({ state: ' ' });
-  const [showNav, setNav] = useState<boolean>(false);
+  const [authenticated, setAuth] = useState<boolean>(false);
 
   useEffect(() => {
-    const authenticated = (localStorage.getItem('authenticated'));
-    if (authenticated === 'true') {
-      setNav(true);
+    const session = (localStorage.getItem('authenticated'));
+    if (session === 'true') {
+      setAuthenticated(true);
     }
   }, []);
 
@@ -44,11 +44,11 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
-          <ProtectedRoute path="/home/settings" component={Settings} />
-          <ProtectedRoute path="/home/goals" component={Goals} />
-          <ProtectedRoute path="/home/budget" component={BudgetBreakdown} />
-          <ProtectedRoute path="/home/subscriptions" component={Subscriptions} />
-          <ProtectedRoute path="/home/credit" component={CreditPayments} />
+          <ProtectedRoute path="/home/settings" component={Settings} authenticated={authenticated} />
+          <ProtectedRoute path="/home/goals" component={Goals} authenticated={authenticated} />
+          <ProtectedRoute path="/home/budget" component={BudgetBreakdown} authenticated={authenticated} />
+          <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
+          <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
           <Route exact path="*" component={NotFound} />
         </Switch>
       </div>
