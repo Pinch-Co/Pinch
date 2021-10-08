@@ -4,10 +4,11 @@ import {
   useEffect,
 } from 'react';
 import {
-  BrowserRouter,
+  HashRouter,
   Route,
   Switch,
 } from 'react-router-dom';
+import axios from 'axios';
 import Overview from './05.Overview/Overview';
 import Home from './01.Homepage/Home';
 import NotFound from './SharedComponents/NotFound/NotFound';
@@ -24,23 +25,36 @@ function App() {
   // eslint-disable-next-line
   const [state, setState] = useState({ state: ' ' });
   const [authenticated, setAuth] = useState<boolean>(false);
+  const [showNav, setNav] = useState<boolean>(false);
+
+  const verifyAuth = () => {
+    axios.get('http://localhost:4000/graphql?query={authenticated{id}}')
+      .then((response) => {
+        if (response.data.data.authenticated) {
+          setAuth(true);
+          setNav(true);
+        }
+      })
+      .catch(() => {
+        setAuth(false);
+      });
+  };
 
   useEffect(() => {
-    const session = (localStorage.getItem('authenticated'));
-    if (session === 'true') {
-      setAuthenticated(true);
-    }
+    verifyAuth();
   }, []);
 
+  console.log('shownav', showNav);
+
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div>
         <h1>Welcome to our Application!</h1>
         {showNav
           ? <Navbar />
           : null }
         <Switch>
-          <ProtectedRoute path="/home/overview" component={Overview} />
+          <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
@@ -52,7 +66,7 @@ function App() {
           <Route exact path="*" component={NotFound} />
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

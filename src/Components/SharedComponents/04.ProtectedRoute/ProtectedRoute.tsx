@@ -7,14 +7,12 @@ import {
 } from 'react-router-dom';
 
 type ProtectedRouteProps = {
-  authenticated: boolean;
+  authenticated: boolean
   path: RouteProps['path'];
   component: React.ElementType;
 }
 
-// eslint-disable-next-line max-len
 function ProtectedRoute({ authenticated, component: Component, ...rest }: ProtectedRouteProps) {
-  console.log(authenticated);
   return (
     <Route
       {...rest}
