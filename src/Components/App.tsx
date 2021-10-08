@@ -44,8 +44,6 @@ function App() {
     verifyAuth();
   }, []);
 
-  console.log('shownav', showNav);
-
   return (
     <HashRouter>
       <div>
