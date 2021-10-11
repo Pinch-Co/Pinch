@@ -229,6 +229,13 @@ img {
   color: white;
   border: none;
   margin-bottom: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.credentialsDiv .signInBtn:hover {
+  background-color: #1c9993;
 }
 
 .credentialsDiv .agreement {
@@ -263,6 +270,7 @@ img {
 .credentialsDiv .noAccount :nth-child(2) {
   text-decoration: underline;
   margin-left: 5px;
+  cursor: pointer;
 }
 
 .rightsTextDiv {

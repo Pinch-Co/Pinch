@@ -123,6 +123,11 @@
     color: white;
     border: none;
     margin-bottom: 5px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+    &:hover{
+      background-color: #1c9993;
+    }
   }
   .agreement {
     width: 60%;
@@ -140,6 +145,7 @@
       :nth-child(2) {
         text-decoration: underline;
         margin-left: 5px;
+        cursor: pointer;
       }
   }
 }
