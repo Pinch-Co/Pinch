@@ -47,7 +47,6 @@ function App() {
   return (
     <HashRouter>
       <div>
-        <h1>Welcome to our Application!</h1>
         {showNav
           ? <Navbar />
           : null }
