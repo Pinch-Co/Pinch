@@ -4,7 +4,8 @@
     "sources": [
         "global.scss",
         "../01.Homepage/Homepage.scss",
-        "../01.Homepage/ToolsOffered/_ToolsOffered.scss"
+        "../01.Homepage/ToolsOffered/_ToolsOffered.scss",
+        "../SharedComponents/01.Header/Header.scss"
     ],
     "names": [],
     "file": "global.css"

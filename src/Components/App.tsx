@@ -12,6 +12,7 @@ import Navbar from './SharedComponents/02.Navbar/Navbar';
 import ProtectedRoute from './ProtectedRoute';
 import Login from './03.Login/Login';
 import Settings from './04.Settings/Settings';
+import Header from './SharedComponents/01.Header/Header';
 
 function App() {
   // eslint-disable-next-line
@@ -21,6 +22,7 @@ function App() {
     <BrowserRouter>
       <div>
         <h1>Welcome to our Application!</h1>
+        <Header />
         <Navbar />
         <Switch>
           <ProtectedRoute path="/home/overview" component={Overview} />
