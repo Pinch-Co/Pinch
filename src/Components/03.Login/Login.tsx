@@ -30,7 +30,7 @@ function Login(props: OverviewProps) {
     axios.post(
       'http://localhost:4000/graphql',
       JSON.stringify({
-        query: `mutation {login(email: '${email}', password: '${password}') {
+        query: `mutation {login(email: "${email}", password: "${password}") {
           user {
             id
             firstName
