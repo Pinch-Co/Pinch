@@ -50,7 +50,7 @@ function Login(props: OverviewProps) {
 
   return (
     <div className="login-container">
-      <></>
+      <div />
       <div className="login-center-div">
         <div className="login-main-div">
           <div className="login-page-logo-div">
