@@ -48,15 +48,12 @@ function App() {
   return (
     <HashRouter>
       <div>
-<<<<<<< HEAD
         <h1>Welcome to our Application!</h1>
         <Header />
         <Navbar />
-=======
         {showNav
           ? <Navbar />
           : null }
->>>>>>> 560293e739b16fd4ae71e06cdb1dd88b9674d993
         <Switch>
           <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
           <Route exact path="/" component={Home} />

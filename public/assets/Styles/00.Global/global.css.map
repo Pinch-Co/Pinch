@@ -5,7 +5,8 @@
         "global.scss",
         "../01.Homepage/Homepage.scss",
         "../01.Homepage/ToolsOffered/_ToolsOffered.scss",
-        "../03.Login/Login.scss"
+        "../03.Login/Login.scss",
+        "../SharedComponents/01.Header/Header.scss"
     ],
     "names": [],
     "file": "global.css"
