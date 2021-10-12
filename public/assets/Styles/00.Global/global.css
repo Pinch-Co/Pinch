@@ -21,27 +21,6 @@ img {
 }
 
 .loginContainer {
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-family: "Avenir";
-}
-
-.loginCenterDiv {
-  width: 700px;
-  height: 85vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,13 +38,65 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+@media screen and (max-height: 723px) {
+  .loginContainer {
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .loginContainer {
+    width: 100vw;
+    height: unset;
+  }
+}
+
+.loginCenterDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+}
+
+.loginMainDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 700px;
+}
+
+@media screen and (max-width: 700px) {
+  .loginMainDiv {
+    width: 100vw;
+  }
 }
 
 .loginPageLogoDiv {
-  width: 85%;
-  height: 146px;
-  padding: 10px;
-  background-color: #20B2AA;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,6 +111,10 @@ img {
       -ms-flex-direction: row;
           flex-direction: row;
   font-family: "Avenir";
+  width: 85%;
+  height: 146px;
+  padding: 10px;
+  background-color: #20b2aa;
 }
 
 .pinchLogo {
@@ -90,11 +125,10 @@ img {
 }
 
 .credentialsDiv {
-  margin-top: -60px;
+  margin-top: 20px;
   width: 85%;
-  height: 550px;
   padding: 30px;
-  background-color: #D1E0DE;
+  background-color: #d1e0de;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,7 +143,7 @@ img {
 
 .credentialsDiv .credentialsTitle {
   font-size: 40px;
-  color: #5D5D5D;
+  color: #5d5d5d;
 }
 
 .credentialsDiv .loginForm {
@@ -132,13 +166,19 @@ img {
   margin-top: 70px;
 }
 
+@media screen and (max-height: 1000px) {
+  .credentialsDiv .loginForm {
+    margin-top: 10px;
+  }
+}
+
 .credentialsDiv .loginInputTitle {
   font-size: 20px;
   width: 75%;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  color: #5D5D5D;
+  color: #5d5d5d;
 }
 
 .credentialsDiv .loginInput {
@@ -192,7 +232,7 @@ img {
       -ms-flex-pack: start;
           justify-content: flex-start;
   margin-bottom: 18px;
-  color: #5D5D5D;
+  color: #5d5d5d;
 }
 
 .credentialsDiv .rememberMeLabel {
@@ -225,7 +265,7 @@ img {
   width: 75%;
   padding: 12px;
   font-size: 25px;
-  background-color: #20B2AA;
+  background-color: #20b2aa;
   color: white;
   border: none;
   margin-bottom: 5px;
@@ -243,14 +283,11 @@ img {
   font-size: 12px;
   margin-bottom: 18px;
   text-align: center;
-  color: #5D5D5D;
+  color: #5d5d5d;
   font-style: italic;
 }
 
 .credentialsDiv .noAccount {
-  width: 70%;
-  font-size: 25px;
-  color: #5f5f5f;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -265,6 +302,9 @@ img {
       -ms-flex-direction: row;
           flex-direction: row;
   font-family: "Avenir";
+  width: 70%;
+  font-size: 25px;
+  color: #5f5f5f;
 }
 
 .credentialsDiv .noAccount :nth-child(2) {
@@ -274,7 +314,6 @@ img {
 }
 
 .rightsTextDiv {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -289,12 +328,23 @@ img {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: "Avenir";
-  margin-bottom: -50px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 20px;
 }
 
 .rightsText {
   font-size: 15px;
   text-align: center;
-  color: #5D5D5D;
+  color: #5d5d5d;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=global.css.map */
