@@ -49,57 +49,57 @@ function Login(props: OverviewProps) {
   };
 
   return (
-    <div className="loginContainer">
-      <div />
-      <div className="loginCenterDiv">
-        <div className="loginMainDiv">
-          <div className="loginPageLogoDiv">
-            <img className="pinchLogo" src="https://i.imgur.com/MZQaH4n.png" alt="pinchLogo" />
+    <div className="login-container">
+      <></>
+      <div className="login-center-div">
+        <div className="login-main-div">
+          <div className="login-page-logo-div">
+            <img className="pinch-logo" src="https://i.imgur.com/MZQaH4n.png" alt="pinchLogo" />
           </div>
-          <div className="credentialsDiv">
-            <div className="credentialsTitle">Login</div>
-            <form className="loginForm">
-              <div className="loginInputTitle">Email Address</div>
+          <div className="credentials-div">
+            <div className="credentials-title">Login</div>
+            <form className="login-form">
+              <div className="login-input-title">Email Address</div>
               <input
-                className="loginInput"
+                className="login-input"
                 type="text"
                 placeholder="example@email.com"
                 onChange={(event) => handleEmail(event)}
               />
-              <div className="loginInputTitle">Password</div>
+              <div className="login-input-title">Password</div>
               <input
-                className="loginInput"
+                className="login-input"
                 type="password"
                 placeholder="•••••••••••••"
                 onChange={(event) => handlePassword(event)}
               />
-              <div className="rememberMe">
-                <label htmlFor="rememberMe" className="rememberMeLabel">
-                  <input className="rememberMeChk" type="checkbox" id="rememberMe" />
-                  <div className="rememberMeText">Remember Me</div>
+              <div className="remember-me">
+                <label htmlFor="rememberMe" className="remember-me-label">
+                  <input className="remember-me-chk" type="checkbox" id="rememberMe" />
+                  <div className="remember-me-text">Remember Me</div>
                 </label>
               </div>
             </form>
-            <button className="signInBtn" type="submit" onClick={(event) => handleSubmit(event)}>
+            <button className="sign-in-btn" type="submit" onClick={(event) => handleSubmit(event)}>
               Sign In
             </button>
             <div className="agreement">
               By selecting Sign In, you agree to our Terms and have read and acknowledge
               our Global Privacy Statement.
             </div>
-            <div className="noAccount">
+            <div className="no-account">
               <div>Don’t have an account?</div>
               <div>Sign Up</div>
             </div>
           </div>
         </div>
       </div>
-      <div className="rightsTextDiv">
-        <div className="rightsText">
+      <div className="rights-text-div">
+        <div className="rights-text">
           All rights reserved. Pinch, Pinch Co and Pinch LLC are registered trademarks of
           Pinch Inc.
         </div>
-        <div className="rightsText">
+        <div className="rights-text">
           Terms and conditions, features, support, pricing, and
           service options subject to change without notice.
         </div>
