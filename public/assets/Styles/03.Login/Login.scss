@@ -126,6 +126,7 @@ $phone: 450px;
     color: #5d5d5d;
   }
   .rememberMeLabel {
+    // margin-bottom: 0;
     @include flexCenter(row);
     justify-content: start;
   }
