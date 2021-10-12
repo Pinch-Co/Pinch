@@ -8,7 +8,7 @@ $phone: 450px;
   font-family: "Avenir";
 }
 
-.loginContainer {
+.login-container {
   @include flexCenter(column);
   justify-content: space-between;
   width: 100%;
@@ -22,12 +22,12 @@ $phone: 450px;
   // border: 1px solid red;
 }
 
-.loginCenterDiv {
+.login-center-div {
   @include flexCenter(column);
   // border: 1px solid red;
 }
 
-.loginMainDiv {
+.login-main-div {
   @include flexCenter(column);
   width: 700px;
   @media screen and (max-width: 700px) {
@@ -35,7 +35,7 @@ $phone: 450px;
   }
 }
 
-.loginPageLogoDiv {
+.login-page-logo-div {
   @include flexCenter(row);
   width: 85%;
   height: 146px;
@@ -44,14 +44,14 @@ $phone: 450px;
   // border: 1px solid red;
 }
 
-.pinchLogo {
+.pinch-logo {
   width: 70%;
   height: 100%;
   object-fit: contain;
   // border: 1px solid red;
 }
 
-.credentialsDiv {
+.credentials-div {
   margin-top: 20px;
   width: 85%;
   padding: 30px;
@@ -64,7 +64,7 @@ $phone: 450px;
     font-size: 40px;
     color: #5d5d5d;
   }
-  .loginForm {
+  .login-form {
     @include flexCenter(column);
     width: 100%;
     position: relative;
@@ -73,13 +73,13 @@ $phone: 450px;
       margin-top: 10px;
     }
   }
-  .loginInputTitle {
+  .login-input-title {
     font-size: 20px;
     width: 75%;
     justify-content: flex-start;
     color: #5d5d5d;
   }
-  .loginInput {
+  .login-input {
     width: 75%;
     height: 45px;
     padding-left: 10px;
@@ -119,23 +119,23 @@ $phone: 450px;
       font-weight: lighter;
     }
   }
-  .rememberMe {
+  .remember-me {
     width: 75%;
     justify-content: flex-start;
     margin-bottom: 18px;
     color: #5d5d5d;
   }
-  .rememberMeLabel {
+  .remember-me-label {
     // margin-bottom: 0;
     @include flexCenter(row);
     justify-content: start;
   }
-  .rememberMeChk {
+  .remember-me-chk {
     margin-right: 8px;
     width: 22px;
     height: 22px;
   }
-  .signInBtn {
+  .sign-in-btn {
     width: 75%;
     padding: 12px;
     font-size: 25px;
@@ -157,7 +157,7 @@ $phone: 450px;
     color: #5d5d5d;
     font-style: italic;
   }
-  .noAccount {
+  .no-account {
     @include flexCenter(row);
     width: 70%;
     font-size: 25px;
@@ -170,7 +170,7 @@ $phone: 450px;
   }
 }
 
-.rightsTextDiv {
+.rights-text-div {
   @include flexCenter(column);
   width: 100%;
   // border: 1px solid red;
@@ -179,7 +179,7 @@ $phone: 450px;
   margin-bottom: 20px;
 }
 
-.rightsText {
+.rights-text {
   font-size: 15px;
   text-align: center;
   color: #5d5d5d;
