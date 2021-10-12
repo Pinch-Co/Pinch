@@ -1,0 +1,164 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+.loginContainer {
+  width: 100%;
+  height: 100vh;
+  @include flexCenter(column);
+}
+
+.loginCenterDiv {
+  width: 700px;
+  height: 85vh;
+  // border: 1px solid red;
+  @include flexCenter(column);
+  justify-content: space-between;
+}
+
+.loginPageLogoDiv {
+  width: 85%;
+  height: 146px;
+  padding: 10px;
+  background-color: #20B2AA;
+  // border: 1px solid red;
+  @include flexCenter(row);
+}
+
+.pinchLogo {
+  width: 70%;
+  height: 100%;
+  object-fit: contain;
+  // border: 1px solid red;
+}
+
+.credentialsDiv {
+  margin-top: -60px;
+  width: 85%;
+  height: 550px;
+  padding: 30px;
+  // border: 1px solid red;
+  background-color: #D1E0DE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .credentialsTitle {
+    font-size:40px;
+    color: #5D5D5D;
+  }
+  .loginForm {
+    @include flexCenter(column);
+    width: 100%;
+    position: relative;
+    margin-top: 70px;
+  }
+  .loginInputTitle {
+    font-size: 20px;
+    width: 75%;
+    justify-content: flex-start;
+    color: #5D5D5D;
+  }
+  .loginInput {
+    width: 75%;
+    height: 45px;
+    padding-left: 10px;
+    margin-bottom: 18px;
+    border: none;
+    font-size: 20px;
+    &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      position: relative;
+      font-size: 20px;
+      font-style: italic;
+      color:rgb(156, 156, 156);
+      font-weight: lighter;
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+      position: relative;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: lighter;
+      color:rgb(156, 156, 156);
+    }
+    &:-ms-input-placeholder { /* IE 10+ */
+      position: relative;
+      font-size: 20px;
+      font-style: italic;
+      font-weight: lighter;
+      color:rgb(156, 156, 156);
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+      position: relative;
+      font-size: 20px;
+      font-style: italic;
+      color:rgb(156, 156, 156);
+      font-weight: lighter;
+    }
+
+  }
+  .rememberMe {
+    width: 75%;
+    justify-content: flex-start;
+    margin-bottom: 18px;
+    color: #5D5D5D;
+  }
+  .rememberMeLabel {
+    // margin-bottom: 0;
+    @include flexCenter(row);
+    justify-content: start;
+  }
+  .rememberMeChk {
+    margin-right: 8px;
+    width: 22px;
+    height: 22px;
+  }
+  .signInBtn {
+    width: 75%;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #20B2AA;
+    color: white;
+    border: none;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+    &:hover{
+      background-color: #1c9993;
+    }
+  }
+  .agreement {
+    width: 60%;
+    font-size: 12px;
+    margin-bottom: 18px;
+    text-align: center;
+    color: #5D5D5D;
+    font-style: italic;
+  }
+  .noAccount {
+      width: 70%;
+      font-size: 25px;
+      color: rgb(95, 95, 95);
+      @include flexCenter(row);
+      :nth-child(2) {
+        text-decoration: underline;
+        margin-left: 5px;
+        cursor: pointer;
+      }
+  }
+}
+
+.rightsTextDiv{
+  width: 100%;
+  // border: 1px solid red;
+  @include flexCenter(column);
+  margin-bottom: -50px;
+}
+
+.rightsText {
+  font-size: 15px;
+  text-align: center;
+  color: #5D5D5D;
+}

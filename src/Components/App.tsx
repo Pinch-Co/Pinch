@@ -11,31 +11,33 @@ import {
 import axios from 'axios';
 import Overview from './05.Overview/Overview';
 import Home from './01.Homepage/Home';
-// import NotFound from './NotFound';
+import NotFound from './SharedComponents/NotFound/NotFound';
 import Navbar from './SharedComponents/02.Navbar/Navbar';
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from './SharedComponents/04.ProtectedRoute/ProtectedRoute';
 import Login from './03.Login/Login';
 import Settings from './04.Settings/Settings';
-// import Goals from './06.Goals/Goals';
-// import BudgetBreakdown from './07.BudgetBreakdown/BudgetBreakdown';
-// import Subscriptions from './08.Subscriptions/Subscriptions';
-// import CreditPayments from './09.CreditPayments/CreditPayments';
+import Header from './SharedComponents/01.Header/Header';
+import Goals from './06.Goals/Goals';
+import BudgetBreakdown from './07.BudgetBreakdown/BudgetBreakdown';
+import Subscriptions from './08.Subscriptions/Subscriptions';
+import CreditPayments from './09.CreditPayments/CreditPayments';
 
 function App() {
   // eslint-disable-next-line
   const [state, setState] = useState({ state: ' ' });
   const [authenticated, setAuth] = useState<boolean>(false);
+  const [showNav, setNav] = useState<boolean>(false);
 
   const verifyAuth = () => {
     axios.get('http://localhost:4000/graphql?query={authenticated{id}}')
       .then((response) => {
-        // eslint-disable-next-line no-console
-        console.log('verify auth response', response);
-        setAuth(true);
+        if (response.data.data.authenticated) {
+          setAuth(true);
+          setNav(true);
+        }
       })
-      .catch((error) => {
-        // eslint-disable-next-line no-console
-        console.log(error);
+      .catch(() => {
+        setAuth(false);
       });
   };
 
@@ -47,13 +49,22 @@ function App() {
     <HashRouter>
       <div>
         <h1>Welcome to our Application!</h1>
+        <Header />
         <Navbar />
+        {showNav
+          ? <Navbar />
+          : null }
         <Switch>
           <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
           <Route exact path="/" component={Home} />
           <Route exact path="/home" component={Home} />
           <Route exact path="/login" component={Login} />
           <ProtectedRoute path="/home/settings" component={Settings} authenticated={authenticated} />
+          <ProtectedRoute path="/home/goals" component={Goals} authenticated={authenticated} />
+          <ProtectedRoute path="/home/budget" component={BudgetBreakdown} authenticated={authenticated} />
+          <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
+          <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
+          <Route exact path="*" component={NotFound} />
         </Switch>
       </div>
     </HashRouter>
