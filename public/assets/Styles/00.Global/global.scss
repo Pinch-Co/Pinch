@@ -1,3 +1,11 @@
-@import '../01.Homepage/Homepage.scss';
-@import '../03.Login/Login.scss';
-@import '../SharedComponents/01.Header/Header.scss';
+@import "../01.Homepage/Homepage.scss";
+@import "../03.Login/Login.scss";
+@import "../SharedComponents/01.Header/Header.scss";
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}

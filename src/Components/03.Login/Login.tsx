@@ -49,56 +49,59 @@ function Login(props: OverviewProps) {
   };
 
   return (
-    <div className="loginContainer">
-      <div className="loginCenterDiv">
-        <div className="loginPageLogoDiv">
-          <img className="pinchLogo" src="https://i.imgur.com/MZQaH4n.png" alt="pinchLogo" />
-        </div>
-        <div className="credentialsDiv">
-          <div className="credentialsTitle">Login</div>
-          <form className="loginForm">
-            <div className="loginInputTitle">Email Address</div>
-            <input
-              className="loginInput"
-              type="text"
-              placeholder="example@email.com"
-              onChange={(event) => handleEmail(event)}
-            />
-            <div className="loginInputTitle">Password</div>
-            <input
-              className="loginInput"
-              type="password"
-              placeholder="•••••••••••••"
-              onChange={(event) => handlePassword(event)}
-            />
-            <div className="rememberMe">
-              <label htmlFor="rememberMe" className="rememberMeLabel">
-                <input className="rememberMeChk" type="checkbox" id="rememberMe" />
-                <div className="rememberMeText">Remember Me</div>
-              </label>
+    <div className="login-container">
+      <div />
+      <div className="login-center-div">
+        <div className="login-main-div">
+          <div className="login-page-logo-div">
+            <img className="pinch-logo" src="https://i.imgur.com/MZQaH4n.png" alt="pinch logo" />
+          </div>
+          <div className="credentials-div">
+            <div className="credentials-title">Login</div>
+            <form className="login-form">
+              <div className="login-input-title">Email Address</div>
+              <input
+                className="login-input"
+                type="text"
+                placeholder="example@email.com"
+                onChange={(event) => handleEmail(event)}
+              />
+              <div className="login-input-title">Password</div>
+              <input
+                className="login-input"
+                type="password"
+                placeholder="•••••••••••••"
+                onChange={(event) => handlePassword(event)}
+              />
+              <div className="remember-me">
+                <label htmlFor="remember-me" className="remember-me-label">
+                  <input className="remember-me-chk" type="checkbox" id="remember-me" />
+                  <div className="remember-me-text">Remember Me</div>
+                </label>
+              </div>
+            </form>
+            <button className="sign-in-btn" type="submit" onClick={(event) => handleSubmit(event)}>
+              Sign In
+            </button>
+            <div className="agreement">
+              By selecting Sign In, you agree to our Terms and have read and acknowledge
+              our Global Privacy Statement.
             </div>
-          </form>
-          <button className="signInBtn" type="submit" onClick={(event) => handleSubmit(event)}>
-            Sign In
-          </button>
-          <div className="agreement">
-            By selecting Sign In, you agree to our Terms and have read and acknowledge
-            our Global Privacy Statement.
-          </div>
-          <div className="noAccount">
-            <div>Don’t have an account?</div>
-            <div>Sign Up</div>
+            <div className="no-account">
+              <div>Don’t have an account?</div>
+              <div>Sign Up</div>
+            </div>
           </div>
         </div>
-        <div className="rightsTextDiv">
-          <div className="rightsText">
-            All rights reserved. Pinch, Pinch Co and Pinch LLC are registered trademarks of
-            Pinch Inc.
-          </div>
-          <div className="rightsText">
-            Terms and conditions, features, support, pricing, and
-            service options subject to change without notice.
-          </div>
+      </div>
+      <div className="rights-text-div">
+        <div className="rights-text">
+          All rights reserved. Pinch, Pinch Co and Pinch LLC are registered trademarks of
+          Pinch Inc.
+        </div>
+        <div className="rights-text">
+          Terms and conditions, features, support, pricing, and
+          service options subject to change without notice.
         </div>
       </div>
     </div>
