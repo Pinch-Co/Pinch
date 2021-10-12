@@ -54,7 +54,7 @@ function Login(props: OverviewProps) {
       <div className="login-center-div">
         <div className="login-main-div">
           <div className="login-page-logo-div">
-            <img className="pinch-logo" src="https://i.imgur.com/MZQaH4n.png" alt="pinchLogo" />
+            <img className="pinch-logo" src="https://i.imgur.com/MZQaH4n.png" alt="pinch logo" />
           </div>
           <div className="credentials-div">
             <div className="credentials-title">Login</div>
@@ -74,8 +74,8 @@ function Login(props: OverviewProps) {
                 onChange={(event) => handlePassword(event)}
               />
               <div className="remember-me">
-                <label htmlFor="rememberMe" className="remember-me-label">
-                  <input className="remember-me-chk" type="checkbox" id="rememberMe" />
+                <label htmlFor="remember-me" className="remember-me-label">
+                  <input className="remember-me-chk" type="checkbox" id="remember-me" />
                   <div className="remember-me-text">Remember Me</div>
                 </label>
               </div>
