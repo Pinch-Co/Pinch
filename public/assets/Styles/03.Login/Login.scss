@@ -11,15 +11,25 @@ $phone: 450px;
 .login-container {
   @include flexCenter(column);
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 100vh;
-  @media screen and (max-height: 723px) {
-    height: 100%;
+  background-color: white;
+  @media screen and (max-width: 600px) {
+    justify-content: flex-start;
+    background-color: #d1e0de;
   }
   @media screen and (max-width: $phone) {
     width: 100vw;
   }
   // border: 1px solid red;
+}
+
+.empty-div {
+  display: block;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .login-center-div {
@@ -30,7 +40,7 @@ $phone: 450px;
 .login-main-div {
   @include flexCenter(column);
   width: 700px;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     width: 100vw;
   }
 }
@@ -63,10 +73,14 @@ $phone: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-height: 723px) {
+    margin-top: 0;
+  }
   @media screen and (max-width: 600px) {
     width: 100%;
+    margin-top: 0;
   }
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 600px) {
     padding: 30px 0 30px 0;
   }
   .credentials-title {
@@ -87,6 +101,9 @@ $phone: 450px;
     width: 75%;
     justify-content: flex-start;
     color: #5d5d5d;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
   }
   .login-input {
     width: 75%;
@@ -95,8 +112,8 @@ $phone: 450px;
     margin-bottom: 18px;
     border: none;
     font-size: 20px;
-    @media screen and (max-width: 400px) {
-      width: 95%;
+    @media screen and (max-width: 600px) {
+      width: 90%;
     }
     &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
@@ -136,8 +153,8 @@ $phone: 450px;
     justify-content: flex-start;
     margin-bottom: 18px;
     color: #5d5d5d;
-    @media screen and (max-width: 400px) {
-      width: 95%;
+    @media screen and (max-width: 600px) {
+      width: 90%;
     }
   }
   .remember-me-label {
@@ -160,8 +177,9 @@ $phone: 450px;
     margin-bottom: 5px;
     cursor: pointer;
     transition: 0.1s ease-in;
-    @media screen and (max-width: 400px) {
-      width: 95%;
+    @media screen and (max-width: 600px) {
+      transition: none;
+      width: 90%;
     }
     &:hover {
       background-color: #1c9993;
@@ -174,7 +192,7 @@ $phone: 450px;
     text-align: center;
     color: #5d5d5d;
     font-style: italic;
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: 600px) {
       width: 80%;
     }
   }
@@ -183,15 +201,10 @@ $phone: 450px;
     width: 70%;
     font-size: 25px;
     color: rgb(95, 95, 95);
-    @media screen and (max-width: 600px) {
-      width: 95%;
-    }
     text-align: center;
-    // :nth-child(2) {
-    //   text-decoration: underline;
-    //   margin-left: 5px;
-    //   cursor: pointer;
-    // }
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
   }
   .signup-link {
     margin-left: 5px;
@@ -206,6 +219,12 @@ $phone: 450px;
   position: relative;
   bottom: 0;
   margin-bottom: 20px;
+  @media screen and (max-width: 600px) {
+    // margin-top: 30px;
+    width: 90%;
+    padding-top: 30px;
+    border-top: 0.5px solid rgb(255, 255, 255);
+  }
 }
 
 .rights-text {

@@ -47,7 +47,7 @@ function Login(props: OverviewProps) {
 
   return (
     <div className="login-container">
-      <div />
+      <div className="empty-div" />
       <div className="login-center-div">
         <div className="login-main-div">
           <div className="login-page-logo-div">
@@ -85,10 +85,14 @@ function Login(props: OverviewProps) {
               our Global Privacy Statement.
             </div>
             <div className="no-account">
-              <div>Don’t have an account?</div>
-              <Link to="/signup" style={{ color: 'inherit' }}>
-                <u className="signup-link">Sign Up</u>
-              </Link>
+              <div>
+                Don’t have an account?
+                <u className="signup-link">
+                  <Link to="/signup" style={{ color: 'inherit' }}>
+                    Sign Up
+                  </Link>
+                </u>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +107,7 @@ function Login(props: OverviewProps) {
           service options subject to change without notice.
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 
