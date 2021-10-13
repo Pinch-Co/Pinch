@@ -111,7 +111,7 @@ img {
           flex-direction: row;
   font-family: "Avenir";
   width: 85%;
-  height: 136px;
+  height: 146px;
   padding: 10px;
   background-color: #20b2aa;
 }
@@ -462,7 +462,7 @@ img {
   -webkit-box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.25);
           box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.25);
   background-color: white;
-  width: 760%;
+  width: 770%;
   max-height: 220px;
   overflow-y: scroll;
   border-radius: 7px;

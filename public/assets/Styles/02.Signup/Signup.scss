@@ -38,7 +38,7 @@ $phone: 450px;
 .signUp-page-logo-div {
   @include flexCenter(row);
   width: 85%;
-  height: 136px;
+  height: 146px;
   padding: 10px;
   background-color: #20b2aa;
   // border: 1px solid red;
@@ -298,7 +298,7 @@ $phone: 450px;
     margin: 0px 0 10px -1px;
     box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.25);
     background-color: white;
-    width: 760%;
+    width: 770%;
     max-height: 220px;
     overflow-y: scroll;
     border-radius: 7px;
