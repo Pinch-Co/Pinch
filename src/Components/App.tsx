@@ -51,10 +51,7 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/login" component={Login} />
-<<<<<<< HEAD
-=======
           <Route exact path="/signup" component={SignUp} />
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
           <div>
             <Header />
             <Navbar />
