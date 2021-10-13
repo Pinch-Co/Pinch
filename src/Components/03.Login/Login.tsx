@@ -88,8 +88,10 @@ function Login(props: OverviewProps) {
               our Global Privacy Statement.
             </div>
             <div className="no-account">
-              <div>Don’t have an account?</div>
-              <div>Sign Up</div>
+              <div>
+                Don’t have an account?
+                <u className="sign-up-link">Sign up</u>
+              </div>
             </div>
           </div>
         </div>
