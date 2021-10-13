@@ -107,7 +107,7 @@ function Login(props: OverviewProps) {
           service options subject to change without notice.
         </div>
       </div>
-    </div >
+    </div>
   );
 }
 
