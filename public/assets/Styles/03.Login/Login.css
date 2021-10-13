@@ -67,11 +67,7 @@
   width: 700px;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 600px) {
-=======
-@media screen and (max-width: 700px) {
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
   .login-main-div {
     width: 100vw;
   }
@@ -98,15 +94,12 @@
   background-color: #20b2aa;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 600px) {
   .login-page-logo-div {
     width: 100%;
   }
 }
 
-=======
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
 .pinch-logo {
   width: 70%;
   height: 100%;
@@ -131,7 +124,6 @@
           align-items: center;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 600px) {
   .credentials-div {
     width: 100%;
@@ -144,8 +136,6 @@
   }
 }
 
-=======
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
 .credentials-div .credentials-title {
   font-size: 40px;
   color: #5d5d5d;
@@ -195,15 +185,12 @@
   font-size: 20px;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 400px) {
   .credentials-div .login-input {
     width: 95%;
   }
 }
 
-=======
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
 .credentials-div .login-input::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   position: relative;
@@ -247,15 +234,12 @@
           justify-content: flex-start;
   margin-bottom: 18px;
   color: #5d5d5d;
-<<<<<<< HEAD
 }
 
 @media screen and (max-width: 400px) {
   .credentials-div .remember-me {
     width: 95%;
   }
-=======
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
 }
 
 .credentials-div .remember-me-label {
@@ -297,15 +281,12 @@
   transition: 0.1s ease-in;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 400px) {
   .credentials-div .sign-in-btn {
     width: 95%;
   }
 }
 
-=======
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
 .credentials-div .sign-in-btn:hover {
   background-color: #1c9993;
 }
@@ -319,15 +300,12 @@
   font-style: italic;
 }
 
-<<<<<<< HEAD
 @media screen and (max-width: 400px) {
   .credentials-div .agreement {
     width: 80%;
   }
 }
 
-=======
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
 .credentials-div .no-account {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -346,7 +324,6 @@
   width: 70%;
   font-size: 25px;
   color: #5f5f5f;
-<<<<<<< HEAD
   text-align: center;
 }
 
@@ -356,13 +333,7 @@
   }
 }
 
-.credentials-div .sign-up-link {
-=======
-}
-
-.credentials-div .no-account :nth-child(2) {
-  text-decoration: underline;
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
+.credentials-div .signup-link {
   margin-left: 5px;
   cursor: pointer;
 }
@@ -389,11 +360,7 @@
 }
 
 .rights-text {
-<<<<<<< HEAD
-  font-size: 15px;
-=======
   font-size: 13px;
->>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
   text-align: center;
   color: #5d5d5d;
 }
