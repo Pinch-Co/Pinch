@@ -1,16 +1,13 @@
-// import * as React from 'react';
 import React, { useState } from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { RouteComponentProps, Link } from 'react-router-dom';
 import axios from 'axios';
-// import ApolloClient from 'apollo-boost';
-// import { ApolloProvider } from '@apollo/client';
 
 interface OverviewProps extends RouteComponentProps<{ name: string }> { }
 
 // eslint-disable-next-line no-unused-vars
 function Login(props: OverviewProps) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   // eslint-disable-next-line no-unused-vars
   const [err, setErr] = useState([]);
 
@@ -88,10 +85,10 @@ function Login(props: OverviewProps) {
               our Global Privacy Statement.
             </div>
             <div className="no-account">
-              <div>
-                Don’t have an account?
-                <u className="sign-up-link">Sign up</u>
-              </div>
+              <div>Don’t have an account?</div>
+              <Link to="/signup" style={{ color: 'inherit' }}>
+                <u className="signup-link">Sign Up</u>
+              </Link>
             </div>
           </div>
         </div>

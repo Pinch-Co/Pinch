@@ -15,6 +15,7 @@ import NotFound from './SharedComponents/NotFound/NotFound';
 import Navbar from './SharedComponents/02.Navbar/Navbar';
 import ProtectedRoute from './SharedComponents/04.ProtectedRoute/ProtectedRoute';
 import Login from './03.Login/Login';
+import SignUp from './02.Signup/Signup';
 import Settings from './04.Settings/Settings';
 import Header from './SharedComponents/01.Header/Header';
 import Goals from './06.Goals/Goals';
@@ -50,6 +51,10 @@ function App() {
       <div>
         <Switch>
           <Route exact path="/login" component={Login} />
+<<<<<<< HEAD
+=======
+          <Route exact path="/signup" component={SignUp} />
+>>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
           <div>
             <Header />
             <Navbar />

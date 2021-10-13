@@ -30,7 +30,11 @@ $phone: 450px;
 .login-main-div {
   @include flexCenter(column);
   width: 700px;
+<<<<<<< HEAD
   @media screen and (max-width: 600px) {
+=======
+  @media screen and (max-width: 700px) {
+>>>>>>> 5280e39c3a6d038b9472a419f627d4b2accfe0e2
     width: 100vw;
   }
 }
@@ -193,7 +197,7 @@ $phone: 450px;
     //   cursor: pointer;
     // }
   }
-  .sign-up-link {
+  .signup-link {
     margin-left: 5px;
     cursor: pointer;
   }
@@ -209,7 +213,7 @@ $phone: 450px;
 }
 
 .rights-text {
-  font-size: 15px;
+  font-size: 13px;
   text-align: center;
   color: #5d5d5d;
 }

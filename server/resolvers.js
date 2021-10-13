@@ -5,6 +5,7 @@ const resolver = {
   },
   Mutation: {
     logout: (parent, args, context) => context.logout(),
+    signup: (parent, args, context) => context.addUser(args),
     login: async (parent, { email, password }, context) => {
       // eslint-disable-next-line no-console
       console.log('this is the context', context.req.user);
