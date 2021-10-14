@@ -8,6 +8,7 @@ const resolver = {
   },
   Mutation: {
     logout: (parent, args, context) => context.logout(),
+    signup: (parent, args, context) => context.addUser(args),
     login: async (parent, { email, password }, context) => {
       const { user } = await context.authenticate('graphql-local', { email, password });
       await context.login(user);
