@@ -18,6 +18,7 @@ type Mutation {
   login(email: String!, password: String!): AuthPayload
   logout: Boolean
   signup(firstName: String!, lastName: String!, email: String!, password: String!): AuthPayload
+  dummy1(firstName: String!, lastName: String!, username: String!, phone: String!, email: String!, password: String!): User
 }
 `;
 
