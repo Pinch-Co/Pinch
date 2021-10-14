@@ -163,6 +163,13 @@ $phone: 450px;
     background: rgb(252, 200, 200);
   }
 
+  .input-container[data-error] .form-control {
+    border-color: #da5560;
+    border: 1px solid;
+    color: #da5560;
+    background: rgb(252, 200, 200);
+  }
+
   .input-container[data-error]::after {
     content: attr(data-error);
     font-size: 15px;
@@ -267,9 +274,9 @@ $phone: 450px;
 
 //Phone Input Specific Styling ----------------------------------------//
 .react-tel-input {
-  width: 75%;
+  width: 100%;
   @media screen and (max-width: 600px) {
-    width: 90%;
+    width: 100%;
   }
   .form-control {
     width: 100%;
@@ -345,9 +352,6 @@ $phone: 450px;
       }
     }
     .flag {
-      // position: absolute;
-      // top: 50%;
-      // margin-top: -12px;
       display: none;
     }
     .arrow {

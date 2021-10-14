@@ -271,6 +271,13 @@
   background: #fcc8c8;
 }
 
+.signup-credentials-div .input-container[data-error] .form-control {
+  border-color: #da5560;
+  border: 1px solid;
+  color: #da5560;
+  background: #fcc8c8;
+}
+
 .signup-credentials-div .input-container[data-error]::after {
   content: attr(data-error);
   font-size: 15px;
@@ -434,12 +441,12 @@
 }
 
 .react-tel-input {
-  width: 75%;
+  width: 100%;
 }
 
 @media screen and (max-width: 600px) {
   .react-tel-input {
-    width: 90%;
+    width: 100%;
   }
 }
 

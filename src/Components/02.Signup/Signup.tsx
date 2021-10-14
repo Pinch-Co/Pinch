@@ -10,6 +10,7 @@ interface OverviewProps extends RouteComponentProps<{ name: string }> { }
 interface Verrors {
   email: string;
   password: string;
+  phone: string;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -24,6 +25,8 @@ function SignUp(props: OverviewProps) {
   const allValues: any = {
     // eslint-disable-next-line quote-props
     'email': email,
+    // eslint-disable-next-line quote-props
+    'phone': phone,
     // eslint-disable-next-line quote-props
     'password': password,
   };
@@ -88,12 +91,14 @@ function SignUp(props: OverviewProps) {
                 />
               </div>
               <div className="signUp-input-title">Phone</div>
-              <PhoneInput
-                country="us"
-                placeholder="555-555-5555"
-                value={phone}
-                onChange={(value: string) => setPhone(value)}
-              />
+              <div className="input-container" data-error={validation?.phone}>
+                <PhoneInput
+                  country="us"
+                  placeholder="555-555-5555"
+                  value={phone}
+                  onChange={(value: string) => setPhone(value)}
+                />
+              </div>
               <div className="signUp-input-title">Password</div>
               <div className="input-container" data-error={validation?.password}>
                 <input

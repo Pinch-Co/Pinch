@@ -7,15 +7,17 @@ export default function validateInfo(values: any) {
     errors.email = 'Email address is invalid';
   }
 
-  if (values.password.length === 0) {
-    errors.password = 'Password is required';
+  if (!values.phone) {
+    errors.phone = 'Phone number required';
+  } else if (values.phone.length < 6) {
+    errors.phone = 'Invalid phone numbers, please enter valid numbers';
   }
 
-  // if (!values.password) {
-  //   errors.password = 'Password is required';
-  // } else if (values.password !== values.password) {
-  //   errors.password = 'Passwords do not match';
-  // }
+  if (values.password.length === 0) {
+    errors.password = 'Password is required';
+  } else if (values.password.length < 6) {
+    errors.password = 'Password needs to be more than 6 characters';
+  }
 
   return errors;
 }
