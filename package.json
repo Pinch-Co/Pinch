@@ -24,6 +24,7 @@
   "homepage": "https://github.com/gregorymacat/Pinch#readme",
   "dependencies": {
     "@types/express": "^4.17.13",
+    "@types/zxcvbn": "^4.4.1",
     "apollo-server-core": "^3.3.0",
     "apollo-server-express": "^2.25.2",
     "axios": "^0.21.4",
@@ -54,7 +55,8 @@
     "webpack": "^5.53.0",
     "webpack-cli": "^4.8.0",
     "webpack-dev": "^1.1.1",
-    "webpack-dev-server": "^4.2.1"
+    "webpack-dev-server": "^4.2.1",
+    "zxcvbn": "^4.4.2"
   },
   "devDependencies": {
     "@types/express-session": "^1.17.4",
