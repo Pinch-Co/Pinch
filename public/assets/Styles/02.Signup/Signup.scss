@@ -13,13 +13,21 @@ $phone: 450px;
   justify-content: space-between;
   width: 100%;
   height: 100vh;
-  @media screen and (max-height: 723px) {
-    height: 100%;
+  @media screen and (max-width: 600px) {
+    justify-content: flex-start;
+    background-color: #d1e0de;
   }
   @media screen and (max-width: $phone) {
     width: 100vw;
   }
   // border: 1px solid red;
+}
+
+.signUp-empty-div {
+  display: block;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
 }
 
 .signUp-center-div {
@@ -42,6 +50,9 @@ $phone: 450px;
   padding: 10px;
   background-color: #20b2aa;
   // border: 1px solid red;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .pinch-logo {
@@ -60,6 +71,16 @@ $phone: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-height: 723px) {
+    margin-top: 0;
+  }
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    margin-top: 0;
+  }
+  @media screen and (max-width: 600px) {
+    padding: 30px 0 30px 0;
+  }
   .signup-title {
     font-size: 30px;
     color: #5d5d5d;
@@ -68,7 +89,8 @@ $phone: 450px;
     @include flexCenter(column);
     width: 100%;
     position: relative;
-    margin-top: 70px;
+    margin-top: 35px;
+    margin-bottom: 5px;
     @media screen and (max-height: 1000px) {
       margin-top: 10px;
     }
@@ -78,14 +100,20 @@ $phone: 450px;
     width: 75%;
     justify-content: flex-start;
     color: #5d5d5d;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
   }
   .signUp-input {
-    width: 75%;
+    width: 100%;
     height: 45px;
     padding-left: 10px;
     margin-bottom: 18px;
     border: none;
     font-size: 20px;
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
     &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       position: relative;
@@ -118,13 +146,51 @@ $phone: 450px;
       color: rgb(156, 156, 156);
       font-weight: lighter;
     }
+
   }
+
+  .input-container {
+    width: 75%;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
+  }
+
+  .input-container[data-error] .signUp-input {
+    border-color: #da5560;
+    border: 1px solid;
+    color: #da5560;
+    background: rgb(252, 200, 200);
+  }
+
+  .input-container[data-error] .form-control {
+    border-color: #da5560;
+    border: 1px solid;
+    color: #da5560;
+    background: rgb(252, 200, 200);
+  }
+
+  .input-container[data-error]::after {
+    content: attr(data-error);
+    font-size: 15px;
+    font-weight: bold;
+    color: #da5560;
+    display: block;
+    position: absolute;
+    margin-top: -15px;
+    margin-bottom: 6px;
+  }
+
   .remember-me {
     width: 75%;
     justify-content: flex-start;
     margin-bottom: 18px;
     color: #5d5d5d;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
   }
+
   .remember-me-label {
     // margin-bottom: 0;
     @include flexCenter(row);
@@ -146,6 +212,10 @@ $phone: 450px;
     margin-bottom: 5px;
     cursor: pointer;
     transition: 0.1s ease-in;
+    @media screen and (max-width: 600px) {
+      transition: none;
+      width: 90%;
+    }
     &:hover {
       background-color: #1c9993;
     }
@@ -157,6 +227,9 @@ $phone: 450px;
     text-align: center;
     color: #5d5d5d;
     font-style: italic;
+    @media screen and (max-width: 600px) {
+      width: 80%;
+    }
   }
   .have-account {
     @include flexCenter(row);
@@ -164,12 +237,17 @@ $phone: 450px;
     font-size: 25px;
     color: rgb(95, 95, 95);
     margin-top: 15px;
-    :nth-child(2) {
-      text-decoration: underline;
-      margin-left: 5px;
-      cursor: pointer;
+    text-align: center;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+      margin-top: 10px;
     }
   }
+  .login-link {
+    margin-left: 7px;
+    cursor: pointer;
+  }
+
 }
 
 .rights-text-div {
@@ -179,6 +257,12 @@ $phone: 450px;
   position: relative;
   bottom: 0;
   margin-bottom: 20px;
+  @media screen and (max-width: 600px) {
+    // margin-top: 30px;
+    width: 90%;
+    padding-top: 30px;
+    border-top: 0.5px solid rgb(255, 255, 255);
+  }
 }
 
 .rights-text {
@@ -188,11 +272,12 @@ $phone: 450px;
 }
 
 
-
 //Phone Input Specific Styling ----------------------------------------//
 .react-tel-input {
-  width: 75%;
-
+  width: 100%;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
   .form-control {
     width: 100%;
     height: 45px;
@@ -204,7 +289,6 @@ $phone: 450px;
     color: #5d5d5d;
     // padding: 18.5px 14px 18.5px 58px;
     transition: box-shadow ease .25s, border-color ease .25s;
-
     &:hover {
       border-color: #000;
     }
@@ -268,9 +352,6 @@ $phone: 450px;
       }
     }
     .flag {
-      // position: absolute;
-      // top: 50%;
-      // margin-top: -12px;
       display: none;
     }
     .arrow {
@@ -302,6 +383,9 @@ $phone: 450px;
     max-height: 220px;
     overflow-y: scroll;
     border-radius: 7px;
+    @media screen and (max-width: 600px) {
+      width: 560%;
+    }
     .flag {
       display: none;
     }
