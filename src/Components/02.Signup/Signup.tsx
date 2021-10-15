@@ -100,6 +100,7 @@ function SignUp(props: OverviewProps) {
                   onChange={(value: string) => setPhone(value)}
                 />
               </div>
+              {password ? <PasswordChecker passwort={password} /> : null}
               <div className="signUp-input-title">Password</div>
               <div className="input-container" data-error={validation?.password}>
                 <input
@@ -126,7 +127,6 @@ function SignUp(props: OverviewProps) {
           </div>
         </div>
       </div>
-      {password ? <PasswordChecker passwort={password} /> : null}
       <div className="rights-text-div">
         <div className="rights-text">
           All rights reserved. Pinch, Pinch Co and Pinch LLC are registered trademarks of

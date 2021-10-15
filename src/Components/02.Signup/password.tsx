@@ -30,33 +30,24 @@ function PasswordChecker(props: PasswordProps) {
     },
   };
 
-  // const upperCaseStyles: { [key: string]: React.CSSProperties } = {
-  //   container: {
-  //     color: '#5d5d5d',
-  //   },
-  // };
-
   const specialCharStyles: { [key: string]: React.CSSProperties } = {
     container: {
       color: '#5d5d5d',
     },
   };
+  // console.log('password', passwort);
   if (passwort.length >= 8) {
     charLengthStyles.container.color = '#20b2aa';
   }
-  if (passwort.search(/[0-9]/) > 0) {
+  if (passwort.search(/[0-9]/) !== -1) {
     digitStyles.container.color = '#20b2aa';
   }
-  if (passwort.search(/[a-z]/i) > 0) {
+  if (passwort.search(/[a-zA-Z]/) !== -1) {
     lowerCaseStyles.container.color = '#20b2aa';
   }
-  // if (passwort.search(/[A-Z]/i) > 0) {
-  //   upperCaseStyles.container.color = '#20b2aa';
-  // }
-  if (passwort.search(/[ !"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/) > 0) {
+  if (passwort.search(/[ !"#$%&'()*+,-./:;<=>?@[\\\]^_`{|}~]/) !== -1) {
     specialCharStyles.container.color = '#20b2aa';
   }
-
   // --------------- END: section for password checking bullet points --------//
 
   // ---------------section for password strength bar --------//
@@ -108,10 +99,10 @@ function PasswordChecker(props: PasswordProps) {
       <div className="password-modal-contents">
         <p className="most-contain">Must Contain</p>
         <hr className="line" />
-        <li className="constraints" style={charLengthStyles.container}>Atleast 8 characters</li>
-        <li className="constraints" style={specialCharStyles.container}>Atleast 1 special character</li>
-        <li className="constraints" style={digitStyles.container}>Atleast 1 digit</li>
-        <li className="constraints" style={lowerCaseStyles.container}>Atleast 1 letter</li>
+        <li className="constraints" style={charLengthStyles.container}>At least 8 characters</li>
+        <li className="constraints" style={specialCharStyles.container}>At least 1 special character</li>
+        <li className="constraints" style={digitStyles.container}>At least 1 digit</li>
+        <li className="constraints" style={lowerCaseStyles.container}>At least 1 letter</li>
         <div className="progress">
           <div className="progress-bar" style={styles.container} />
         </div>

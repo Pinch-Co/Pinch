@@ -16,6 +16,7 @@ import Navbar from './SharedComponents/02.Navbar/Navbar';
 import ProtectedRoute from './SharedComponents/04.ProtectedRoute/ProtectedRoute';
 import Login from './03.Login/Login';
 import SignUp from './02.Signup/Signup';
+import Additionalinfo from './02.Signup/Additional-info';
 import Settings from './04.Settings/Settings';
 import Header from './SharedComponents/01.Header/Header';
 import Goals from './06.Goals/Goals';
@@ -52,6 +53,7 @@ function App() {
         <Switch>
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/additional-info" component={Additionalinfo} />
           <div>
             <Header />
             {showNav
