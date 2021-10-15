@@ -39,43 +39,35 @@ export default function validateLogin(values: any) {
   ];
 
   // check if email exists in database
-  let emailExists = false;
   if (!values.email) {
     errors.email = 'Email required';
-  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-    errors.email = 'Email address is invalid';
   } else {
-    for (let i = 0; i < tempUserList.length; i += 1) {
-      if (tempUserList[i].email === values.email) {
-        emailExists = true;
-        break;
-      }
-    }
-    if (!emailExists) {
-      errors.email = 'Email does not exist. Sign up instead';
+    // check if password matches with the email provided
+    if (values.password.length === 0) {
+      errors.password = 'Password is required';
+    } else if (values.password.length < 6) {
+      errors.password = 'Password is incorrect';
     } else {
-      // check if password matches with the email provided
-      if (values.password.length === 0) {
-        errors.password = 'Password is required';
-      } else if (values.password.length < 6) {
-        errors.password = 'Password is incorrect';
-      } else {
-        let passwordMatch = false;
-        for (let i = 0; i < tempUserList.length; i += 1) {
-          if (tempUserList[i].password === values.password) {
-            passwordMatch = true;
-            break;
-          }
-        }
-        if (passwordMatch) {
-          // temporary success message
-          // eslint-disable-next-line no-alert
-          window.alert('Login successful!');
-        } else {
-          errors.password = 'Password is incorrect';
+      let passwordMatch = false;
+      for (let i = 0; i < tempUserList.length; i += 1) {
+        const currentUser = tempUserList[i];
+        if (currentUser.email === values.email && currentUser.password === values.password) {
+          passwordMatch = true;
+          break;
         }
       }
+      // temporary success message
+      if (passwordMatch) {
+        // eslint-disable-next-line no-alert
+        window.alert('Login successful!');
+      } else {
+        errors.password = 'Email and/or password is incorrect.';
+      }
     }
+  }
+
+  if (values.password.length === 0) {
+    errors.password = 'Password is required';
   }
 
   return errors;

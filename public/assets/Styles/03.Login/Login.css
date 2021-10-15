@@ -257,13 +257,6 @@
   }
 }
 
-.credentials-div .input-container[data-error] .login-input {
-  border-color: #da5560;
-  border: 1px solid;
-  color: #da5560;
-  background: #fcc8c8;
-}
-
 .credentials-div .input-container[data-error]::after {
   content: attr(data-error);
   font-size: 15px;
@@ -271,8 +264,7 @@
   color: #da5560;
   display: block;
   position: absolute;
-  margin-top: -20px;
-  margin-bottom: 6px;
+  margin-top: -19px;
 }
 
 .credentials-div .remember-me {

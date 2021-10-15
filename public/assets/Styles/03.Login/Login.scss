@@ -151,20 +151,6 @@ $phone: 450px;
     }
   }
 
-  .input-container[data-error] .login-input {
-    border-color: #da5560;
-    border: 1px solid;
-    color: #da5560;
-    background: rgb(252, 200, 200);
-  }
-
-  // .input-container[data-error] .form-control {
-  //   border-color: #da5560;
-  //   border: 1px solid;
-  //   color: #da5560;
-  //   background: rgb(252, 200, 200);
-  // }
-
   .input-container[data-error]::after {
     content: attr(data-error);
     font-size: 15px;
@@ -172,8 +158,8 @@ $phone: 450px;
     color: #da5560;
     display: block;
     position: absolute;
-    margin-top: -20px;
-    margin-bottom: 6px;
+    margin-top: -19px;
+    // margin-bottom: 6px;
   }
 
   .remember-me {
