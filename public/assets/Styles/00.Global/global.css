@@ -1330,10 +1330,8 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -1519,18 +1517,12 @@ img {
 }
 
 .credentials-div .login-input {
-  width: 75%;
+  width: 100%;
   height: 45px;
   padding-left: 10px;
   margin-bottom: 18px;
   border: none;
   font-size: 20px;
-}
-
-@media screen and (max-width: 600px) {
-  .credentials-div .login-input {
-    width: 90%;
-  }
 }
 
 .credentials-div .login-input::-webkit-input-placeholder {
@@ -1567,6 +1559,26 @@ img {
   font-style: italic;
   color: #9c9c9c;
   font-weight: lighter;
+}
+
+.credentials-div .input-container {
+  width: 75%;
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div .input-container {
+    width: 90%;
+  }
+}
+
+.credentials-div .input-container[data-error]::after {
+  content: attr(data-error);
+  font-size: 15px;
+  font-weight: bold;
+  color: #da5560;
+  display: block;
+  position: absolute;
+  margin-top: -19px;
 }
 
 .credentials-div .remember-me {

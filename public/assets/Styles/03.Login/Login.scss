@@ -11,10 +11,8 @@ $phone: 450px;
 .login-container {
   @include flexCenter(column);
   justify-content: space-between;
-  align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: white;
   @media screen and (max-width: 600px) {
     justify-content: flex-start;
     background-color: #d1e0de;
@@ -106,15 +104,12 @@ $phone: 450px;
     }
   }
   .login-input {
-    width: 75%;
+    width: 100%;
     height: 45px;
     padding-left: 10px;
     margin-bottom: 18px;
     border: none;
     font-size: 20px;
-    @media screen and (max-width: 600px) {
-      width: 90%;
-    }
     &::-webkit-input-placeholder {
       /* Chrome/Opera/Safari */
       position: relative;
@@ -148,6 +143,25 @@ $phone: 450px;
       font-weight: lighter;
     }
   }
+
+  .input-container {
+    width: 75%;
+    @media screen and (max-width: 600px) {
+      width: 90%;
+    }
+  }
+
+  .input-container[data-error]::after {
+    content: attr(data-error);
+    font-size: 15px;
+    font-weight: bold;
+    color: #da5560;
+    display: block;
+    position: absolute;
+    margin-top: -19px;
+    // margin-bottom: 6px;
+  }
+
   .remember-me {
     width: 75%;
     justify-content: flex-start;
@@ -220,7 +234,6 @@ $phone: 450px;
   bottom: 0;
   margin-bottom: 20px;
   @media screen and (max-width: 600px) {
-    // margin-top: 30px;
     width: 90%;
     padding-top: 30px;
     border-top: 0.5px solid rgb(255, 255, 255);
