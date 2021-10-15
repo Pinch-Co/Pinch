@@ -1154,10 +1154,6 @@ img {
   color: #9c9c9c;
 }
 
-.additional-info-credentials-div .additional-info-input::-webkit-calendar-picker-indicator {
-  color: #9c9c9c;
-}
-
 .additional-info-credentials-div .additional-info-input-address {
   width: 122%;
   height: 45px;
