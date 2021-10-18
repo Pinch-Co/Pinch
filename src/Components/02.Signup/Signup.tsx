@@ -4,6 +4,7 @@ import axios from 'axios';
 import { RouteComponentProps, Link } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import validateInfo from '../SharedComponents/05.Validation/validation';
+import PasswordChecker from './password';
 
 interface OverviewProps extends RouteComponentProps<{ name: string }> { }
 
@@ -99,6 +100,7 @@ function SignUp(props: OverviewProps) {
                   onChange={(value: string) => setPhone(value)}
                 />
               </div>
+              {password ? <PasswordChecker passwort={password} /> : null}
               <div className="signUp-input-title">Password</div>
               <div className="input-container" data-error={validation?.password}>
                 <input
