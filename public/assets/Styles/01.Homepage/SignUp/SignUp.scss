@@ -1,0 +1,68 @@
+.sign-up {
+  background-color: #D1E0DE;
+  font-family: 'Roboto';
+  color: #696969;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .container-logo-words {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .logo-smoll {
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .column-words {
+    height: 250px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .underline {
+    border-bottom: solid #696969 3px;
+    padding-bottom: 5px;
+  }
+  .column-description {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-bottom: 10px;
+  }
+  .pargaph-size {
+    font-size: 1em;
+  }
+  .make-the-button-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .button-sign-up {
+    width: 400px;
+    background-color: #1EB2AA;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3em;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  .button-sign-up:hover {
+      background-color: white;
+      color: #1EB2AA;
+  }
+}

@@ -5,13 +5,66 @@
   padding: 0;
 }
 
-tools-offered {
-  background-color: #f4f4f4;
-  font-family: "Roboto";
+.tools-offered {
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  height: 1300px;
+  margin-top: 40px;
 }
 
-tools-offered example-image {
-  width: 50px;
-  height: 50px;
+.tools-offered .tools {
+  float: left;
+  width: 45%;
+  margin-left: 5%;
+  color: #696969;
+  border-bottom: solid #696969 3px;
+}
+
+.tools-offered .tool-slot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+  width: 100%;
+}
+
+.tools-offered .example-image {
+  height: 250px;
+  width: 50%;
+}
+
+.tools-offered .about-tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  color: #696969;
+  font-size: 1em;
+  width: 50%;
+  height: 250px;
 }
 /*# sourceMappingURL=ToolsOffered.css.map */
