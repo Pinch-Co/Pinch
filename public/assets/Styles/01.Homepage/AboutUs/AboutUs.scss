@@ -1,0 +1,23 @@
+.about-us {
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 300px;
+  width: 100%;
+  .ab-img {
+    height: 250px;
+    width: 40%;
+    margin: 2%;
+  }
+  .description {
+    width: 50%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #696969;
+    font-size: 1.3em;
+  }
+}

@@ -18,6 +18,7 @@ import Login from './03.Login/Login';
 import SignUp from './02.Signup/Signup';
 import Additionalinfo from './02.Signup/Additional-info';
 import Settings from './04.Settings/Settings';
+import Footer from './SharedComponents/03.Footer/Footer';
 import Header from './SharedComponents/01.Header/Header';
 import Goals from './06.Goals/Goals';
 import BudgetBreakdown from './07.BudgetBreakdown/BudgetBreakdown';
@@ -70,6 +71,7 @@ function App() {
             <Route exact path="*" component={NotFound} />
           </div>
         </Switch>
+        <Footer />
       </div>
     </HashRouter>
   );

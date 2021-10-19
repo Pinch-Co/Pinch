@@ -21,6 +21,7 @@ const SESSION_SECRECT = 'bad_secret';
 
 // express related code
 const app = express();
+app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 app.use(cookieParser());
 app.use(session({
@@ -31,7 +32,6 @@ app.use(session({
   saveUninitialized: true,
 }));
 app.use(cors());
-app.use('/', express.static(path.join(__dirname, '../public')));
 app.use(passport.initialize());
 app.use(passport.session());
 
