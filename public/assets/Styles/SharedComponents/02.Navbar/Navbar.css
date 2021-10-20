@@ -44,7 +44,7 @@
   }
 }
 
-.navbar-main-div {
+.navbar-container-div .navbar-main-div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,19 +69,19 @@
 }
 
 @media screen and (max-width: 900px) {
-  .navbar-main-div {
+  .navbar-container-div .navbar-main-div {
     width: 75%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .navbar-main-div {
+  .navbar-container-div .navbar-main-div {
     width: 90%;
   }
 }
 
 @media screen and (max-width: 550px) {
-  .navbar-main-div {
+  .navbar-container-div .navbar-main-div {
     width: 90%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -105,7 +105,7 @@
 }
 
 @media screen and (max-width: 490px) {
-  .navbar-main-div {
+  .navbar-container-div .navbar-main-div {
     width: 70%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -128,7 +128,7 @@
   }
 }
 
-a#link.navbar-links {
+.navbar-container-div a#link.navbar-links {
   font-size: 1.3em;
   text-decoration: none;
   color: #5d5d5d;
@@ -137,27 +137,27 @@ a#link.navbar-links {
 }
 
 @media screen and (max-width: 900px) {
-  a#link.navbar-links {
+  .navbar-container-div a#link.navbar-links {
     font-size: 1.1em;
   }
-  a#link.navbar-links:hover {
+  .navbar-container-div a#link.navbar-links:hover {
     color: #3d3d3d;
     font-weight: bold;
   }
 }
 
 @media screen and (max-width: 550px) {
-  a#link.navbar-links {
+  .navbar-container-div a#link.navbar-links {
     font-size: 1em;
   }
-  a#link.navbar-links:hover {
+  .navbar-container-div a#link.navbar-links:hover {
     color: #3d3d3d;
     font-weight: bold;
     margin-bottom: 5px;
   }
 }
 
-a#link.navbar-links:hover {
+.navbar-container-div a#link.navbar-links:hover {
   color: #3d3d3d;
   font-weight: bold;
 }
