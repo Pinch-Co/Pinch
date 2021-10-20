@@ -28,8 +28,8 @@ import CreditPayments from './09.CreditPayments/CreditPayments';
 function App() {
   // eslint-disable-next-line
   const [state, setState] = useState({ state: ' ' });
-  const [authenticated, setAuth] = useState<boolean>(false);
-  const [showNav, setNav] = useState<boolean>(false);
+  const [authenticated, setAuth] = useState<boolean>(true);
+  const [showNav, setNav] = useState<boolean>(true);
 
   const verifyAuth = () => {
     axios.get('http://localhost:4000/graphql?query={authenticated{id}}')
@@ -56,7 +56,7 @@ function App() {
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/additional-info" component={Additionalinfo} />
           <div>
-            <Header />
+            <Header {...authenticated} />
             {showNav
               ? <Navbar />
               : null}
@@ -69,9 +69,9 @@ function App() {
             <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
             <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
             <Route exact path="*" component={NotFound} />
+            <Footer />
           </div>
         </Switch>
-        <Footer />
       </div>
     </HashRouter>
   );
