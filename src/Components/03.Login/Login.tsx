@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RouteComponentProps, Link } from 'react-router-dom';
+import { RouteComponentProps, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import validateLogin from '../SharedComponents/05.Validation/loginCheck';
 
@@ -17,7 +17,7 @@ function Login(props: OverviewProps) {
   const [validation, setErrors] = useState<Verrors>();
   // eslint-disable-next-line no-unused-vars
   const [err, setErr] = useState([]);
-  // const history = useHistory();
+  const history = useHistory();
 
   const allValues: any = {
     // eslint-disable-next-line quote-props
@@ -58,7 +58,8 @@ function Login(props: OverviewProps) {
       }), { headers },
     )
       .then((response) => {
-        // history.push('/home/overview');
+        // console.log('should redirect');
+        history.push('/home/overview');
         const error = response.data.errors;
         setErr(error);
       })

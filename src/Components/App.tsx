@@ -28,8 +28,8 @@ import CreditPayments from './09.CreditPayments/CreditPayments';
 function App() {
   // eslint-disable-next-line
   const [state, setState] = useState({ state: ' ' });
-  const [authenticated, setAuth] = useState<boolean>(true);
-  const [showNav, setNav] = useState<boolean>(true);
+  const [authenticated, setAuth] = useState<boolean>(false);
+  const [showNav, setNav] = useState<boolean>(false);
 
   const verifyAuth = () => {
     axios.get('http://localhost:4000/graphql?query={authenticated{id}}')
