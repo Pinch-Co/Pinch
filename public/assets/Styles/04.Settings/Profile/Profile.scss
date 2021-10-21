@@ -7,7 +7,7 @@
   font-family: "Avenir";
 }
 
-.profile-contents {
+.tabs-contents {
   width: 600px;
   height: 100%;
   overflow-x: hidden;
@@ -60,7 +60,7 @@
     outline: 1px solid rgb(130, 142, 155);
   }
 
-  .profile-header-section {
+  .tabs-header-section {
     @include flexCenter(column);
     justify-content: space-evenly;
     width: 100%;
@@ -68,7 +68,7 @@
     padding: 0.5em;
   }
 
-  .profile-header-title {
+  .tabs-header-title {
     @include flexCenter(row);
     justify-content: flex-start;
     width: 100%;
@@ -76,7 +76,7 @@
     font-size: 1.3em;
   }
 
-  .profile-section-cutoff {
+  .tabs-section-cutoff {
     color:rgb(98, 100, 100);
     width: 95%;
   }
@@ -86,7 +86,7 @@
     color:rgb(110, 112, 112);
   }
 
-  .profile-information-section {
+  .tabs-information-section {
     @include flexCenter(column);
     align-items: flex-start;
     width: 100%;
@@ -97,7 +97,7 @@
       margin-top: 1em;
     }
 
-    .profile-question-section {
+    .tabs-question-section {
       width: 100%;
       padding: 0.9em;
       color:rgb(103, 105, 105);

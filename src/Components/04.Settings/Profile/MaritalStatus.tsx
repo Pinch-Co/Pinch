@@ -2,7 +2,7 @@ import * as React from 'react';
 
 function MaritalStatus() {
   return (
-    <div className="profile-question-section">
+    <div className="tabs-question-section">
       <p className="info-section-question-title">Marital Status</p>
       <div className="info-section-inputs">
         <div className="info-section-inputs-mini">

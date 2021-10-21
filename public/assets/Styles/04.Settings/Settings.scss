@@ -7,6 +7,14 @@
   font-family: "Avenir";
 }
 
+.tabs-header-title {
+  @include flexCenter(row);
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
 .settings-outer-container {
   width: 100vw;
   height: 75vh;
@@ -18,7 +26,39 @@
     // border: 1px solid red;
     width: 65%;
     height: 100%;
-    @media screen and (max-width: 1390px) {
+    @media screen and (max-width: 2030px) {
+      width: 50%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 2000px) {
+      width: 50%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1900px) {
+      width: 65%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1800px) {
+      width: 65%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1700px) {
+      width: 65%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1600px) {
+      width: 60%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1500px) {
+      width: 70%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1400px) {
+      width: 80%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1300px) {
       width: 100%;
       justify-content: space-evenly;
     }
@@ -93,7 +133,7 @@
   }
 
   .settings-content-container {
-    border: 1px solid rgb(79, 80, 80);
+    border: 1px solid rgb(161, 163, 163);
     @include flexCenter(column);
     justify-content: flex-start;
     width: 70;

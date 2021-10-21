@@ -1,3 +1,26 @@
+.tabs-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
 .settings-outer-container {
   width: 100vw;
   height: 75vh;
@@ -38,7 +61,79 @@
   height: 100%;
 }
 
-@media screen and (max-width: 1390px) {
+@media screen and (max-width: 2030px) {
+  .settings-outer-container .settings-main-container {
+    width: 50%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .settings-outer-container .settings-main-container {
+    width: 50%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1900px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .settings-outer-container .settings-main-container {
+    width: 60%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .settings-outer-container .settings-main-container {
+    width: 70%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .settings-outer-container .settings-main-container {
+    width: 80%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1300px) {
   .settings-outer-container .settings-main-container {
     width: 100%;
     -webkit-box-pack: space-evenly;
@@ -172,7 +267,7 @@
 }
 
 .settings-outer-container .settings-content-container {
-  border: 1px solid #4f5050;
+  border: 1px solid #a1a3a3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

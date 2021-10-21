@@ -8,15 +8,15 @@ import HouseSize from './HouseSize';
 
 function Profile() {
   return (
-    <div className="profile-contents">
-      <div className="profile-header-section">
-        <div className="profile-header-title">
+    <div className="tabs-contents">
+      <div className="tabs-header-section">
+        <div className="tabs-header-title">
           Profile
         </div>
         <p className="blurb"> Tell us a little about yourself...</p>
-        <hr className="profile-section-cutoff" />
+        <hr className="tabs-section-cutoff" />
       </div>
-      <div className="profile-information-section">
+      <div className="tabs-information-section">
         <h5 className="section-divider-title">My information</h5>
         <Gender />
         <MaritalStatus />
