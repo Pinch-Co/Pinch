@@ -14,6 +14,7 @@
       -ms-flex-align: center;
           align-items: center;
   height: 110px;
+  width: 100%;
   font-family: "Avenir";
 }
 

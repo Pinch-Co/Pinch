@@ -1937,6 +1937,7 @@
       -ms-flex-align: center;
           align-items: center;
   height: 110px;
+  width: 100%;
   font-family: "Avenir";
 }
 
@@ -3153,12 +3154,6 @@
 @media all and (max-width: 600px) {
   .userSetting-input-container {
     padding-left: 1.5em;
-  }
-}
-
-@media all and (max-width: 500px) {
-  .userSetting-input-container {
-    padding-left: 1em;
   }
 }
 
