@@ -314,4 +314,29 @@
   height: 30px;
   color: #676969;
 }
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.custom-checkbox .checkmark {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #919090;
+  display: inline-block;
+  border-radius: 10px;
+  background: #71c7bb url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-size: 60%;
+}
+
+.custom-checkbox input {
+  display: none;
+}
 /*# sourceMappingURL=Profile.css.map */

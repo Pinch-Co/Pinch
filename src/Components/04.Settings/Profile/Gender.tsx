@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import * as React from 'react';
 
 function Gender() {
@@ -7,15 +8,24 @@ function Gender() {
       <div className="info-section-inputs">
         <div className="info-section-inputs-mini">
           <div className="infor-input-option">Female</div>
-          <input className="info-me-chk" type="checkbox" id="female" />
+          <label className="custom-checkbox">
+            <input className="info-me-chk" type="checkbox" id="female" />
+            <span className="checkmark" />
+          </label>
         </div>
         <div className="info-section-inputs-mini">
           <div className="infor-input-option">Male</div>
-          <input className="info-me-chk" type="checkbox" id="male" />
+          <label className="custom-checkbox">
+            <input className="info-me-chk" type="checkbox" id="male" />
+            <span className="checkmark" />
+          </label>
         </div>
         <div className="info-section-inputs-mini">
           <div className="infor-input-option">Other</div>
-          <input className="info-me-chk" type="checkbox" id="other" />
+          <label className="custom-checkbox">
+            <input className="info-me-chk" type="checkbox" id="other" />
+            <span className="checkmark" />
+          </label>
         </div>
       </div>
     </div>

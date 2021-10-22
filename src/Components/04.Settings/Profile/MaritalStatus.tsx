@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import * as React from 'react';
 
 function MaritalStatus() {
@@ -7,19 +8,31 @@ function MaritalStatus() {
       <div className="info-section-inputs">
         <div className="info-section-inputs-mini">
           <div className="infor-input-option">Single</div>
-          <input className="info-me-chk" type="checkbox" id="single" />
+          <label className="custom-checkbox">
+            <input className="info-me-chk" type="checkbox" id="single" />
+            <span className="checkmark" />
+          </label>
         </div>
         <div className="info-section-inputs-mini">
           <div className="infor-input-option">Married</div>
-          <input className="info-me-chk" type="checkbox" id="married" />
+          <label className="custom-checkbox">
+            <input className="info-me-chk" type="checkbox" id="married" />
+            <span className="checkmark" />
+          </label>
         </div>
         <div className="info-section-inputs-mini">
           <div className="infor-input-option">Living Together</div>
-          <input className="info-me-chk" type="checkbox" id="livingTogether" />
+          <label className="custom-checkbox">
+            <input className="info-me-chk" type="checkbox" id="living-together" />
+            <span className="checkmark" />
+          </label>
         </div>
         <div className="info-section-inputs-mini">
           <div className="infor-input-option">Divorced</div>
-          <input className="info-me-chk" type="checkbox" id="divorced" />
+          <label className="custom-checkbox">
+            <input className="info-me-chk" type="checkbox" id="divorced" />
+            <span className="checkmark" />
+          </label>
         </div>
       </div>
     </div>
