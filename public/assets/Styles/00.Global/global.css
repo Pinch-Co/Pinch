@@ -1478,7 +1478,7 @@
 }
 
 .additional-info-credentials-div .signin-additional-info-btn {
-  width: 75%;
+  width: 50%;
   padding: 12px;
   font-size: 25px;
   font-weight: lighter;
@@ -1936,13 +1936,95 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 120px;
+  height: 110px;
+  width: 100%;
+  font-family: "Avenir";
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.header .header-image {
+  width: 60%;
+  padding: 1em;
+}
+
+@media screen and (max-width: 1000px) {
+  .header .header-image {
+    width: 40%;
+    padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .header .header-image {
+    width: 30%;
+    padding: 0;
+  }
 }
 
 .header .header-logo {
   margin-left: 10px;
   width: 210px;
-  height: 100px;
+  height: 90px;
+}
+
+@media screen and (max-width: 560px) {
+  .header .header-logo {
+    width: 100px;
+    height: 45px;
+  }
 }
 
 .header .header-contents {
@@ -1953,19 +2035,82 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 300px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 10px;
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .header .header-contents {
+    width: 35%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header .header-contents {
+    width: 45%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header .header-contents {
+    width: 55%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header .header-contents {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header .header-contents {
+    width: 80%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header .header-contents {
+    width: 90%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-right: 0;
+  }
 }
 
 .header .header-contents .link {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 1.2em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.header .header-contents .link:hover {
+  color: #117973;
 }
 
 .footer {
@@ -2008,6 +2153,1117 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.navbar-container-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  background-color: #a5dfdc;
+  -webkit-box-shadow: 0px 9px 5px -4px #d1d1d1;
+          box-shadow: 0px 9px 5px -4px #d1d1d1;
+  width: 100vw;
+  height: 60px;
+  padding: 1em;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div {
+    width: 100%;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: "Avenir";
+    justify-content: center;
+  }
+}
+
+.navbar-container-div .navbar-main-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: transparent;
+  width: 70%;
+  height: 50px;
+  line-height: 1em;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-container-div .navbar-main-div {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-container-div .navbar-main-div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div .navbar-main-div {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .navbar-container-div .navbar-main-div {
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.navbar-container-div a#link.navbar-links {
+  font-size: 1.3em;
+  text-decoration: none;
+  color: #5d5d5d;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-container-div a#link.navbar-links {
+    font-size: 1.1em;
+  }
+  .navbar-container-div a#link.navbar-links:hover {
+    color: #3d3d3d;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div a#link.navbar-links {
+    font-size: 1em;
+  }
+  .navbar-container-div a#link.navbar-links:hover {
+    color: #3d3d3d;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.navbar-container-div a#link.navbar-links:hover {
+  color: #3d3d3d;
+  font-weight: bold;
+}
+
+.tabs-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
+.settings-outer-container {
+  width: 100vw;
+  height: 75vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+}
+
+.settings-outer-container .settings-main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 65%;
+  height: 100%;
+}
+
+@media screen and (max-width: 2030px) {
+  .settings-outer-container .settings-main-container {
+    width: 50%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .settings-outer-container .settings-main-container {
+    width: 50%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1900px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .settings-outer-container .settings-main-container {
+    width: 60%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .settings-outer-container .settings-main-container {
+    width: 70%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .settings-outer-container .settings-main-container {
+    width: 80%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+.settings-outer-container .settings-tab-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 30;
+  height: 90%;
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-tab-container {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .settings-outer-container .settings-tab-container {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .settings-outer-container .settings-tab-container {
+    width: 25%;
+  }
+}
+
+.settings-outer-container .settings-tab-list {
+  width: 280px;
+  height: 100%;
+  background-color: #cacbcc;
+  text-decoration: none;
+  list-style-type: none;
+  line-height: 3em;
+  padding: 2em;
+}
+
+@media screen and (max-width: 900px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+    font-size: 11px;
+    padding: 0.5em;
+  }
+}
+
+.settings-outer-container .settings-tab-list .settings-tab-list-item {
+  color: #555657;
+  font-size: 1.3em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.settings-outer-container .settings-tab-list .settings-tab-list-item:hover {
+  color: white;
+}
+
+.settings-outer-container .settings-content-container {
+  border: 1px solid #a1a3a3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 70;
+  height: 90%;
+}
+
+@media screen and (max-width: 900px) {
+  .settings-outer-container .settings-content-container {
+    width: 60;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-content-container {
+    width: 55;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .settings-outer-container .settings-content-container {
+    width: 50;
+  }
+}
+
+.settings-outer-container .settings-content-items {
+  height: 100%;
+}
+
+.tabs-contents {
+  width: 600px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 900px) {
+  .tabs-contents {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .tabs-contents {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .tabs-contents {
+    width: 410px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .tabs-contents {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .tabs-contents {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tabs-contents {
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .tabs-contents {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tabs-contents {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tabs-contents {
+    width: 250px;
+  }
+}
+
+.tabs-contents::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tabs-contents::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(231, 225, 225, 0.3);
+          box-shadow: inset 0 0 6px rgba(231, 225, 225, 0.3);
+}
+
+.tabs-contents::-webkit-scrollbar-thumb {
+  background-color: #36c2bb;
+  outline: 1px solid #828e9b;
+}
+
+.tabs-contents .tabs-header-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 90px;
+  padding: 0.5em;
+}
+
+.tabs-contents .tabs-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
+.tabs-contents .tabs-section-cutoff {
+  color: #626464;
+  width: 95%;
+}
+
+.tabs-contents .blurb {
+  font-size: 0.9em;
+  color: #6e7070;
+}
+
+.tabs-contents .tabs-information-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+.tabs-contents .tabs-information-section .section-divider-title {
+  color: #525555;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+.tabs-contents .tabs-information-section .tabs-question-section {
+  width: 100%;
+  padding: 0.9em;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section .info-section-question-title {
+  padding-left: 1em;
+  margin-bottom: 6px;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section .info-section-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 3em;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section .info-section-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section .info-section-inputs-mini {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-right: 1.2em;
+}
+
+.tabs-contents .tabs-information-section .infor-input-option {
+  margin-right: 7px;
+}
+
+.tabs-contents .tabs-information-section .info-section-dropdown {
+  width: 90%;
+  padding: 1em;
+}
+
+.tabs-contents .tabs-information-section select#education {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#education {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section select#income {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#income {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section select#residential-status {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#residential-status {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section .info-section-household {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.tabs-contents .tabs-information-section select#adults {
+  margin-left: 1em;
+  width: 40%;
+  height: 30px;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section select#children {
+  margin-left: 2em;
+  width: 40%;
+  height: 30px;
+  color: #676969;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.custom-checkbox .checkmark {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #919090;
+  display: inline-block;
+  border-radius: 10px;
+  background: #71c7bb url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-size: 60%;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.account-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 95%;
+  height: 150px;
+  margin: 1em;
+  background-color: #cddfdf;
+  color: #5d5e5e;
+}
+
+.account-container .bank-logo {
+  width: 120px;
+  height: 120px;
+  margin-left: 1em;
+}
+
+.account-container .bank-logo > img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 120px;
+  height: 120px;
+}
+
+.account-container .vertical-divider {
+  border: 1px solid #b4b6b6;
+  height: 85%;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.account-container .account-text-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 95%;
+  height: 100%;
+  padding-top: 1em;
+  padding-right: 1em;
+  line-height: 2em;
+}
+
+.account-container .account-name-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.account-container .bank-title {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.notification-section {
+  width: 100%;
+  padding: 1em;
+}
+
+.section-divider-title {
+  padding-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.notif-input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  padding-left: 3em;
+  padding-top: 1em;
+}
+
+.notif-input-container .notif-input-title {
+  color: #555555;
+  margin-bottom: 0.5em;
+}
+
+.notif-input-container input.notif-input {
+  width: 60%;
+  height: 30px;
+}
+
+.notif-input-container input:focus, .notif-input-container textarea:focus, .notif-input-container select:focus {
+  outline-color: #71c7bb;
+  outline-style: solid;
+}
+
+.userSetting-input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding-left: 3em;
+  padding-top: 0.5em;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-input-container {
+    padding-left: 2em;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .userSetting-input-container {
+    padding-left: 1.5em;
+  }
+}
+
+.userSetting-input-container input.userSetting-input {
+  width: 90%;
+  height: 30px;
+  background-color: #d1d1d1;
+  border: none;
+  padding-left: 10px;
+}
+
+.userSetting-input-container input:focus, .userSetting-input-container textarea:focus, .userSetting-input-container select:focus {
+  outline-color: #71c7bb;
+  outline-style: solid;
+}
+
+.userSetting-delete-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  justify-content: center;
+  padding: 3em;
+  margin-top: 1em;
+}
+
+.userSetting-delete-container .userSetting-delete-button {
+  width: 50%;
+  height: 30px;
+  background: transparent;
+  border: none;
+  color: #e46a6a;
+  font-size: 1em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.userSetting-delete-container .userSetting-delete-button:hover {
+  color: white;
+  background-color: #EC314A;
+  font-weight: bold;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-delete-container .userSetting-delete-button {
+    width: 60%;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+@media all and (max-width: 620px) {
+  .userSetting-delete-container .userSetting-delete-button {
+    width: 80%;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .userSetting-delete-container .userSetting-delete-button {
+    width: 90%;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+.userSetting-delete-container .delete-warning-text {
+  padding: 1em;
+  width: 80%;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-delete-container .delete-warning-text {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .userSetting-delete-container .delete-warning-text {
+    width: 95%;
+  }
+}
+
+.userSetting-delete-container .delete-warning-text .warning-text {
+  line-height: 1em;
+  color: #757575;
+  text-align: center;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-delete-container .delete-warning-text .warning-text {
+    line-height: 1.4em;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .userSetting-delete-container .delete-warning-text .warning-text {
+    text-align: left;
+  }
 }
 
 body,

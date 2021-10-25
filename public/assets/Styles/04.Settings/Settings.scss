@@ -1,0 +1,154 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+.tabs-header-title {
+  @include flexCenter(row);
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
+.settings-outer-container {
+  width: 100vw;
+  height: 75vh;
+  @include flexCenter(column);
+
+  .settings-main-container {
+    @include flexCenter(row);
+    justify-content: space-around;
+    // border: 1px solid red;
+    width: 65%;
+    height: 100%;
+    @media screen and (max-width: 2030px) {
+      width: 50%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 2000px) {
+      width: 50%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1900px) {
+      width: 65%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1800px) {
+      width: 65%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1700px) {
+      width: 65%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1600px) {
+      width: 60%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1500px) {
+      width: 70%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1400px) {
+      width: 80%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1300px) {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 1150px) {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 950px) {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 800px) {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 750px) {
+      width: 100%;
+      justify-content: space-evenly;
+    }
+  }
+
+  .settings-tab-container {
+    // border: 1px solid red;
+    @include flexCenter(column);
+    justify-content: flex-start;
+    width: 30;
+    height: 90%;
+    @media screen and (max-width: 800px) {
+      width: 25%;
+    }
+    @media screen and (max-width: 700px) {
+      width: 25%;
+    }
+    @media screen and (max-width: 610px) {
+      width: 25%;
+    }
+  }
+
+  .settings-tab-list {
+    width: 280px;
+    height: 100%;
+    background-color: #cacbcc;
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 3em;
+    padding: 2em;
+
+    @media screen and (max-width: 900px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 800px) {
+      width: 100%;
+    }
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      font-size: 11px;
+    }
+    @media screen and (max-width: 550px) {
+      width: 100%;
+      font-size: 11px;
+      padding: 0.5em;
+    }
+
+    .settings-tab-list-item {
+      color: #555657;
+      font-size: 1.3em;
+      transition: 0.1s ease-in;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .settings-content-container {
+    border: 1px solid rgb(161, 163, 163);
+    @include flexCenter(column);
+    justify-content: flex-start;
+    width: 70;
+    height: 90%;
+    @media screen and (max-width: 900px) {
+      width: 60;
+    }
+    @media screen and (max-width: 800px) {
+      width: 55;
+    }
+    @media screen and (max-width: 700px) {
+      width: 50;
+    }
+  }
+
+  .settings-content-items {
+    height: 100%;
+  }
+}

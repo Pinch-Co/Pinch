@@ -1,1 +1,164 @@
-/* No CSS *//*# sourceMappingURL=Navbar.css.map */
+.navbar-container-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  background-color: #a5dfdc;
+  -webkit-box-shadow: 0px 9px 5px -4px #d1d1d1;
+          box-shadow: 0px 9px 5px -4px #d1d1d1;
+  width: 100vw;
+  height: 60px;
+  padding: 1em;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div {
+    width: 100%;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: "Avenir";
+    justify-content: center;
+  }
+}
+
+.navbar-container-div .navbar-main-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: transparent;
+  width: 70%;
+  height: 50px;
+  line-height: 1em;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-container-div .navbar-main-div {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-container-div .navbar-main-div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div .navbar-main-div {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .navbar-container-div .navbar-main-div {
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.navbar-container-div a#link.navbar-links {
+  font-size: 1.3em;
+  text-decoration: none;
+  color: #5d5d5d;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-container-div a#link.navbar-links {
+    font-size: 1.1em;
+  }
+  .navbar-container-div a#link.navbar-links:hover {
+    color: #3d3d3d;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div a#link.navbar-links {
+    font-size: 1em;
+  }
+  .navbar-container-div a#link.navbar-links:hover {
+    color: #3d3d3d;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.navbar-container-div a#link.navbar-links:hover {
+  color: #3d3d3d;
+  font-weight: bold;
+}
+/*# sourceMappingURL=Navbar.css.map */

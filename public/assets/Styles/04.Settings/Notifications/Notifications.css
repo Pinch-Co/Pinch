@@ -1,0 +1,48 @@
+.notification-section {
+  width: 100%;
+  padding: 1em;
+}
+
+.section-divider-title {
+  padding-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.notif-input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  padding-left: 3em;
+  padding-top: 1em;
+}
+
+.notif-input-container .notif-input-title {
+  color: #555555;
+  margin-bottom: 0.5em;
+}
+
+.notif-input-container input.notif-input {
+  width: 60%;
+  height: 30px;
+}
+
+.notif-input-container input:focus, .notif-input-container textarea:focus, .notif-input-container select:focus {
+  outline-color: #71c7bb;
+  outline-style: solid;
+}
+/*# sourceMappingURL=Notifications.css.map */

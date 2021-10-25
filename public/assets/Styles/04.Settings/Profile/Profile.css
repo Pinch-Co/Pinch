@@ -1,0 +1,342 @@
+.tabs-contents {
+  width: 600px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 900px) {
+  .tabs-contents {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .tabs-contents {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .tabs-contents {
+    width: 410px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .tabs-contents {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .tabs-contents {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tabs-contents {
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .tabs-contents {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tabs-contents {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tabs-contents {
+    width: 250px;
+  }
+}
+
+.tabs-contents::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tabs-contents::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(231, 225, 225, 0.3);
+          box-shadow: inset 0 0 6px rgba(231, 225, 225, 0.3);
+}
+
+.tabs-contents::-webkit-scrollbar-thumb {
+  background-color: #36c2bb;
+  outline: 1px solid #828e9b;
+}
+
+.tabs-contents .tabs-header-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 90px;
+  padding: 0.5em;
+}
+
+.tabs-contents .tabs-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
+.tabs-contents .tabs-section-cutoff {
+  color: #626464;
+  width: 95%;
+}
+
+.tabs-contents .blurb {
+  font-size: 0.9em;
+  color: #6e7070;
+}
+
+.tabs-contents .tabs-information-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+.tabs-contents .tabs-information-section .section-divider-title {
+  color: #525555;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+.tabs-contents .tabs-information-section .tabs-question-section {
+  width: 100%;
+  padding: 0.9em;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section .info-section-question-title {
+  padding-left: 1em;
+  margin-bottom: 6px;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section .info-section-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 3em;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section .info-section-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section .info-section-inputs-mini {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-right: 1.2em;
+}
+
+.tabs-contents .tabs-information-section .infor-input-option {
+  margin-right: 7px;
+}
+
+.tabs-contents .tabs-information-section .info-section-dropdown {
+  width: 90%;
+  padding: 1em;
+}
+
+.tabs-contents .tabs-information-section select#education {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#education {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section select#income {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#income {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section select#residential-status {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#residential-status {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section .info-section-household {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.tabs-contents .tabs-information-section select#adults {
+  margin-left: 1em;
+  width: 40%;
+  height: 30px;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section select#children {
+  margin-left: 2em;
+  width: 40%;
+  height: 30px;
+  color: #676969;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.custom-checkbox .checkmark {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #919090;
+  display: inline-block;
+  border-radius: 10px;
+  background: #71c7bb url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-size: 60%;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+/*# sourceMappingURL=Profile.css.map */

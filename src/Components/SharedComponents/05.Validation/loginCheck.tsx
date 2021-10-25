@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-lonely-if */
 export default function validateLogin(values: any) {
   const errors: any = {};
@@ -59,7 +60,7 @@ export default function validateLogin(values: any) {
       // temporary success message
       if (passwordMatch) {
         // eslint-disable-next-line no-alert
-        window.alert('Login successful!');
+        console.log('Login successful!');
       } else {
         errors.password = 'Email and/or password is incorrect.';
       }

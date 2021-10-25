@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
   return (
@@ -13,7 +14,11 @@ function SignUp() {
       </div>
       <div className="column-description">
         <div className="make-the-button-center">
-          <div className="button-sign-up">Sign up for Pinch!</div>
+          <div className="button-sign-up">
+            <Link to="/signup" style={{ color: 'inherit', textDecoration: 'none' }}>
+              Sign up for Pinch!
+            </Link>
+          </div>
         </div>
         <p className="pargaph-size">Start reaching your financial goals with powerful tools,</p>
         <p className="pargaph-size">personalized analytics, and more. Fincancial freedom has</p>

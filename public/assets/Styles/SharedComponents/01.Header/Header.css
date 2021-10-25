@@ -13,13 +13,95 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 120px;
+  height: 110px;
+  width: 100%;
+  font-family: "Avenir";
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.header .header-image {
+  width: 60%;
+  padding: 1em;
+}
+
+@media screen and (max-width: 1000px) {
+  .header .header-image {
+    width: 40%;
+    padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .header .header-image {
+    width: 30%;
+    padding: 0;
+  }
 }
 
 .header .header-logo {
   margin-left: 10px;
   width: 210px;
-  height: 100px;
+  height: 90px;
+}
+
+@media screen and (max-width: 560px) {
+  .header .header-logo {
+    width: 100px;
+    height: 45px;
+  }
 }
 
 .header .header-contents {
@@ -30,18 +112,81 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: 300px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-right: 10px;
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .header .header-contents {
+    width: 35%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header .header-contents {
+    width: 45%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header .header-contents {
+    width: 55%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header .header-contents {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header .header-contents {
+    width: 80%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header .header-contents {
+    width: 90%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-right: 0;
+  }
 }
 
 .header .header-contents .link {
   color: #FFFFFF;
   text-decoration: none;
   font-size: 1.2em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.header .header-contents .link:hover {
+  color: #117973;
 }
 /*# sourceMappingURL=Header.css.map */

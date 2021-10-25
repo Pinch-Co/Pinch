@@ -5,7 +5,7 @@ const users = [
     lastName: 'Moss',
     phone: '',
     email: 'm@moss.com',
-    password: 'abc',
+    password: 'abcdefg',
   },
   {
     id: '2',
