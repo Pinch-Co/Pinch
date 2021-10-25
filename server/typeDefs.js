@@ -7,10 +7,19 @@ type User {
   lastName: String
   phone: String
   email: String
+  goals:[Goal!]!
+}
+type Goal {
+  name: String
+  currentAmount: Float
+  goalAmount: Float
+  description: String
 }
 type Query {
   currentUser: User
   authenticated: User
+  getGoals(email: String!): Goal
+  getUserInfo(id: String!): User
 }
 type AuthPayload {
   user: User

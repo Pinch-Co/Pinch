@@ -40,7 +40,11 @@ const goalSchema = new Schema({
     type: String,
     required: true,
   },
-  amount: {
+  currentAmount: {
+    type: Number,
+    required: true,
+  },
+  goalAmount: {
     type: Number,
     required: true,
   },
@@ -191,4 +195,7 @@ const userSchema = new Schema({
   accessToken: String,
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = {
+  UserModel: mongoose.model('User', userSchema),
+};
+// module.exports = mongoose.model('Goals', goalSchema);
