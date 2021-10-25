@@ -1,0 +1,134 @@
+@mixin center($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.bb-container {
+  @include center(row);
+  width: 100vw;
+  margin: 60px 0 30px;
+}
+
+.bb-mid-div {
+  @include center(row);
+  width: 1500px;
+  justify-content: space-between;
+  align-items: flex-start;
+  @media screen and (max-width: 1600px) {
+    width: 95%;
+  }
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.bb-left {
+  width: 55%;
+  height: 100%;
+  // border: 3px solid red;
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
+  .bb-tabs {
+    @include center(row);
+    justify-content: flex-start;
+    width: 100%;
+    // border: 3px solid red;
+    .bb-tab {
+      @include center(row);
+      justify-content: flex-start;
+      width: 80px;
+      padding: 10px;
+      // border: 3px solid red;
+      border: 1px solid black;
+      cursor: pointer;
+      &:hover {
+        background-color: rgb(201, 201, 201);
+      }
+    }
+    .bb-active-tab {
+      font-weight: bold;
+      background-color: rgb(186, 186, 186);
+      &:hover {
+        background-color: rgb(186, 186, 186);
+      }
+    }
+  }
+  .bb-budget-box {
+    @include center(column);
+    justify-content: flex-start;
+    width: 100%;
+    border: 0.5px solid black;
+    padding: 20px;
+    .bb-budget-top {
+      @include center(row);
+      align-items: flex-start;
+      justify-content: space-between;
+      // border: 3px solid red;
+      width: 100%;
+      margin-bottom: 20px;
+      border-bottom: 1px solid rgb(157, 157, 157);
+      .bb-budget-top-left {
+        @include center(column);
+        align-items: flex-start;
+        // border: 3px solid red;
+        .bb-income {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+        .bb-sort {
+          width: 100%;
+          height: 30px;
+          margin-bottom: 20px;
+        }
+      }
+      .bb-budget-top-right {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        // border: 3px solid red;
+      }
+    }
+    .bb-budget-bottom {
+      @include center(column);
+      width: 100%;
+      // border: 3px solid red;
+      .bb-budget-bottom-row {
+        @include center(row);
+        width: 95%;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        // border: 3px solid red;
+        .bb-budget-category {
+          font-size: 24px;
+        }
+        .bb-budget-dollars {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+}
+
+.bb-right {
+  position: relative;
+  width: 44%;
+  height: 100%;
+  border: 3px solid red;
+  .bb-chart {
+    width: 100%;
+    height: 600px;
+    border-radius: 100%;
+    border: 3px solid black;
+  }
+  .bb-chart-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
+}

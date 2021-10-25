@@ -41,7 +41,9 @@
   height: 30px;
 }
 
-.notif-input-container input:focus, .notif-input-container textarea:focus, .notif-input-container select:focus {
+.notif-input-container input:focus,
+.notif-input-container textarea:focus,
+.notif-input-container select:focus {
   outline-color: #71c7bb;
   outline-style: solid;
 }

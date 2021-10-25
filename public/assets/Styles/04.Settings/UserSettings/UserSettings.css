@@ -41,7 +41,9 @@
   padding-left: 10px;
 }
 
-.userSetting-input-container input:focus, .userSetting-input-container textarea:focus, .userSetting-input-container select:focus {
+.userSetting-input-container input:focus,
+.userSetting-input-container textarea:focus,
+.userSetting-input-container select:focus {
   outline-color: #71c7bb;
   outline-style: solid;
 }
@@ -79,7 +81,7 @@
 
 .userSetting-delete-container .userSetting-delete-button:hover {
   color: white;
-  background-color: #EC314A;
+  background-color: #ec314a;
   font-weight: bold;
 }
 
