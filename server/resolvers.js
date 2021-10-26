@@ -1,5 +1,5 @@
 /* eslint-disable import/extensions */
-const { testDatabase, getUserInfo } = require('../database/models.ts');
+const { testDatabase, getUserInfo, updateGoals } = require('../database/models.ts');
 
 const resolver = {
   Query: {
@@ -22,6 +22,10 @@ const resolver = {
     dummy1: async (parent, args) => {
       const results = testDatabase(args);
       return results;
+    },
+    updateGoal: async (parent, args) => {
+      const result = updateGoals(args);
+      return result;
     },
   },
 
