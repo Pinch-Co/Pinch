@@ -22,8 +22,8 @@ module.exports.getUserInfo = (id) => {
     .catch((error) => error);
 };
 
-module.exports.updateGoals = (obj) => {
-  // this updated Goals
+module.exports.createGoals = (obj) => {
+  // this creates Goals
   const {
     id,
     name,

@@ -23,7 +23,7 @@ const resolver = {
       const results = testDatabase(args);
       return results;
     },
-    updateGoal: async (parent, args) => {
+    createGoal: async (parent, args) => {
       const result = updateGoals(args);
       return result;
     },
