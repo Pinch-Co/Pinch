@@ -7,6 +7,7 @@ function BudgetBreakdown() {
   const [showAdd, setShowAdd] = React.useState<boolean>(true);
   const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>([]);
   const [newlyAddedBudget, setNewlyAddedBudget] = React.useState<any>();
+  const [justAdded, setJustAdded] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     // Dummy data -> query from database later
@@ -50,11 +51,19 @@ function BudgetBreakdown() {
   };
 
   React.useEffect(() => {
-    if (budgets.length) {
+    if (justAdded) {
+      setActiveBudget(Object.entries(budgets[budgets.length - 1]));
+      document.querySelector(`#bb-btn-${budgets.length - 1}`)?.classList.add('bb-active-tab');
+      document.querySelector('#bb-btn-0')?.classList.remove('bb-active-tab');
+      document.querySelector('#bb-add-btn')?.classList.remove('bb-active-tab');
+      setShowAdd(false);
+      setJustAdded(false);
+    } else if (budgets.length) {
       setActiveBudget(Object.entries(budgets[0]));
       document.querySelector('#bb-btn-0')?.classList.add('bb-active-tab');
       setShowAdd(false);
     }
+    // console.log(budgets);
   }, [budgets]);
 
   const changeTabs = (tabNum: number): void => {
@@ -89,7 +98,8 @@ function BudgetBreakdown() {
   const showText = (): void => {
     const myForm = document.getElementById('myForm');
     const inputs = myForm!.getElementsByTagName('input');
-    const temp: any = { Income: '$0' };
+    const temp: any = {};
+    temp.id = 'abcd123456';
     temp.Income = `$${inputs[0].value}`;
     const tempArr = [];
     for (let i = 1; i < inputs.length; i += 1) {
@@ -112,7 +122,10 @@ function BudgetBreakdown() {
 
   React.useEffect(() => {
     if (newlyAddedBudget) {
-      console.log('Newly Added Budget:', newlyAddedBudget);
+      const temp = budgets.splice(0);
+      temp.push(newlyAddedBudget);
+      setBudgets(temp);
+      setJustAdded(true);
     }
   }, [newlyAddedBudget]);
 
@@ -162,7 +175,7 @@ function BudgetBreakdown() {
               {!showAdd ? (
                 <>
                   {activeBudget.map((row: any, i: number) => {
-                    if (i > 2) {
+                    if (i > 1) {
                       return (
                         <div key={row[i]} className="bb-budget-bottom-row">
                           <ul>
