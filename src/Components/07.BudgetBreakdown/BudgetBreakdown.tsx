@@ -90,7 +90,7 @@ function BudgetBreakdown() {
     const myForm = document.getElementById('myForm');
     const inputs = myForm!.getElementsByTagName('input');
     const temp: any = { Income: '$0' };
-    temp.Income = inputs[0].value;
+    temp.Income = `$${inputs[0].value}`;
     const tempArr = [];
     for (let i = 1; i < inputs.length; i += 1) {
       if (inputs[i].type === 'text') {
@@ -99,7 +99,7 @@ function BudgetBreakdown() {
     }
     for (let j = 0; j < tempArr.length; j += 2) {
       if (tempArr[j] && tempArr[j + 1]) {
-        temp[tempArr[j]] = tempArr[j + 1];
+        temp[tempArr[j]] = `$${tempArr[j + 1]}`;
       }
     }
     setNewlyAddedBudget(temp);
