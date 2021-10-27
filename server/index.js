@@ -69,5 +69,5 @@ const server = new ApolloServer({
 server.applyMiddleware({ app });
 
 app.listen({ port: PORT }, () => {
-  console.log(`🚀 Server ready at http://localhost:${PORT}`);
+  console.log(`🚀 Server ready at 1st port: http://localhost:${PORT}`);
 });
