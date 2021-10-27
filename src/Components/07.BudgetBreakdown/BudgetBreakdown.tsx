@@ -117,7 +117,15 @@ function BudgetBreakdown() {
 
   const addNewBudget = (e: any): void => {
     e.preventDefault();
-    showText();
+    const myForm = document.getElementById('myForm');
+    const inputField = myForm!.getElementsByTagName('input')[0];
+    const reg = /^\d+$/;
+    if (reg.test(inputField.value)) {
+      showText();
+    } else {
+      window.alert('Please enter a valid income value');
+      inputField.focus();
+    }
   };
 
   React.useEffect(() => {
