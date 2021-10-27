@@ -2,10 +2,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-// const { PLAID_CLIENT_ID, PLAID_SECRET } = require('./key');
-// const PLAID_CLIENT_ID = '614b5a60b6c9f50010fab929';
-// const PLAID_SECRET = '4c968374bb9776ba5918dfddf026bf';
-// const PLAID_SANDBOX = '6bd3881b81c286e637a280fbdb6148';
 
 const app = express();
 const port = 3000;

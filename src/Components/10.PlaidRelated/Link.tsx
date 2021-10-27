@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-vars */
@@ -37,6 +38,7 @@ const PlaidLink: FunctionComponent<Props> = ({ token }) => {
   const { open, ready, error } = usePlaidLink(config);
 
   const handleClick = () => {
+    event?.preventDefault();
     const access = token;
     axios.get('http://localhost:3000/transactions', { params: { key: access } })
       .then((data) => console.log(data));
