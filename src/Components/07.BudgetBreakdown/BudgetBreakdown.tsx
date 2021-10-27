@@ -5,7 +5,8 @@ function BudgetBreakdown() {
   const [budgets, setBudgets] = React.useState<any>([]);
   const [activeBudget, setActiveBudget] = React.useState<any>([]);
   const [showAdd, setShowAdd] = React.useState<boolean>(true);
-  const [numberOfExpenses, increaseExpenses] = React.useState<string[]>([]);
+  const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>([]);
+  const [newlyAddedBudget, setNewlyAddedBudget] = React.useState<any>();
 
   React.useEffect(() => {
     // Dummy data -> query from database later
@@ -68,14 +69,52 @@ function BudgetBreakdown() {
 
   const addExpense = (): void => {
     const temp = numberOfExpenses.splice(0);
-    temp.push('1');
-    increaseExpenses(temp);
+    if (!temp.length) {
+      temp.push('0');
+    } else {
+      temp.push((parseInt(temp[temp.length - 1], 10) + 1).toString());
+    }
+    setNumberOfExpenses(temp);
+  };
+
+  const deleteExpense = (e: any, i: number): void => {
+    e.preventDefault();
+    // const temp = numberOfExpenses.splice(0);
+    // temp.splice(i, 1);
+    // setNumberOfExpenses(temp);
+    const elToRemove = document.getElementById(`custom-row-${i}`);
+    elToRemove?.remove();
+  };
+
+  const showText = (): void => {
+    const myForm = document.getElementById('myForm');
+    const inputs = myForm!.getElementsByTagName('input');
+    const temp: any = { Income: '$0' };
+    temp.Income = inputs[0].value;
+    const tempArr = [];
+    for (let i = 1; i < inputs.length; i += 1) {
+      if (inputs[i].type === 'text') {
+        tempArr.push(inputs[i].value);
+      }
+    }
+    for (let j = 0; j < tempArr.length; j += 2) {
+      if (tempArr[j] && tempArr[j + 1]) {
+        temp[tempArr[j]] = tempArr[j + 1];
+      }
+    }
+    setNewlyAddedBudget(temp);
   };
 
   const addNewBudget = (e: any): void => {
     e.preventDefault();
-    console.log('add new budget');
+    showText();
   };
+
+  React.useEffect(() => {
+    if (newlyAddedBudget) {
+      console.log('Newly Added Budget:', newlyAddedBudget);
+    }
+  }, [newlyAddedBudget]);
 
   return (
     <div className="bb-container">
@@ -141,37 +180,39 @@ function BudgetBreakdown() {
               ) : (
                 <div className="bb-add-body">
                   <h1 className="bb-add-title">Create a New Budget</h1>
-                  <form className="bb-add-form" onSubmit={(e: any) => addNewBudget(e)}>
+                  <form className="bb-add-form" id="myForm" onSubmit={(e: any) => addNewBudget(e)}>
                     <label htmlFor="bb-add-input-income" className="bb-add-input-group">
                       <div className="bb-input-title">Income (monthly)*</div>
-                      <input type="text" id="bb-add-input-income" className="bb-input-field" placeholder="$0" />
+                      <div className="bb-input-box">
+                        <span className="bb-prefix">$</span>
+                        <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" />
+                      </div>
                     </label>
-                    {/* <label htmlFor="bb-add-input-rent" className="bb-add-input-group">
-                      <div className="bb-input-title">Rent</div>
-                      <input type="text" id="bb-add-input-rent" className="bb-input-field" placeholder="$0" />
-                    </label>
-                    <label htmlFor="bb-add-input-groceries" className="bb-add-input-group">
-                      <div className="bb-input-title">Groceries</div>
-                      <input type="text" id="bb-add-input-groceries" className="bb-input-field" placeholder="$0" />
-                    </label> */}
                     <div className="bb-add-custom">
-                      <input type="button" className="bb-add-custom-btn" onClick={addExpense} value="add an expense +" />
-                      {numberOfExpenses.map((each: string) => (
-                        <div className="bb-add-custom-row">
+                      {numberOfExpenses.map((each: string, i: number) => (
+                        <div className="bb-add-custom-row" id={`custom-row-${i}`}>
                           <label htmlFor="bb-add-input-custom" className="bb-add-input-group">
                             <div className="bb-input-title">Name</div>
-                            <input type="text" id="bb-add-input-custom" className="bb-input-custom-field" placeholder="Miscellaneous" />
+                            <div className="bb-input-box">
+                              <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" />
+                            </div>
                           </label>
                           <label htmlFor="bb-add-input-custom" className="bb-add-input-group">
                             <div className="bb-input-title">Amount</div>
-                            <input type="text" id="bb-add-input-custom" className="bb-input-custom-field" placeholder="$0" />
+                            <div className="bb-input-box">
+                              <span className="bb-prefix">$</span>
+                              <input type="text" id="bb-add-input-custom" className="bb-input-field" autoComplete="off" />
+                            </div>
                           </label>
+                          <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}>X</button>
                         </div>
                       ))}
                     </div>
-                    <input type="submit" value="Submit" />
+                    <div className="bb-buttons-div">
+                      <button type="button" className="bb-add-custom-btn" onClick={addExpense}>Add an expense +</button>
+                      <input type="submit" className="bb-submit-custom-btn" value="Submit" />
+                    </div>
                   </form>
-
                 </div>
               )}
             </div>
