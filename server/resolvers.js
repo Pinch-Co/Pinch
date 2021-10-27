@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
-const { testDatabase, getUserInfo, updateGoals } = require('../database/models.ts');
+const {
+  testDatabase, getUserInfo, updateGoals, makeBudget,
+} = require('../database/models.ts');
 const {
   receivePublicToken,
   getTransactions,
@@ -35,6 +37,10 @@ const resolver = {
     },
     createGoal: async (parent, args) => {
       const result = updateGoals(args);
+      return result;
+    },
+    createBudget: async (parent, args) => {
+      const result = makeBudget(args);
       return result;
     },
   },

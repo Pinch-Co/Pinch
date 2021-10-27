@@ -47,6 +47,32 @@ module.exports.createGoals = (obj) => {
     .catch((error) => error);
 };
 
+module.exports.makeBudget = (obj) => {
+  // this creates Goals
+  const {
+    id,
+    income,
+    rent,
+    groceries,
+    expenses,
+  } = obj;
+
+  console.log(expenses[0]);
+
+  const transID = Mongoose.Types.ObjectId(id);
+  UserModel.updateOne({ "_id": transID }, {
+    $push: {
+      "budgets": {
+        "income": income,
+        "rent": rent,
+        "groceries": groceries,
+      },
+    },
+  })
+    .then((data) => data)
+    .catch((error) => error);
+};
+
 // This is an example of userInfo object
 // {
 //   firstName: 'katie',
