@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -5,14 +6,21 @@ import PlaidLink from '../10.PlaidRelated/Link';
 
 function Additionalinfo() {
   const [token, setToken] = useState<string | null>('');
+  // const [expiration, setExpiration] = useState<string | null>('');
 
   useEffect(() => {
-    axios.post('http://localhost:3000/api/create_link_token')
+    axios.post('/graphql', {
+      query: `query { getLinkToken {
+      expiration
+      link_token
+    }}`,
+    })
       .then((result) => {
-        console.log(result);
-        setToken(result.data.link_token);
+        const resultObj = result.data.data.getLinkToken;
+        setToken(resultObj.link_token);
+        // setExpiration(resultObj.expiration);
       })
-      .catch((error) => console.log('error in link token', error));
+      .catch((error) => console.log('could not get link token', error));
   }, []);
 
   return (
@@ -85,8 +93,8 @@ function Additionalinfo() {
                     // onChange={(event) => handleEmail(event)}
                     />
                   </div>
-                  {token === null ? <div /> : <PlaidLink token={token} />}
                 </div>
+                {token === null ? <div /> : <PlaidLink token={token} />}
               </form>
               <button
                 className="signin-additional-info-btn"

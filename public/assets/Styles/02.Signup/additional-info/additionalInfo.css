@@ -488,6 +488,7 @@
   font-weight: lighter;
   background-color: #20b2aa;
   color: white;
+  letter-spacing: 1px;
   border: none;
   margin-top: 20px;
   margin-bottom: 5px;
@@ -506,5 +507,72 @@
 
 .additional-info-credentials-div .signin-additional-info-btn:hover {
   background-color: #1c9993;
+}
+
+.connect-plaid-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  justify-content: center;
+  width: 100%;
+}
+
+.connect-plaid-div .connect-bank-btn {
+  width: 60%;
+  height: 45px;
+  color: white;
+  background-color: #37686e;
+  border: none;
+  font-size: 1.1em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  letter-spacing: 1px;
+}
+
+.connect-plaid-div .connect-bank-btn:hover {
+  background-color: #1c9993;
+}
+
+.connect-plaid-div .connect-bank-success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  justify-content: center;
+  width: 60%;
+  height: 45px;
+  color: white;
+  text-align: center;
+  background-color: #2aa38f;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.connect-plaid-div .connect-bank-success .success-message {
+  font-size: 1.1em;
+  font-weight: bold;
 }
 /*# sourceMappingURL=additionalInfo.css.map */

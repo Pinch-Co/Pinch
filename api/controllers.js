@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable camelcase */
 /* eslint-disable prefer-destructuring */
@@ -5,11 +6,11 @@
 const {
   Configuration, PlaidApi, PlaidEnvironments,
 } = require('plaid');
+require('dotenv').config();
 
-const PLAID_CLIENT_ID = '614b5a60b6c9f50010fab929';
-// const PLAID_SECRET = '4c968374bb9776ba5918dfddf026bf';
-const PLAID_SECRET = '6bd3881b81c286e637a280fbdb6148';
-const PLAID_ENV = 'sandbox';
+const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
+const PLAID_SECRET = process.env.PLAID_SECRET;
+const PLAID_ENV = process.env.PLAID_ENV;
 
 const configuration = new Configuration({
   basePath: PlaidEnvironments[PLAID_ENV],
@@ -26,7 +27,7 @@ const client = new PlaidApi(configuration);
 
 // ---- Get Link Token ------ ///
 
-const receivePublicToken = async (req, res) => {
+const receivePublicToken = async () => {
   console.log('in this link token');
   const clientUserId = PLAID_CLIENT_ID;
   const reqy = {
@@ -42,8 +43,8 @@ const receivePublicToken = async (req, res) => {
   };
   try {
     const createTokenResponse = await client.linkTokenCreate(reqy);
-    // console.log('createTokenResponse', createTokenResponse.data);
-    res.send(createTokenResponse.data);
+    return createTokenResponse.data;
+    // res.send(createTokenResponse.data);
   } catch (error) {
     // handle error
     console.log('!!create_link_token error!!!', error);

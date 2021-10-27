@@ -15,11 +15,17 @@ type Goal {
   goalAmount: Float
   description: String
 }
+type linkToken {
+  expiration: String!
+  link_token: String!
+  request_id: String!
+}
 type Query {
   currentUser: User
   authenticated: User
   getGoals(email: String!): Goal
   getUserInfo(id: String!): User
+  getLinkToken: linkToken
 }
 type AuthPayload {
   user: User

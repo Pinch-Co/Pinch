@@ -1,5 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
 const { testDatabase, getUserInfo, updateGoals } = require('../database/models.ts');
+const {
+  receivePublicToken,
+  getTransactions,
+} = require('../api/controllers.js');
 
 const resolver = {
   Query: {
@@ -9,6 +14,11 @@ const resolver = {
       const result = await getUserInfo(args);
       // mongo returns an arrray
       return result[0];
+    },
+    getLinkToken: async (parent, args) => {
+      // gets Link Token from Plaid Api
+      const result = await receivePublicToken();
+      return result;
     },
   },
   Mutation: {
