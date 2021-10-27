@@ -61,6 +61,51 @@
   height: 100%;
 }
 
+@media screen and (max-width: 3300px) {
+  .settings-outer-container .settings-main-container {
+    width: 32%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 3200px) {
+  .settings-outer-container .settings-main-container {
+    width: 33%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 3000px) {
+  .settings-outer-container .settings-main-container {
+    width: 35%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2800px) {
+  .settings-outer-container .settings-main-container {
+    width: 40%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2500px) {
+  .settings-outer-container .settings-main-container {
+    width: 45%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
 @media screen and (max-width: 2030px) {
   .settings-outer-container .settings-main-container {
     width: 50%;
