@@ -4,8 +4,9 @@ import * as React from 'react';
 function BudgetBreakdown() {
   const [budgets, setBudgets] = React.useState<any>([]);
   const [activeBudget, setActiveBudget] = React.useState<any>([]);
+  const [activeTotal, setActiveTotal] = React.useState<number>(0);
   const [showAdd, setShowAdd] = React.useState<boolean>(true);
-  const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>([]);
+  const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>(['']);
   const [newlyAddedBudget, setNewlyAddedBudget] = React.useState<any>();
   const [justAdded, setJustAdded] = React.useState<boolean>(false);
 
@@ -13,7 +14,6 @@ function BudgetBreakdown() {
     // Dummy data -> query from database later
     setBudgets([
       {
-        id: 'aisdfua890sdfu',
         Income: '$5000',
         Rent: '$1200',
         Groceries: '$200',
@@ -22,7 +22,6 @@ function BudgetBreakdown() {
         Subscriptions: '$50',
       },
       {
-        id: 'aisdfuadf90sdfu',
         Income: '$4000',
         Rent: '$1900',
         Groceries: '$300',
@@ -33,7 +32,6 @@ function BudgetBreakdown() {
         Tuition: '$1000',
       },
       {
-        id: 'aisdfua132fu',
         Income: '$9000',
         Rent: '$1900',
         Groceries: '$300',
@@ -57,18 +55,39 @@ function BudgetBreakdown() {
       document.querySelector('#bb-btn-0')?.classList.remove('bb-active-tab');
       document.querySelector('#bb-add-btn')?.classList.remove('bb-active-tab');
       setShowAdd(false);
+      const budgetsArr = Object.entries(budgets[budgets.length - 1]);
+      let total = 0;
+      for (let j = 1; j < budgetsArr.length; j += 1) {
+        const budget: any = budgetsArr[j][1];
+        total += parseInt(budget.slice(1), 10);
+      }
+      setActiveTotal(total);
       setJustAdded(false);
     } else if (budgets.length) {
       setActiveBudget(Object.entries(budgets[0]));
       document.querySelector('#bb-btn-0')?.classList.add('bb-active-tab');
       setShowAdd(false);
+      const budgetsArr = Object.entries(budgets[0]);
+      setActiveBudget(budgetsArr);
+      let total = 0;
+      for (let j = 2; j < budgetsArr.length; j += 1) {
+        const budget: any = budgetsArr[j][1];
+        total += parseInt(budget.slice(1), 10);
+      }
+      setActiveTotal(total);
     }
-    // console.log(budgets);
   }, [budgets]);
 
   const changeTabs = (tabNum: number): void => {
     if (showAdd) { setShowAdd(false); }
-    setActiveBudget(Object.entries(budgets[tabNum]));
+    const budgetsArr = Object.entries(budgets[tabNum]);
+    setActiveBudget(budgetsArr);
+    let total = 0;
+    for (let j = 1; j < budgetsArr.length; j += 1) {
+      const budget: any = budgetsArr[j][1];
+      total += parseInt(budget.slice(1), 10);
+    }
+    setActiveTotal(total);
     for (let i = 0; i < budgets.length; i += 1) {
       document.querySelector(`#bb-btn-${i}`)?.classList.remove('bb-active-tab');
     }
@@ -88,9 +107,6 @@ function BudgetBreakdown() {
 
   const deleteExpense = (e: any, i: number): void => {
     e.preventDefault();
-    // const temp = numberOfExpenses.splice(0);
-    // temp.splice(i, 1);
-    // setNumberOfExpenses(temp);
     const elToRemove = document.getElementById(`custom-row-${i}`);
     elToRemove?.remove();
   };
@@ -99,7 +115,6 @@ function BudgetBreakdown() {
     const myForm = document.getElementById('myForm');
     const inputs = myForm!.getElementsByTagName('input');
     const temp: any = {};
-    temp.id = 'abcd123456';
     temp.Income = `$${inputs[0].value}`;
     const tempArr = [];
     for (let i = 1; i < inputs.length; i += 1) {
@@ -179,13 +194,13 @@ function BudgetBreakdown() {
                 </>
               </div>
             ) : null}
-            <div className="bb-budget-bottom">
+            <div className="bb-budget-middle">
               {!showAdd ? (
                 <>
                   {activeBudget.map((row: any, i: number) => {
-                    if (i > 1) {
+                    if (i > 0) {
                       return (
-                        <div key={row[i]} className="bb-budget-bottom-row">
+                        <div key={row[i]} className="bb-budget-middle-row">
                           <ul>
                             <li className="bb-budget-category">
                               {row[0]}
@@ -197,6 +212,31 @@ function BudgetBreakdown() {
                     }
                     return null;
                   })}
+                  <div className="bb-budget-bottom">
+                    <div className="bb-budget-total">
+                      <div className="bb-budget-total-title">Total:</div>
+                      <div className="bb-budget-total-amount>">
+                        $
+                        {activeTotal}
+                      </div>
+                    </div>
+                    <div className="bb-budget-difference">
+                      <div className="bb-budget-total-title">Remaining:</div>
+                      <div className="bb-budget-total-amount>">
+                        {activeBudget.map((row: any) => {
+                          if (row[0] === 'Income') {
+                            return (
+                              <div className="bb-income" key={row[1]}>
+                                $
+                                {parseInt(row[1].slice(1), 10) - activeTotal}
+                              </div>
+                            );
+                          }
+                          return null;
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 </>
               ) : (
                 <div className="bb-add-body">
@@ -240,7 +280,9 @@ function BudgetBreakdown() {
           </div>
         </div>
         <div className="bb-right">
-          <div className="bb-chart" />
+          <div className="bb-chart">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Turkish_general_election%2C_2007_pie_chart.png" alt="pie chart" className="bb-pie-chart" />
+          </div>
           <select className="bb-chart-type">
             <option value="Pie Chart">Pie Chart</option>
             <option value="Line Graph">Line Graph</option>
