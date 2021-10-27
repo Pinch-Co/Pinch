@@ -255,7 +255,7 @@ function BudgetBreakdown() {
                           <label htmlFor="bb-add-input-custom" className="bb-add-input-group">
                             <div className="bb-input-title">Name</div>
                             <div className="bb-input-box">
-                              <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" />
+                              <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" placeholder="Category name..." />
                             </div>
                           </label>
                           <label htmlFor="bb-add-input-custom" className="bb-add-input-group">

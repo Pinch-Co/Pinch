@@ -381,12 +381,20 @@
   margin-right: 20px;
   font-size: 18px;
   padding: 5px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-buttons-div .bb-submit-custom-btn {
   cursor: pointer;
   font-size: 18px;
   padding: 5px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
 .bb-left .bb-budget-box .bb-budget-bottom {
