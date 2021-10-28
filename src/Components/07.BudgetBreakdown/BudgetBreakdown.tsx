@@ -156,7 +156,7 @@ function BudgetBreakdown() {
 
   const sortExpenses = (e: any): void => {
     e.preventDefault();
-    if (e.target.value === 'alphabetical') {
+    if (e.target.value === 'alphabetical-AtoZ') {
       const sortedBudget = activeBudget.splice(1);
       sortedBudget.sort((a: any, b: any) => {
         if (a[0] > b[0]) { return 1; }
@@ -164,11 +164,27 @@ function BudgetBreakdown() {
         return -1;
       });
       setActiveBudget([activeBudget[0], ...sortedBudget]);
-    } else if (e.target.value === 'price') {
+    } else if (e.target.value === 'alphabetical-ZtoA') {
+      const sortedBudget = activeBudget.splice(1);
+      sortedBudget.sort((a: any, b: any) => {
+        if (a[0] < b[0]) { return 1; }
+        if (a[0] > b[0]) { return -1; }
+        return -1;
+      });
+      setActiveBudget([activeBudget[0], ...sortedBudget]);
+    } else if (e.target.value === 'price-highest') {
       const sortedBudget = activeBudget.splice(1);
       sortedBudget.sort((a: any, b: any) => {
         if (parseInt(a[1].slice(1), 10) > parseInt(b[1].slice(1), 10)) { return -1; }
         if (parseInt(a[1].slice(1), 10) < parseInt(b[1].slice(1), 10)) { return 1; }
+        return -1;
+      });
+      setActiveBudget([activeBudget[0], ...sortedBudget]);
+    } else if (e.target.value === 'price-lowest') {
+      const sortedBudget = activeBudget.splice(1);
+      sortedBudget.sort((a: any, b: any) => {
+        if (parseInt(a[1].slice(1), 10) < parseInt(b[1].slice(1), 10)) { return -1; }
+        if (parseInt(a[1].slice(1), 10) > parseInt(b[1].slice(1), 10)) { return 1; }
         return -1;
       });
       setActiveBudget([activeBudget[0], ...sortedBudget]);
@@ -209,8 +225,10 @@ function BudgetBreakdown() {
                     })}
                     <select onChange={(e: any) => sortExpenses(e)} className="bb-sort" name="sort" id="bb-sort-select">
                       <option defaultValue="Sort">Sort</option>
-                      <option value="price">Price</option>
-                      <option value="alphabetical">Alphabetical</option>
+                      <option value="price-highest">Price Highest to Lowest</option>
+                      <option value="price-lowest">Price Lowest to Highest</option>
+                      <option value="alphabetical-AtoZ">Alphabetical A to Z</option>
+                      <option value="alphabetical-ZtoA">Alphabetical Z to A</option>
                     </select>
                   </div>
                   <div className="bb-budget-top-right">Edit</div>
