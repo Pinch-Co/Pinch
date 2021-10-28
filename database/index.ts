@@ -35,6 +35,17 @@ const questionSchema = new Schema({
   },
 });
 
+const budgetSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    required: true,
+  },
+});
+
 const goalSchema = new Schema({
   name: {
     type: String,
@@ -51,35 +62,6 @@ const goalSchema = new Schema({
   description: {
     type: String,
     required: true,
-  },
-});
-
-const budgetSchema = new Schema({
-  income: {
-    type: Number,
-    required: true,
-  },
-  rent: {
-    type: Number,
-    required: true,
-  },
-  groceries: {
-    type: Number,
-    required: true,
-  },
-  expenses: [{
-    name: {
-      type: String,
-      required: true,
-    },
-    amount: {
-      type: Number,
-      required: true,
-    },
-  }],
-  expenses1: {
-    type: Map,
-    of: Number,
   },
 });
 
@@ -185,7 +167,7 @@ const userSchema = new Schema({
   goals: {
     type: [goalSchema],
   },
-  budgets: {
+  budget: {
     type: [budgetSchema],
   },
   subscriptions: {
@@ -198,4 +180,3 @@ const userSchema = new Schema({
 module.exports = {
   UserModel: mongoose.model('User', userSchema),
 };
-// module.exports = mongoose.model('Goals', goalSchema);

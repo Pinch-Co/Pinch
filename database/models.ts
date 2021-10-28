@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable quotes */
 /* eslint-disable quote-props */
 /* eslint-disable import/extensions */
@@ -13,7 +14,7 @@ module.exports.testDatabase = (userInfo) => {
     .then((data) => data)
     .catch((error) => error);
 };
-
+// ------------------------------------------ //
 module.exports.getUserInfo = (id) => {
   // returns large user collection with all fields
   const oid = Mongoose.Types.ObjectId(id.id);
@@ -21,7 +22,7 @@ module.exports.getUserInfo = (id) => {
     .then((data) => data)
     .catch((error) => error);
 };
-
+// ------------------------------------------ //
 module.exports.createGoals = (obj) => {
   // this creates Goals
   const {
@@ -46,32 +47,28 @@ module.exports.createGoals = (obj) => {
     .then((data) => data)
     .catch((error) => error);
 };
-
+// ------------------------------------------ //
 module.exports.makeBudget = (obj) => {
-  // this creates Goals
+  // this creates Budgets
   const {
     id,
-    income,
-    rent,
-    groceries,
-    expenses,
+    budget,
   } = obj;
-
-  console.log(expenses[0]);
 
   const transID = Mongoose.Types.ObjectId(id);
   UserModel.updateOne({ "_id": transID }, {
-    $push: {
-      "budgets": {
-        "income": income,
-        "rent": rent,
-        "groceries": groceries,
-      },
+    $set: {
+      "budget": budget,
     },
   })
     .then((data) => data)
-    .catch((error) => error);
+    .catch((error) => console.log(error));
 };
+// ------------------------------------------ //
+// module.exports.deleteBudget = (id, ) => {
+//   const transID = Mongoose.Types.ObjectId(id);
+//   UserModel.deleteOne({})
+// }
 
 // This is an example of userInfo object
 // {

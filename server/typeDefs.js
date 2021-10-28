@@ -8,7 +8,7 @@ type User {
   phone: String
   email: String
   goals:[Goal!]!
-  budgets: [Budget!]!
+  budget: [Budget!]!
 }
 type Goal {
   name: String
@@ -16,19 +16,13 @@ type Goal {
   goalAmount: Float
   description: String
 }
-input Expenses {
-  name: String
-  amount: Float
-}
-type Expenses1 {
-  name: String
-  amount: Float
-}
 type Budget {
-  income: Float
-  rent: Float
-  groceries: Float
-  expenses: Expenses1
+  name: String
+  amount: Float
+}
+input BudgetInput {
+  name: String
+  amount: Float
 }
 type linkToken {
   expiration: String!
@@ -51,7 +45,7 @@ type Mutation {
   dummy1(firstName: String!, lastName: String!, username: String!, phone: String!, email: String!, password: String!): User
   signup(firstName: String!, lastName: String!, email: String!, phone: String!, password: String!): AuthPayload
   createGoal(id: String!, name: String, currentAmount: Float, goalAmount: Float, description: String): Goal
-  createBudget(id: String!, income: Float, rent: Float, groceries: Float, expenses: [Expenses]): Budget
+  createBudget(id: String! budget: [BudgetInput]): Budget
 }
 `;
 

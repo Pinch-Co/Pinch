@@ -14,7 +14,6 @@ const resolver = {
     authenticated: (parent, args, context) => context.req.user,
     getUserInfo: async (parent, args) => {
       const result = await getUserInfo(args);
-      // mongo returns an arrray
       return result[0];
     },
     getLinkToken: async (parent, args) => {
@@ -40,7 +39,8 @@ const resolver = {
       return result;
     },
     createBudget: async (parent, args) => {
-      const result = makeBudget(args);
+      const a = JSON.parse(JSON.stringify(args));
+      const result = makeBudget(a);
       return result;
     },
   },
