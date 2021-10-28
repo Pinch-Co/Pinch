@@ -9,6 +9,7 @@ function BudgetBreakdown() {
   const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>(['']);
   const [newlyAddedBudget, setNewlyAddedBudget] = React.useState<any>();
   const [justAdded, setJustAdded] = React.useState<boolean>(false);
+  const [editActive, setEditActive] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     // Dummy data -> query from database later
@@ -113,11 +114,12 @@ function BudgetBreakdown() {
     elToRemove?.remove();
   };
 
-  const showText = (): void => {
-    const myForm = document.getElementById('myForm');
+  const showText = (id: string): any => {
+    const myForm = document.getElementById(id);
     const inputs = myForm!.getElementsByTagName('input');
     const temp: any = {};
     temp.Income = `$${inputs[0].value}`;
+    console.log(inputs);
     const tempArr = [];
     for (let i = 1; i < inputs.length; i += 1) {
       if (inputs[i].type === 'text') {
@@ -129,7 +131,7 @@ function BudgetBreakdown() {
         temp[tempArr[j]] = `$${tempArr[j + 1]}`;
       }
     }
-    setNewlyAddedBudget(temp);
+    return temp;
   };
 
   const addNewBudget = (e: any): void => {
@@ -138,7 +140,7 @@ function BudgetBreakdown() {
     const inputField = myForm!.getElementsByTagName('input')[0];
     const reg = /^\d+$/;
     if (reg.test(inputField.value)) {
-      showText();
+      setNewlyAddedBudget(showText('myForm'));
     } else {
       window.alert('Please enter a valid income value');
       inputField.focus();
@@ -191,6 +193,32 @@ function BudgetBreakdown() {
     }
   };
 
+  const getEditedInputs = (id: string): any => {
+    const myForm = document.getElementById(id);
+    const inputs = myForm!.getElementsByTagName('input');
+    const temp: any = {};
+    const tempArr = [];
+    for (let i = 0; i < inputs.length; i += 1) {
+      if (inputs[i].type === 'text') {
+        tempArr.push(inputs[i].value);
+      }
+    }
+    for (let j = 0; j < tempArr.length; j += 2) {
+      if (tempArr[j] && tempArr[j + 1]) {
+        temp[tempArr[j]] = `$${tempArr[j + 1]}`;
+      }
+    }
+    return temp;
+  };
+
+  const editActiveBudget = (e: any): void => {
+    e.preventDefault();
+    const updatedBudget = Object.entries(getEditedInputs('bb-form-edit'));
+    console.log([...activeBudget[0], ...updatedBudget]);
+    setActiveBudget([activeBudget[0], ...updatedBudget]);
+    setEditActive(false);
+  };
+
   return (
     <div className="bb-container">
       <div className="bb-mid-div">
@@ -231,53 +259,86 @@ function BudgetBreakdown() {
                       <option value="alphabetical-ZtoA">Alphabetical Z to A</option>
                     </select>
                   </div>
-                  <div className="bb-budget-top-right">Edit</div>
+                  {!editActive ? <button type="button" className="bb-budget-top-right" onClick={() => setEditActive(true)}>Edit</button> : <button type="button" className="bb-budget-top-right" onClick={() => setEditActive(false)}>Cancel</button>}
                 </>
               </div>
             ) : null}
             <div className="bb-budget-middle">
               {!showAdd ? (
                 <>
-                  {activeBudget.map((row: any, i: number) => {
-                    if (i > 0) {
-                      return (
-                        <div key={row[i]} className="bb-budget-middle-row">
-                          <ul>
-                            <li className="bb-budget-category">
-                              {row[0]}
-                            </li>
-                          </ul>
-                          <div className="bb-budget-dollars">{row[1]}</div>
+                  {!editActive ? (
+                    <>
+                      {activeBudget.map((row: any, i: number) => {
+                        if (i > 0) {
+                          return (
+                            <div key={row[i]} className="bb-budget-middle-row">
+                              <ul>
+                                <li className="bb-budget-category">
+                                  {row[0]}
+                                </li>
+                              </ul>
+                              <div className="bb-budget-dollars">{row[1]}</div>
+                            </div>
+                          );
+                        }
+                        return null;
+                      })}
+                      <div className="bb-budget-bottom">
+                        <div className="bb-budget-total">
+                          <div className="bb-budget-total-title">Total:</div>
+                          <div className="bb-budget-total-amount>">
+                            $
+                            {activeTotal}
+                          </div>
                         </div>
-                      );
-                    }
-                    return null;
-                  })}
-                  <div className="bb-budget-bottom">
-                    <div className="bb-budget-total">
-                      <div className="bb-budget-total-title">Total:</div>
-                      <div className="bb-budget-total-amount>">
-                        $
-                        {activeTotal}
+                        <div className="bb-budget-difference">
+                          <div className="bb-budget-total-title">Remaining:</div>
+                          <div className="bb-budget-total-amount>">
+                            {activeBudget.map((row: any) => {
+                              if (row[0] === 'Income') {
+                                return (
+                                  <div className="bb-income" key={row[1]}>
+                                    $
+                                    {parseInt(row[1].slice(1), 10) - activeTotal}
+                                  </div>
+                                );
+                              }
+                              return null;
+                            })}
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div className="bb-budget-difference">
-                      <div className="bb-budget-total-title">Remaining:</div>
-                      <div className="bb-budget-total-amount>">
-                        {activeBudget.map((row: any) => {
-                          if (row[0] === 'Income') {
+                    </>
+                  ) : (
+                    <div className="bb-edit-form">
+                      <form id="bb-form-edit" onSubmit={(e: any) => editActiveBudget(e)}>
+                        {activeBudget.map((row: any, i: number) => {
+                          if (i > 0) {
                             return (
-                              <div className="bb-income" key={row[1]}>
-                                $
-                                {parseInt(row[1].slice(1), 10) - activeTotal}
+                              // eslint-disable-next-line react/no-array-index-key
+                              <div className="bb-add-custom-row" key={row[0] + i}>
+                                <label htmlFor="bb-add-input-income" className="bb-add-input-group">
+                                  <div className="bb-input-title">Name</div>
+                                  <div className="bb-input-box">
+                                    <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row[0]} />
+                                  </div>
+                                </label>
+                                <label htmlFor="bb-add-input-income" className="bb-add-input-group">
+                                  <div className="bb-input-title">Amount</div>
+                                  <div className="bb-input-box">
+                                    <span className="bb-prefix">$</span>
+                                    <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row[1].slice(1)} />
+                                  </div>
+                                </label>
                               </div>
                             );
                           }
                           return null;
                         })}
-                      </div>
+                        <input type="submit" onClick={(e: any) => editActiveBudget(e)} className="bb-submit-custom-btn" value="Submit" />
+                      </form>
                     </div>
-                  </div>
+                  )}
                 </>
               ) : (
                 <div className="bb-add-body">

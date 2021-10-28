@@ -212,8 +212,7 @@
 }
 
 .bb-left .bb-budget-box .bb-budget-top .bb-budget-top-right {
-  width: 30px;
-  height: 30px;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -281,89 +280,8 @@
   min-height: 500px;
 }
 
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-add-input-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  margin: 0 20px 20px 0;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-input-title {
-  font-size: 20px;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-input-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  max-width: 300px;
-  background: #fff;
-  border: 1px solid #a0a0a0;
-  border-radius: 4px;
-  padding-left: 0.5rem;
-  overflow: hidden;
-  font-family: sans-serif;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-input-box:focus-within {
-  border-color: #777;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-prefix {
-  font-weight: 300;
-  font-size: 20px;
-  color: #999;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-input-field {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  font-size: 20px;
-  background: #fff;
-  border: none;
-  outline: none;
-  padding: 0.5rem;
-}
-
 .bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-add-custom {
   margin-top: 10px;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-add-custom .bb-add-custom-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-add-custom .bb-add-custom-row .bb-delete-custom-btn {
-  position: relative;
-  top: 3px;
-  padding: 11px;
-  outline: none;
 }
 
 .bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-buttons-div {
@@ -379,16 +297,6 @@
 .bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-buttons-div .bb-add-custom-btn {
   cursor: pointer;
   margin-right: 20px;
-  font-size: 18px;
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-}
-
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-buttons-div .bb-submit-custom-btn {
-  cursor: pointer;
   font-size: 18px;
   padding: 5px;
   border-radius: 5px;
@@ -441,6 +349,98 @@
   font-weight: bold;
 }
 
+.bb-add-input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 0 20px 20px 0;
+}
+
+.bb-input-title {
+  font-size: 20px;
+}
+
+.bb-input-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.bb-input-box:focus-within {
+  border-color: #777;
+}
+
+.bb-prefix {
+  font-weight: 300;
+  font-size: 20px;
+  color: #999;
+}
+
+.bb-input-field {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 20px;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+
+.bb-add-custom-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.bb-add-custom-row .bb-delete-custom-btn {
+  position: relative;
+  top: 3px;
+  padding: 11px;
+  outline: none;
+}
+
+.bb-submit-custom-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border: 0.5px solid black;
+}
+
 .bb-right {
   position: relative;
   width: 44%;
@@ -470,5 +470,15 @@
   .bb-right {
     width: 100%;
   }
+}
+
+.bb-edit-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=BudgetBreakdown.css.map */

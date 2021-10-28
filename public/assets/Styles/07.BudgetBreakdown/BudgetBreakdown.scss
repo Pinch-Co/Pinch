@@ -92,8 +92,7 @@
         }
       }
       .bb-budget-top-right {
-        width: 30px;
-        height: 30px;
+        padding: 10px;
         cursor: pointer;
       }
     }
@@ -121,54 +120,8 @@
         align-items: flex-start;
         width: 100%;
         min-height: 500px;
-        .bb-add-input-group {
-          @include center(column);
-          align-items: flex-start;
-          margin: 0 20px 20px 0;
-        }
-        .bb-input-title {
-          font-size: 20px;
-        }
-        .bb-input-box {
-          display: flex;
-          align-items: center;
-          max-width: 300px;
-          background: #fff;
-          border: 1px solid #a0a0a0;
-          border-radius: 4px;
-          padding-left: 0.5rem;
-          overflow: hidden;
-          font-family: sans-serif;
-          &:focus-within {
-            border-color: #777;
-          }
-        }
-        .bb-prefix {
-          font-weight: 300;
-          font-size: 20px;
-          color: #999;
-        }
-        .bb-input-field {
-          flex-grow: 1;
-          font-size: 20px;
-          background: #fff;
-          border: none;
-          outline: none;
-          padding: 0.5rem;
-        }
         .bb-add-custom {
           margin-top: 10px;
-          .bb-add-custom-row {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            .bb-delete-custom-btn {
-              position: relative;
-              top: 3px;
-              padding: 11px;
-              outline: none;
-            }
-          }
         }
         .bb-buttons-div {
           display: flex;
@@ -176,14 +129,6 @@
           .bb-add-custom-btn {
             cursor: pointer;
             margin-right: 20px;
-            font-size: 18px;
-            padding: 5px;
-            border-radius: 5px;
-            border: none;
-            box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          }
-          .bb-submit-custom-btn {
-            cursor: pointer;
             font-size: 18px;
             padding: 5px;
             border-radius: 5px;
@@ -217,6 +162,62 @@
   }
 }
 
+.bb-add-input-group {
+  @include center(column);
+  align-items: flex-start;
+  margin: 0 20px 20px 0;
+}
+.bb-input-title {
+  font-size: 20px;
+}
+.bb-input-box {
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  overflow: hidden;
+  font-family: sans-serif;
+  &:focus-within {
+    border-color: #777;
+  }
+}
+.bb-prefix {
+  font-weight: 300;
+  font-size: 20px;
+  color: #999;
+}
+.bb-input-field {
+  flex-grow: 1;
+  font-size: 20px;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+}
+.bb-add-custom-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .bb-delete-custom-btn {
+    position: relative;
+    top: 3px;
+    padding: 11px;
+    outline: none;
+  }
+}
+.bb-submit-custom-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border: 0.5px solid black;
+}
+
 .bb-right {
   position: relative;
   width: 44%;
@@ -239,4 +240,10 @@
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
+}
+
+.bb-edit-form {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
