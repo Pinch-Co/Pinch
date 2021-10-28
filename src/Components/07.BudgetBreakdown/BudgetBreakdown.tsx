@@ -79,6 +79,8 @@ function BudgetBreakdown() {
   }, [budgets]);
 
   const changeTabs = (tabNum: number): void => {
+    const sortSelect: any = document.querySelector('#bb-sort-select');
+    sortSelect!.value = 'Sort';
     if (showAdd) { setShowAdd(false); }
     const budgetsArr = Object.entries(budgets[tabNum]);
     setActiveBudget(budgetsArr);
@@ -152,6 +154,27 @@ function BudgetBreakdown() {
     }
   }, [newlyAddedBudget]);
 
+  const sortExpenses = (e: any): void => {
+    e.preventDefault();
+    if (e.target.value === 'alphabetical') {
+      const sortedBudget = activeBudget.splice(1);
+      sortedBudget.sort((a: any, b: any) => {
+        if (a[0] > b[0]) { return 1; }
+        if (a[0] < b[0]) { return -1; }
+        return -1;
+      });
+      setActiveBudget([activeBudget[0], ...sortedBudget]);
+    } else if (e.target.value === 'price') {
+      const sortedBudget = activeBudget.splice(1);
+      sortedBudget.sort((a: any, b: any) => {
+        if (parseInt(a[1].slice(1), 10) > parseInt(b[1].slice(1), 10)) { return -1; }
+        if (parseInt(a[1].slice(1), 10) < parseInt(b[1].slice(1), 10)) { return 1; }
+        return -1;
+      });
+      setActiveBudget([activeBudget[0], ...sortedBudget]);
+    }
+  };
+
   return (
     <div className="bb-container">
       <div className="bb-mid-div">
@@ -184,7 +207,7 @@ function BudgetBreakdown() {
                       }
                       return null;
                     })}
-                    <select className="bb-sort" name="sort">
+                    <select onChange={(e: any) => sortExpenses(e)} className="bb-sort" name="sort" id="bb-sort-select">
                       <option defaultValue="Sort">Sort</option>
                       <option value="price">Price</option>
                       <option value="alphabetical">Alphabetical</option>
