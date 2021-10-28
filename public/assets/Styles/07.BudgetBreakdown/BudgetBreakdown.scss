@@ -9,9 +9,11 @@
   @include center(row);
   align-items: flex-start;
   width: 100vw;
-  height: 65vh;
   margin: 100px 0 30px;
   font-family: "Avenir";
+  @media screen and (max-width: 1000px) {
+    margin-top: 30px;
+  }
 }
 
 .bb-mid-div {
@@ -31,7 +33,8 @@
   width: 55%;
   height: 100%;
   @media screen and (max-width: 1000px) {
-    width: 90%;
+    width: 100%;
+    margin-bottom: 20px;
   }
   .bb-tabs {
     @include center(row);
@@ -237,6 +240,6 @@
     right: 0;
   }
   @media screen and (max-width: 1000px) {
-    width: 90%;
+    width: 100%;
   }
 }

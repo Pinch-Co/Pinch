@@ -16,9 +16,14 @@
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100vw;
-  height: 65vh;
   margin: 100px 0 30px;
   font-family: "Avenir";
+}
+
+@media screen and (max-width: 1000px) {
+  .bb-container {
+    margin-top: 30px;
+  }
 }
 
 .bb-mid-div {
@@ -66,7 +71,8 @@
 
 @media screen and (max-width: 1000px) {
   .bb-left {
-    width: 90%;
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
@@ -468,7 +474,7 @@
 
 @media screen and (max-width: 1000px) {
   .bb-right {
-    width: 90%;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=BudgetBreakdown.css.map */
