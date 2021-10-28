@@ -16,14 +16,8 @@
       -ms-flex-align: start;
           align-items: flex-start;
   width: 100vw;
-  margin: 100px 0 30px;
+  margin: 30px 0 30px;
   font-family: "Avenir";
-}
-
-@media screen and (max-width: 1000px) {
-  .bb-container {
-    margin-top: 30px;
-  }
 }
 
 .bb-mid-div {
