@@ -68,12 +68,12 @@ const goalSchema = new Schema({
 const subscriptionSchema = new Schema({
   currentCost: Number,
   yearCost: Number,
-  type: String,
+  companyName: String,
   billDate: Date,
-  history: [{
-    date: Date,
-    cost: Number,
-  }],
+  // history: [{
+  //   date: Date,
+  //   cost: Number,
+  // }],
 });
 
 const userSchema = new Schema({

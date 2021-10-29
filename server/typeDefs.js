@@ -9,6 +9,7 @@ type User {
   email: String
   goals:[Goal!]!
   budget: [Budget!]!
+  subscriptions: [Subscription!]!
 }
 type Goal {
   name: String
@@ -24,6 +25,18 @@ input BudgetInput {
   name: String
   amount: Float
 }
+type Subscription {
+  currentCost: Float
+  yearCost: Float
+  companyName: String
+  billDate: String
+}
+input SubInput {
+  currentCost: Float
+  yearCost: Float
+  companyName: String
+  billDate: String
+}
 type linkToken {
   expiration: String!
   link_token: String!
@@ -32,7 +45,6 @@ type linkToken {
 type Query {
   currentUser: User
   authenticated: User
-  getGoals(email: String!): Goal
   getUserInfo(id: String!): User
   getLinkToken: linkToken
 }
@@ -46,6 +58,10 @@ type Mutation {
   signup(firstName: String!, lastName: String!, email: String!, phone: String!, password: String!): AuthPayload
   createGoal(id: String!, name: String, currentAmount: Float, goalAmount: Float, description: String): Goal
   createBudget(id: String! budget: [BudgetInput]): Budget
+  updateGoalText(id: String!, original: String, update: String, fieldOfUpdate: String): User
+  updateGoalAmount(id: String!, original: Float, update: Float, fieldOfUpdate: String): User
+  deleteGoal(id: String!, goalName: String!): User
+  addSubscription(id: String!, subscriptions: [SubInput]): Subscription
 }
 `;
 

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
 const {
-  testDatabase, getUserInfo, updateGoals, makeBudget,
+  testDatabase, getUserInfo, createNewGoals, updateGoal, makeBudget, deleteOneGoal, createSubs,
 } = require('../database/models.ts');
 const {
   receivePublicToken,
@@ -35,13 +35,29 @@ const resolver = {
       return results;
     },
     createGoal: async (parent, args) => {
-      const result = updateGoals(args);
+      const result = createNewGoals(args);
       return result;
     },
     createBudget: async (parent, args) => {
       const a = JSON.parse(JSON.stringify(args));
       const result = makeBudget(a);
       return result;
+    },
+    updateGoalText: async (parent, args) => {
+      const results = updateGoal(args);
+      return results;
+    },
+    updateGoalAmount: async (parent, args) => {
+      const results = updateGoal(args);
+      return results;
+    },
+    deleteGoal: async (parent, args) => {
+      const results = deleteOneGoal(args);
+      return results;
+    },
+    addSubscription: async (parent, args) => {
+      const results = createSubs(args);
+      return results;
     },
   },
 
