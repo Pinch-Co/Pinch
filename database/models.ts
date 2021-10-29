@@ -260,7 +260,6 @@ module.exports.createSubs = (obj) => {
   //    billDate
   //  }
   // }
-
   const {
     id,
     subscriptions,
