@@ -8,7 +8,7 @@ const { UserModel } = require('./index.ts');
 
 // ------------------------------------------  Test Model //
 module.exports.testDatabase = (userInfo) => {
-// This is an example of userInfo object
+// This is an example of userInfo object in mongodb
 // {
 //   firstName: 'katie',
 //   lastName: 'law',
