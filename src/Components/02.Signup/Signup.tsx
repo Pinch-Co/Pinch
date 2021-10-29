@@ -1,4 +1,4 @@
-// import * as React from 'react';
+/* eslint-disable quote-props */ // need quotes for the DB
 import React, { useState } from 'react';
 import axios from 'axios';
 import { RouteComponentProps, Link } from 'react-router-dom';
@@ -24,11 +24,8 @@ function SignUp(props: OverviewProps) {
   const [err, setErr] = useState([]);
 
   const allValues: any = {
-    // eslint-disable-next-line quote-props
     'email': email,
-    // eslint-disable-next-line quote-props
     'phone': phone,
-    // eslint-disable-next-line quote-props
     'password': password,
   };
 

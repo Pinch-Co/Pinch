@@ -1,6 +1,3 @@
-// create database schema in here
-// use mongoose
-
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;

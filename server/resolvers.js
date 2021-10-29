@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable import/extensions */
+/* eslint-disable no-unused-vars */
 const {
   testDatabase, getUserInfo, createNewGoals, updateGoal, makeBudget, deleteOneGoal, createSubs,
 } = require('../database/models.ts');
