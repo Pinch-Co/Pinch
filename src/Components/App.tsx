@@ -32,7 +32,7 @@ function App() {
   const [showNav, setNav] = useState<boolean>(true); // make sure to make these false when done
 
   const verifyAuth = () => {
-    axios.get('http://localhost:4000/graphql?query={authenticated{id}}')
+    axios.get('/graphql?query={authenticated{id}}')
       .then((response) => {
         if (response.data.data.authenticated) {
           setAuth(true);
