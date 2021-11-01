@@ -1,7 +1,28 @@
-import React from 'react';
-// import { RouteComponentProps } from 'react-router-dom';
+/* eslint-disable no-console */
+/* eslint-disable camelcase */
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import PlaidLink from '../10.PlaidRelated/Link';
 
 function Additionalinfo() {
+  const [token, setToken] = useState<string | null>('');
+  // const [expiration, setExpiration] = useState<string | null>('');
+
+  useEffect(() => {
+    axios.post('/graphql', {
+      query: `query { getLinkToken {
+      expiration
+      link_token
+    }}`,
+    })
+      .then((result) => {
+        const resultObj = result.data.data.getLinkToken;
+        setToken(resultObj.link_token);
+        // setExpiration(resultObj.expiration);
+      })
+      .catch((error) => console.log('could not get link token', error));
+  }, []);
+
   return (
     <div className="additional-info-container">
       <div className="additional-info-empty-div" />
@@ -72,6 +93,7 @@ function Additionalinfo() {
                   />
                 </div>
               </div>
+              {token === null ? <div /> : <PlaidLink token={token} />}
             </form>
             <button
               className="signin-additional-info-btn"

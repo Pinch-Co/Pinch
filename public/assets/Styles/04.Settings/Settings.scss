@@ -25,6 +25,26 @@
     // border: 1px solid red;
     width: 65%;
     height: 100%;
+    @media screen and (max-width: 3300px) {
+      width: 32%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 3200px) {
+      width: 33%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 3000px) {
+      width: 35%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 2800px) {
+      width: 40%;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-width: 2500px) {
+      width: 45%;
+      justify-content: space-evenly;
+    }
     @media screen and (max-width: 2030px) {
       width: 50%;
       justify-content: space-evenly;

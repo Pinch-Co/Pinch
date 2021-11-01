@@ -15,6 +15,10 @@ $phone: 450px;
   width: 100%;
   height: 100vh;
   background-color: white;
+  @media screen and (max-width: 3800px) {
+    padding-top: 5em;
+    justify-content: flex-start;
+  }
   @media screen and (max-width: 600px) {
     justify-content: flex-start;
     background-color: #d1e0de;
@@ -181,7 +185,7 @@ $phone: 450px;
       font-weight: lighter;
     }
     &::-webkit-datetime-edit-month-field {
-       color: rgb(156, 156, 156);
+      color: rgb(156, 156, 156);
     }
     &::-webkit-datetime-edit-day-field {
       color: rgb(156, 156, 156);
@@ -236,7 +240,6 @@ $phone: 450px;
       color: rgb(156, 156, 156);
       font-weight: lighter;
     }
-
   }
 
   .input-container {
@@ -298,6 +301,7 @@ $phone: 450px;
     font-weight: lighter;
     background-color: #20b2aa;
     color: white;
+    letter-spacing: 1px;
     border: none;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -311,5 +315,42 @@ $phone: 450px;
       background-color: #1c9993;
     }
   }
+}
 
+.connect-plaid-div {
+  @include flexCenter(row);
+  justify-content: center;
+  width: 100%;
+
+  .connect-bank-btn {
+    width: 60%;
+    height: 45px;
+    color: white;
+    background-color: rgb(55, 104, 110);
+    border: none;
+    font-size: 1.1em;
+    transition: 0.1s ease-in;
+    letter-spacing: 1px;
+    &:hover {
+      background-color: #1c9993;
+    }
+  }
+
+  .connect-bank-success {
+    @include flexCenter(row);
+    justify-content: center;
+    width: 60%;
+    height: 45px;
+    color: white;
+    text-align: center;
+    background-color: rgb(42, 163, 143);
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    .success-message {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
 }

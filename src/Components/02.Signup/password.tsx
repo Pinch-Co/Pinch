@@ -1,4 +1,3 @@
-// import * as React from 'react';
 import React from 'react';
 import zxcvbn from 'zxcvbn';
 

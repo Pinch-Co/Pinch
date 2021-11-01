@@ -1,6 +1,3 @@
-// create database schema in here
-// use mongoose
-
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
@@ -35,12 +32,27 @@ const questionSchema = new Schema({
   },
 });
 
-const goalSchema = new Schema({
+const budgetSchema = new Schema({
   name: {
     type: String,
     required: true,
   },
   amount: {
+    type: Number,
+    required: true,
+  },
+});
+
+const goalSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  currentAmount: {
+    type: Number,
+    required: true,
+  },
+  goalAmount: {
     type: Number,
     required: true,
   },
@@ -50,44 +62,15 @@ const goalSchema = new Schema({
   },
 });
 
-const budgetSchema = new Schema({
-  income: {
-    type: Number,
-    required: true,
-  },
-  rent: {
-    type: Number,
-    required: true,
-  },
-  groceries: {
-    type: Number,
-    required: true,
-  },
-  expenses: [{
-    name: {
-      type: String,
-      required: true,
-    },
-    amount: {
-      type: Number,
-      required: true,
-    },
-  }],
-  expenses1: {
-    type: Map,
-    of: Number,
-  },
-});
-
 const subscriptionSchema = new Schema({
   currentCost: Number,
   yearCost: Number,
-  type: String,
+  companyName: String,
   billDate: Date,
-  history: [{
-    date: Date,
-    cost: Number,
-  }],
+  // history: [{
+  //   date: Date,
+  //   cost: Number,
+  // }],
 });
 
 const userSchema = new Schema({
@@ -181,7 +164,7 @@ const userSchema = new Schema({
   goals: {
     type: [goalSchema],
   },
-  budgets: {
+  budget: {
     type: [budgetSchema],
   },
   subscriptions: {
@@ -191,4 +174,6 @@ const userSchema = new Schema({
   accessToken: String,
 });
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = {
+  UserModel: mongoose.model('User', userSchema),
+};

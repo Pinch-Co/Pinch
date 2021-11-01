@@ -1,19 +1,15 @@
-/* eslint-disable import/extensions */
-/* eslint-disable no-console */
 const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
 const path = require('path');
 const { v4: uuidv4 } = require('uuid');
 const cookieParser = require('cookie-parser');
-// const bodyParser = require('body-parss
 const passport = require('passport');
 const { ApolloServer } = require('apollo-server-express');
 const { GraphQLLocalStrategy, buildContext } = require('graphql-passport');
-// const graphqlHTTP = require('express-graphql');
-const User = require('./User.js');
-const typeDefs = require('./typeDefs.js');
-const resolvers = require('./resolvers.js');
+const User = require('./User');
+const typeDefs = require('./typeDefs');
+const resolvers = require('./resolvers');
 
 // variables for port and session
 const PORT = 4000;
@@ -40,7 +36,6 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 passport.deserializeUser((id, done) => {
-  console.log('deserialize', id);
   const users = User.getUsers();
   const matchingUser = users.find((user) => user.id === id);
   done(null, matchingUser);
@@ -69,5 +64,6 @@ const server = new ApolloServer({
 server.applyMiddleware({ app });
 
 app.listen({ port: PORT }, () => {
-  console.log(`🚀 Server ready at http://localhost:${PORT}`);
+  // eslint-disable-next-line no-console
+  console.log(`🚀 Server ready at 1st port: http://localhost:${PORT}`);
 });
