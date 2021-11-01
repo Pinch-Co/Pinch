@@ -130,9 +130,8 @@ function BudgetBreakdown() {
                     {!editBudget
                       ? (
                         <div className="bb-income">
-                          Income: $
+                          Monthly Income: $
                           {income}
-                          /month
                         </div>
                       )
                       : (

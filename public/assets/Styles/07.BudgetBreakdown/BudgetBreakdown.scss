@@ -5,6 +5,15 @@
   flex-direction: $direction;
 }
 
+@mixin button() {
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border: 0.5px solid black;
+}
+
 .bb-container {
   @include center(row);
   align-items: flex-start;
@@ -93,9 +102,9 @@
         }
       }
       .bb-budget-top-right {
-        padding: 10px;
         cursor: pointer;
         margin: 20px;
+        @include button();
       }
     }
     .bb-budget-middle {
@@ -170,29 +179,19 @@
     justify-content: center;
     position: relative;
     top: 3px;
-    padding: 11px;
+    @include button();
     // height: 30px;
   }
 }
 .bb-add-custom-btn {
   cursor: pointer;
-  font-size: 18px;
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.5px solid black;
+  @include button();
 }
 
 .bb-submit-custom-btn {
   cursor: pointer;
-  font-size: 18px;
-  padding: 5px;
+  @include button();
   margin-right: 20px;
-  border-radius: 5px;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.5px solid black;
 }
 
 .bb-add-input-group {
