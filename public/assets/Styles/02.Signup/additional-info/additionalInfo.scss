@@ -19,6 +19,14 @@ $phone: 450px;
     padding-top: 5em;
     justify-content: flex-start;
   }
+  @media screen and (max-width: 2800px) {
+    padding-top: 4em;
+    justify-content: flex-start;
+  }
+  @media screen and (max-width: 1800px) {
+    padding-top: 3em;
+    justify-content: flex-start;
+  }
   @media screen and (max-width: 600px) {
     justify-content: flex-start;
     background-color: #d1e0de;

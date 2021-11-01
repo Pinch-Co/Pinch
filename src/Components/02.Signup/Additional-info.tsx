@@ -1,12 +1,34 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import PlaidLink from '../10.PlaidRelated/Link';
 
-function Additionalinfo() {
+function Additionalinfo(props: any) {
+  const history = useHistory();
   const [token, setToken] = useState<string | null>('');
-  // const [expiration, setExpiration] = useState<string | null>('');
+  const [userId, setUserId] = useState<string>();
+  const [showButton, setButton] = useState<boolean>(false);
+  const [values, setValues] = useState({
+    firstName: '',
+    lastName: '',
+    username: '',
+    dateOfBirth: '',
+    address: '',
+    email: '',
+    password: '',
+    phone: '',
+    access_token: '',
+    item_id: '',
+  });
+
+  if (props.history.location.state) {
+    values.email = props.history.location.state.email;
+    values.password = props.history.location.state.password;
+    values.phone = props.history.location.state.phone;
+  }
 
   useEffect(() => {
     axios.post('/graphql', {
@@ -18,10 +40,51 @@ function Additionalinfo() {
       .then((result) => {
         const resultObj = result.data.data.getLinkToken;
         setToken(resultObj.link_token);
-        // setExpiration(resultObj.expiration);
       })
       .catch((error) => console.log('could not get link token', error));
   }, []);
+
+  const handleButton = () => {
+    setButton(true);
+  };
+
+  const retrieveValues = (obj:any) => {
+    const { access_token, item_id } = obj;
+    setValues((prevState) => ({
+      ...prevState,
+      // eslint-disable-next-line quote-props
+      'access_token': access_token,
+      // eslint-disable-next-line quote-props
+      'item_id': item_id,
+    }));
+  };
+
+  const handleChange = (event: any) => {
+    const { name, value } = event.target;
+    setValues((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    axios.post('/graphql', {
+      query: `mutation {
+        createAccount(firstName: "${values.firstName}", lastName: "${values.lastName}", username: "${values.username}", phone: "${values.phone}" email: "${values.email}", password: "${values.password}", accessToken: "${values.access_token}", itemId:"${values.item_id}") {
+          id
+        }
+      }`,
+    })
+      .then((result) => {
+        setUserId(result.data.data.createAccount.id);
+        history.push({
+          pathname: '/home/overview',
+          state: userId,
+        });
+      })
+      .catch((error) => console.log('there was an error', error));
+  };
 
   return (
     <div className="additional-info-container">
@@ -41,8 +104,9 @@ function Additionalinfo() {
                     <input
                       className="additional-info-input"
                       type="text"
+                      name="firstName"
                       placeholder="John"
-                    // onChange={(event) => handleEmail(event)}
+                      onChange={(event) => handleChange(event)}
                     />
                   </div>
                 </div>
@@ -53,7 +117,8 @@ function Additionalinfo() {
                       className="additional-info-input"
                       type="text"
                       placeholder="Doe"
-                    // onChange={(event) => handleEmail(event)}
+                      name="lastName"
+                      onChange={(event) => handleChange(event)}
                     />
                   </div>
                 </div>
@@ -66,7 +131,8 @@ function Additionalinfo() {
                       className="additional-info-input"
                       type="text"
                       placeholder="JD123"
-                    // onChange={(event) => handleEmail(event)}
+                      name="username"
+                      onChange={(event) => handleChange(event)}
                     />
                   </div>
                 </div>
@@ -77,7 +143,8 @@ function Additionalinfo() {
                       className="additional-info-input"
                       type="date"
                       placeholder="MM/DD/YY"
-                    // onChange={(event) => handleEmail(event)}
+                      name="dateOfBirth"
+                      onChange={(event) => handleChange(event)}
                     />
                   </div>
                 </div>
@@ -89,19 +156,28 @@ function Additionalinfo() {
                     className="additional-info-input-address"
                     type="text"
                     placeholder="123 James Street, North Pole"
-                  // onChange={(event) => handleEmail(event)}
+                    name="address"
+                    onChange={(event) => handleChange(event)}
                   />
                 </div>
               </div>
-              {token === null ? <div /> : <PlaidLink token={token} />}
+              {token === null ? <div /> : (
+                <PlaidLink
+                  retrieveValues={retrieveValues}
+                  handleButton={handleButton}
+                  token={token}
+                />
+              )}
             </form>
-            <button
-              className="signin-additional-info-btn"
-              type="submit"
-            // onClick={(event) => handleSubmit(event)}
-            >
-              Next
-            </button>
+            {showButton ? (
+              <button
+                className="signin-additional-info-btn"
+                type="submit"
+                onClick={(event) => handleSubmit(event)}
+              >
+                Next
+              </button>
+            ) : null}
           </div>
         </div>
       </div>

@@ -1,11 +1,12 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 const {
-  testDatabase, getUserInfo, createNewGoals, updateGoal, makeBudget, deleteOneGoal, createSubs,
+  newUserModel, getUserInfo, createNewGoals, updateGoal, makeBudget, deleteOneGoal, createSubs,
 } = require('../database/models.ts');
 const {
   receivePublicToken,
   getTransactions,
+  recieveAccessToken,
 } = require('../api/controllers.js');
 
 const resolver = {
@@ -21,6 +22,10 @@ const resolver = {
       const result = await receivePublicToken();
       return result;
     },
+    getAccess_Token: async (parent, args) => {
+      const result = await recieveAccessToken(args);
+      return result;
+    },
   },
   Mutation: {
     logout: (parent, args, context) => context.logout(),
@@ -30,8 +35,8 @@ const resolver = {
       await context.login(user);
       return { user };
     },
-    dummy1: async (parent, args) => {
-      const results = testDatabase(args);
+    createAccount: async (parent, args) => {
+      const results = newUserModel(args);
       return results;
     },
     createGoal: async (parent, args) => {

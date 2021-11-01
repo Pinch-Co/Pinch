@@ -10,6 +10,8 @@ type User {
   goals:[Goal!]!
   budget: [Budget!]!
   subscriptions: [Subscription!]!
+  accessToken: String
+  itemId: String
 }
 type Goal {
   name: String
@@ -42,11 +44,17 @@ type linkToken {
   link_token: String!
   request_id: String!
 }
+type accessToken {
+  access_token: String
+  item_id: String
+  request_id: String
+}
 type Query {
   currentUser: User
   authenticated: User
   getUserInfo(id: String!): User
   getLinkToken: linkToken
+  getAccess_Token(public_token: String): accessToken
 }
 type AuthPayload {
   user: User
@@ -54,7 +62,7 @@ type AuthPayload {
 type Mutation {
   login(email: String!, password: String!): AuthPayload
   logout: Boolean
-  dummy1(firstName: String!, lastName: String!, username: String!, phone: String!, email: String!, password: String!): User
+  createAccount(firstName: String!, lastName: String!, username: String!, phone: String!, email: String!, password: String!, accessToken: String!, itemId: String!): User
   signup(firstName: String!, lastName: String!, email: String!, phone: String!, password: String!): AuthPayload
   createGoal(id: String!, name: String, currentAmount: Float, goalAmount: Float, description: String): Goal
   createBudget(id: String! budget: [BudgetInput]): Budget

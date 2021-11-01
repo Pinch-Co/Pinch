@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const {
   Configuration, PlaidApi, PlaidEnvironments,
 } = require('plaid');
@@ -79,7 +80,24 @@ const getTransactions = async (req, res) => {
   }
 };
 
+// ---- Get Access Token------ ///
+
+const recieveAccessToken = async (request) => {
+  const publicToken = request.public_token;
+  try {
+    const response = await client.itemPublicTokenExchange({
+      public_token: publicToken,
+    });
+    // const accessToken = response.data.access_token;
+    // const itemID = response.data.item_id;
+    return response.data;
+  } catch (error) {
+    return console.log('Error getting access token', error);
+  }
+};
+
 module.exports = {
   receivePublicToken,
   getTransactions,
+  recieveAccessToken,
 };

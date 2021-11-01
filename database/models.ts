@@ -23,12 +23,15 @@ mutation {
   username: 'cactus',
   phone: '13474757915',
   email: 'cactus@oasis.com',
-  password: 'skfanejnfa' ) {
+  password: 'skfanejnfa',
+  access_token: 'test1223334Dummy',
+  item_id: 'test23444dummydummy' ) {
     id
   }
 }
 test resolver to connect DB to Graphql */
-module.exports.testDatabase = (userInfo) => {
+module.exports.newUserModel = (userInfo) => {
+  console.log(userInfo);
   const newUser = new UserModel(userInfo);
   return newUser.save()
     .then((data) => data)
