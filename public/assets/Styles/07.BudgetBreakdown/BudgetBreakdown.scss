@@ -89,23 +89,23 @@
           width: 100%;
           height: 30px;
           margin-bottom: 20px;
+          font-size: 18px;
         }
       }
       .bb-budget-top-right {
         padding: 10px;
         cursor: pointer;
+        margin: 20px;
       }
     }
     .bb-budget-middle {
       @include center(column);
       width: 100%;
-
       .bb-budget-middle-row {
         @include center(row);
         width: 95%;
         justify-content: space-between;
         margin-bottom: 12px;
-
         .bb-budget-category {
           font-size: 24px;
         }
@@ -126,15 +126,6 @@
         .bb-buttons-div {
           display: flex;
           flex-direction: row;
-          .bb-add-custom-btn {
-            cursor: pointer;
-            margin-right: 20px;
-            font-size: 18px;
-            padding: 5px;
-            border-radius: 5px;
-            border: none;
-            box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          }
         }
       }
     }
@@ -162,53 +153,28 @@
   }
 }
 
-.bb-add-input-group {
-  @include center(column);
-  align-items: flex-start;
-  margin: 0 20px 20px 0;
-}
-.bb-input-title {
-  font-size: 20px;
-}
-.bb-input-box {
+.bb-edit-form {
   display: flex;
-  align-items: center;
-  max-width: 300px;
-  background: #fff;
-  border: 1px solid #a0a0a0;
-  border-radius: 4px;
-  padding-left: 0.5rem;
-  overflow: hidden;
-  font-family: sans-serif;
-  &:focus-within {
-    border-color: #777;
+  width: 100%;
+  flex-direction: column;
+  .bb-add-custom-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    // width: 100%;
+    justify-content: flex-start;
   }
-}
-.bb-prefix {
-  font-weight: 300;
-  font-size: 20px;
-  color: #999;
-}
-.bb-input-field {
-  flex-grow: 1;
-  font-size: 20px;
-  background: #fff;
-  border: none;
-  outline: none;
-  padding: 0.5rem;
-}
-.bb-add-custom-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
   .bb-delete-custom-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     top: 3px;
     padding: 11px;
-    outline: none;
+    // height: 30px;
   }
 }
-.bb-submit-custom-btn {
+.bb-add-custom-btn {
   cursor: pointer;
   font-size: 18px;
   padding: 5px;
@@ -218,6 +184,83 @@
   border: 0.5px solid black;
 }
 
+.bb-submit-custom-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border: 0.5px solid black;
+}
+
+.bb-add-input-group {
+  @include center(column);
+  align-items: flex-start;
+  margin: 0 20px 20px 0;
+  .bb-input-title {
+    font-size: 20px;
+  }
+  .bb-input-box {
+    display: flex;
+    align-items: center;
+    max-width: 300px;
+    background: #fff;
+    border: 1px solid #a0a0a0;
+    border-radius: 4px;
+    padding-left: 0.5rem;
+    overflow: hidden;
+    font-family: sans-serif;
+    &:focus-within {
+      border-color: #777;
+    }
+  }
+  .bb-prefix {
+    font-weight: 300;
+    font-size: 20px;
+    color: #999;
+  }
+  .bb-input-field {
+    flex-grow: 1;
+    font-size: 20px;
+    background: #fff;
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+  }
+}
+
+.bb-input-box-income {
+  display: flex;
+  align-items: center;
+  max-width: 200px;
+  background: #fff;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  padding-left: 0.3rem;
+  overflow: hidden;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+  &:focus-within {
+    border-color: #777;
+  }
+}
+.bb-prefix-income {
+  font-weight: 200;
+  font-size: 18px;
+  color: #999;
+}
+.bb-input-field-income {
+  flex-grow: 1;
+  font-size: 18px;
+  background: #fff;
+  border: none;
+  outline: none;
+  padding: 0.3rem;
+}
+
+// Chart side
 .bb-right {
   position: relative;
   width: 44%;
@@ -240,10 +283,4 @@
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
-}
-
-.bb-edit-form {
-  display: flex;
-  width: 100%;
-  justify-content: center;
 }

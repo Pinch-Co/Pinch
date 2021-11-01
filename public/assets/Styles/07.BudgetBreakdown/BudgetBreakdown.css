@@ -209,11 +209,13 @@
   width: 100%;
   height: 30px;
   margin-bottom: 20px;
+  font-size: 18px;
 }
 
 .bb-left .bb-budget-box .bb-budget-top .bb-budget-top-right {
   padding: 10px;
   cursor: pointer;
+  margin: 20px;
 }
 
 .bb-left .bb-budget-box .bb-budget-middle {
@@ -294,17 +296,6 @@
           flex-direction: row;
 }
 
-.bb-left .bb-budget-box .bb-budget-middle .bb-add-body .bb-buttons-div .bb-add-custom-btn {
-  cursor: pointer;
-  margin-right: 20px;
-  font-size: 18px;
-  padding: 5px;
-  border-radius: 5px;
-  border: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-}
-
 .bb-left .bb-budget-box .bb-budget-bottom {
   width: 95%;
   display: -webkit-box;
@@ -349,6 +340,71 @@
   font-weight: bold;
 }
 
+.bb-edit-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.bb-edit-form .bb-add-custom-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.bb-edit-form .bb-delete-custom-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 3px;
+  padding: 11px;
+}
+
+.bb-add-custom-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border: 0.5px solid black;
+}
+
+.bb-submit-custom-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: none;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border: 0.5px solid black;
+}
+
 .bb-add-input-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -369,11 +425,11 @@
   margin: 0 20px 20px 0;
 }
 
-.bb-input-title {
+.bb-add-input-group .bb-input-title {
   font-size: 20px;
 }
 
-.bb-input-box {
+.bb-add-input-group .bb-input-box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -389,17 +445,17 @@
   font-family: sans-serif;
 }
 
-.bb-input-box:focus-within {
+.bb-add-input-group .bb-input-box:focus-within {
   border-color: #777;
 }
 
-.bb-prefix {
+.bb-add-input-group .bb-prefix {
   font-weight: 300;
   font-size: 20px;
   color: #999;
 }
 
-.bb-input-field {
+.bb-add-input-group .bb-input-field {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
@@ -410,35 +466,42 @@
   padding: 0.5rem;
 }
 
-.bb-add-custom-row {
+.bb-input-box-income {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  max-width: 200px;
+  background: #fff;
+  border: 1px solid #a0a0a0;
+  border-radius: 4px;
+  padding-left: 0.3rem;
+  overflow: hidden;
+  font-family: sans-serif;
+  margin-bottom: 10px;
 }
 
-.bb-add-custom-row .bb-delete-custom-btn {
-  position: relative;
-  top: 3px;
-  padding: 11px;
-  outline: none;
+.bb-input-box-income:focus-within {
+  border-color: #777;
 }
 
-.bb-submit-custom-btn {
-  cursor: pointer;
+.bb-prefix-income {
+  font-weight: 200;
   font-size: 18px;
-  padding: 5px;
-  border-radius: 5px;
+  color: #999;
+}
+
+.bb-input-field-income {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 18px;
+  background: #fff;
   border: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.5px solid black;
+  outline: none;
+  padding: 0.3rem;
 }
 
 .bb-right {
@@ -470,15 +533,5 @@
   .bb-right {
     width: 100%;
   }
-}
-
-.bb-edit-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 /*# sourceMappingURL=BudgetBreakdown.css.map */
