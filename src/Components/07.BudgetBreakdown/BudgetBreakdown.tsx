@@ -10,11 +10,12 @@ function BudgetBreakdown() {
   const [total, setTotal] = React.useState<number>(0);
   const [editBudget, setEditBudget] = React.useState<boolean>(false);
   const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>(['1']);
+  const [objectId, setObjectId] = React.useState<string>();
 
   const getData = (): any => {
     axios.post('/graphql', {
       query: `query {
-        getUserInfo(id: "618173401611f20916388243") {
+        getUserInfo(id: ${JSON.stringify(objectId)}) {
           budget {
             name
             amount
@@ -32,7 +33,7 @@ function BudgetBreakdown() {
     axios.post('/graphql', {
       query: `mutation {
         createBudget(
-          id: "618173401611f20916388243",
+          id: ${JSON.stringify(objectId)},
           budget: ${JSON.stringify(budget).replace(/"([^(")"]+)":/g, '$1:')}) {
           name
         }
@@ -54,8 +55,15 @@ function BudgetBreakdown() {
     // ],
     // );
     setIncome(8000);
-    getData();
+    setObjectId('618173401611f20916388243');
   }, []);
+
+  React.useEffect(() => {
+    // Used to retrieve Object ID of user
+    if (objectId) {
+      getData();
+    }
+  }, [objectId]);
 
   React.useEffect(() => {
     if (budget.length > 0) {
