@@ -2,6 +2,7 @@
 /* eslint-disable max-len */
 import * as React from 'react';
 import axios from 'axios';
+import BudgetCharts from './BudgetCharts';
 
 function BudgetBreakdown() {
   const [budget, setBudget] = React.useState<any>([]);
@@ -151,6 +152,12 @@ function BudgetBreakdown() {
     }
   };
 
+  const editAddExpense = (): void => {
+    const temp = budget.splice(0);
+    temp.push({ name: '', amount: '' });
+    setBudget(temp);
+  };
+
   const setNewIncome = (e: any): void => {
     e.preventDefault();
     setIncome(e.target.value);
@@ -257,10 +264,11 @@ function BudgetBreakdown() {
                                   <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.amount} />
                                 </div>
                               </label>
-                              <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}>Delete Expense</button>
+                              <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}><img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/trashcan-512.png" alt="delete icon" className="bb-delete-icon" /></button>
                             </div>
                           ))}
                           <input type="submit" onClick={(e: any) => setNewBudget(e)} className="bb-submit-custom-btn" value="Update" />
+                          <button type="button" className="bb-add-custom-btn" onClick={editAddExpense}>Add +1 expense</button>
                         </form>
                       </div>
                     )}
@@ -310,14 +318,7 @@ function BudgetBreakdown() {
             )}
         </div>
         <div className="bb-right">
-          <div className="bb-chart">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Turkish_general_election%2C_2007_pie_chart.png" alt="pie chart" className="bb-pie-chart" />
-          </div>
-          <select className="bb-chart-type">
-            <option value="Pie Chart">Pie Chart</option>
-            <option value="Line Graph">Line Graph</option>
-            <option value="Bar Graph">Bar Graph</option>
-          </select>
+          <BudgetCharts budget={budget} />
         </div>
       </div>
     </div>
