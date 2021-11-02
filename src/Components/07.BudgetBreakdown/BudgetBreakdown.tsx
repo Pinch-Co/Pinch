@@ -2,7 +2,7 @@
 /* eslint-disable max-len */
 import * as React from 'react';
 import axios from 'axios';
-import BudgetCharts from './BudgetCharts';
+// import BudgetCharts from './BudgetCharts';
 
 function BudgetBreakdown() {
   const [budget, setBudget] = React.useState<any>([]);
@@ -19,7 +19,7 @@ function BudgetBreakdown() {
         getUserInfo(id: ${JSON.stringify(objectId)}) {
           budget {
             name
-            amount
+            value
           }
         }
       }`,
@@ -48,11 +48,11 @@ function BudgetBreakdown() {
     // Dummy data -> query from database later
     // setBudget(
     // [
-    // { name: 'Rent', amount: 1200 },
-    // { name: 'Groceries', amount: 200 },
-    // { name: 'Gas', amount: 150 },
-    // { name: 'Pet supplies', amount: 200 },
-    // { name: 'Shopping', amount: 200 },
+    // { name: 'Rent', value: 1200 },
+    // { name: 'Groceries', value: 200 },
+    // { name: 'Gas', value: 150 },
+    // { name: 'Pet supplies', value: 200 },
+    // { name: 'Shopping', value: 200 },
     // ],
     // );
     setIncome(8000);
@@ -71,7 +71,7 @@ function BudgetBreakdown() {
       setShowAdd(false);
       let sum = 0;
       for (let i = 0; i < budget.length; i += 1) {
-        sum += parseInt(budget[i].amount, 10);
+        sum += budget[i].value;
       }
       setTotal(sum);
       // Post to database
@@ -108,16 +108,16 @@ function BudgetBreakdown() {
     } else if (e.target.value === 'price-highest') {
       const sortedBudget = budget.splice(0);
       sortedBudget.sort((a: any, b: any) => {
-        if (parseInt(a.amount, 10) > parseInt(b.amount, 10)) { return -1; }
-        if (parseInt(a.amount, 10) < parseInt(b.amount, 10)) { return 1; }
+        if (a > b) { return -1; }
+        if (a < b) { return 1; }
         return -1;
       });
       setBudget(sortedBudget);
     } else if (e.target.value === 'price-lowest') {
       const sortedBudget = budget.splice(0);
       sortedBudget.sort((a: any, b: any) => {
-        if (parseInt(a.amount, 10) < parseInt(b.amount, 10)) { return -1; }
-        if (parseInt(a.amount, 10) > parseInt(b.amount, 10)) { return 1; }
+        if (a < b) { return -1; }
+        if (a > b) { return 1; }
         return -1;
       });
       setBudget(sortedBudget);
@@ -132,11 +132,11 @@ function BudgetBreakdown() {
     for (let i = 0; i < inputs.length - 2; i += 2) {
       const each = {
         name: '',
-        amount: 0,
+        value: 0,
       };
       if (inputs[i].type === 'text') {
         each.name = inputs[i].value;
-        each.amount = parseInt(inputs[i + 1].value, 10);
+        each.value = parseInt(inputs[i + 1].value, 10);
       }
       if (each.name !== '') {
         updatedBudget.push(each);
@@ -154,7 +154,7 @@ function BudgetBreakdown() {
 
   const editAddExpense = (): void => {
     const temp = budget.splice(0);
-    temp.push({ name: '', amount: '' });
+    temp.push({ name: '', value: '' });
     setBudget(temp);
   };
 
@@ -220,7 +220,7 @@ function BudgetBreakdown() {
                               </div>
                               <div className="bb-budget-dollars">
                                 $
-                                {expense.amount}
+                                {expense.value}
                               </div>
                             </div>
                           ))
@@ -261,7 +261,7 @@ function BudgetBreakdown() {
                                 <div className="bb-input-title">Amount</div>
                                 <div className="bb-input-box">
                                   <span className="bb-prefix">$</span>
-                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.amount} />
+                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.value} />
                                 </div>
                               </label>
                               <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}><img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/trashcan-512.png" alt="delete icon" className="bb-delete-icon" /></button>
@@ -318,7 +318,7 @@ function BudgetBreakdown() {
             )}
         </div>
         <div className="bb-right">
-          <BudgetCharts budget={budget} />
+          {/* <BudgetCharts chartData={budget} /> */}
         </div>
       </div>
     </div>
