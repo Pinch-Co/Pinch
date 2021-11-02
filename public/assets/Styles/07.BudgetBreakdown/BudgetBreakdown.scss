@@ -11,7 +11,10 @@
   border-radius: 5px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.5px solid black;
+  border: 0.1px solid black;
+  &:hover {
+    background-color: #dddddd;
+  }
 }
 
 .bb-container {
@@ -96,9 +99,10 @@
         }
         .bb-sort {
           width: 100%;
-          height: 30px;
+          height: 35px;
           margin-bottom: 20px;
           font-size: 18px;
+          border-radius: 2px;
         }
       }
       .bb-budget-top-right {
@@ -170,8 +174,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    // width: 100%;
+    flex-wrap: wrap;
     justify-content: flex-start;
+    @media screen and (max-width: 589px) {
+    }
   }
   .bb-delete-custom-btn {
     display: flex;
@@ -180,6 +186,8 @@
     position: relative;
     top: 3px;
     @include button();
+    padding: 6px;
+    cursor: pointer;
     // height: 30px;
   }
 }
@@ -192,6 +200,10 @@
   cursor: pointer;
   @include button();
   margin-right: 20px;
+  background-color: #4fcec5;
+  &:hover {
+    background-color: #45b9b2;
+  }
 }
 
 .bb-add-input-group {
@@ -282,4 +294,9 @@
   @media screen and (max-width: 1000px) {
     width: 100%;
   }
+}
+
+.bb-delete-icon {
+  height: 25px;
+  width: 25px;
 }
