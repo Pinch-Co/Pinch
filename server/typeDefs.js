@@ -19,11 +19,11 @@ type Goal {
 }
 type Budget {
   name: String
-  amount: Float
+  value: Float
 }
 input BudgetInput {
   name: String
-  amount: Float
+  value: Float
 }
 type Subscription {
   currentCost: Float
