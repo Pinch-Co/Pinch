@@ -14,7 +14,7 @@ function BudgetBreakdown() {
   const getData = (): any => {
     axios.post('/graphql', {
       query: `query {
-        getUserInfo(id: "123456789abc") {
+        getUserInfo(id: "618173401611f20916388243") {
           budget {
             name
             amount
@@ -22,23 +22,22 @@ function BudgetBreakdown() {
         }
       }`,
     }).then((res) => {
-      console.log('Query success!');
-      console.log(res.data);
+      setBudget(res.data.data.getUserInfo.budget);
     }).catch((err) => {
       console.log(err);
-      console.log('Query failed!');
     });
   };
 
   const postData = (): void => {
     axios.post('/graphql', {
       query: `mutation {
-        createBudget(id: "123456789abc",  budget: ${budget}
+        createBudget(
+          id: "618173401611f20916388243",
+          budget: ${JSON.stringify(budget).replace(/"([^(")"]+)":/g, '$1:')}) {
+          name
+        }
       }`,
-    }).then(() => {
-      console.log('Post success!');
     }).catch((err) => {
-      console.log('Post failed!');
       console.log(err);
     });
   };
@@ -46,13 +45,13 @@ function BudgetBreakdown() {
   React.useEffect(() => {
     // Dummy data -> query from database later
     // setBudget(
-    //   [
-    //     { name: 'Rent', amount: '1200' },
-    //     { name: 'Groceries', amount: '200' },
-    //     { name: 'Gas', amount: '150' },
-    //     { name: 'Pet supplies', amount: '200' },
-    //     { name: 'Shopping', amount: '200' },
-    //   ],
+    // [
+    // { name: 'Rent', amount: 1200 },
+    // { name: 'Groceries', amount: 200 },
+    // { name: 'Gas', amount: 150 },
+    // { name: 'Pet supplies', amount: 200 },
+    // { name: 'Shopping', amount: 200 },
+    // ],
     // );
     setIncome(8000);
     getData();
@@ -124,11 +123,11 @@ function BudgetBreakdown() {
     for (let i = 0; i < inputs.length - 2; i += 2) {
       const each = {
         name: '',
-        amount: '',
+        amount: 0,
       };
       if (inputs[i].type === 'text') {
         each.name = inputs[i].value;
-        each.amount = inputs[i + 1].value;
+        each.amount = parseInt(inputs[i + 1].value, 10);
       }
       if (each.name !== '') {
         updatedBudget.push(each);
