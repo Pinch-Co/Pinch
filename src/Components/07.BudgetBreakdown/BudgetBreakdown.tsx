@@ -1,5 +1,7 @@
+/* eslint-disable no-console */
 /* eslint-disable max-len */
 import * as React from 'react';
+import axios from 'axios';
 
 function BudgetBreakdown() {
   const [budget, setBudget] = React.useState<any>([]);
@@ -8,6 +10,38 @@ function BudgetBreakdown() {
   const [total, setTotal] = React.useState<number>(0);
   const [editBudget, setEditBudget] = React.useState<boolean>(false);
   const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>(['1']);
+
+  const getData = (): any => {
+    axios.post('/graphql', {
+      query: `query {
+        getUserInfo(id: "123456789abc") {
+          budget {
+            name
+            amount
+          }
+        }
+      }`,
+    }).then((res) => {
+      console.log('Query success!');
+      console.log(res.data);
+    }).catch((err) => {
+      console.log(err);
+      console.log('Query failed!');
+    });
+  };
+
+  const postData = (): void => {
+    axios.post('/graphql', {
+      query: `mutation {
+        createBudget(id: "123456789abc",  budget: ${budget}
+      }`,
+    }).then(() => {
+      console.log('Post success!');
+    }).catch((err) => {
+      console.log('Post failed!');
+      console.log(err);
+    });
+  };
 
   React.useEffect(() => {
     // Dummy data -> query from database later
@@ -20,7 +54,8 @@ function BudgetBreakdown() {
     //     { name: 'Shopping', amount: '200' },
     //   ],
     // );
-    // setIncome(8000);
+    setIncome(8000);
+    getData();
   }, []);
 
   React.useEffect(() => {
@@ -31,6 +66,8 @@ function BudgetBreakdown() {
         sum += parseInt(budget[i].amount, 10);
       }
       setTotal(sum);
+      // Post to database
+      postData();
     } else {
       setShowAdd(true);
     }
@@ -102,6 +139,7 @@ function BudgetBreakdown() {
       setBudget(updatedBudget);
       setEditBudget(false);
     } else {
+      // eslint-disable-next-line no-alert
       window.alert('Please fill out all fields');
     }
   };
