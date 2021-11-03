@@ -20,13 +20,12 @@ function BudgetBreakdown() {
         getUserInfo(id: ${JSON.stringify(objectId)}) {
           budget {
             name
-            amount
+            value
           }
         }
       }`,
     }).then((res) => {
       const data = res.data.data.getUserInfo.budget;
-      console.log('data from GET request', data);
       setBudget(data);
     }).catch((err) => {
       console.log(err);
@@ -61,7 +60,7 @@ function BudgetBreakdown() {
     //   ],
     // );
     setIncome(8000);
-    setObjectId('618173401611f20916388243');
+    setObjectId('6182bc611fb1249632b3107a');
   }, []);
 
   React.useEffect(() => {
@@ -76,7 +75,7 @@ function BudgetBreakdown() {
       // setShowAdd(false);
       let sum = 0;
       for (let i = 0; i < budget.length; i += 1) {
-        sum += budget[i].amount;
+        sum += budget[i].value;
       }
       setTotal(sum);
       // Post to database
@@ -137,11 +136,11 @@ function BudgetBreakdown() {
     for (let i = 0; i < inputs.length - 2; i += 2) {
       const each = {
         name: '',
-        amount: 0,
+        value: 0,
       };
       if (inputs[i].type === 'text') {
         each.name = inputs[i].value;
-        each.amount = parseInt(inputs[i + 1].value, 10);
+        each.value = parseInt(inputs[i + 1].value, 10);
       }
       if (each.name !== '') {
         updatedBudget.push(each);
@@ -149,7 +148,6 @@ function BudgetBreakdown() {
     }
 
     if (updatedBudget.length && income > 0) {
-      console.log('Updated budget1:', updatedBudget);
       setBudget(updatedBudget);
       setEditBudget(false);
     } else {
@@ -160,7 +158,7 @@ function BudgetBreakdown() {
 
   const editAddExpense = (): void => {
     const temp = budget.splice(0);
-    temp.push({ name: '', amount: '' });
+    temp.push({ name: '', value: '' });
     setBudget(temp);
   };
 
@@ -226,7 +224,7 @@ function BudgetBreakdown() {
                               </div>
                               <div className="bb-budget-dollars">
                                 $
-                                {expense.amount}
+                                {expense.value}
                               </div>
                             </div>
                           ))
@@ -267,7 +265,7 @@ function BudgetBreakdown() {
                                 <div className="bb-input-title">Amount</div>
                                 <div className="bb-input-box">
                                   <span className="bb-prefix">$</span>
-                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.amount} />
+                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.value} />
                                 </div>
                               </label>
                               <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}><img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/trashcan-512.png" alt="delete icon" className="bb-delete-icon" /></button>
