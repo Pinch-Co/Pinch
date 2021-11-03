@@ -291,6 +291,9 @@
 // Chart side
 .bb-right {
   position: relative;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
   width: 600px;
   height: 100%;
   .bb-chart-div {
@@ -298,6 +301,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
   }
   .bb-chart {
     width: 100%;
