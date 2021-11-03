@@ -73,11 +73,14 @@ const BudgetCharts: React.FC<Props> = ({
             {income}
           </div>
         )
-        : <div className="bb-chart-new">Create new budget to see chart!</div>}
-      <select className="bb-chart-type" onChange={(e: any) => changeChartType(e)}>
-        <option value="pie">Pie Chart</option>
-        <option value="bar">Bar Graph</option>
-      </select>
+        : <div className="bb-chart-new">Create new budget to see a chart!</div>}
+      {total
+        ? (
+          <select className="bb-chart-type" onChange={(e: any) => changeChartType(e)}>
+            <option value="pie">Pie Chart</option>
+            <option value="bar">Bar Graph</option>
+          </select>
+        ) : null}
     </div>
   );
 };

@@ -34,7 +34,7 @@ const AddBudget: React.FC<Props> = ({
               </div>
             </label>
             <label htmlFor="bb-add-input-income" className="bb-add-input-group">
-              <div className="bb-input-title">Amount</div>
+              <div className="bb-input-title" id="bb-input-amount">Amount</div>
               <div className="bb-input-box">
                 <span className="bb-prefix">$</span>
                 <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" />

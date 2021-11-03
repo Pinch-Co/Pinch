@@ -97,34 +97,30 @@ function BudgetBreakdown() {
   const sortExpenses = (e: any): void => {
     e.preventDefault();
     if (e.target.value === 'alphabetical-AtoZ') {
-      const sortedBudget = budget.splice(0);
+      const sortedBudget = budget.slice(0);
       sortedBudget.sort((a: any, b: any) => {
         if (a.name > b.name) { return 1; }
-        if (a.name < b.name) { return -1; }
         return -1;
       });
       setBudget(sortedBudget);
     } else if (e.target.value === 'alphabetical-ZtoA') {
-      const sortedBudget = budget.splice(0);
+      const sortedBudget = budget.slice(0);
       sortedBudget.sort((a: any, b: any) => {
         if (a.name < b.name) { return 1; }
-        if (a.name > b.name) { return -1; }
         return -1;
       });
       setBudget(sortedBudget);
     } else if (e.target.value === 'price-highest') {
-      const sortedBudget = budget.splice(0);
+      const sortedBudget = budget.slice(0);
       sortedBudget.sort((a: any, b: any) => {
-        if (a > b) { return -1; }
-        if (a < b) { return 1; }
+        if (a.value < b.value) { return 1; }
         return -1;
       });
       setBudget(sortedBudget);
     } else if (e.target.value === 'price-lowest') {
-      const sortedBudget = budget.splice(0);
+      const sortedBudget = budget.slice(0);
       sortedBudget.sort((a: any, b: any) => {
-        if (a < b) { return -1; }
-        if (a > b) { return 1; }
+        if (a.value > b.value) { return 1; }
         return -1;
       });
       setBudget(sortedBudget);
