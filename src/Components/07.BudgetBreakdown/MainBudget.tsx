@@ -12,12 +12,12 @@ interface Props {
   budget: any;
   deleteExpense: Function;
   editAddExpense: any;
-
+  deleteBudget: Function;
 }
 
 const MainBudget: React.FC<Props> = ({
   editBudget, income, setNewIncome, sortExpenses, setEditBudget, total,
-  setNewBudget, budget, deleteExpense, editAddExpense,
+  setNewBudget, budget, deleteExpense, editAddExpense, deleteBudget,
 }) => (
   <>
     <div className="bb-budget-top">
@@ -49,7 +49,18 @@ const MainBudget: React.FC<Props> = ({
           </select>
         ) : null}
       </div>
-      {!editBudget ? <button type="button" className="bb-budget-top-right" onClick={() => setEditBudget(true)}>Edit</button> : <button type="button" className="bb-budget-top-right" onClick={() => setEditBudget(false)}>Cancel</button>}
+      <div className="bb-budget-top-right">
+        {!editBudget
+          ? (
+            <button type="button" className="bb-budget-edit-btn" onClick={() => setEditBudget(true)}>Edit</button>
+          )
+          : (
+            <>
+              <button type="button" className="bb-budget-delete-btn" onClick={() => deleteBudget()}>Delete Budget</button>
+              <button type="button" className="bb-budget-edit-btn" onClick={() => setEditBudget(false)}>Cancel</button>
+            </>
+          )}
+      </div>
     </div>
     <div className="bb-budget-middle">
       {!editBudget

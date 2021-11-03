@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-console */
 /* eslint-disable max-len */
 import React, { useState, useEffect } from 'react';
@@ -43,8 +44,6 @@ function BudgetBreakdown() {
           name
         }
       }`,
-    }).then(() => {
-      setShowAdd(false);
     }).catch((err) => {
       console.log(err);
     });
@@ -73,17 +72,19 @@ function BudgetBreakdown() {
   }, [objectId]);
 
   useEffect(() => {
-    if (budget.length > 0) {
-      // setShowAdd(false);
+    if (budget.length > 0 && JSON.stringify(budget[0]) !== JSON.stringify({ name: '', value: null })) {
       let sum = 0;
       for (let i = 0; i < budget.length; i += 1) {
         sum += budget[i].value;
       }
+      setShowAdd(false);
       setTotal(sum);
       // Post to database
       postData();
     } else {
+      setTotal(0);
       setShowAdd(true);
+      postData();
     }
   }, [budget]);
 
@@ -175,6 +176,14 @@ function BudgetBreakdown() {
     setNumberOfExpenses(temp);
   };
 
+  const deleteBudget = (): void => {
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm('Are you sure you want to delete budget?')) {
+      setBudget([{ name: '', value: null }]);
+      setShowAdd(true);
+    }
+  };
+
   return (
     <div className="bb-container">
       <div className="bb-mid-div">
@@ -193,6 +202,7 @@ function BudgetBreakdown() {
                   budget={budget}
                   deleteExpense={deleteExpense}
                   editAddExpense={editAddExpense}
+                  deleteBudget={deleteBudget}
                 />
               </div>
             )

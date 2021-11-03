@@ -3550,6 +3550,10 @@
   padding: 20px;
 }
 
+.bb-left .bb-budget-box .bb-budget-div {
+  width: 100%;
+}
+
 .bb-left .bb-budget-box .bb-budget-top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3608,18 +3612,40 @@
 }
 
 .bb-left .bb-budget-box .bb-budget-top .bb-budget-top-right {
-  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin: 20px;
-  font-size: 18px;
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.1px solid black;
 }
 
-.bb-left .bb-budget-box .bb-budget-top .bb-budget-top-right:hover {
+.bb-left .bb-budget-box .bb-budget-top .bb-budget-edit-btn {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e4e4e4;
+}
+
+.bb-left .bb-budget-box .bb-budget-top .bb-budget-edit-btn:hover {
+  background-color: #dddddd;
+}
+
+.bb-left .bb-budget-box .bb-budget-top .bb-budget-delete-btn {
+  cursor: pointer;
+  margin-right: 15px;
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e4e4e4;
+}
+
+.bb-left .bb-budget-box .bb-budget-top .bb-budget-delete-btn:hover {
   background-color: #dddddd;
 }
 
@@ -3787,12 +3813,10 @@
   position: relative;
   top: 3px;
   font-size: 18px;
-  padding: 8px;
+  padding: 12px;
   border-radius: 5px;
   border: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.1px solid black;
+  background-color: #e4e4e4;
   padding: 6px;
   cursor: pointer;
 }
@@ -3804,12 +3828,10 @@
 .bb-add-custom-btn {
   cursor: pointer;
   font-size: 18px;
-  padding: 8px;
+  padding: 12px;
   border-radius: 5px;
   border: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.1px solid black;
+  background-color: #e4e4e4;
 }
 
 .bb-add-custom-btn:hover {
@@ -3819,12 +3841,10 @@
 .bb-submit-custom-btn {
   cursor: pointer;
   font-size: 18px;
-  padding: 8px;
+  padding: 12px;
   border-radius: 5px;
   border: none;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-          box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  border: 0.1px solid black;
+  background-color: #e4e4e4;
   margin-right: 20px;
   background-color: #4fcec5;
 }
@@ -3958,7 +3978,6 @@
 .bb-right .bb-chart {
   width: 100%;
   height: 600px;
-  border: 1px solid red;
 }
 
 .bb-right .bb-chart-type {
@@ -3969,6 +3988,13 @@
 
 .bb-right .bb-chart-data {
   position: absolute;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.bb-right .bb-chart-new {
+  position: absolute;
+  top: 100px;
   font-weight: bold;
   font-size: 30px;
 }

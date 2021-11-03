@@ -11,7 +11,7 @@ interface Props {
 const AddBudget: React.FC<Props> = ({
   setNewIncome, setNewBudget, numberOfExpenses, deleteExpense, addExpense,
 }) => (
-  <div>
+  <div className="bb-budget-div">
     <div className="bb-budget-top">
       <h1>Create new budget</h1>
     </div>

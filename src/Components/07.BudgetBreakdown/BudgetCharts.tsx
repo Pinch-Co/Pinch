@@ -63,13 +63,17 @@ const BudgetCharts: React.FC<Props> = ({
             )}
         </ResponsiveContainer>
       </div>
-      <div className="bb-chart-data">
-        $
-        {total}
-        {' / '}
-        $
-        {income}
-      </div>
+      {total
+        ? (
+          <div className="bb-chart-data">
+            $
+            {total}
+            {' / '}
+            $
+            {income}
+          </div>
+        )
+        : <div className="bb-chart-new">Create new budget to see chart!</div>}
       <select className="bb-chart-type" onChange={(e: any) => changeChartType(e)}>
         <option value="pie">Pie Chart</option>
         <option value="bar">Bar Graph</option>
