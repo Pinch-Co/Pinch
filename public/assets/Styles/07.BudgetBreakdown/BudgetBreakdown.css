@@ -487,6 +487,12 @@
   font-size: 20px;
 }
 
+@media screen and (max-width: 589px) {
+  .bb-add-input-group #bb-input-amount {
+    margin-top: -20px;
+  }
+}
+
 .bb-add-input-group .bb-input-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -603,6 +609,13 @@
   top: 100px;
   font-weight: bold;
   font-size: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #35aaa4;
+  color: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: default;
 }
 
 @media screen and (max-width: 1000px) {

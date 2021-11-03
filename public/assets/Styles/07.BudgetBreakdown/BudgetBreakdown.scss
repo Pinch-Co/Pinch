@@ -225,6 +225,11 @@
   .bb-input-title {
     font-size: 20px;
   }
+  #bb-input-amount {
+    @media screen and (max-width: 589px) {
+      margin-top: -20px;
+    }
+  }
   .bb-input-box {
     display: flex;
     align-items: center;
@@ -313,6 +318,12 @@
     top: 100px;
     font-weight: bold;
     font-size: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgb(53, 170, 164);
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    cursor: default;
   }
   @media screen and (max-width: 1000px) {
     width: 100%;
