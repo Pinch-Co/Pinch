@@ -1,19 +1,20 @@
 /* eslint-disable no-console */
 /* eslint-disable max-len */
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import BudgetCharts from './BudgetCharts';
 import AddBudget from './AddBudget';
 import MainBudget from './MainBudget';
 
 function BudgetBreakdown() {
-  const [budget, setBudget] = React.useState<any>([]);
-  const [income, setIncome] = React.useState<number>(0);
-  const [showAdd, setShowAdd] = React.useState<boolean>(true);
-  const [total, setTotal] = React.useState<number>(0);
-  const [editBudget, setEditBudget] = React.useState<boolean>(false);
-  const [numberOfExpenses, setNumberOfExpenses] = React.useState<string[]>(['1']);
-  const [objectId, setObjectId] = React.useState<string>();
+  const [budget, setBudget] = useState<any>([]);
+  const [income, setIncome] = useState<number>(0);
+  const [showAdd, setShowAdd] = useState<boolean>(true);
+  const [total, setTotal] = useState<number>(0);
+  const [editBudget, setEditBudget] = useState<boolean>(false);
+  const [numberOfExpenses, setNumberOfExpenses] = useState<string[]>(['1']);
+  const [objectId, setObjectId] = useState<string>();
+  const [chartType, setChartType] = useState<string>('pie');
 
   const getData = (): any => {
     axios.post('/graphql', {
@@ -49,7 +50,7 @@ function BudgetBreakdown() {
     });
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Dummy data -> query from database later
     // setBudget(
     //   [
@@ -64,14 +65,14 @@ function BudgetBreakdown() {
     setObjectId('6182bc611fb1249632b3107a');
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Used to retrieve Object ID of user
     if (objectId) {
       getData();
     }
   }, [objectId]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (budget.length > 0) {
       // setShowAdd(false);
       let sum = 0;
@@ -203,7 +204,7 @@ function BudgetBreakdown() {
             )}
         </div>
         <div className="bb-right">
-          <BudgetCharts chartData={budget} />
+          <BudgetCharts chartData={budget} total={total} income={income} setChartType={setChartType} chartType={chartType} />
         </div>
       </div>
     </div>
