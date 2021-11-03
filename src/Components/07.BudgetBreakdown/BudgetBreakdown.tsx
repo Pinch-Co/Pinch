@@ -35,12 +35,12 @@ function BudgetBreakdown() {
     });
   };
 
-  const postData = (): void => {
+  const postData = (budg: any): void => {
     axios.post('/graphql', {
       query: `mutation {
         createBudget(
           id: ${JSON.stringify(objectId)},
-          budget: ${JSON.stringify(budget).replace(/"([^(")"]+)":/g, '$1:')}) {
+          budget: ${JSON.stringify(budg).replace(/"([^(")"]+)":/g, '$1:')}) {
           name
         }
       }`,
@@ -80,19 +80,20 @@ function BudgetBreakdown() {
       setShowAdd(false);
       setTotal(sum);
       // Post to database
-      postData();
+      let filteredBudget = budget.slice(0);
+      filteredBudget = filteredBudget.filter((expense: any) => {
+        if (expense.value !== '') {
+          return true;
+        }
+        return false;
+      });
+      postData(filteredBudget);
     } else {
       setTotal(0);
       setShowAdd(true);
-      postData();
+      postData(budget);
     }
   }, [budget]);
-
-  const deleteExpense = (e: any, i: number): void => {
-    e.preventDefault();
-    const elToRemove = document.getElementById(`bb-edit-row-${i}`);
-    elToRemove?.remove();
-  };
 
   const sortExpenses = (e: any): void => {
     e.preventDefault();
@@ -127,6 +128,11 @@ function BudgetBreakdown() {
     }
   };
 
+  const isValidInput = (num: string): boolean => {
+    const reg = new RegExp('^[0-9]+$');
+    return reg.test(num);
+  };
+
   const setNewBudget = (e: any): any => {
     e.preventDefault();
     const myForm = document.getElementById('bb-form-edit');
@@ -137,21 +143,21 @@ function BudgetBreakdown() {
         name: '',
         value: 0,
       };
-      if (inputs[i].type === 'text') {
+      if (inputs[i].type === 'text' && isValidInput(inputs[i + 1].value)) {
         each.name = inputs[i].value;
         each.value = parseInt(inputs[i + 1].value, 10);
       }
-      if (each.name !== '') {
+      if (each.name !== '' && each.value) {
         updatedBudget.push(each);
       }
     }
 
-    if (updatedBudget.length && income > 0) {
+    if (updatedBudget.length && income > 0 && isValidInput(income.toString())) {
       setBudget(updatedBudget);
       setEditBudget(false);
     } else {
       // eslint-disable-next-line no-alert
-      window.alert('Please fill out all fields');
+      window.alert('Please enter valid inputs.');
     }
   };
 
@@ -170,6 +176,12 @@ function BudgetBreakdown() {
     const temp = numberOfExpenses.splice(0);
     temp.push('1');
     setNumberOfExpenses(temp);
+  };
+
+  const deleteExpense = (e: any, i: number): void => {
+    e.preventDefault();
+    const elToRemove = document.getElementById(`bb-edit-row-${i}`);
+    elToRemove?.remove();
   };
 
   const deleteBudget = (): void => {
