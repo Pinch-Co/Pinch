@@ -2,7 +2,8 @@
 /* eslint-disable max-len */
 import * as React from 'react';
 import axios from 'axios';
-// import BudgetCharts from './BudgetCharts';
+import BudgetCharts from './BudgetCharts';
+import AddBudget from './AddBudget';
 
 function BudgetBreakdown() {
   const [budget, setBudget] = React.useState<any>([]);
@@ -19,12 +20,14 @@ function BudgetBreakdown() {
         getUserInfo(id: ${JSON.stringify(objectId)}) {
           budget {
             name
-            value
+            amount
           }
         }
       }`,
     }).then((res) => {
-      setBudget(res.data.data.getUserInfo.budget);
+      const data = res.data.data.getUserInfo.budget;
+      console.log('data from GET request', data);
+      setBudget(data);
     }).catch((err) => {
       console.log(err);
     });
@@ -39,6 +42,8 @@ function BudgetBreakdown() {
           name
         }
       }`,
+    }).then(() => {
+      setShowAdd(false);
     }).catch((err) => {
       console.log(err);
     });
@@ -47,13 +52,13 @@ function BudgetBreakdown() {
   React.useEffect(() => {
     // Dummy data -> query from database later
     // setBudget(
-    // [
-    // { name: 'Rent', value: 1200 },
-    // { name: 'Groceries', value: 200 },
-    // { name: 'Gas', value: 150 },
-    // { name: 'Pet supplies', value: 200 },
-    // { name: 'Shopping', value: 200 },
-    // ],
+    //   [
+    //     { name: 'Rent', value: 1200 },
+    //     { name: 'Groceries', value: 200 },
+    //     { name: 'Gas', value: 150 },
+    //     { name: 'Pet supplies', value: 200 },
+    //     { name: 'Shopping', value: 200 },
+    //   ],
     // );
     setIncome(8000);
     setObjectId('618173401611f20916388243');
@@ -68,10 +73,10 @@ function BudgetBreakdown() {
 
   React.useEffect(() => {
     if (budget.length > 0) {
-      setShowAdd(false);
+      // setShowAdd(false);
       let sum = 0;
       for (let i = 0; i < budget.length; i += 1) {
-        sum += budget[i].value;
+        sum += budget[i].amount;
       }
       setTotal(sum);
       // Post to database
@@ -132,11 +137,11 @@ function BudgetBreakdown() {
     for (let i = 0; i < inputs.length - 2; i += 2) {
       const each = {
         name: '',
-        value: 0,
+        amount: 0,
       };
       if (inputs[i].type === 'text') {
         each.name = inputs[i].value;
-        each.value = parseInt(inputs[i + 1].value, 10);
+        each.amount = parseInt(inputs[i + 1].value, 10);
       }
       if (each.name !== '') {
         updatedBudget.push(each);
@@ -144,6 +149,7 @@ function BudgetBreakdown() {
     }
 
     if (updatedBudget.length && income > 0) {
+      console.log('Updated budget1:', updatedBudget);
       setBudget(updatedBudget);
       setEditBudget(false);
     } else {
@@ -154,7 +160,7 @@ function BudgetBreakdown() {
 
   const editAddExpense = (): void => {
     const temp = budget.splice(0);
-    temp.push({ name: '', value: '' });
+    temp.push({ name: '', amount: '' });
     setBudget(temp);
   };
 
@@ -220,7 +226,7 @@ function BudgetBreakdown() {
                               </div>
                               <div className="bb-budget-dollars">
                                 $
-                                {expense.value}
+                                {expense.amount}
                               </div>
                             </div>
                           ))
@@ -261,7 +267,7 @@ function BudgetBreakdown() {
                                 <div className="bb-input-title">Amount</div>
                                 <div className="bb-input-box">
                                   <span className="bb-prefix">$</span>
-                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.value} />
+                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.amount} />
                                 </div>
                               </label>
                               <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}><img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/trashcan-512.png" alt="delete icon" className="bb-delete-icon" /></button>
@@ -279,46 +285,12 @@ function BudgetBreakdown() {
             : (
               // Add new budget
               <div className="bb-budget-box">
-                <div className="bb-budget-top">
-                  <h1>Create new budget</h1>
-                </div>
-                <div className="bb-edit-form">
-                  <form className="bb-add-input-group">
-                    <div className="bb-input-title">Monthly Income:</div>
-                    <div className="bb-input-box">
-                      <span className="bb-prefix">$</span>
-                      <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" onChange={(e: any) => setNewIncome(e)} />
-                    </div>
-                  </form>
-                  <form className="bb-form-edit" id="bb-form-edit" onSubmit={(e: any) => setNewBudget(e)}>
-                    {numberOfExpenses.map((row: any, i: number) => (
-                      // eslint-disable-next-line react/no-array-index-key
-                      <div className="bb-add-custom-row" key={row + i} id={`bb-edit-row-${i}`}>
-                        <label className="bb-add-input-group" htmlFor="bb-add-input-income">
-                          <div className="bb-input-title">Expense Name</div>
-                          <div className="bb-input-box">
-                            <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" />
-                          </div>
-                        </label>
-                        <label htmlFor="bb-add-input-income" className="bb-add-input-group">
-                          <div className="bb-input-title">Amount</div>
-                          <div className="bb-input-box">
-                            <span className="bb-prefix">$</span>
-                            <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" />
-                          </div>
-                        </label>
-                        {i > 0 ? <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}><img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/trashcan-512.png" alt="delete icon" className="bb-delete-icon" /></button> : null}
-                      </div>
-                    ))}
-                    <input type="submit" onClick={(e: any) => setNewBudget(e)} className="bb-submit-custom-btn" value="Submit" />
-                    <button type="button" className="bb-add-custom-btn" onClick={addExpense}>Add +1 expense</button>
-                  </form>
-                </div>
+                <AddBudget setNewIncome={setNewIncome} setNewBudget={setNewBudget} numberOfExpenses={numberOfExpenses} deleteExpense={deleteExpense} addExpense={addExpense} />
               </div>
             )}
         </div>
         <div className="bb-right">
-          {/* <BudgetCharts chartData={budget} /> */}
+          <BudgetCharts chartData={budget} />
         </div>
       </div>
     </div>
