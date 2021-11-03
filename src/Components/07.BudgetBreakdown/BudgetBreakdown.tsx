@@ -4,6 +4,7 @@ import * as React from 'react';
 import axios from 'axios';
 import BudgetCharts from './BudgetCharts';
 import AddBudget from './AddBudget';
+import MainBudget from './MainBudget';
 
 function BudgetBreakdown() {
   const [budget, setBudget] = React.useState<any>([]);
@@ -180,104 +181,18 @@ function BudgetBreakdown() {
           {!showAdd
             ? (
               <div className="bb-budget-box">
-                <div className="bb-budget-top">
-                  <div className="bb-budget-top-left">
-                    <h1>Budget Breakdown</h1>
-                    {!editBudget
-                      ? (
-                        <div className="bb-income">
-                          Monthly Income: $
-                          {income}
-                        </div>
-                      )
-                      : (
-                        <form>
-                          Income:
-                          <div className="bb-input-box-income">
-                            <span className="bb-prefix-income">$</span>
-                            <input type="text" id="bb-add-input-income" className="bb-input-field-income" autoComplete="off" defaultValue={income} onChange={(e: any) => setNewIncome(e)} />
-                          </div>
-                        </form>
-                      )}
-                    {!editBudget ? (
-                      <select onChange={(e: any) => sortExpenses(e)} className="bb-sort" name="sort" id="bb-sort-select">
-                        <option defaultValue="Sort">Sort</option>
-                        <option value="price-highest">Price Highest to Lowest</option>
-                        <option value="price-lowest">Price Lowest to Highest</option>
-                        <option value="alphabetical-AtoZ">Alphabetical A to Z</option>
-                        <option value="alphabetical-ZtoA">Alphabetical Z to A</option>
-                      </select>
-                    ) : null}
-                  </div>
-                  {!editBudget ? <button type="button" className="bb-budget-top-right" onClick={() => setEditBudget(true)}>Edit</button> : <button type="button" className="bb-budget-top-right" onClick={() => setEditBudget(false)}>Cancel</button>}
-                </div>
-                <div className="bb-budget-middle">
-                  {!editBudget
-                    ? (
-                      <>
-                        {
-                          budget.map((expense: any, i: number) => (
-                            // eslint-disable-next-line react/no-array-index-key
-                            <div key={expense.name + i} className="bb-budget-middle-row">
-                              <div className="bb-budget-category">
-                                {expense.name}
-                              </div>
-                              <div className="bb-budget-dollars">
-                                $
-                                {expense.value}
-                              </div>
-                            </div>
-                          ))
-                        }
-                        <div className="bb-budget-bottom">
-                          <div className="bb-budget-total">
-                            <div className="bb-budget-total-title">Total:</div>
-                            <div className="bb-budget-total-amount>">
-                              $
-                              {total.toString()}
-                            </div>
-                          </div>
-                          <div className="bb-budget-difference">
-                            <div className="bb-budget-total-title">Remaining:</div>
-                            <div className="bb-budget-total-amount>">
-                              <div className="bb-income">
-                                $
-                                {income - total}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </>
-                    )
-                    : (
-                      <div className="bb-edit-form">
-                        <form className="bb-form-edit" id="bb-form-edit" onSubmit={(e: any) => setNewBudget(e)}>
-                          {budget.map((row: any, i: number) => (
-                            // eslint-disable-next-line react/no-array-index-key
-                            <div className="bb-add-custom-row" key={row.name + i} id={`bb-edit-row-${i}`}>
-                              <label className="bb-add-input-group" htmlFor="bb-add-input-income">
-                                <div className="bb-input-title">Name</div>
-                                <div className="bb-input-box">
-                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.name} />
-                                </div>
-                              </label>
-                              <label htmlFor="bb-add-input-income" className="bb-add-input-group">
-                                <div className="bb-input-title">Amount</div>
-                                <div className="bb-input-box">
-                                  <span className="bb-prefix">$</span>
-                                  <input type="text" id="bb-add-input-income" className="bb-input-field" autoComplete="off" defaultValue={row.value} />
-                                </div>
-                              </label>
-                              <button type="button" className="bb-delete-custom-btn" onClick={(e: any) => deleteExpense(e, i)}><img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/trashcan-512.png" alt="delete icon" className="bb-delete-icon" /></button>
-                            </div>
-                          ))}
-                          <input type="submit" onClick={(e: any) => setNewBudget(e)} className="bb-submit-custom-btn" value="Update" />
-                          <button type="button" className="bb-add-custom-btn" onClick={editAddExpense}>Add +1 expense</button>
-                        </form>
-                      </div>
-                    )}
-
-                </div>
+                <MainBudget
+                  editBudget={editBudget}
+                  income={income}
+                  setNewIncome={setNewIncome}
+                  sortExpenses={sortExpenses}
+                  setEditBudget={setEditBudget}
+                  total={total}
+                  setNewBudget={setNewBudget}
+                  budget={budget}
+                  deleteExpense={deleteExpense}
+                  editAddExpense={editAddExpense}
+                />
               </div>
             )
             : (
