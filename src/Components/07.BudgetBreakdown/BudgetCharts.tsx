@@ -28,39 +28,42 @@ const BudgetCharts: React.FC<Props> = ({
 
   return (
     <div className="bb-chart-div">
-      <div className="bb-chart">
-        {chartType === 'pie'
-          ? (
-            <ResponsiveContainer>
-              <PieChart width={600} height={600}>
-                <Pie
-                  data={localData}
-                  dataKey="value"
-                  label
-                  fill="#61aaa4"
-                />
-              </PieChart>
-            </ResponsiveContainer>
-          ) : (
-            <ResponsiveContainer>
-              <BarChart
-                width={600}
-                height={600}
-                data={localData}
-                margin={{
-                  top: 30, right: 30, left: 0, bottom: 0,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis dataKey="value" />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="value" fill="#61aaa4" label={{ position: 'top' }} />
-              </BarChart>
-            </ResponsiveContainer>
-          )}
-      </div>
+      {total
+        ? (
+          <div className="bb-chart">
+            {chartType === 'pie'
+              ? (
+                <ResponsiveContainer>
+                  <PieChart width={600} height={600}>
+                    <Pie
+                      data={localData}
+                      dataKey="value"
+                      label
+                      fill="#61aaa4"
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+              ) : (
+                <ResponsiveContainer>
+                  <BarChart
+                    width={600}
+                    height={600}
+                    data={localData}
+                    margin={{
+                      top: 30, right: 30, left: 0, bottom: 0,
+                    }}
+                  >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" />
+                    <YAxis dataKey="value" />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey="value" fill="#61aaa4" label={{ position: 'top' }} />
+                  </BarChart>
+                </ResponsiveContainer>
+              )}
+          </div>
+        ) : null}
       {total
         ? (
           <div className="bb-chart-data">
