@@ -36,7 +36,7 @@ function UserSettings() {
     event.preventDefault();
 
     alert('WOW YOU ARE DELETING YOUR ACCOUNT!');
-
+    // id is currently hard coded but will be passdown as prop soon
     axios.post('/graphql', JSON.stringify({
       query: `mutation {
         deleteOneAccount {
