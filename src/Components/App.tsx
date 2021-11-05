@@ -2,6 +2,7 @@ import * as React from 'react';
 import {
   useState,
   useEffect,
+  createContext,
 } from 'react';
 import {
   HashRouter,
@@ -25,11 +26,16 @@ import BudgetBreakdown from './07.BudgetBreakdown/BudgetBreakdown';
 import Subscriptions from './08.Subscriptions/Subscriptions';
 import CreditPayments from './09.CreditPayments/CreditPayments';
 
-function App() {
+function App(props: any) {
   // eslint-disable-next-line
   const [state, setState] = useState({ state: ' ' });
   const [authenticated, setAuth] = useState<boolean>(true);
-  const [showNav, setNav] = useState<boolean>(true); // make sure to make these false when done
+  const [user, setUser] = useState<any>();
+  const [showNav, setNav] = useState<boolean>(true); // make sure to makethese false when done
+
+  console.log(props);
+
+  const UserContext = createContext<any | undefined>(null);
 
   const verifyAuth = () => {
     axios.get('/graphql?query={authenticated{id}}')
@@ -55,22 +61,24 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/additional-info" component={Additionalinfo} />
-          <div>
-            <Header {...authenticated} />
-            {showNav
-              ? <Navbar />
-              : null}
-            <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <ProtectedRoute path="/home/settings" component={Settings} authenticated={authenticated} />
-            <ProtectedRoute path="/home/goals" component={Goals} authenticated={authenticated} />
-            <ProtectedRoute path="/home/budget" component={BudgetBreakdown} authenticated={authenticated} />
-            <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
-            <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
-            {/* <Route exact path="*" component={NotFound} /> */}
-            <Footer />
-          </div>
+          <UserContext.Provider value={user}>
+            <div>
+              <Header {...authenticated} />
+              {showNav
+                ? <Navbar />
+                : null}
+              <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
+              <ProtectedRoute path="/home/settings" component={Settings} authenticated={authenticated} />
+              <ProtectedRoute path="/home/goals" component={Goals} authenticated={authenticated} />
+              <ProtectedRoute path="/home/budget" component={BudgetBreakdown} authenticated={authenticated} />
+              <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
+              <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
+              {/* <Route exact path="*" component={NotFound} /> */}
+              <Footer />
+            </div>
+          </UserContext.Provider>
         </Switch>
       </div>
     </HashRouter>

@@ -1,6 +1,8 @@
+/* eslint-disable no-shadow */
 import React, { useState } from 'react';
 import { RouteComponentProps, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { FiAlertTriangle } from 'react-icons/fi';
 import validateLogin from '../SharedComponents/05.Validation/loginCheck';
 
 interface OverviewProps extends RouteComponentProps<{ name: string }> { }
@@ -16,7 +18,7 @@ function Login(props: OverviewProps) {
   const [password, setPassword] = useState<string>('');
   const [validation, setErrors] = useState<Verrors>();
   // eslint-disable-next-line no-unused-vars
-  const [err, setErr] = useState([]);
+  const [err, setErr] = useState<string>('');
   const history = useHistory();
 
   const allValues: any = {
@@ -41,29 +43,41 @@ function Login(props: OverviewProps) {
     const headers = { 'Content-Type': 'application/json' };
 
     const returnedValidation = validateLogin(allValues);
-    setErrors(returnedValidation);
-
-    axios.post(
-      'http://localhost:4000/graphql',
-      JSON.stringify({
-        query: `mutation {login(email: "${email}", password: "${password}") {
-          user {
-            id
-            firstName
-            lastName
-            email
+    if (Object.keys(returnedValidation).length === 0) {
+      axios.post(
+        '/graphql',
+        JSON.stringify({
+          query: `mutation {login(email: "${email}", password: "${password}") {
+            user {
+              id
+              firstName
+              lastName
+              email
+              accessToken
+              itemId
+            }
           }
-        }
-      }`,
-      }), { headers },
-    )
-      .then((response) => {
-        // console.log('should redirect');
-        history.push('/home/overview');
-        const error = response.data.errors;
-        setErr(error);
-      })
-      .catch(() => { });
+        }`,
+        }), { headers },
+      )
+        .then((response) => {
+          const {
+            firstName, lastName, email,
+            id, accessToken, itemId,
+          } = response.data.data.login.user;
+          history.push({
+            pathname: '/home/overview',
+            state: {
+              firstName, lastName, email, id, accessToken, itemId,
+            },
+          });
+          const error = response.data.errors[0].message;
+          setErr(error);
+        })
+        .catch(() => { });
+    } else {
+      setErrors(returnedValidation);
+    }
   };
 
   return (
@@ -75,6 +89,17 @@ function Login(props: OverviewProps) {
             <img className="pinch-logo" src="https://i.imgur.com/MZQaH4n.png" alt="pinch logo" />
           </div>
           <div className="credentials-div">
+            {err
+              ? (
+                <div className="login-error-div">
+                  <FiAlertTriangle className="alert-icon" />
+                  <p className="login-error-message">
+                    {err}
+                    {' '}
+                    : email or password may be incorrect, please try again.
+                  </p>
+                </div>
+              ) : null}
             <div className="credentials-title">Login</div>
             <form className="login-form">
               <div className="login-input-title">Email Address</div>

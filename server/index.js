@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable import/extensions */
 const express = require('express');
 const session = require('express-session');
 const cors = require('cors');
@@ -7,7 +9,8 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const { ApolloServer } = require('apollo-server-express');
 const { GraphQLLocalStrategy, buildContext } = require('graphql-passport');
-const User = require('./User');
+const { UserModel } = require('../database/index.ts');
+// const User = require('./User');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 
@@ -36,16 +39,25 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 passport.deserializeUser((id, done) => {
-  const users = User.getUsers();
-  const matchingUser = users.find((user) => user.id === id);
-  done(null, matchingUser);
+  // eslint-disable-next-line quote-props
+  UserModel.findOne({ 'id': id })
+    .then((result) => {
+      const matchingUser = result;
+      console.log(matchingUser);
+      done(null, matchingUser);
+    })
+    .catch((error) => console.log(error));
 });
 passport.use(
   new GraphQLLocalStrategy((email, password, done) => {
-    const users = User.getUsers();
-    const matchingUser = users.find((user) => email === user.email && password === user.password);
-    const error = matchingUser ? null : new Error('no matching user');
-    done(error, matchingUser);
+    // eslint-disable-next-line quote-props
+    UserModel.findOne({ 'email': email, 'password': password })
+      .then((result) => {
+        const matched = result;
+        const error = matched ? null : new Error('no matching user');
+        done(error, matched);
+      })
+      .catch((error) => console.log('error', error));
   }),
 );
 

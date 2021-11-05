@@ -414,4 +414,43 @@
   text-align: center;
   color: #5d5d5d;
 }
+
+.login-error-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  padding: 1em;
+  background-color: #eb6666;
+}
+
+.login-error-div .login-error-message {
+  font-size: 1.1em;
+  color: #ededed;
+  text-align: center;
+}
+
+.login-error-div .alert-icon {
+  font-size: 1.5em;
+  margin-right: 0.5em;
+  color: white;
+}
 /*# sourceMappingURL=Login.css.map */

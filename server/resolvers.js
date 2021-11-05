@@ -1,12 +1,15 @@
 /* eslint-disable import/extensions */
 /* eslint-disable no-unused-vars */
 const {
-  newUserModel, getUserInfo, createNewGoals, updateGoal, makeBudget, deleteOneGoal, createSubs,
+  newUserModel, getUserInfo, createNewGoals,
+  updateGoal, makeBudget, deleteOneGoal,
+  createSubs, deleteAccount, getPassword,
 } = require('../database/models.ts');
 const {
   receivePublicToken,
   getTransactions,
   recieveAccessToken,
+  retrieveBalance,
 } = require('../api/controllers.js');
 
 const resolver = {
@@ -17,6 +20,10 @@ const resolver = {
       const result = await getUserInfo(args);
       return result[0];
     },
+    verifyPassword: async (parent, args) => {
+      const results = await getPassword(args);
+      return results;
+    },
     getLinkToken: async (parent, args) => {
       // gets Link Token from Plaid Api
       const result = await receivePublicToken();
@@ -24,6 +31,14 @@ const resolver = {
     },
     getAccess_Token: async (parent, args) => {
       const result = await recieveAccessToken(args);
+      return result;
+    },
+    getTransactionRecent: async (parent, args) => {
+      const result = await getTransactions(args);
+      return result;
+    },
+    getBalance: async (parent, args) => {
+      const result = await retrieveBalance(args);
       return result;
     },
   },
@@ -62,6 +77,10 @@ const resolver = {
     },
     addSubscription: async (parent, args) => {
       const results = createSubs(args);
+      return results;
+    },
+    deleteOneAccount: async (parent, args) => {
+      const results = deleteAccount(args);
       return results;
     },
   },

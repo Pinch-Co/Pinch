@@ -7,6 +7,7 @@ type User {
   lastName: String
   phone: String
   email: String
+  password: String
   goals:[Goal!]!
   budget: [Budget!]!
   subscriptions: [Subscription!]!
@@ -49,12 +50,47 @@ type accessToken {
   item_id: String
   request_id: String
 }
+type categoryArray {
+  value: [String]
+}
+type Transact {
+  account_id: String
+  amount: Float
+  authorized_date: String
+  category: [String]
+  category_Id: String
+  date: String
+  iso_currency_code: String
+  name: String
+  merchant_name: String
+  payment_channel: String
+  pending: Boolean
+  transaction_id: String
+  transaction_type: String
+}
+type BalanceBreakdown {
+  available: Float
+  current: Float
+  iso_currency_code: String
+}
+type Balance {
+  account_id: String
+  balances: BalanceBreakdown
+  mask: String
+  name: String
+  official_name: String
+  subtype: String
+  type: String
+}
 type Query {
   currentUser: User
   authenticated: User
   getUserInfo(id: String!): User
+  verifyPassword(email: String!): User
   getLinkToken: linkToken
   getAccess_Token(public_token: String): accessToken
+  getTransactionRecent(accessToken: String!): [Transact!]!
+  getBalance(accessToken: String!): [Balance!]!
 }
 type AuthPayload {
   user: User
@@ -70,6 +106,7 @@ type Mutation {
   updateGoalAmount(id: String!, original: Float, update: Float, fieldOfUpdate: String): User
   deleteGoal(id: String!, goalName: String!): User
   addSubscription(id: String!, subscriptions: [SubInput]): Subscription
+  deleteOneAccount(id: String): User
 }
 `;
 
