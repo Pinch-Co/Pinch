@@ -1,9 +1,11 @@
 /* eslint-disable no-shadow */
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { RouteComponentProps, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { FiAlertTriangle } from 'react-icons/fi';
 import validateLogin from '../SharedComponents/05.Validation/loginCheck';
+import { PinchContext } from '../SharedComponents/06.Context/PinchContext';
+import AppContext from '../SharedComponents/06.Context/AppContext';
 
 interface OverviewProps extends RouteComponentProps<{ name: string }> { }
 
@@ -20,6 +22,25 @@ function Login(props: OverviewProps) {
   // eslint-disable-next-line no-unused-vars
   const [err, setErr] = useState<string>('');
   const history = useHistory();
+
+  const {
+    setAuth,
+    setNav,
+  } = useContext(AppContext);
+
+  const verifyAuth = () => {
+    axios.get('/graphql?query={authenticated{id}}')
+      .then((response) => {
+        if (response.data.data.authenticated) {
+          setAuth(true);
+          setNav(true);
+        }
+      })
+      .catch((error) => {
+        setAuth(false);
+        console.log('in catch, error', error);
+      });
+  };
 
   const allValues: any = {
     // eslint-disable-next-line quote-props
@@ -40,8 +61,8 @@ function Login(props: OverviewProps) {
 
   // eslint-disable-next-line no-unused-vars
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
     const headers = { 'Content-Type': 'application/json' };
-
     const returnedValidation = validateLogin(allValues);
     if (Object.keys(returnedValidation).length === 0) {
       axios.post(
@@ -61,20 +82,23 @@ function Login(props: OverviewProps) {
         }), { headers },
       )
         .then((response) => {
-          const {
-            firstName, lastName, email,
-            id, accessToken, itemId,
-          } = response.data.data.login.user;
-          history.push({
-            pathname: '/home/overview',
-            state: {
-              firstName, lastName, email, id, accessToken, itemId,
-            },
-          });
-          const error = response.data.errors[0].message;
+          // const {
+          //   firstName, lastName, email,
+          //   id, accessToken, itemId,
+          // } = response.data.data.login.user;
+          let error;
+          if (response.data.errors) {
+            error = response.data.errors[0].message;
+          }
           setErr(error);
+          verifyAuth();
         })
-        .catch(() => { });
+        .then(() => {
+          setTimeout(() => {
+            history.push('/home/overview');
+          }, 500);
+        })
+        .catch((error) => console.log('there was an error', error));
     } else {
       setErrors(returnedValidation);
     }

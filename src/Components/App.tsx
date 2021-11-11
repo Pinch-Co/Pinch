@@ -2,13 +2,15 @@ import * as React from 'react';
 import {
   useState,
   useEffect,
+  // useContext,
+  // createContext,
 } from 'react';
 import {
   HashRouter,
   Route,
   Switch,
 } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios';
 import Overview from './05.Overview/Overview';
 import Home from './01.Homepage/Home';
 // import NotFound from './SharedComponents/NotFound/NotFound';
@@ -24,57 +26,56 @@ import Goals from './06.Goals/Goals';
 import BudgetBreakdown from './07.BudgetBreakdown/BudgetBreakdown';
 import Subscriptions from './08.Subscriptions/Subscriptions';
 import CreditPayments from './09.CreditPayments/CreditPayments';
+import AppContext from './SharedComponents/06.Context/AppContext';
 
 function App() {
-  // eslint-disable-next-line
-  const [state, setState] = useState({ state: ' ' });
   const [authenticated, setAuth] = useState<boolean>(true);
-  // const [user, setUser] = useState<any>();
-  const [showNav, setNav] = useState<boolean>(true); // make sure to makethese false when done
-
-  const verifyAuth = () => {
-    axios.get('/graphql?query={authenticated{id}}')
-      .then((response) => {
-        if (response.data.data.authenticated) {
-          setAuth(true);
-          setNav(true);
-        }
-      })
-      .catch(() => {
-        setAuth(false);
-      });
-  };
+  const [showNav, setNav] = useState<boolean>(true);
 
   useEffect(() => {
-    verifyAuth();
+    const auth = JSON.parse(localStorage.getItem('authBool') || '{}');
+    const navigation = JSON.parse(localStorage.getItem('nav') || '{}');
+    console.log('returned aut', auth);
+    setAuth(auth);
+    setNav(navigation);
   }, []);
 
+  useEffect(() => {
+    window.localStorage.setItem('authBool', JSON.stringify(authenticated));
+    window.localStorage.setItem('nav', JSON.stringify(showNav));
+  });
+
   return (
-    <HashRouter>
-      <div>
-        <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/additional-info" component={Additionalinfo} />
-          <div>
-            <Header {...authenticated} />
-            {showNav
-              ? <Navbar />
-              : null}
-            <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/home" component={Home} />
-            <ProtectedRoute path="/home/settings" component={Settings} authenticated={authenticated} />
-            <ProtectedRoute path="/home/goals" component={Goals} authenticated={authenticated} />
-            <ProtectedRoute path="/home/budget" component={BudgetBreakdown} authenticated={authenticated} />
-            <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
-            <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
-            {/* <Route exact path="*" component={NotFound} /> */}
-            <Footer />
-          </div>
-        </Switch>
-      </div>
-    </HashRouter>
+    <AppContext.Provider value={{
+      authenticated, setAuth, showNav, setNav,
+    }}
+    >
+      <HashRouter>
+        <div>
+          <Switch>
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/additional-info" component={Additionalinfo} />
+            <div>
+              <Header auth={authenticated} />
+              {showNav
+                ? <Navbar />
+                : null}
+              <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
+              <Route exact path="/" component={Home} />
+              <Route exact path="/home" component={Home} />
+              <ProtectedRoute path="/home/settings" component={Settings} authenticated={authenticated} />
+              <ProtectedRoute path="/home/goals" component={Goals} authenticated={authenticated} />
+              <ProtectedRoute path="/home/budget" component={BudgetBreakdown} authenticated={authenticated} />
+              <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
+              <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
+              {/* <Route exact path="*" component={NotFound} /> */}
+              <Footer />
+            </div>
+          </Switch>
+        </div>
+      </HashRouter>
+    </AppContext.Provider>
   );
 }
 

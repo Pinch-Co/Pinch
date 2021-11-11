@@ -1,0 +1,137 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+$border: 1px solid rgb(155, 155, 155);
+
+.overview-outter-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5em;
+  padding-right: 4em;
+  padding-left: 4em;
+
+  @media all and (max-width: 2200px) {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+
+  @media all and (max-width: 1600px) {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+
+  .overview-column-container {
+    @include flexCenter(row);
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    // border: $border;
+    .overview-side-panel {
+      @include flexCenter(column);
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+      width: 30%;
+      .overview-welcome-bubble {
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        font-size: 1.3em;
+        color:rgb(97, 97, 97);
+        padding: 1em;
+        border: $border;
+        border-radius: 20px;
+        margin-bottom: 1em;
+        box-shadow: -2px 4px 26px -13px rgba(114, 114, 114, 0.75);
+      }
+      .overview-accounts-container {
+        @include flexCenter(column);
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+        border: $border;
+        .accounts-title-section {
+          @include flexCenter(row);
+          justify-content: space-between;
+          width: 100%;
+          .overview-accounts-title {
+            font-size: 2.1em;
+            color: rgb(97, 97, 97);
+          }
+          .bank-icon {
+            font-size: 2.3em;
+            color:rgb(130, 130, 130);
+          }
+        }
+        .account-mini-container {
+          @include flexCenter(column);
+          justify-content: space-evenly;
+          width: 100%;
+          height: auto;
+          padding: 0.5em;
+          .account-type-title {
+            @include flexCenter(row);
+            justify-content: center;
+            width: 100%;
+            height: 30px;
+            background-color: #8fcec6;
+            text-align: center;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .account-line-break {
+      width: 97%;
+      color: rgb(97, 97, 97);
+    }
+
+    .overview-snapshot-container {
+      @include flexCenter(column);
+      justify-content: space-between;
+      width: 65%;
+      height: 100vh;
+      .overview-snapshots {
+        @include flexCenter(row);
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 32%;
+        // margin-bottom: 1.2em;
+        border: $border;
+        .overview-text {
+          @include flexCenter(column);
+          justify-content: space-evenly;
+          align-items: flex-start;
+          height: 100%;
+          width: 50%;
+          padding: 0.5em;
+          padding-left: 2em;
+          .snapshot-overall-title {
+            font-size: 1.3em;
+            color: rgb(116, 116, 116);
+          }
+        }
+        .overview-graphic {
+          height: 50%;
+          width: 35%;
+          padding: 0.5em;
+        }
+      }
+    }
+  }
+
+}
+
+img.graphic {
+  width: 200px;
+  height: 200px;
+}
