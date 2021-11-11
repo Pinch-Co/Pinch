@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
   useState,
-  useEffect,
+  // useEffect,
   // useContext,
   // createContext,
 } from 'react';
@@ -13,7 +13,7 @@ import {
 // import axios from 'axios';
 import Overview from './05.Overview/Overview';
 import Home from './01.Homepage/Home';
-// import NotFound from './SharedComponents/NotFound/NotFound';
+import NotFound from './SharedComponents/NotFound/NotFound';
 import Navbar from './SharedComponents/02.Navbar/Navbar';
 import ProtectedRoute from './SharedComponents/04.ProtectedRoute/ProtectedRoute';
 import Login from './03.Login/Login';
@@ -27,29 +27,18 @@ import BudgetBreakdown from './07.BudgetBreakdown/BudgetBreakdown';
 import Subscriptions from './08.Subscriptions/Subscriptions';
 import CreditPayments from './09.CreditPayments/CreditPayments';
 import AppContext from './SharedComponents/06.Context/AppContext';
+import auth from '../auth/auth';
 
 function App() {
-  const [authenticated, setAuth] = useState<boolean>(true);
-  const [showNav, setNav] = useState<boolean>(true);
-
-  useEffect(() => {
-    const auth = JSON.parse(localStorage.getItem('authBool') || '{}');
-    const navigation = JSON.parse(localStorage.getItem('nav') || '{}');
-    console.log('returned aut', auth);
-    setAuth(auth);
-    setNav(navigation);
-  }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem('authBool', JSON.stringify(authenticated));
-    window.localStorage.setItem('nav', JSON.stringify(showNav));
+  const [userObj, setUserObj] = useState<any>({
+    id: '',
+    email: '',
+    access_token: '',
+    item_id: '',
   });
 
   return (
-    <AppContext.Provider value={{
-      authenticated, setAuth, showNav, setNav,
-    }}
-    >
+    <AppContext.Provider value={{ userObj, setUserObj }}>
       <HashRouter>
         <div>
           <Switch>
@@ -57,19 +46,19 @@ function App() {
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/additional-info" component={Additionalinfo} />
             <div>
-              <Header auth={authenticated} />
-              {showNav
+              <Header />
+              {auth.isAuthenticated()
                 ? <Navbar />
                 : null}
-              <ProtectedRoute path="/home/overview" component={Overview} authenticated={authenticated} />
+              <ProtectedRoute path="/home/overview" component={Overview} />
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
-              <ProtectedRoute path="/home/settings" component={Settings} authenticated={authenticated} />
-              <ProtectedRoute path="/home/goals" component={Goals} authenticated={authenticated} />
-              <ProtectedRoute path="/home/budget" component={BudgetBreakdown} authenticated={authenticated} />
-              <ProtectedRoute path="/home/subscriptions" component={Subscriptions} authenticated={authenticated} />
-              <ProtectedRoute path="/home/credit" component={CreditPayments} authenticated={authenticated} />
-              {/* <Route exact path="*" component={NotFound} /> */}
+              <ProtectedRoute path="/home/settings" component={Settings} />
+              <ProtectedRoute path="/home/goals" component={Goals} />
+              <ProtectedRoute path="/home/budget" component={BudgetBreakdown} />
+              <ProtectedRoute path="/home/subscriptions" component={Subscriptions} />
+              <ProtectedRoute path="/home/credit" component={CreditPayments} />
+              <Route exact path="*" component={NotFound} />
               <Footer />
             </div>
           </Switch>

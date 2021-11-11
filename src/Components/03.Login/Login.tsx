@@ -1,11 +1,12 @@
+/* eslint-disable quote-props */
 /* eslint-disable no-shadow */
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import { RouteComponentProps, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
 import { FiAlertTriangle } from 'react-icons/fi';
 import validateLogin from '../SharedComponents/05.Validation/loginCheck';
-import { PinchContext } from '../SharedComponents/06.Context/PinchContext';
 import AppContext from '../SharedComponents/06.Context/AppContext';
+import auth from '../../auth/auth';
 
 interface OverviewProps extends RouteComponentProps<{ name: string }> { }
 
@@ -24,23 +25,8 @@ function Login(props: OverviewProps) {
   const history = useHistory();
 
   const {
-    setAuth,
-    setNav,
+    setUserObj,
   } = useContext(AppContext);
-
-  const verifyAuth = () => {
-    axios.get('/graphql?query={authenticated{id}}')
-      .then((response) => {
-        if (response.data.data.authenticated) {
-          setAuth(true);
-          setNav(true);
-        }
-      })
-      .catch((error) => {
-        setAuth(false);
-        console.log('in catch, error', error);
-      });
-  };
 
   const allValues: any = {
     // eslint-disable-next-line quote-props
@@ -82,21 +68,29 @@ function Login(props: OverviewProps) {
         }), { headers },
       )
         .then((response) => {
-          // const {
-          //   firstName, lastName, email,
-          //   id, accessToken, itemId,
-          // } = response.data.data.login.user;
+          const {
+            email, id, accessToken, itemId,
+          } = response.data.data.login.user;
+
+          const input = {
+            'id': id,
+            'email': email,
+            'access_token': accessToken,
+            'item_id': itemId,
+          };
+
+          setUserObj(input);
+
           let error;
           if (response.data.errors) {
             error = response.data.errors[0].message;
           }
           setErr(error);
-          verifyAuth();
-        })
-        .then(() => {
-          setTimeout(() => {
+          localStorage.clear();
+          localStorage.setItem('id', id);
+          auth.login(() => {
             history.push('/home/overview');
-          }, 500);
+          });
         })
         .catch((error) => console.log('there was an error', error));
     } else {

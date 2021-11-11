@@ -1,22 +1,16 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-redeclare */
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import AppContext from '../06.Context/AppContext';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
+import auth from '../../../auth/auth';
 
-interface AuthProp {
-  auth: boolean;
-}
-
-function Header(auth: AuthProp) {
-  const {
-    setAuth,
-    setNav,
-  } = useContext(AppContext);
+function Header() {
+  const history = useHistory();
 
   const handleClick = () => {
-    setAuth(false);
-    setNav(false);
+    auth.logout(() => {
+      history.push('/login');
+    });
   };
 
   return (
@@ -28,7 +22,7 @@ function Header(auth: AuthProp) {
         <Link id="link" to="/home/settings" className="link">Profile</Link>
         <Link id="link" to="/alerts" className="link">Alerts</Link>
         <Link id="link" to="/home/settings" className="link">Settings</Link>
-        {auth.auth ? <Link id="link" to="/login" className="link" onClick={() => handleClick()}>Logout</Link> : <Link id="link" to="/login" className="link">Login</Link>}
+        {auth.isAuthenticated() ? <Link id="link" to="/login" className="link" onClick={() => handleClick()}>Logout</Link> : <Link id="link" to="/login" className="link">Login</Link>}
       </div>
     </div>
   );
