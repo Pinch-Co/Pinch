@@ -33,6 +33,10 @@ const questionSchema = new Schema({
 });
 
 const budgetSchema = new Schema({
+  income: {
+    type: Number,
+    required: true,
+  },
   name: {
     type: String,
     required: true,

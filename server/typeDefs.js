@@ -21,10 +21,12 @@ type Goal {
   description: String
 }
 type Budget {
+  income: Float
   name: String
   value: Float
 }
 input BudgetInput {
+  income: Float
   name: String
   value: Float
 }
