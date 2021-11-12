@@ -36,7 +36,6 @@ function Subscriptions() {
   const { userObj } = useContext(AppContext);
   const { access_token } = userObj;
 
-
   useEffect(() => {
     if (access_token) {
       const headers = { 'Content-Type': 'application/json' };
