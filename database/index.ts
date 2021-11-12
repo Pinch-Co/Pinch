@@ -78,19 +78,19 @@ const userSchema = new Schema({
     type: String,
     required: true,
     minLength: 1,
-    maxLength: 10,
+    maxLength: 20,
   },
   lastName: {
     type: String,
     required: true,
     minLength: 1,
-    maxLength: 10,
+    maxLength: 20,
   },
   username: {
     type: String,
     required: true,
-    minLength: 5,
-    maxLength: 10,
+    minLength: 1,
+    maxLength: 20,
   },
   phone: {
     type: String, // must be a string-- graphQL does not support ints larger than 32-bit
@@ -111,7 +111,7 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true,
-    minLength: 10,
+    minLength: 5,
     maxLength: 25,
   },
   profile: {
