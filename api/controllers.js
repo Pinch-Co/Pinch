@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const {
   Configuration, PlaidApi, PlaidEnvironments,
 } = require('plaid');
@@ -42,44 +43,65 @@ const receivePublicToken = async () => {
   }
 };
 
+// ---- Get Access Token------ ///
+
+const recieveAccessToken = async (request) => {
+  const publicToken = request.public_token;
+  try {
+    const response = await client.itemPublicTokenExchange({
+      public_token: publicToken,
+    });
+    // const accessToken = response.data.access_token;
+    // const itemID = response.data.item_id;
+    return response.data;
+  } catch (error) {
+    return console.log('Error getting access token', error);
+  }
+};
+
 // ---- Get Trasanctions ------ ///
 
-const getTransactions = async (req, res) => {
+const getTransactions = async (request) => {
   // Pull transactions for the last 30 days
-  const request = {
-    access_token: '**NEEDS ACCESS KEY**',
+  const { accessToken } = request;
+  const TransactionsGetRequest = {
+    access_token: accessToken,
     start_date: '2018-01-01',
     end_date: '2020-02-01',
+    options: {
+      count: 250,
+      offset: 0,
+    },
   };
   try {
-    const response = await client.transactionsGet(request);
-    let { transactions } = response.data.transactions;
-    const totalTransactions = response.data.total_transactions;
-    // Manipulate the offset parameter to paginate
-    // transactions and retrieve all available data
-    while (transactions.length < totalTransactions) {
-      const paginatedRequest = {
-        access_token: '**NEEDS ACCESS KEY**',
-        start_date: '2018-01-01',
-        end_date: '2020-02-01',
-        options: {
-          offset: transactions.length,
-        },
-      };
-      // eslint-disable-next-line no-await-in-loop
-      const paginatedResponse = await client.transactionsGet(paginatedRequest);
-      transactions = transactions.concat(
-        paginatedResponse.data.transactions,
-      );
-      res.send(transactions);
-    }
+    const response = await client.transactionsGet(TransactionsGetRequest);
+    const { transactions } = response.data;
+    return transactions;
   } catch (err) {
-    /* eslint-disable-next-line no-console */
-    console.log('error getting transactions', err);
+    return console.log('error retrieving transactions', err);
+  }
+};
+
+// ---- Get Trasanctions ------ ///
+
+const retrieveBalance = async (request) => {
+  const { accessToken } = request;
+  const AccountsGetRequest = {
+    access_token: accessToken,
+  };
+  try {
+    const response = await client.accountsBalanceGet(AccountsGetRequest);
+    const { accounts } = response.data;
+    return accounts;
+  } catch (error) {
+    // handle error
+    return console.log('Error retrieving balance', error);
   }
 };
 
 module.exports = {
   receivePublicToken,
   getTransactions,
+  recieveAccessToken,
+  retrieveBalance,
 };

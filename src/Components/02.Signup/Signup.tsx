@@ -1,7 +1,6 @@
 /* eslint-disable quote-props */ // need quotes for the DB
 import React, { useState } from 'react';
-import axios from 'axios';
-import { RouteComponentProps, Link } from 'react-router-dom';
+import { RouteComponentProps, Link, useHistory } from 'react-router-dom';
 import PhoneInput from 'react-phone-input-2';
 import validateInfo from '../SharedComponents/05.Validation/validation';
 import PasswordChecker from './password';
@@ -19,9 +18,8 @@ function SignUp(props: OverviewProps) {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [phone, setPhone] = useState<string | undefined>();
-  const [validation, setErrors] = useState<Verrors>();
-  // eslint-disable-next-line no-unused-vars
-  const [err, setErr] = useState([]);
+  const [validation, setErrors] = useState<Verrors | undefined>();
+  const history = useHistory();
 
   const allValues: any = {
     'email': email,
@@ -39,33 +37,17 @@ function SignUp(props: OverviewProps) {
     setPassword(passwrd);
   };
 
-  // eslint-disable-next-line no-unused-vars
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
-    const headers = { 'Content-Type': 'application/json' };
-
-    const returnedValidation = validateInfo(allValues);
-    setErrors(returnedValidation);
-
-    axios.post(
-      'http://localhost:4000/graphql',
-      JSON.stringify({
-        query: `mutation {signup(email: "${email}", phone: ${phone} password: "${password}") {
-          user {
-            id
-            firstName
-            lastName
-            email
-          }
-        }
-      }`,
-      }), { headers },
-    )
-      .then((response) => {
-        const error = response.data.errors;
-        setErr(error);
-      })
-      .catch(() => { });
+    const result = validateInfo(allValues);
+    if (Object.keys(result).length === 0) {
+      history.push({
+        pathname: '/additional-info',
+        state: allValues,
+      });
+    } else {
+      setErrors(result);
+    }
   };
 
   return (

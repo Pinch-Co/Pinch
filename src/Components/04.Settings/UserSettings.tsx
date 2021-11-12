@@ -1,36 +1,54 @@
+/* eslint-disable no-console */
 /* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function UserSettings() {
   const [err, setErr] = useState('');
+  const [email, setEmail] = useState<string>('');
+  const [pass, setPassword] = useState<string>('');
+  const history = useHistory();
 
-  const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    event.preventDefault();
-
-    alert('WOW YOU ARE DELETING YOUR ACCOUNT!');
-
+  useEffect(() => {
     const headers = { 'Content-Type': 'application/json' };
     axios.post(
-      'http://localhost:4000/graphql',
+      '/graphql',
       JSON.stringify({
-        query: `mutation {login(email: "") {
-          user {
-            id
-            firstName
-            lastName
-            email
-          }
+        query: `query {getUserInfo(id: "617b4ab18042428e32405a6e") {
+          email
+          password
         }
       }`,
       }), { headers },
     )
       .then((response) => {
+        setEmail(response.data.data.getUserInfo.email);
+        setPassword(response.data.data.getUserInfo.password);
         const error = response.data.errors;
         setErr(error);
       })
       .catch(() => { });
+  }, []);
+
+  const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
+
+    alert('WOW YOU ARE DELETING YOUR ACCOUNT!');
+    // id is currently hard coded but will be passdown as prop soon
+    axios.post('/graphql', JSON.stringify({
+      query: `mutation {
+        deleteOneAccount {
+          id: "617b4ab18042428e32405a6e"
+        }
+      }`,
+    }))
+      .then(() => {
+        alert('Successfully Deleted Account');
+        history.push({ pathname: '/login' });
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
@@ -47,11 +65,11 @@ function UserSettings() {
         {/* <h5 className="section-divider-title">Dark / Light Mode</h5> */}
         <h5 className="section-divider-title">Your email</h5>
         <div className="userSetting-input-container">
-          <input className="userSetting-input" type="text" />
+          <input className="userSetting-input" type="text" placeholder={email} readOnly />
         </div>
         <h5 className="section-divider-title">Your password</h5>
         <div className="userSetting-input-container">
-          <input className="userSetting-input" type="text" />
+          <input className="userSetting-input" type="text" placeholder={pass} readOnly />
         </div>
         <div className="userSetting-delete-container">
           <button className="userSetting-delete-button" type="submit" onClick={(event) => handleSubmit(event)}>Delete Account</button>

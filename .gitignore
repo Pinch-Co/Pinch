@@ -1,6 +1,6 @@
 bundle.js
 node_modules
-.css
-.css.map
+*.css
+*.css.map
 .vscode
 .env

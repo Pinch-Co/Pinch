@@ -23,12 +23,15 @@ mutation {
   username: 'cactus',
   phone: '13474757915',
   email: 'cactus@oasis.com',
-  password: 'skfanejnfa' ) {
+  password: 'skfanejnfa',
+  access_token: 'test1223334Dummy',
+  item_id: 'test23444dummydummy' ) {
     id
   }
 }
 test resolver to connect DB to Graphql */
-module.exports.testDatabase = (userInfo) => {
+module.exports.newUserModel = (userInfo) => {
+  console.log(userInfo);
   const newUser = new UserModel(userInfo);
   return newUser.save()
     .then((data) => data)
@@ -279,4 +282,39 @@ module.exports.createSubs = (obj) => {
   })
     .then((data) => data)
     .catch((error) => console.log(error));
+};
+
+/*
+  --------------------------------------------------Deletes Account
+  This is an create subscription query that must be made on the front end
+  object id must be specific to the user
+  Ex:
+  mutation{
+    addSubscription( id: '617b4ab18042428e32405a6e'
+    subscriptions: [{currentCost: 30.23, yearCost: 140.00, companyName: 'Univision', billDate:
+  '11-19-21'}]) {
+     billDate
+   }
+  }
+*/
+
+module.exports.deleteAccount = (obj) => {
+  const {
+    id,
+  } = obj;
+
+  const transID = Mongoose.Types.ObjectId(id);
+  UserModel.deleteOne({ '_id': transID })
+    .then((data) => data)
+    .catch((error) => console.log(error));
+};
+
+/*
+ ---------------------------- verify password
+*/
+module.exports.getPassword = (uemail) => {
+  const { email } = uemail;
+  return UserModel.findOne({ 'email': email })
+    .then((data) => data)
+    .catch((error) => error);
 };

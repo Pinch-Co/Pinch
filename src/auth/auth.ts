@@ -2,7 +2,7 @@ class Auth {
   authenticated: boolean;
 
   constructor() {
-    this.authenticated = false;
+    this.authenticated = !!sessionStorage.id;
   }
 
   login(cb: any): void {
@@ -12,6 +12,8 @@ class Auth {
 
   logout(cb: any): void {
     this.authenticated = false;
+    localStorage.clear();
+    sessionStorage.clear();
     cb();
   }
 

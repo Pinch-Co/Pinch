@@ -170,8 +170,14 @@ const userSchema = new Schema({
   subscriptions: {
     type: [subscriptionSchema],
   },
-  itemId: String,
-  accessToken: String,
+  itemId: {
+    type: String,
+    required: true,
+  },
+  accessToken: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = {

@@ -1,7 +1,13 @@
-import React, { useState } from 'react';
+/* eslint-disable no-console */
+/* eslint-disable quote-props */
+/* eslint-disable no-shadow */
+import React, { useState, useContext } from 'react';
 import { RouteComponentProps, Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+import { FiAlertTriangle } from 'react-icons/fi';
 import validateLogin from '../SharedComponents/05.Validation/loginCheck';
+import AppContext from '../SharedComponents/06.Context/AppContext';
+import auth from '../../auth/auth';
 
 interface OverviewProps extends RouteComponentProps<{ name: string }> { }
 
@@ -16,8 +22,13 @@ function Login(props: OverviewProps) {
   const [password, setPassword] = useState<string>('');
   const [validation, setErrors] = useState<Verrors>();
   // eslint-disable-next-line no-unused-vars
-  const [err, setErr] = useState([]);
+  const [err, setErr] = useState<string>('');
   const history = useHistory();
+
+  const {
+    setUserObj,
+    setNav,
+  } = useContext(AppContext);
 
   const allValues: any = {
     // eslint-disable-next-line quote-props
@@ -38,32 +49,56 @@ function Login(props: OverviewProps) {
 
   // eslint-disable-next-line no-unused-vars
   const handleSubmit = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
     const headers = { 'Content-Type': 'application/json' };
-
     const returnedValidation = validateLogin(allValues);
-    setErrors(returnedValidation);
-
-    axios.post(
-      'http://localhost:4000/graphql',
-      JSON.stringify({
-        query: `mutation {login(email: "${email}", password: "${password}") {
-          user {
-            id
-            firstName
-            lastName
-            email
+    if (Object.keys(returnedValidation).length === 0) {
+      axios.post(
+        '/graphql',
+        JSON.stringify({
+          query: `mutation {login(email: "${email}", password: "${password}") {
+            user {
+              id
+              firstName
+              lastName
+              email
+              accessToken
+              itemId
+            }
           }
-        }
-      }`,
-      }), { headers },
-    )
-      .then((response) => {
-        // console.log('should redirect');
-        history.push('/home/overview');
-        const error = response.data.errors;
-        setErr(error);
-      })
-      .catch(() => { });
+        }`,
+        }), { headers },
+      )
+        .then((response) => {
+          const {
+            email, id, accessToken, itemId,
+          } = response.data.data.login.user;
+
+          const input = {
+            'id': id,
+            'email': email,
+            'access_token': accessToken,
+            'item_id': itemId,
+          };
+
+          setUserObj(input);
+
+          let error;
+          if (response.data.errors) {
+            error = response.data.errors[0].message;
+          }
+          setErr(error);
+          sessionStorage.setItem('id', id);
+          sessionStorage.setItem('nav', 'true');
+          setNav(true);
+          auth.login(() => {
+            history.push('/home/overview');
+          });
+        })
+        .catch((error) => console.log('there was an error', error));
+    } else {
+      setErrors(returnedValidation);
+    }
   };
 
   return (
@@ -75,6 +110,17 @@ function Login(props: OverviewProps) {
             <img className="pinch-logo" src="https://i.imgur.com/MZQaH4n.png" alt="pinch logo" />
           </div>
           <div className="credentials-div">
+            {err
+              ? (
+                <div className="login-error-div">
+                  <FiAlertTriangle className="alert-icon" />
+                  <p className="login-error-message">
+                    {err}
+                    {' '}
+                    : email or password may be incorrect, please try again.
+                  </p>
+                </div>
+              ) : null}
             <div className="credentials-title">Login</div>
             <form className="login-form">
               <div className="login-input-title">Email Address</div>
