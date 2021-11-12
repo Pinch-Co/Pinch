@@ -57,7 +57,7 @@ const MainBudget: React.FC<Props> = ({
           : (
             <>
               <button type="button" className="bb-budget-delete-btn" onClick={() => deleteBudget()}>Delete Budget</button>
-              <button type="button" className="bb-budget-edit-btn" onClick={() => setEditBudget(false)}>Cancel</button>
+              <button type="button" className="bb-budget-cancel-btn" onClick={() => setEditBudget(false)}>Cancel</button>
             </>
           )}
       </div>
