@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 import * as React from 'react';
 import {
   useState,
@@ -54,10 +55,12 @@ function App() {
           const {
             id, accessToken, email, itemId,
           } = result.data.data.getUserInfo;
-          userObj.id = id;
-          userObj.access_token = accessToken;
-          userObj.email = email;
-          userObj.item_id = itemId;
+          setUserObj({
+            id: id,
+            email: email,
+            access_token: accessToken,
+            item_id: itemId,
+          });
         })
         .catch((error) => { throw (error); });
     }
