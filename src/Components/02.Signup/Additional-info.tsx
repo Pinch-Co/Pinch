@@ -1,15 +1,16 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import PlaidLink from '../10.PlaidRelated/Link';
+import AppContext from '../SharedComponents/06.Context/AppContext';
+import auth from '../../auth/auth';
 
 function Additionalinfo(props: any) {
   const history = useHistory();
   const [token, setToken] = useState<string | null>('');
-  const [userId, setUserId] = useState<string>();
   const [showButton, setButton] = useState<boolean>(false);
   const [values, setValues] = useState({
     firstName: '',
@@ -23,6 +24,10 @@ function Additionalinfo(props: any) {
     access_token: '',
     item_id: '',
   });
+
+  const {
+    setNav,
+  } = useContext(AppContext);
 
   if (props.history.location.state) {
     values.email = props.history.location.state.email;
@@ -77,10 +82,16 @@ function Additionalinfo(props: any) {
       }`,
     })
       .then((result) => {
-        setUserId(result.data.data.createAccount.id);
-        history.push({
-          pathname: '/home/overview',
-          state: userId,
+        const returnId = result.data.data.createAccount.id;
+        sessionStorage.setItem('id', returnId);
+        sessionStorage.setItem('nav', 'true');
+        setNav(true);
+      })
+      .then(() => {
+        auth.login(() => {
+          history.push({
+            pathname: '/home/overview',
+          });
         });
       })
       .catch((error) => console.log('there was an error', error));
