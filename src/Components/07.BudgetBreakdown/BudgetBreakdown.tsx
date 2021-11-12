@@ -37,7 +37,7 @@ function BudgetBreakdown() {
       setBudget(data);
       setIncome(data[0].income);
     }).catch((err) => {
-      console.log(err);
+      console.log('GET budget', err);
     });
   };
 
@@ -51,7 +51,7 @@ function BudgetBreakdown() {
         }
       }`,
     }).catch((err) => {
-      console.log(err);
+      console.log('POST budget', err);
     });
   };
 
@@ -103,7 +103,6 @@ function BudgetBreakdown() {
       } else {
         setTotal(0);
         setShowAdd(true);
-        postData(budget);
       }
     }
     setSorting(false);
