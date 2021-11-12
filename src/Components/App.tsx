@@ -25,9 +25,9 @@ import BudgetBreakdown from './07.BudgetBreakdown/BudgetBreakdown';
 import Subscriptions from './08.Subscriptions/Subscriptions';
 import CreditPayments from './09.CreditPayments/CreditPayments';
 import AppContext from './SharedComponents/06.Context/AppContext';
-import auth from '../auth/auth';
 
 function App() {
+  const [showNav, setNav] = useState<boolean>(false);
   const [userObj, setUserObj] = useState<any>({
     id: '',
     email: '',
@@ -35,8 +35,10 @@ function App() {
     item_id: '',
   });
 
+  const switcher = showNav || sessionStorage.nav;
+
   useEffect(() => {
-    const user = localStorage.getItem('id');
+    const user = sessionStorage.getItem('id');
     if (user) {
       const headers = { 'Content-Type': 'application/json' };
       axios.post('/graphql', JSON.stringify({
@@ -62,7 +64,10 @@ function App() {
   }, []);
 
   return (
-    <AppContext.Provider value={{ userObj, setUserObj }}>
+    <AppContext.Provider value={{
+      userObj, setUserObj, setNav, showNav,
+    }}
+    >
       <HashRouter>
         <div>
           <Switch>
@@ -71,7 +76,7 @@ function App() {
             <Route exact path="/additional-info" component={Additionalinfo} />
             <div>
               <Header />
-              {auth.isAuthenticated()
+              {switcher
                 ? <Navbar />
                 : null}
               <ProtectedRoute path="/home/overview" component={Overview} />

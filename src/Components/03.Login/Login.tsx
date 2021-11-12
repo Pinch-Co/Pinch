@@ -26,6 +26,7 @@ function Login(props: OverviewProps) {
 
   const {
     setUserObj,
+    setNav,
   } = useContext(AppContext);
 
   const allValues: any = {
@@ -86,8 +87,9 @@ function Login(props: OverviewProps) {
             error = response.data.errors[0].message;
           }
           setErr(error);
-          localStorage.clear();
-          localStorage.setItem('id', id);
+          sessionStorage.setItem('id', id);
+          sessionStorage.setItem('nav', 'true');
+          setNav(true);
           auth.login(() => {
             history.push('/home/overview');
           });
