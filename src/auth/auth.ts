@@ -5,8 +5,6 @@ class Auth {
     this.authenticated = !!sessionStorage.id;
   }
 
-  // onClose(cb: any): void {}
-
   login(cb: any): void {
     this.authenticated = true;
     cb();
