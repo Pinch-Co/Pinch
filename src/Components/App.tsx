@@ -41,6 +41,7 @@ function App() {
       const headers = { 'Content-Type': 'application/json' };
       axios.post('/graphql', JSON.stringify({
         query: `query { getUserInfo(id: "${user}") {
+        id
         email
         accessToken
         itemId
@@ -48,7 +49,10 @@ function App() {
     }`,
       }), { headers })
         .then((result) => {
-          const { accessToken, email, itemId } = result.data.data.getUserInfo;
+          const {
+            id, accessToken, email, itemId,
+          } = result.data.data.getUserInfo;
+          userObj.id = id;
           userObj.access_token = accessToken;
           userObj.email = email;
           userObj.item_id = itemId;
