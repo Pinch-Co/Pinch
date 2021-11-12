@@ -1,19 +1,17 @@
 import * as React from 'react';
 import {
   useState,
-  // useEffect,
-  // useContext,
-  // createContext,
+  useEffect,
 } from 'react';
 import {
   HashRouter,
   Route,
   Switch,
 } from 'react-router-dom';
-// import axios from 'axios';
+import axios from 'axios';
 import Overview from './05.Overview/Overview';
 import Home from './01.Homepage/Home';
-import NotFound from './SharedComponents/NotFound/NotFound';
+// import NotFound from './SharedComponents/NotFound/NotFound';
 import Navbar from './SharedComponents/02.Navbar/Navbar';
 import ProtectedRoute from './SharedComponents/04.ProtectedRoute/ProtectedRoute';
 import Login from './03.Login/Login';
@@ -37,6 +35,28 @@ function App() {
     item_id: '',
   });
 
+  useEffect(() => {
+    const user = localStorage.getItem('id');
+    if (user) {
+      const headers = { 'Content-Type': 'application/json' };
+      axios.post('/graphql', JSON.stringify({
+        query: `query { getUserInfo(id: "${user}") {
+        email
+        accessToken
+        itemId
+      }
+    }`,
+      }), { headers })
+        .then((result) => {
+          const { accessToken, email, itemId } = result.data.data.getUserInfo;
+          userObj.access_token = accessToken;
+          userObj.email = email;
+          userObj.item_id = itemId;
+        })
+        .catch((error) => { throw (error); });
+    }
+  }, []);
+
   return (
     <AppContext.Provider value={{ userObj, setUserObj }}>
       <HashRouter>
@@ -58,7 +78,7 @@ function App() {
               <ProtectedRoute path="/home/budget" component={BudgetBreakdown} />
               <ProtectedRoute path="/home/subscriptions" component={Subscriptions} />
               <ProtectedRoute path="/home/credit" component={CreditPayments} />
-              <Route exact path="*" component={NotFound} />
+              {/* <Route exact path="*" component={NotFound} /> */}
               <Footer />
             </div>
           </Switch>

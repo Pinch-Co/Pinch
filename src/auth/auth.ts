@@ -12,6 +12,7 @@ class Auth {
 
   logout(cb: any): void {
     this.authenticated = false;
+    localStorage.clear();
     cb();
   }
 
