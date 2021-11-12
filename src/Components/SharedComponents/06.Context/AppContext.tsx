@@ -2,10 +2,15 @@
 import React, { createContext } from 'react';
 
 const AppContext = createContext({
-  userObj: {},
-  setUserObj: (obj: any) => {},
+  userObj: {
+    id: '',
+    email: '',
+    access_token: '',
+    item_id: '',
+  },
+  setUserObj: (obj: any) => { },
   showNav: false,
-  setNav: (showNav: boolean) => {},
+  setNav: (showNav: boolean) => { },
 });
 
 export default AppContext;

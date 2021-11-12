@@ -1,11 +1,12 @@
 /* eslint-disable no-alert */
 /* eslint-disable no-console */
 /* eslint-disable max-len */
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import BudgetCharts from './BudgetCharts';
 import AddBudget from './AddBudget';
 import MainBudget from './MainBudget';
+import AppContext from '../SharedComponents/06.Context/AppContext';
 
 function BudgetBreakdown() {
   const [budget, setBudget] = useState<any>([]);
@@ -16,6 +17,8 @@ function BudgetBreakdown() {
   const [numberOfExpenses, setNumberOfExpenses] = useState<string[]>(['1']);
   const [objectId, setObjectId] = useState<string>();
   const [chartType, setChartType] = useState<string>('pie');
+
+  const { userObj } = useContext(AppContext);
 
   const getData = (): any => {
     axios.post('/graphql', {
@@ -31,6 +34,7 @@ function BudgetBreakdown() {
       const data = res.data.data.getUserInfo.budget;
       setBudget(data);
     }).catch((err) => {
+      console.log('Get budget breakdown error', objectId);
       console.log(err);
     });
   };
@@ -45,6 +49,7 @@ function BudgetBreakdown() {
         }
       }`,
     }).catch((err) => {
+      console.log('Post budget breakdown error', objectId);
       console.log(err);
     });
   };
@@ -61,12 +66,20 @@ function BudgetBreakdown() {
     //   ],
     // );
     setIncome(8000);
-    setObjectId('6182bc611fb1249632b3107a');
   }, []);
 
   useEffect(() => {
     // Used to retrieve Object ID of user
+    if (userObj.id !== '') {
+      console.log('User Object ID:', userObj.id);
+      const { id } = userObj;
+      setObjectId(id);
+    }
+  }, [userObj]);
+
+  useEffect(() => {
     if (objectId) {
+      console.log('ObjectId updated! Getting data.', objectId);
       getData();
     }
   }, [objectId]);
