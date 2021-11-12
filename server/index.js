@@ -40,11 +40,18 @@ passport.serializeUser((user, done) => {
 });
 passport.deserializeUser((id, done) => {
   // eslint-disable-next-line quote-props
+<<<<<<< HEAD
   UserModel.findOne({ '_id': id })
     .then((result) => {
       const matchingUser = result;
       // console.log('matching user', matchingUser);
       console.log('Successfully found matching user');
+=======
+  UserModel.findOne({ 'id': id })
+    .then((result) => {
+      const matchingUser = result;
+      console.log(matchingUser);
+>>>>>>> f55a20f04bfb1c561ef700f8e918a75f86618e79
       done(null, matchingUser);
     })
     .catch((error) => console.log(error));
