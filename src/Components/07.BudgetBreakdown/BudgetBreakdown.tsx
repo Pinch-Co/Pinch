@@ -17,6 +17,7 @@ function BudgetBreakdown() {
   const [numberOfExpenses, setNumberOfExpenses] = useState<string[]>(['1']);
   const [objectId, setObjectId] = useState<string>();
   const [chartType, setChartType] = useState<string>('pie');
+  const [sorting, setSorting] = useState<boolean>(false);
 
   const { userObj } = useContext(AppContext);
 
@@ -25,6 +26,7 @@ function BudgetBreakdown() {
       query: `query {
         getUserInfo(id: ${JSON.stringify(objectId)}) {
           budget {
+            income
             name
             value
           }
@@ -33,8 +35,8 @@ function BudgetBreakdown() {
     }).then((res) => {
       const data = res.data.data.getUserInfo.budget;
       setBudget(data);
+      setIncome(data[0].income);
     }).catch((err) => {
-      console.log('Get budget breakdown error', objectId);
       console.log(err);
     });
   };
@@ -49,7 +51,6 @@ function BudgetBreakdown() {
         }
       }`,
     }).catch((err) => {
-      console.log('Post budget breakdown error', objectId);
       console.log(err);
     });
   };
@@ -65,13 +66,11 @@ function BudgetBreakdown() {
     //     { name: 'Shopping', value: 200 },
     //   ],
     // );
-    setIncome(8000);
   }, []);
 
   useEffect(() => {
     // Used to retrieve Object ID of user
     if (userObj.id !== '') {
-      console.log('User Object ID:', userObj.id);
       const { id } = userObj;
       setObjectId(id);
     }
@@ -79,37 +78,40 @@ function BudgetBreakdown() {
 
   useEffect(() => {
     if (objectId) {
-      console.log('ObjectId updated! Getting data.', objectId);
       getData();
     }
   }, [objectId]);
 
   useEffect(() => {
-    if (budget.length > 0 && JSON.stringify(budget[0]) !== JSON.stringify({ name: '', value: null })) {
-      let sum = 0;
-      for (let i = 0; i < budget.length; i += 1) {
-        sum += budget[i].value;
-      }
-      setShowAdd(false);
-      setTotal(sum);
-      // Post to database
-      let filteredBudget = budget.slice(0);
-      filteredBudget = filteredBudget.filter((expense: any) => {
-        if (expense.value !== '') {
-          return true;
+    if (!sorting) {
+      if (budget.length > 0 && JSON.stringify(budget[0]) !== JSON.stringify({ income: null, name: '', value: null })) {
+        let sum = 0;
+        for (let i = 0; i < budget.length; i += 1) {
+          sum += budget[i].value;
         }
-        return false;
-      });
-      postData(filteredBudget);
-    } else {
-      setTotal(0);
-      setShowAdd(true);
-      postData(budget);
+        setShowAdd(false);
+        setTotal(sum);
+        // Post to database
+        let filteredBudget = budget.slice(0);
+        filteredBudget = filteredBudget.filter((expense: any) => {
+          if (expense.value !== '') {
+            return true;
+          }
+          return false;
+        });
+        postData(filteredBudget);
+      } else {
+        setTotal(0);
+        setShowAdd(true);
+        postData(budget);
+      }
     }
+    setSorting(false);
   }, [budget]);
 
   const sortExpenses = (e: any): void => {
     e.preventDefault();
+    setSorting(true);
     if (e.target.value === 'alphabetical-AtoZ') {
       const sortedBudget = budget.slice(0);
       sortedBudget.sort((a: any, b: any) => {
@@ -137,9 +139,14 @@ function BudgetBreakdown() {
         if (a.value > b.value) { return 1; }
         return -1;
       });
+      console.log(sortedBudget);
       setBudget(sortedBudget);
     }
   };
+
+  useEffect(() => {
+
+  }, [sorting]);
 
   const isValidInput = (num: string): boolean => {
     const reg = new RegExp('^[0-9]+$');
@@ -151,12 +158,17 @@ function BudgetBreakdown() {
     const myForm = document.getElementById('bb-form-edit');
     const inputs = myForm!.getElementsByTagName('input');
     const updatedBudget: any = [];
+    const numIncome: number = parseInt(income.toString(), 10);
+
     for (let i = 0; i < inputs.length - 2; i += 2) {
       const each = {
+        income: 0,
         name: '',
         value: 0,
       };
+
       if (inputs[i].type === 'text' && isValidInput(inputs[i + 1].value)) {
+        each.income = numIncome;
         each.name = inputs[i].value;
         each.value = parseInt(inputs[i + 1].value, 10);
       }
@@ -176,7 +188,7 @@ function BudgetBreakdown() {
 
   const editAddExpense = (): void => {
     const temp = budget.splice(0);
-    temp.push({ name: '', value: '' });
+    temp.push({ income: 0, name: '', value: '' });
     setBudget(temp);
   };
 
@@ -200,7 +212,7 @@ function BudgetBreakdown() {
   const deleteBudget = (): void => {
     // eslint-disable-next-line no-restricted-globals
     if (confirm('Are you sure you want to delete budget?')) {
-      setBudget([{ name: '', value: null }]);
+      setBudget([{ income: null, name: '', value: null }]);
       setShowAdd(true);
     }
   };
