@@ -1,0 +1,100 @@
+.account-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 95%;
+  height: 150px;
+  margin: 1em;
+  background-color: #cddfdf;
+  color: #5d5e5e;
+}
+
+.account-container .bank-logo {
+  width: 120px;
+  height: 120px;
+  margin-left: 1em;
+}
+
+.account-container .bank-logo > img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 120px;
+  height: 120px;
+}
+
+.account-container .vertical-divider {
+  border: 1px solid #b4b6b6;
+  height: 85%;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.account-container .account-text-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 95%;
+  height: 100%;
+  padding-top: 1em;
+  padding-right: 1em;
+  line-height: 2em;
+}
+
+.account-container .account-name-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.account-container .bank-title {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+/*# sourceMappingURL=YourAccount.css.map */

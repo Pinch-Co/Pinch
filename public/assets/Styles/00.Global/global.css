@@ -1,0 +1,4081 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.tools-offered {
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  height: 1300px;
+  margin-top: 40px;
+}
+
+.tools-offered .tools {
+  float: left;
+  width: 45%;
+  margin-left: 5%;
+  color: #696969;
+  border-bottom: solid #696969 3px;
+}
+
+.tools-offered .tool-slot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 300px;
+  width: 100%;
+}
+
+.tools-offered .example-image {
+  height: 250px;
+  width: 50%;
+}
+
+.tools-offered .about-tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  color: #696969;
+  font-size: 1em;
+  width: 50%;
+  height: 250px;
+}
+
+.about-us {
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 300px;
+  width: 100%;
+}
+
+.about-us .ab-img {
+  height: 250px;
+  width: 40%;
+  margin: 2%;
+}
+
+.about-us .description {
+  width: 50%;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: #696969;
+  font-size: 1.3em;
+}
+
+@media screen and (max-width: 627px) {
+  .about-us .description {
+    height: 200px;
+    font-size: 1em;
+  }
+}
+
+.sign-up {
+  background-color: #D1E0DE;
+  font-family: 'Roboto';
+  color: #696969;
+  font-size: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .sign-up {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    height: 500px;
+  }
+}
+
+.sign-up .container-logo-words {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 1000px) {
+  .sign-up .container-logo-words {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+.sign-up .logo-smoll {
+  width: 200px;
+  height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sign-up .column-words {
+  height: 250px;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 630px) {
+  .sign-up .column-words {
+    width: 40%;
+  }
+}
+
+.sign-up .underline {
+  border-bottom: solid #696969 3px;
+  padding-bottom: 5px;
+}
+
+.sign-up .column-description {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .sign-up .column-description {
+    height: 40%;
+  }
+}
+
+.sign-up .pargaph-size {
+  font-size: 1em;
+}
+
+.sign-up .make-the-button-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.sign-up .button-sign-up {
+  width: 400px;
+  background-color: #1EB2AA;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.3em;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.sign-up .button-sign-up:hover {
+  background-color: white;
+  color: #1EB2AA;
+}
+
+.signUp-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .signUp-container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    background-color: #d1e0de;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .signUp-container {
+    width: 100vw;
+  }
+}
+
+.signUp-empty-div {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .signUp-empty-div {
+    display: none;
+  }
+}
+
+.signUp-center-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+}
+
+.signUp-main-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 700px;
+}
+
+@media screen and (max-width: 700px) {
+  .signUp-main-div {
+    width: 100vw;
+  }
+}
+
+.signUp-page-logo-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  width: 85%;
+  height: 146px;
+  padding: 10px;
+  background-color: #20b2aa;
+}
+
+@media screen and (max-width: 600px) {
+  .signUp-page-logo-div {
+    width: 100%;
+  }
+}
+
+.pinch-logo {
+  width: 70%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.signup-credentials-div {
+  margin-top: 20px;
+  width: 85%;
+  padding: 30px;
+  background-color: #d1e0de;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-height: 723px) {
+  .signup-credentials-div {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div {
+    padding: 30px 0 30px 0;
+  }
+}
+
+.signup-credentials-div .signup-title {
+  font-size: 30px;
+  color: #5d5d5d;
+}
+
+.signup-credentials-div .signUp-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 100%;
+  position: relative;
+  margin-top: 35px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-height: 1000px) {
+  .signup-credentials-div .signUp-form {
+    margin-top: 10px;
+  }
+}
+
+.signup-credentials-div .signUp-input-title {
+  font-size: 20px;
+  width: 75%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: #5d5d5d;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div .signUp-input-title {
+    width: 90%;
+  }
+}
+
+.signup-credentials-div .signUp-input {
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  margin-bottom: 18px;
+  border: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div .signUp-input {
+    width: 100%;
+  }
+}
+
+.signup-credentials-div .signUp-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.signup-credentials-div .signUp-input::-moz-placeholder {
+  /* Firefox 19+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.signup-credentials-div .signUp-input:-ms-input-placeholder {
+  /* IE 10+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.signup-credentials-div .signUp-input:-moz-placeholder {
+  /* Firefox 18- */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.signup-credentials-div .input-container {
+  width: 75%;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div .input-container {
+    width: 90%;
+  }
+}
+
+.signup-credentials-div .input-container[data-error] .signUp-input {
+  border-color: #da5560;
+  border: 1px solid;
+  color: #da5560;
+  background: #fcc8c8;
+}
+
+.signup-credentials-div .input-container[data-error] .form-control {
+  border-color: #da5560;
+  border: 1px solid;
+  color: #da5560;
+  background: #fcc8c8;
+}
+
+.signup-credentials-div .input-container[data-error]::after {
+  content: attr(data-error);
+  font-size: 15px;
+  font-weight: bold;
+  color: #da5560;
+  display: block;
+  position: absolute;
+  margin-top: -15px;
+  margin-bottom: 6px;
+}
+
+.signup-credentials-div .remember-me {
+  width: 75%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 18px;
+  color: #5d5d5d;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div .remember-me {
+    width: 90%;
+  }
+}
+
+.signup-credentials-div .remember-me-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.signup-credentials-div .remember-me-chk {
+  margin-right: 8px;
+  width: 22px;
+  height: 22px;
+}
+
+.signup-credentials-div .loader {
+  color: #ffffff;
+  font-size: 11px;
+  text-indent: -99999em;
+  margin: 55px auto;
+  position: relative;
+  width: 10em;
+  height: 10em;
+  -webkit-box-shadow: inset 0 0 0 1em;
+          box-shadow: inset 0 0 0 1em;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.signup-credentials-div .loader:before,
+.signup-credentials-div .loader:after {
+  position: absolute;
+  content: "";
+}
+
+.signup-credentials-div .loader:before {
+  width: 5.2em;
+  height: 10.2em;
+  background: #0dc5c1;
+  border-radius: 10.2em 0 0 10.2em;
+  top: -0.1em;
+  left: -0.1em;
+  -webkit-transform-origin: 5.1em 5.1em;
+  transform-origin: 5.1em 5.1em;
+  -webkit-animation: load2 2s infinite ease 1.5s;
+  animation: load2 2s infinite ease 1.5s;
+}
+
+.signup-credentials-div .loader:after {
+  width: 5.2em;
+  height: 10.2em;
+  background: #0dc5c1;
+  border-radius: 0 10.2em 10.2em 0;
+  top: -0.1em;
+  left: 4.9em;
+  -webkit-transform-origin: 0.1em 5.1em;
+  transform-origin: 0.1em 5.1em;
+  -webkit-animation: load2 2s infinite ease;
+  animation: load2 2s infinite ease;
+}
+
+@-webkit-keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.signup-credentials-div .signin-signup-btn {
+  width: 75%;
+  padding: 12px;
+  font-size: 25px;
+  font-weight: lighter;
+  background-color: #20b2aa;
+  color: white;
+  border: none;
+  margin-bottom: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div .signin-signup-btn {
+    -webkit-transition: none;
+    transition: none;
+    width: 90%;
+  }
+}
+
+.signup-credentials-div .signin-signup-btn:hover {
+  background-color: #1c9993;
+}
+
+.signup-credentials-div .agreement {
+  width: 60%;
+  font-size: 12px;
+  margin-bottom: 18px;
+  text-align: center;
+  color: #5d5d5d;
+  font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div .agreement {
+    width: 80%;
+  }
+}
+
+.signup-credentials-div .have-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  width: 70%;
+  font-size: 25px;
+  color: #5f5f5f;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .signup-credentials-div .have-account {
+    width: 90%;
+    margin-top: 10px;
+  }
+}
+
+.signup-credentials-div .login-link {
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.rights-text-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .rights-text-div {
+    width: 90%;
+    padding-top: 30px;
+    border-top: 0.5px solid white;
+  }
+}
+
+.rights-text {
+  font-size: 13px;
+  text-align: center;
+  color: #5d5d5d;
+}
+
+.react-tel-input {
+  width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .react-tel-input {
+    width: 100%;
+  }
+}
+
+.react-tel-input .form-control {
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  margin-bottom: 18px;
+  border: none;
+  font-size: 20px;
+  outline: none;
+  color: #5d5d5d;
+  -webkit-transition: border-color ease 0.25s, -webkit-box-shadow ease 0.25s;
+  transition: border-color ease 0.25s, -webkit-box-shadow ease 0.25s;
+  transition: box-shadow ease 0.25s, border-color ease 0.25s;
+  transition: box-shadow ease 0.25s, border-color ease 0.25s, -webkit-box-shadow ease 0.25s;
+}
+
+.react-tel-input .form-control:hover {
+  border-color: #000;
+}
+
+.react-tel-input .form-control:focus {
+  border-color: #1976d2;
+  -webkit-box-shadow: 0 0 0 1px #1976d2;
+          box-shadow: 0 0 0 1px #1976d2;
+}
+
+.react-tel-input .form-control:focus + div:before {
+  color: #1976d2;
+}
+
+.react-tel-input .form-control.invalid-number {
+  border: 1px solid #f44336;
+}
+
+.react-tel-input .form-control.invalid-number:focus {
+  -webkit-box-shadow: 0 0 0 1px #f44336;
+          box-shadow: 0 0 0 1px #f44336;
+}
+
+.react-tel-input .form-control.invalid-number + div:before {
+  content: "Error";
+  display: none;
+  color: #f44336;
+  width: 27px;
+}
+
+.react-tel-input .flag-dropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.react-tel-input .flag-dropdown:hover, .react-tel-input .flag-dropdown:focus {
+  cursor: pointer;
+}
+
+.react-tel-input .flag-dropdown.open {
+  z-index: 2;
+}
+
+.react-tel-input input[disabled] + .flag-dropdown:hover {
+  cursor: default;
+  border-color: #cacaca;
+}
+
+.react-tel-input input[disabled] + .flag-dropdown:hover .selected-flag {
+  background-color: transparent;
+}
+
+.react-tel-input .selected-flag {
+  outline: none;
+  position: relative;
+  width: 52px;
+  height: 110px;
+  padding: 0 0 0 11px;
+  margin-top: 110%;
+  border-radius: 3px 0 0 3px;
+}
+
+.react-tel-input .selected-flag:focus .arrow {
+  border-left-width: 4px;
+  border-right-width: 4px;
+  border-top: 5px solid #1976d2;
+}
+
+.react-tel-input .selected-flag .flag {
+  display: none;
+}
+
+.react-tel-input .selected-flag .arrow {
+  position: relative;
+  top: 50%;
+  margin-top: -1px;
+  left: 29px;
+  width: 0;
+  height: 0;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  border-top: 4px solid #555;
+}
+
+.react-tel-input .selected-flag .arrow.up {
+  border-top: none;
+  border-bottom: 4px solid #555;
+}
+
+.react-tel-input .country-list {
+  outline: none;
+  z-index: 1;
+  list-style: none;
+  position: absolute;
+  padding: 0;
+  margin: 0px 0 10px -1px;
+  -webkit-box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.25);
+          box-shadow: 1px 2px 18px rgba(0, 0, 0, 0.25);
+  background-color: white;
+  width: 770%;
+  max-height: 220px;
+  overflow-y: scroll;
+  border-radius: 7px;
+}
+
+@media screen and (max-width: 600px) {
+  .react-tel-input .country-list {
+    width: 560%;
+  }
+}
+
+.react-tel-input .country-list .flag {
+  display: none;
+}
+
+.react-tel-input .country-list .divider {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+.react-tel-input .country-list .country {
+  position: relative;
+  padding: 12px 9px 13px 46px;
+}
+
+.react-tel-input .country-list .country .dial-code {
+  color: #6b6b6b;
+}
+
+.react-tel-input .country-list .country:hover {
+  background-color: #f1f1f1;
+}
+
+.react-tel-input .country-list .country.highlight {
+  background-color: #f1f1f1;
+}
+
+.react-tel-input .country-list .flag {
+  margin-right: 7px;
+  margin-top: 2px;
+}
+
+.react-tel-input .country-list .country-name {
+  margin-right: 6px;
+}
+
+.react-tel-input .country-list .search {
+  z-index: 2;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 10px 0 6px 10px;
+}
+
+.react-tel-input .country-list .search-emoji {
+  display: none;
+  font-size: 15px;
+}
+
+.react-tel-input .country-list .search-box {
+  border: 1px solid #cacaca;
+  border-radius: 3px;
+  font-size: 15px;
+  line-height: 15px;
+  margin-left: 6px;
+  padding: 3px 8px 5px;
+  outline: none;
+}
+
+.react-tel-input .country-list .search-box:hover {
+  border-color: #505050;
+}
+
+.react-tel-input .country-list .no-entries-message {
+  padding: 7px 10px 11px;
+  opacity: 0.7;
+}
+
+.react-tel-input .invalid-number-message {
+  position: absolute;
+  z-index: 1;
+  font-size: 13px;
+  left: 25px;
+  top: -7px;
+  background: #fff;
+  padding: 0 5px;
+  color: #de0000;
+}
+
+.react-tel-input .special-label {
+  display: none;
+}
+
+.password-modal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  position: absolute;
+  height: 150px;
+  width: 240px;
+  border-radius: 6px;
+  -webkit-box-shadow: 6px 7px 14px -2px #a1a1a1;
+          box-shadow: 6px 7px 14px -2px #a1a1a1;
+  top: 70px;
+  right: 5px;
+}
+
+.password-modal-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 5px;
+  padding-left: 6px;
+  padding: 5px 5px 5px 7px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.most-contain {
+  font-weight: bold;
+  font-size: 13px;
+  color: #20b2aa;
+  text-align: center;
+}
+
+.constraints {
+  list-style-type: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.line {
+  width: 100%;
+  height: 2px;
+}
+
+.progress {
+  width: 100%;
+  border-radius: 6px;
+  background-color: #e2e0e0;
+}
+
+.password-strength-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.password-strength-label {
+  font-size: 11px;
+  text-align: left;
+  font-weight: bolder;
+  color: #5d5d5d;
+}
+
+.password-strength {
+  font-size: 11px;
+  text-align: right;
+  font-weight: bolder;
+  color: #5d5d5d;
+}
+
+.additional-info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+}
+
+@media screen and (max-width: 3800px) {
+  .additional-info-container {
+    padding-top: 5em;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 2800px) {
+  .additional-info-container {
+    padding-top: 4em;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .additional-info-container {
+    padding-top: 3em;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    background-color: #d1e0de;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .additional-info-container {
+    width: 100vw;
+  }
+}
+
+.additional-info-empty-div {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-empty-div {
+    display: none;
+  }
+}
+
+.additional-info-center-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  margin-bottom: 50px;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-center-div {
+    margin-bottom: 0;
+  }
+}
+
+.additional-info-main-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 700px;
+}
+
+@media screen and (max-width: 700px) {
+  .additional-info-main-div {
+    width: 100vw;
+  }
+}
+
+.additional-info-page-logo-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  width: 75%;
+  height: 146px;
+  padding: 10px;
+  background-color: #20b2aa;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-page-logo-div {
+    width: 100%;
+  }
+}
+
+.pinch-logo {
+  width: 70%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.additional-info-credentials-div {
+  margin-top: 20px;
+  width: 90%;
+  padding: 30px;
+  background-color: #d1e0de;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-height: 723px) {
+  .additional-info-credentials-div {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div {
+    padding: 30px 0 30px 0;
+  }
+}
+
+.additional-info-credentials-div .additional-info-title {
+  font-size: 25px;
+  color: #5d5d5d;
+}
+
+@media screen and (max-width: 410px) {
+  .additional-info-credentials-div .additional-info-title {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.additional-info-credentials-div .additional-info-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 100%;
+  position: relative;
+  margin-top: 35px;
+  margin-bottom: 5px;
+}
+
+@media screen and (max-height: 1000px) {
+  .additional-info-credentials-div .additional-info-form {
+    margin-top: 10px;
+  }
+}
+
+.additional-info-credentials-div .additional-info-input-blocks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  width: 100%;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 460px) {
+  .additional-info-credentials-div .additional-info-input-blocks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+  }
+}
+
+.additional-info-credentials-div .boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 100%;
+}
+
+.additional-info-credentials-div .address-input {
+  width: 100%;
+  margin-left: 70px;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div .address-input {
+    margin-left: 10px;
+    width: 96%;
+  }
+}
+
+.additional-info-credentials-div .additional-info-input-title {
+  font-size: 15px;
+  width: 75%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: #5d5d5d;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div .additional-info-input-title {
+    width: 90%;
+  }
+}
+
+.additional-info-credentials-div .additional-info-input {
+  width: 110%;
+  height: 45px;
+  padding-left: 10px;
+  margin-bottom: 18px;
+  border: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div .additional-info-input {
+    width: 100%;
+  }
+}
+
+.additional-info-credentials-div .additional-info-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.additional-info-credentials-div .additional-info-input::-moz-placeholder {
+  /* Firefox 19+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input:-ms-input-placeholder {
+  /* IE 10+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input:-moz-placeholder {
+  /* Firefox 18- */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.additional-info-credentials-div .additional-info-input::-webkit-datetime-edit-month-field {
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input::-webkit-datetime-edit-day-field {
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input::-webkit-datetime-edit-year-field {
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input::-webkit-datetime-edit-text {
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input-address {
+  width: 122%;
+  height: 45px;
+  padding-left: 10px;
+  margin-bottom: 18px;
+  border: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div .additional-info-input-address {
+    width: 100%;
+  }
+}
+
+.additional-info-credentials-div .additional-info-input-address::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.additional-info-credentials-div .additional-info-input-address::-moz-placeholder {
+  /* Firefox 19+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input-address:-ms-input-placeholder {
+  /* IE 10+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.additional-info-credentials-div .additional-info-input-address:-moz-placeholder {
+  /* Firefox 18- */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.additional-info-credentials-div .input-container {
+  width: 75%;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div .input-container {
+    width: 90%;
+  }
+}
+
+.additional-info-credentials-div .input-container[data-error] .additional-info-input {
+  border-color: #da5560;
+  border: 1px solid;
+  color: #da5560;
+  background: #fcc8c8;
+}
+
+.additional-info-credentials-div .input-container[data-error] .form-control {
+  border-color: #da5560;
+  border: 1px solid;
+  color: #da5560;
+  background: #fcc8c8;
+}
+
+.additional-info-credentials-div .input-container[data-error]::after {
+  content: attr(data-error);
+  font-size: 15px;
+  font-weight: bold;
+  color: #da5560;
+  display: block;
+  position: absolute;
+  margin-top: -15px;
+  margin-bottom: 6px;
+}
+
+.additional-info-credentials-div .remember-me {
+  width: 75%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 18px;
+  color: #5d5d5d;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div .remember-me {
+    width: 90%;
+  }
+}
+
+.additional-info-credentials-div .remember-me-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.additional-info-credentials-div .remember-me-chk {
+  margin-right: 8px;
+  width: 22px;
+  height: 22px;
+}
+
+.additional-info-credentials-div .signin-additional-info-btn {
+  width: 50%;
+  padding: 12px;
+  font-size: 25px;
+  font-weight: lighter;
+  background-color: #20b2aa;
+  color: white;
+  letter-spacing: 1px;
+  border: none;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+@media screen and (max-width: 600px) {
+  .additional-info-credentials-div .signin-additional-info-btn {
+    -webkit-transition: none;
+    transition: none;
+    width: 90%;
+  }
+}
+
+.additional-info-credentials-div .signin-additional-info-btn:hover {
+  background-color: #1c9993;
+}
+
+.connect-plaid-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  justify-content: center;
+  width: 100%;
+}
+
+.connect-plaid-div .connect-bank-btn {
+  width: 60%;
+  height: 45px;
+  color: white;
+  background-color: #37686e;
+  border: none;
+  font-size: 1.1em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  letter-spacing: 1px;
+}
+
+.connect-plaid-div .connect-bank-btn:hover {
+  background-color: #1c9993;
+}
+
+.connect-plaid-div .connect-bank-success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  justify-content: center;
+  width: 60%;
+  height: 45px;
+  color: white;
+  text-align: center;
+  background-color: #2aa38f;
+  border: none;
+  border-radius: 15px;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.connect-plaid-div .connect-bank-success .success-message {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.login-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  .login-container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    background-color: #d1e0de;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .login-container {
+    width: 100vw;
+  }
+}
+
+.empty-div {
+  display: block;
+}
+
+@media screen and (max-width: 600px) {
+  .empty-div {
+    display: none;
+  }
+}
+
+.login-center-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+}
+
+.login-main-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 700px;
+}
+
+@media screen and (max-width: 700px) {
+  .login-main-div {
+    width: 100vw;
+  }
+}
+
+.login-page-logo-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  width: 85%;
+  height: 146px;
+  padding: 10px;
+  background-color: #20b2aa;
+}
+
+@media screen and (max-width: 600px) {
+  .login-page-logo-div {
+    width: 100%;
+  }
+}
+
+.pinch-logo {
+  width: 70%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.credentials-div {
+  margin-top: 20px;
+  width: 85%;
+  padding: 30px;
+  background-color: #d1e0de;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-height: 723px) {
+  .credentials-div {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div {
+    padding: 30px 0 30px 0;
+  }
+}
+
+.credentials-div .credentials-title {
+  font-size: 40px;
+  color: #5d5d5d;
+}
+
+.credentials-div .login-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 100%;
+  position: relative;
+  margin-top: 70px;
+}
+
+@media screen and (max-height: 1000px) {
+  .credentials-div .login-form {
+    margin-top: 10px;
+  }
+}
+
+.credentials-div .login-input-title {
+  font-size: 20px;
+  width: 75%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  color: #5d5d5d;
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div .login-input-title {
+    width: 90%;
+  }
+}
+
+.credentials-div .login-input {
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  margin-bottom: 18px;
+  border: none;
+  font-size: 20px;
+}
+
+.credentials-div .login-input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.credentials-div .login-input::-moz-placeholder {
+  /* Firefox 19+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.credentials-div .login-input:-ms-input-placeholder {
+  /* IE 10+ */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: lighter;
+  color: #9c9c9c;
+}
+
+.credentials-div .login-input:-moz-placeholder {
+  /* Firefox 18- */
+  position: relative;
+  font-size: 20px;
+  font-style: italic;
+  color: #9c9c9c;
+  font-weight: lighter;
+}
+
+.credentials-div .input-container {
+  width: 75%;
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div .input-container {
+    width: 90%;
+  }
+}
+
+.credentials-div .input-container[data-error]::after {
+  content: attr(data-error);
+  font-size: 15px;
+  font-weight: bold;
+  color: #da5560;
+  display: block;
+  position: absolute;
+  margin-top: -19px;
+}
+
+.credentials-div .remember-me {
+  width: 75%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 18px;
+  color: #5d5d5d;
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div .remember-me {
+    width: 90%;
+  }
+}
+
+.credentials-div .remember-me-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+.credentials-div .remember-me-chk {
+  margin-right: 8px;
+  width: 22px;
+  height: 22px;
+}
+
+.credentials-div .sign-in-btn {
+  width: 75%;
+  padding: 12px;
+  font-size: 25px;
+  background-color: #20b2aa;
+  color: white;
+  border: none;
+  margin-bottom: 5px;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div .sign-in-btn {
+    -webkit-transition: none;
+    transition: none;
+    width: 90%;
+  }
+}
+
+.credentials-div .sign-in-btn:hover {
+  background-color: #1c9993;
+}
+
+.credentials-div .agreement {
+  width: 60%;
+  font-size: 12px;
+  margin-bottom: 18px;
+  text-align: center;
+  color: #5d5d5d;
+  font-style: italic;
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div .agreement {
+    width: 80%;
+  }
+}
+
+.credentials-div .no-account {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  width: 70%;
+  font-size: 25px;
+  color: #5f5f5f;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .credentials-div .no-account {
+    width: 90%;
+  }
+}
+
+.credentials-div .signup-link {
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.rights-text-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .rights-text-div {
+    width: 90%;
+    padding-top: 30px;
+    border-top: 0.5px solid white;
+  }
+}
+
+.rights-text {
+  font-size: 13px;
+  text-align: center;
+  color: #5d5d5d;
+}
+
+.login-error-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  padding: 1em;
+  background-color: #eb6666;
+}
+
+.login-error-div .login-error-message {
+  font-size: 1.1em;
+  color: #ededed;
+  text-align: center;
+}
+
+.login-error-div .alert-icon {
+  font-size: 1.5em;
+  margin-right: 0.5em;
+  color: white;
+}
+
+.header {
+  background-color: #37b2aa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 110px;
+  width: 100%;
+  font-family: "Avenir";
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.header .header-image {
+  width: 60%;
+  padding: 1em;
+}
+
+@media screen and (max-width: 1000px) {
+  .header .header-image {
+    width: 40%;
+    padding: 0.5em;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .header .header-image {
+    width: 30%;
+    padding: 0;
+  }
+}
+
+.header .header-logo {
+  margin-left: 10px;
+  width: 210px;
+  height: 90px;
+}
+
+@media screen and (max-width: 560px) {
+  .header .header-logo {
+    width: 100px;
+    height: 45px;
+  }
+}
+
+.header .header-contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 25%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+  .header .header-contents {
+    width: 35%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header .header-contents {
+    width: 45%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header .header-contents {
+    width: 55%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header .header-contents {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header .header-contents {
+    width: 80%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .header .header-contents {
+    width: 90%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    margin-right: 0;
+  }
+}
+
+.header .header-contents .link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.2em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.header .header-contents .link:hover {
+  color: #117973;
+}
+
+.footer {
+  background-color: #676767;
+  font-family: 'Roboto';
+  color: white;
+  font-size: 1.2em;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 457px) {
+  .footer {
+    height: 300px;
+  }
+}
+
+.footer .links-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 457px) {
+  .footer .links-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    text-align: center;
+  }
+}
+
+.footer .the-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar-container-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  background-color: #a5dfdc;
+  -webkit-box-shadow: 0px 9px 5px -4px #d1d1d1;
+          box-shadow: 0px 9px 5px -4px #d1d1d1;
+  width: 100vw;
+  height: 60px;
+  padding: 1em;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div {
+    width: 100%;
+    height: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: "Avenir";
+    justify-content: center;
+  }
+}
+
+.navbar-container-div .navbar-main-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: transparent;
+  width: 70%;
+  height: 50px;
+  line-height: 1em;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-container-div .navbar-main-div {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar-container-div .navbar-main-div {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div .navbar-main-div {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .navbar-container-div .navbar-main-div {
+    width: 70%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+.navbar-container-div a#link.navbar-links {
+  font-size: 1.3em;
+  text-decoration: none;
+  color: #5d5d5d;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar-container-div a#link.navbar-links {
+    font-size: 1.1em;
+  }
+  .navbar-container-div a#link.navbar-links:hover {
+    color: #3d3d3d;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .navbar-container-div a#link.navbar-links {
+    font-size: 1em;
+  }
+  .navbar-container-div a#link.navbar-links:hover {
+    color: #3d3d3d;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+.navbar-container-div a#link.navbar-links:hover {
+  color: #3d3d3d;
+  font-weight: bold;
+}
+
+.overview-outter-container {
+  width: 100%;
+  height: 100%;
+  padding: 1.5em;
+  padding-right: 4em;
+  padding-left: 4em;
+}
+
+@media all and (max-width: 2200px) {
+  .overview-outter-container {
+    padding-left: 10em;
+    padding-right: 10em;
+  }
+}
+
+@media all and (max-width: 1600px) {
+  .overview-outter-container {
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+}
+
+.overview-outter-container .overview-column-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  width: 30%;
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel .overview-welcome-bubble {
+  width: 100%;
+  height: 15%;
+  text-align: center;
+  font-size: 1.3em;
+  color: #616161;
+  padding: 1em;
+  border: 1px solid #9b9b9b;
+  border-radius: 20px;
+  margin-bottom: 1em;
+  -webkit-box-shadow: -2px 4px 26px -13px rgba(114, 114, 114, 0.75);
+          box-shadow: -2px 4px 26px -13px rgba(114, 114, 114, 0.75);
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel .overview-accounts-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+  border: 1px solid #9b9b9b;
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel .overview-accounts-container .accounts-title-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel .overview-accounts-container .accounts-title-section .overview-accounts-title {
+  font-size: 2.1em;
+  color: #616161;
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel .overview-accounts-container .accounts-title-section .bank-icon {
+  font-size: 2.3em;
+  color: #828282;
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel .overview-accounts-container .account-mini-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: auto;
+  padding: 0.5em;
+}
+
+.overview-outter-container .overview-column-container .overview-side-panel .overview-accounts-container .account-mini-container .account-type-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  justify-content: center;
+  width: 100%;
+  height: 30px;
+  background-color: #8fcec6;
+  text-align: center;
+  font-weight: bold;
+}
+
+.overview-outter-container .overview-column-container .account-line-break {
+  width: 97%;
+  color: #616161;
+}
+
+.overview-outter-container .overview-column-container .overview-snapshot-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 65%;
+  height: 100vh;
+}
+
+.overview-outter-container .overview-column-container .overview-snapshot-container .overview-snapshots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  height: 32%;
+  border: 1px solid #9b9b9b;
+}
+
+.overview-outter-container .overview-column-container .overview-snapshot-container .overview-snapshots .overview-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 100%;
+  width: 50%;
+  padding: 0.5em;
+  padding-left: 2em;
+}
+
+.overview-outter-container .overview-column-container .overview-snapshot-container .overview-snapshots .overview-text .snapshot-overall-title {
+  font-size: 1.3em;
+  color: #747474;
+}
+
+.overview-outter-container .overview-column-container .overview-snapshot-container .overview-snapshots .overview-graphic {
+  height: 50%;
+  width: 35%;
+  padding: 0.5em;
+}
+
+img.graphic {
+  width: 200px;
+  height: 200px;
+}
+
+.tabs-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
+.settings-outer-container {
+  width: 100vw;
+  height: 75vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+}
+
+.settings-outer-container .settings-main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 65%;
+  height: 100%;
+}
+
+@media screen and (max-width: 3300px) {
+  .settings-outer-container .settings-main-container {
+    width: 32%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 3200px) {
+  .settings-outer-container .settings-main-container {
+    width: 33%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 3000px) {
+  .settings-outer-container .settings-main-container {
+    width: 35%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2800px) {
+  .settings-outer-container .settings-main-container {
+    width: 40%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2500px) {
+  .settings-outer-container .settings-main-container {
+    width: 45%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2030px) {
+  .settings-outer-container .settings-main-container {
+    width: 50%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 2000px) {
+  .settings-outer-container .settings-main-container {
+    width: 50%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1900px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1700px) {
+  .settings-outer-container .settings-main-container {
+    width: 65%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .settings-outer-container .settings-main-container {
+    width: 60%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .settings-outer-container .settings-main-container {
+    width: 70%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .settings-outer-container .settings-main-container {
+    width: 80%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .settings-outer-container .settings-main-container {
+    width: 100%;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+
+.settings-outer-container .settings-tab-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 30;
+  height: 90%;
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-tab-container {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .settings-outer-container .settings-tab-container {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .settings-outer-container .settings-tab-container {
+    width: 25%;
+  }
+}
+
+.settings-outer-container .settings-tab-list {
+  width: 280px;
+  height: 100%;
+  background-color: #cacbcc;
+  text-decoration: none;
+  list-style-type: none;
+  line-height: 3em;
+  padding: 2em;
+}
+
+@media screen and (max-width: 900px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .settings-outer-container .settings-tab-list {
+    width: 100%;
+    font-size: 11px;
+    padding: 0.5em;
+  }
+}
+
+.settings-outer-container .settings-tab-list .settings-tab-list-item {
+  color: #555657;
+  font-size: 1.3em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.settings-outer-container .settings-tab-list .settings-tab-list-item:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.settings-outer-container .settings-content-container {
+  border: 1px solid #a1a3a3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 70;
+  height: 90%;
+}
+
+@media screen and (max-width: 900px) {
+  .settings-outer-container .settings-content-container {
+    width: 60;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .settings-outer-container .settings-content-container {
+    width: 55;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .settings-outer-container .settings-content-container {
+    width: 50;
+  }
+}
+
+.settings-outer-container .settings-content-items {
+  height: 100%;
+}
+
+.tabs-contents {
+  width: 600px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@media screen and (max-width: 900px) {
+  .tabs-contents {
+    width: 500px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .tabs-contents {
+    width: 450px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .tabs-contents {
+    width: 410px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .tabs-contents {
+    width: 380px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .tabs-contents {
+    width: 340px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tabs-contents {
+    width: 310px;
+  }
+}
+
+@media screen and (max-width: 565px) {
+  .tabs-contents {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .tabs-contents {
+    width: 290px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .tabs-contents {
+    width: 250px;
+  }
+}
+
+.tabs-contents::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tabs-contents::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(231, 225, 225, 0.3);
+          box-shadow: inset 0 0 6px rgba(231, 225, 225, 0.3);
+}
+
+.tabs-contents::-webkit-scrollbar-thumb {
+  background-color: #36c2bb;
+  outline: 1px solid #828e9b;
+}
+
+.tabs-contents .tabs-header-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  height: 90px;
+  padding: 0.5em;
+}
+
+.tabs-contents .tabs-header-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1.3em;
+}
+
+.tabs-contents .tabs-section-cutoff {
+  color: #626464;
+  width: 95%;
+}
+
+.tabs-contents .blurb {
+  font-size: 0.9em;
+  color: #6e7070;
+}
+
+.tabs-contents .tabs-information-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+}
+
+.tabs-contents .tabs-information-section .section-divider-title {
+  color: #525555;
+  margin-left: 2em;
+  margin-top: 1em;
+}
+
+.tabs-contents .tabs-information-section .tabs-question-section {
+  width: 100%;
+  padding: 0.9em;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section .info-section-question-title {
+  padding-left: 1em;
+  margin-bottom: 6px;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section .info-section-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-left: 3em;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section .info-section-inputs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-family: "Avenir";
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section .info-section-inputs-mini {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-right: 1.2em;
+}
+
+.tabs-contents .tabs-information-section .infor-input-option {
+  margin-right: 7px;
+}
+
+.tabs-contents .tabs-information-section .info-section-dropdown {
+  width: 90%;
+  padding: 1em;
+}
+
+.tabs-contents .tabs-information-section select#education {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#education {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section select#income {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#income {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section select#residential-status {
+  margin-left: 3em;
+  width: 87%;
+  height: 30px;
+  color: #676969;
+}
+
+@media screen and (max-width: 710px) {
+  .tabs-contents .tabs-information-section select#residential-status {
+    margin-left: 1em;
+  }
+}
+
+.tabs-contents .tabs-information-section .info-section-household {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.tabs-contents .tabs-information-section select#adults {
+  margin-left: 1em;
+  width: 40%;
+  height: 30px;
+  color: #676969;
+}
+
+.tabs-contents .tabs-information-section select#children {
+  margin-left: 2em;
+  width: 40%;
+  height: 30px;
+  color: #676969;
+}
+
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.custom-checkbox .checkmark {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #919090;
+  display: inline-block;
+  border-radius: 10px;
+  background: #71c7bb url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-size: 60%;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+.account-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 95%;
+  height: 150px;
+  margin: 1em;
+  background-color: #cddfdf;
+  color: #5d5e5e;
+}
+
+.account-container .bank-logo {
+  width: 120px;
+  height: 120px;
+  margin-left: 1em;
+}
+
+.account-container .bank-logo > img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 120px;
+  height: 120px;
+}
+
+.account-container .vertical-divider {
+  border: 1px solid #b4b6b6;
+  height: 85%;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.account-container .account-text-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  width: 95%;
+  height: 100%;
+  padding-top: 1em;
+  padding-right: 1em;
+  line-height: 2em;
+}
+
+.account-container .account-name-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.account-container .bank-title {
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+}
+
+.notification-section {
+  width: 100%;
+  padding: 1em;
+}
+
+.section-divider-title {
+  padding-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.notif-input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  padding-left: 3em;
+  padding-top: 1em;
+}
+
+.notif-input-container .notif-input-title {
+  color: #555555;
+  margin-bottom: 0.5em;
+}
+
+.notif-input-container input.notif-input {
+  width: 60%;
+  height: 30px;
+}
+
+.notif-input-container input:focus,
+.notif-input-container textarea:focus,
+.notif-input-container select:focus {
+  outline-color: #71c7bb;
+  outline-style: solid;
+}
+
+.userSetting-input-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Avenir";
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 100%;
+  padding-left: 3em;
+  padding-top: 0.5em;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-input-container {
+    padding-left: 2em;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .userSetting-input-container {
+    padding-left: 1.5em;
+  }
+}
+
+.userSetting-input-container input.userSetting-input {
+  width: 90%;
+  height: 30px;
+  background-color: #d1d1d1;
+  border: none;
+  padding-left: 10px;
+}
+
+.userSetting-input-container input:focus,
+.userSetting-input-container textarea:focus,
+.userSetting-input-container select:focus {
+  outline-color: #71c7bb;
+  outline-style: solid;
+}
+
+.userSetting-delete-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Avenir";
+  justify-content: center;
+  padding: 3em;
+  margin-top: 1em;
+}
+
+.userSetting-delete-container .userSetting-delete-button {
+  width: 50%;
+  height: 30px;
+  background: transparent;
+  border: none;
+  color: #e46a6a;
+  font-size: 1em;
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+}
+
+.userSetting-delete-container .userSetting-delete-button:hover {
+  color: white;
+  background-color: #ec314a;
+  font-weight: bold;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-delete-container .userSetting-delete-button {
+    width: 60%;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+@media all and (max-width: 620px) {
+  .userSetting-delete-container .userSetting-delete-button {
+    width: 80%;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .userSetting-delete-container .userSetting-delete-button {
+    width: 90%;
+    font-size: 1.2em;
+    margin-bottom: 1em;
+  }
+}
+
+.userSetting-delete-container .delete-warning-text {
+  padding: 1em;
+  width: 80%;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-delete-container .delete-warning-text {
+    width: 90%;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .userSetting-delete-container .delete-warning-text {
+    width: 95%;
+  }
+}
+
+.userSetting-delete-container .delete-warning-text .warning-text {
+  line-height: 1em;
+  color: #757575;
+  text-align: center;
+}
+
+@media all and (max-width: 700px) {
+  .userSetting-delete-container .delete-warning-text .warning-text {
+    line-height: 1.4em;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .userSetting-delete-container .delete-warning-text .warning-text {
+    text-align: left;
+  }
+}
+
+.a-goal {
+  height: 100px;
+  width: 85%;
+  border: 1px solid #696969;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.a-goal .name-bar {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.a-goal .name-bar .status-bar-back {
+  height: 20px;
+  width: 90%;
+  background-color: white;
+  border: 1px solid #696969;
+  border-radius: 10px;
+}
+
+.a-goal .name-bar .status-bar-back .status-bar {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.a-goal .icons-edit-delete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.goal-modal .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.goal-modal .modal-main {
+  position: fixed;
+  background: white;
+  width: 80%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.goal-modal .display-block {
+  display: block;
+}
+
+.goal-modal .display-none {
+  display: none;
+}
+
+.goals-page {
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  color: #696969;
+  font-size: 1.5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 1% .5% 1% .5%;
+}
+
+.goals-page .goals-list {
+  width: 37%;
+  border: 1px solid #696969;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.goals-page .goals-list .current-goals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.goals-page .goals-list .add-new {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.goals-page .goals-analytics {
+  width: 57%;
+}
+
+.goals-page .goals-analytics .current-goal-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1em;
+  height: 50px;
+  border: 1px solid #696969;
+  padding: 0px 16px 0px 16px;
+  margin-bottom: 20px;
+}
+
+.goals-page .goals-analytics .icon-style {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60px;
+}
+
+.goals-page .goals-analytics .chart-space {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.goals-page .goals-analytics .description {
+  width: 50%;
+  height: 500px;
+  border: 1px solid #696969;
+}
+
+.goals-page .goals-analytics .forecast {
+  width: 50%;
+  height: 500px;
+  border: 1px solid #696969;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+/*# sourceMappingURL=global.css.map */

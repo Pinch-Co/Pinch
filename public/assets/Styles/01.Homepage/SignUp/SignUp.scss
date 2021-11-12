@@ -8,11 +8,22 @@
   justify-content: space-around;
   margin-top: 40px;
   margin-bottom: 40px;
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 500px;
+  }
 
   .container-logo-words {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    @media screen and (max-width: 1000px) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
   .logo-smoll {
     width: 200px;
@@ -26,6 +37,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @media screen and (max-width: 630px) {
+      width: 40%;
+    }
   }
   .underline {
     border-bottom: solid #696969 3px;
@@ -37,6 +51,9 @@
     flex-direction: column;
     justify-content: space-around;
     padding-bottom: 10px;
+    @media screen and (max-width: 1000px) {
+      height:40%;
+    }
   }
   .pargaph-size {
     font-size: 1em;
