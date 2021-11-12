@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable quote-props */
 /* eslint-disable no-shadow */
 import React, { useState, useContext } from 'react';
