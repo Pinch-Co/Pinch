@@ -143,10 +143,6 @@ function BudgetBreakdown() {
     }
   };
 
-  useEffect(() => {
-
-  }, [sorting]);
-
   const isValidInput = (num: string): boolean => {
     const reg = new RegExp('^[0-9]+$');
     return reg.test(num);
