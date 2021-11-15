@@ -8,9 +8,9 @@ const AppContext = createContext({
     access_token: '',
     item_id: '',
   },
-  setUserObj: (obj: any) => {},
+  setUserObj: (obj: any) => { },
   showNav: false,
-  setNav: (showNav: boolean) => {},
+  setNav: (showNav: boolean) => { },
 });
 
 export default AppContext;

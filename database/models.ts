@@ -242,12 +242,14 @@ mutation{
 module.exports.makeBudget = (obj) => {
   const {
     id,
+    income,
     budget,
   } = obj;
 
   const transID = Mongoose.Types.ObjectId(id);
   UserModel.updateOne({ '_id': transID }, {
     $set: {
+      'income': income,
       'budget': budget,
     },
   })
