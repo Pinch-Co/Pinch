@@ -33,14 +33,6 @@ function ToolsOffered() {
         </div>
         <img src="/assets/images/noimageavailable.jpg" alt="Visual of the budget tracker" className="example-image" />
       </div>
-      <div className="tool-slot">
-        <img src="/assets/images/noimageavailable.jpg" alt="Visual of the credit payment" className="example-image" />
-        <div className="about-tool">
-          <h2>Credit Payments</h2>
-          <p>some words</p>
-          <p>will go here</p>
-        </div>
-      </div>
     </div>
   );
 }

@@ -1,0 +1,64 @@
+@import './GoalsList/GoalsList';
+@import './AddGoalModal/AddGoalModal';
+
+.goals-page {
+  background-color: #ffffff;
+  font-family: 'Roboto';
+  color: #696969;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 1% .5% 1% .5%;
+  .goals-list {
+    width: 37%;
+    border: 1px solid #696969;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .current-goals {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .add-new {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+    }
+  }
+  .goals-analytics {
+    width: 57%;
+    .current-goal-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1em;
+      height: 50px;
+      border: 1px solid #696969;
+      padding: 0px 16px 0px 16px;
+      margin-bottom: 20px;
+    }
+    .icon-style {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 60px;
+    }
+    .chart-space {
+      display: flex;
+      flex-direction: row;
+    }
+    .description {
+      width: 50%;
+      height: 500px;
+      border: 1px solid #696969;
+    }
+    .forecast {
+      width: 50%;
+      height: 500px;
+      border: 1px solid #696969;
+    }
+  }
+}

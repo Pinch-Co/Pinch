@@ -19,5 +19,9 @@
     justify-content: space-around;
     color: #696969;
     font-size: 1.3em;
+    @media screen and (max-width: 627px) {
+      height: 200px;
+      font-size: 1em;
+    }
   }
 }
