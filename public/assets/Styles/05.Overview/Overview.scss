@@ -36,7 +36,7 @@ $border: 1px solid rgb(155, 155, 155);
       @include flexCenter(column);
       justify-content: flex-start;
       align-items: center;
-      height: 100vh;
+      height: 100%;
       width: 30%;
       .overview-welcome-bubble {
         width: 100%;
@@ -98,7 +98,7 @@ $border: 1px solid rgb(155, 155, 155);
       @include flexCenter(column);
       justify-content: space-between;
       width: 65%;
-      height: 100vh;
+      height: 100%;
       .overview-snapshots {
         @include flexCenter(row);
         justify-content: space-between;

@@ -1,5 +1,5 @@
 .subscriptions-outter-container {
-  height: 90vh;
+  height: 100%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -36,7 +36,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 95%;
+  height: 85%;
   width: 95%;
 }
 

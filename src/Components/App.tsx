@@ -77,7 +77,7 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/additional-info" component={Additionalinfo} />
-            <div>
+            <div className="app-page-container">
               <Header />
               {switcher
                 ? <Navbar />

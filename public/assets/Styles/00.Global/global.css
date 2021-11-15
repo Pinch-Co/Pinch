@@ -2446,7 +2446,7 @@
   background-color: #a5dfdc;
   -webkit-box-shadow: 0px 9px 5px -4px #d1d1d1;
           box-shadow: 0px 9px 5px -4px #d1d1d1;
-  width: 100vw;
+  width: 100%;
   height: 60px;
   padding: 1em;
   margin-bottom: 15px;
@@ -2658,7 +2658,7 @@
       -ms-flex-pack: start;
           justify-content: flex-start;
   align-items: center;
-  height: 100vh;
+  height: 100%;
   width: 30%;
 }
 
@@ -2801,7 +2801,7 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 65%;
-  height: 100vh;
+  height: 100%;
 }
 
 .overview-outter-container .overview-column-container .overview-snapshot-container .overview-snapshots {
@@ -4074,7 +4074,7 @@ img.graphic {
 }
 
 .subscriptions-outter-container {
-  height: 90vh;
+  height: 100%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4111,7 +4111,7 @@ img.graphic {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 95%;
+  height: 85%;
   width: 95%;
 }
 
@@ -4229,5 +4229,13 @@ body,
 html {
   padding: 0;
   margin: 0;
+}
+
+.app-page-container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
 }
 /*# sourceMappingURL=global.css.map */

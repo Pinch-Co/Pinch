@@ -7,7 +7,7 @@
 }
 
 .subscriptions-outter-container {
-  height: 90vh;
+  height: 100%;
   width: 100%;
   @include flexCenter(row);
   justify-content: center;
@@ -15,7 +15,7 @@
   .subscriptions-inner-container {
     @include flexCenter(row);
     justify-content: space-between;
-    height: 95%;
+    height: 85%;
     width: 95%;
 
     .subscriptions-list-container {
