@@ -60,7 +60,6 @@ passport.use(
   }),
 );
 
-// apollo server connection
 const server = new ApolloServer({
   typeDefs,
   resolvers,
