@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 // Import technologies
 import * as React from 'react';
 import axios from 'axios';
@@ -86,6 +87,7 @@ function Goals() {
       }), { headers })
       .then((result) => {
         if (result.data.data.getUserInfo.goals.length > 0) {
+          console.log('Get goal');
           updateGoals(result.data.data.getUserInfo.goals);
           pickedGoal(result.data.data.getUserInfo.goals[0]);
         }
@@ -116,19 +118,22 @@ function Goals() {
 
   function handleDelete(goalName: string) {
     const headers = { 'Content-Type': 'application/json' };
-    axios.post('/graphql',
-      JSON.stringify({
-        query: `mutation { deleteGoal(
-        id: "${sessionStorage.id}"
-        goalName: "${goalName}") {
-          lastName
-          }
-        }`,
-      }), { headers })
-      .then(() => {
-        getGoals();
-      })
-      .catch((error) => { throw (error); });
+    // eslint-disable-next-line no-restricted-globals
+    if (confirm('Are you sure you want to delete goal?')) {
+      axios.post('/graphql',
+        JSON.stringify({
+          query: `mutation { deleteGoal(
+          id: "${sessionStorage.id}"
+          goalName: "${goalName}") {
+            lastName
+            }
+          }`,
+        }), { headers })
+        .then(() => {
+          getGoals();
+        })
+        .catch((error) => { throw (error); });
+    }
   }
 
   function handleUpdate() {
