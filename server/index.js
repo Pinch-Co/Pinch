@@ -43,7 +43,6 @@ passport.deserializeUser((id, done) => {
   UserModel.findOne({ '_id': id })
     .then((result) => {
       const matchingUser = result;
-      // console.log('Successfully found matching user');
       done(null, matchingUser);
     })
     .catch((error) => console.log(error));
