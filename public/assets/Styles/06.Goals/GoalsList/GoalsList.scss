@@ -1,22 +1,25 @@
 .a-goal {
   height: 100px;
-  width: 85%;
-  border: 1px solid #696969;
+  width: 97%;
+  box-shadow: 0px 4px 10px -1px rgba(169, 169, 169, 0.75);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 10px;
+  margin: 10px;
+  cursor: pointer;
   .name-bar {
-    width: 70%;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     justify-content: space-evenly;
     .status-bar-back {
-      height:20px;
+      height: 20px;
       width: 90%;
       background-color: white;
       border: 1px solid #696969;
       border-radius: 10px;
+      overflow: hidden;
       .status-bar {
         height: 100%;
         border-radius: 10px;
