@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import * as React from 'react';
 import axios from 'axios';
 
@@ -14,6 +16,7 @@ function AddGoalModal(props: openclose) {
   const [goal, updateGoal] = React.useState<any>();
   const [current, updateCurrent] = React.useState<any>();
   const [description, updateDescription] = React.useState<any>();
+  const backgroundClassName = `goal-modal-background ${showHideClassName}`;
 
   function submitGoal() {
     const goalSG = parseFloat(goal);
@@ -48,35 +51,58 @@ function AddGoalModal(props: openclose) {
 
   return (
     <div className="goal-modal">
+      <div className={backgroundClassName} onClick={handleClose} />
       <div className={showHideClassName}>
         <section className="modal-main">
-          <div> NEW GOAL UWU </div>
-          <div> Goal Name: </div>
-          <input
-            type="text"
-            placeholder="name"
-            onChange={(e) => { updateName(e.target.value); }}
-          />
-          <div> Goal Description: </div>
-          <input
-            type="text"
-            placeholder="Description"
-            onChange={(e) => { updateDescription(e.target.value); }}
-          />
-          <div> Goal Amount: </div>
-          <input
-            type="text"
-            placeholder="Amount"
-            onChange={(e) => { updateGoal(e.target.value); }}
-          />
-          <div> Add to Goal: </div>
-          <input
-            type="text"
-            placeholder="Add funds"
-            onChange={(e) => { updateCurrent(e.target.value); }}
-          />
-          <button type="submit" onClick={() => submitGoal()}> submit </button>
-          <button type="button" onClick={handleClose}>
+          <h3> NEW GOAL </h3>
+          <form className="goal-input-group">
+            <div className="goal-input-title"> Goal Name: </div>
+            <div className="goal-input-box">
+              <input
+                className="goal-input-field"
+                type="text"
+                placeholder="Name"
+                onChange={(e) => { updateName(e.target.value); }}
+              />
+            </div>
+          </form>
+          <form className="goal-input-group">
+            <div className="goal-input-title"> Goal Description: </div>
+            <div className="goal-input-box-desc">
+              <input
+                className="goal-input-field"
+                type="text"
+                placeholder="Description"
+                onChange={(e) => { updateDescription(e.target.value); }}
+              />
+            </div>
+          </form>
+          <form className="goal-input-group">
+            <div className="goal-input-title"> Goal Amount: </div>
+            <div className="goal-input-box">
+              <span className="bb-prefix">$</span>
+              <input
+                className="goal-input-field"
+                type="text"
+                placeholder="Amount"
+                onChange={(e) => { updateGoal(e.target.value); }}
+              />
+            </div>
+          </form>
+          <form className="goal-input-group">
+            <div className="goal-input-title"> Add to Goal: </div>
+            <div className="goal-input-box">
+              <span className="bb-prefix">$</span>
+              <input
+                className="goal-input-field"
+                type="text"
+                placeholder="Add funds"
+                onChange={(e) => { updateCurrent(e.target.value); }}
+              />
+            </div>
+          </form>
+          <button className="goal-button" id="submit" type="submit" onClick={() => submitGoal()}> Submit </button>
+          <button className="goal-button" type="button" onClick={handleClose}>
             Close
           </button>
         </section>

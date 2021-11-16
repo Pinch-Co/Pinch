@@ -1,6 +1,18 @@
 @import "./GoalsList/GoalsList";
 @import "./AddGoalModal/AddGoalModal";
 
+@mixin button() {
+  font-size: 18px;
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(228, 228, 228);
+  &:hover {
+    background-color: #dddddd;
+  }
+  cursor: pointer;
+}
+
 .goals-page {
   display: flex;
   align-items: center;
@@ -55,6 +67,11 @@
         flex-direction: row;
         justify-content: end;
         cursor: pointer;
+        .goal-add-icon {
+          position: relative;
+          top: 5px;
+          margin-left: 5px;
+        }
       }
     }
   }
@@ -86,32 +103,101 @@
     .chart-space {
       display: flex;
       flex-direction: row;
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 700px) {
         flex-direction: column;
       }
     }
-    .description {
+    .goal-chart {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 50%;
-      height: 500px;
+      width: 40%;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 700px) {
         width: 100%;
       }
     }
     .forecast {
-      width: 50%;
-      height: 500px;
+      width: 60%;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
       padding: 30px;
-      @media screen and (max-width: 650px) {
+      @media screen and (max-width: 700px) {
         width: 100%;
       }
     }
     .forecast div {
       margin-bottom: 10px;
     }
+    .goal-input-group {
+      align-items: flex-start;
+      // margin: 0 20px 20px 0;
+      margin-bottom: 20px;
+      flex-wrap: nowrap;
+      font-size: 20px;
+      .goal-top {
+        margin-top: 40px;
+      }
+      .goal-input-title {
+        font-size: 25px;
+        margin-bottom: 0px;
+        color: black;
+      }
+      .goal-input-box {
+        display: flex;
+        align-items: center;
+        max-width: 300px;
+        background: #fff;
+        border: 1px solid #a0a0a0;
+        border-radius: 4px;
+        padding-left: 0.35rem;
+        overflow: hidden;
+        font-family: sans-serif;
+        &:focus-within {
+          border-color: #777;
+        }
+      }
+      .goal-input-box-desc {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #a0a0a0;
+        border-radius: 4px;
+        padding-left: 0.35rem;
+        overflow: hidden;
+        font-family: sans-serif;
+        overflow-wrap: break-word;
+        &:focus-within {
+          border-color: #777;
+        }
+      }
+      .goal-prefix {
+        font-weight: 300;
+        font-size: 20px;
+        color: #999;
+      }
+      .goal-input-field {
+        flex-grow: 1;
+        font-size: 20px;
+        background: #fff;
+        border: none;
+        outline: none;
+        padding: 0.5rem;
+        resize: both;
+        overflow-wrap: break-word;
+      }
+    }
+  }
+}
+
+.goal-button {
+  @include button();
+  margin-right: 10px;
+}
+
+#submit {
+  background-color: #4fcec5;
+  &:hover {
+    background-color: #45b9b2;
   }
 }
