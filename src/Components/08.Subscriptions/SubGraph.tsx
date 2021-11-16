@@ -17,7 +17,8 @@ const SubGraph: React.FC<SubData> = ({ charData }) => {
     setData(charData);
   }, [charData]);
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    // <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer>
       <LineChart
         width={530}
         height={250}

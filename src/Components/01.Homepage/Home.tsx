@@ -9,7 +9,7 @@ function Home() {
       <div className="nl-home-inner-container">
         <AboutUs />
         <ToolsOffered />
-        {/* <SignUp /> */}
+        <SignUp />
       </div>
     </div>
   );

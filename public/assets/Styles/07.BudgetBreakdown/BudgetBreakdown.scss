@@ -28,6 +28,7 @@
 .bb-mid-div {
   @include center(row);
   width: 1500px;
+  min-height: 60vh;
   justify-content: space-between;
   align-items: flex-start;
   @media screen and (max-width: 1600px) {
@@ -186,6 +187,7 @@
       }
       .bb-budget-total-title {
         font-weight: bold;
+        color:rgb(97, 97, 97);
       }
     }
   }

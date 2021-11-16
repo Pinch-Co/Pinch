@@ -140,9 +140,7 @@ function Subscriptions() {
               </div>
             )}
           </div>
-          <div className="graph-container">
-            {picked.length ? <SubGraph charData={picked} /> : null}
-          </div>
+          {picked.length ? <SubGraph charData={picked} /> : null}
         </div>
       </div>
     </div>
@@ -150,3 +148,7 @@ function Subscriptions() {
 }
 
 export default Subscriptions;
+
+/* <div className="graph-container">
+{picked.length ? <SubGraph charData={picked} /> : null}
+</div> */
