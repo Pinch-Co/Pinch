@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
 
 function ToolsOffered() {
   return (
@@ -9,9 +10,14 @@ function ToolsOffered() {
             <div className="tool-title">Goals</div>
             <p className="tool-paragraph">Our Savings Goal tool makes saving easier by keeping track of the money set aside for those big purchases or rainy day funds. This tool has forecast capabilities which tells you how long before you reach your goal at a certain avings rate. You will also get text notification when the savings reach milestones.</p>
           </div>
-          <div className="tool-image-container">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ ease: 'easeOut', duration: 5 }}
+            className="tool-image-container"
+          >
             <img src="/assets/images/noimageavailable.jpg" alt="Visual of the goals tracker" className="example-image" />
-          </div>
+          </motion.div>
         </div>
         <div className="tool-section">
           <div className="tool-image-container">

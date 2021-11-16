@@ -2,6 +2,7 @@
 const {
   Configuration, PlaidApi, PlaidEnvironments,
 } = require('plaid');
+const moment = require('moment');
 require('dotenv').config();
 
 const { PLAID_CLIENT_ID, PLAID_SECRET, PLAID_ENV } = process.env;
@@ -63,11 +64,16 @@ const recieveAccessToken = async (request) => {
 
 const getTransactions = async (request) => {
   // Pull transactions for the last 30 days
+  let end = moment();
+  let start = moment();
+  start = start.subtract(60, 'days');
+  start = start.format('YYYY-MM-DD');
+  end = end.format('YYYY-MM-DD');
   const { accessToken } = request;
   const TransactionsGetRequest = {
     access_token: accessToken,
-    start_date: '2018-01-01',
-    end_date: '2020-02-01',
+    start_date: start,
+    end_date: end,
     options: {
       count: 250,
       offset: 0,

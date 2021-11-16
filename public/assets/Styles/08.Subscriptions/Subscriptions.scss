@@ -18,12 +18,37 @@
     height: 85%;
     width: 95%;
 
+    @media all and (max-width: 2800px) {
+      width: 80%;
+    }
+
+    @media all and (max-width: 1300px) {
+      width: 95%;
+    }
+
+    @media all and (max-width: 750px) {
+      @include flexCenter(column);
+      justify-content: space-between;
+      align-items: center;
+      width: 95%;
+    }
+
+
     .subscriptions-list-container {
       @include flexCenter(column);
       justify-content: flex-start;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
       background-color: rgb(227, 227, 227);
       height: 100%;
       width: 38%;
+
+      @media all and (max-width: 750px) {
+        @include flexCenter(column);
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        height: 35%;
+      }
 
       .list-header-container {
         @include flexCenter(row);
@@ -50,6 +75,16 @@
         width: 95%;
         padding: 1em;
         overflow: scroll;
+
+        @media all and (max-width: 750px) {
+          @include flexCenter(column);
+          justify-content: flex-start;
+          align-items: center;
+          width: 90%;
+          height: 45%;
+          overflow: scroll;
+        }
+
         &::-webkit-scrollbar {
           width: 4px;
         }
@@ -61,6 +96,10 @@
         &::-webkit-scrollbar-thumb {
           background-color: #36c2bb;
           outline: none;
+        }
+
+        ::-webkit-scrollbar-corner {
+          background-color: transparent;
         }
 
         .sub-button-div {
@@ -119,15 +158,25 @@
 
     img.bigger-logo {
       object-fit: contain;
+      @media all and (max-width: 750px) {
+        height: 50px;
+        width: 50px;
+      }
     }
 
     .subscriptions-graph-container {
       width: 60%;
       height: 100%;
-      border: 1px solid rgb(186, 186, 186);
+      border: none;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
       @include flexCenter(column);
       justify-content: flex-start;
       align-items: center;
+
+      @media all and (max-width: 750px) {
+        width: 95%;
+        height: 60%;
+      }
 
       .current-sub-box {
         @include flexCenter(column);
@@ -135,6 +184,10 @@
         width: 100%;
         height: 20%;
         margin-top: 1em;
+
+        @media all and (max-width: 750px) {
+          height: 10%;
+        }
 
         .current-sub-section {
           @include flexCenter(row);
@@ -149,6 +202,10 @@
             @include flexCenter(column);
             justify-content: center;
             margin-right: 3em;
+
+            @media all and (max-width: 750px) {
+              width: 25%;
+            }
           }
 
           .current-sub-title {
@@ -156,10 +213,22 @@
             font-weight: bold;
             color: rgb(87, 87, 87);
 
+            @media all and (max-width: 750px) {
+              font-size: 1.1em;
+              width: 45%;
+              @include flexCenter(column);
+              justify-content: flex-start;
+            }
+
             .mini-title {
               font-size: 0.8em;
               font-weight: lighter;
               color: rgb(143, 143, 143);
+
+              @media all and (max-width: 750px) {
+                margin-left: 0.3em;
+                font-size: 0.5em;
+              }
             }
           }
         }
@@ -172,6 +241,11 @@
           text-align: center;
           border: 1px solid rgb(165, 165, 165);
           border-radius: 10px;
+
+          @media all and (max-width: 750px) {
+            width: 80%;
+            font-size: 1.5em;
+          }
 
           .current-sub-title-choose-icon {
             font-size: 0.8em;
@@ -186,10 +260,21 @@
         height: 70%;
         margin-top: 1em;
         padding: 1em;
+        @include flexCenter(row);
+        justify-content: center;
+
+        @media all and (max-width: 750px) {
+          padding: 0em;
+        }
 
         .recharts-responsive-container {
           width: 100%;
           height: 100%;
+
+          @media all and (max-width: 750px) {
+            width: 85%;
+            height: 100%;
+          }
         }
       }
     }

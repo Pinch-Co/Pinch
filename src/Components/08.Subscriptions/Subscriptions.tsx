@@ -18,7 +18,7 @@ interface Subscription {
 function parseSubs(array: any): Subscription[] {
   const allSubscriptions: Subscription[] = [];
   const input = array;
-  const companyNames: any = ['Netflix', 'Hulu', 'Uber', 'Starbucks', 'Amazon Prime', 'Gym', 'Xbox Live', 'Playstation PLus', 'YouTube TV', 'Spotify', 'Apple Music', 'Pandora', 'Crunchyroll', 'Google', 'United Airlines'];
+  const companyNames: any = ['Netflix', 'Hulu', 'Uber', 'Starbucks', 'Amazon Prime', 'Gym', 'Xbox Live', 'Playstation PLus', 'YouTube TV', 'Spotify', 'Apple Music', 'Pandora', 'Crunchyroll', 'Google', 'United Airlines', 'McDonalds', 'KFC', 'Credit', 'ACH', 'phone', 'T-mobile', 'AT&T', 'Verizon', 'Comcast', 'Chase', 'Citizens', 'cable'];
 
   input.forEach((result: any) => {
     if (companyNames.includes(result.merchant_name)) {
