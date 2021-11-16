@@ -82,15 +82,17 @@ function App() {
               {switcher
                 ? <Navbar />
                 : null}
-              <ProtectedRoute path="/home/overview" component={Overview} />
-              <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <ProtectedRoute path="/home/settings" component={Settings} />
-              <ProtectedRoute path="/home/goals" component={Goals} />
-              <ProtectedRoute path="/home/budget" component={BudgetBreakdown} />
-              <ProtectedRoute path="/home/subscriptions" component={Subscriptions} />
-              <ProtectedRoute path="/home/credit" component={CreditPayments} />
-              {/* <Route exact path="*" component={NotFound} /> */}
+              <div className="app-page-inner-container">
+                <ProtectedRoute path="/home/overview" component={Overview} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/home" component={Home} />
+                <ProtectedRoute path="/home/settings" component={Settings} />
+                <ProtectedRoute path="/home/goals" component={Goals} />
+                <ProtectedRoute path="/home/budget" component={BudgetBreakdown} />
+                <ProtectedRoute path="/home/subscriptions" component={Subscriptions} />
+                <ProtectedRoute path="/home/credit" component={CreditPayments} />
+                {/* <Route exact path="*" component={NotFound} /> */}
+              </div>
               <Footer />
             </div>
           </Switch>
