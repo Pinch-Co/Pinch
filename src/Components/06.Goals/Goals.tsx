@@ -12,6 +12,7 @@ import GoalsList from './Components/GoalsList';
 import GoalChart from './Components/GoalChart';
 import AddGoalModal from './Components/AddGoalModal';
 import exampleGoals from './Components/exampleGoals';
+import AppContext from '../SharedComponents/06.Context/AppContext';
 
 function Goals() {
   // State
@@ -25,6 +26,8 @@ function Goals() {
   const [goalie, updateGoal] = React.useState<any>(userPickedGoal.goalAmount);
   const [current, updateCurrent] = React.useState<any>(userPickedGoal.currentAmount);
   const [description, updateDescription] = React.useState<any>(userPickedGoal.description);
+
+  const { userObj } = React.useContext(AppContext);
 
   function abrakadabra(data: any) {
     pickedGoal(data);
@@ -42,7 +45,7 @@ function Goals() {
     const headers = { 'Content-Type': 'application/json' };
     axios.post('/graphql',
       JSON.stringify({
-        query: `query { getUserInfo(id: "${sessionStorage.id}") {
+        query: `query { getUserInfo(id: "${userObj.id}") {
           id
           goals {
             name
@@ -68,13 +71,13 @@ function Goals() {
         }
       })
       .catch((error) => { throw (error); });
-  }, []);
+  }, [userObj.id]);
 
   function getGoals() {
     const headers = { 'Content-Type': 'application/json' };
     axios.post('/graphql',
       JSON.stringify({
-        query: `query { getUserInfo(id: "${sessionStorage.id}") {
+        query: `query { getUserInfo(id: "${userObj.id}") {
           id
           goals {
             name
@@ -86,8 +89,8 @@ function Goals() {
         }`,
       }), { headers })
       .then((result) => {
-        if (result.data.data.getUserInfo.goals.length > 0) {
-          console.log('Get goal');
+        if (result.data.data.getUserInfo.goals && result.data.data.getUserInfo.goals.length > 0) {
+          console.log('Get goal', result.data.data.getUserInfo.goals);
           updateGoals(result.data.data.getUserInfo.goals);
           pickedGoal(result.data.data.getUserInfo.goals[0]);
         }
@@ -103,7 +106,7 @@ function Goals() {
     axios.post('/graphql',
       JSON.stringify({
         query: `mutation {
-        createGoal( id: "${sessionStorage.id}"
+        createGoal( id: "${userObj.id}"
         name: "${name}"
         currentAmount: ${currentSG}
         goalAmount: ${goalSG}
@@ -119,21 +122,19 @@ function Goals() {
   function handleDelete(goalName: string) {
     const headers = { 'Content-Type': 'application/json' };
     // eslint-disable-next-line no-restricted-globals
-    if (confirm('Are you sure you want to delete goal?')) {
-      axios.post('/graphql',
-        JSON.stringify({
-          query: `mutation { deleteGoal(
-          id: "${sessionStorage.id}"
+    axios.post('/graphql',
+      JSON.stringify({
+        query: `mutation { deleteGoal(
+          id: "${userObj.id}"
           goalName: "${goalName}") {
             lastName
             }
           }`,
-        }), { headers })
-        .then(() => {
-          getGoals();
-        })
-        .catch((error) => { throw (error); });
-    }
+      }), { headers })
+      .then(() => {
+        getGoals();
+      })
+      .catch((error) => { throw (error); });
   }
 
   function handleUpdate() {
@@ -143,7 +144,7 @@ function Goals() {
       JSON.stringify({
         query: `mutation{
           updateGoalAmount(
-            id: "${sessionStorage.id}"
+            id: "${userObj.id}"
             goalName: "${userPickedGoal.name}"
             original: ${userPickedGoal.currentAmount}
             update: ${newAmount}
@@ -162,8 +163,8 @@ function Goals() {
   }
 
   function handleFullUpdate() {
-    handleNewGoal();
     handleDelete(userPickedGoal.name);
+    handleNewGoal();
 
     updateEdit(false);
     updateName(null);
