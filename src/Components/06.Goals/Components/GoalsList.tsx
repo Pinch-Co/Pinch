@@ -22,11 +22,11 @@ function GoalsList(props: ListProps) {
   style.width = `${quickMath}%`;
 
   if (quickMath >= 75) {
-    style.backgroundColor = 'green';
+    style.backgroundColor = 'rgb(99, 172, 77)';
   } else if (quickMath <= 25) {
-    style.backgroundColor = 'red';
+    style.backgroundColor = 'rgb(194, 63, 63)';
   } else {
-    style.backgroundColor = 'yellow';
+    style.backgroundColor = 'rgb(226, 209, 57)';
   }
 
   return (

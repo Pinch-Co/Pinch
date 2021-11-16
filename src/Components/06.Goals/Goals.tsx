@@ -169,32 +169,30 @@ function Goals() {
 
   return (
     <div className="goals-page">
-      <div className="goals-list">
-        <div className="current-goals">
-          <div>
-            YOUR CURRENT GOALS
-          </div>
-          <BsPiggyBank size={25} />
-        </div>
-        <div>
-          {currentGoals.map((goal: any) => (
-            <div key={goal.name} role="button" tabIndex={0} onClick={() => abrakadabra(goal)} onKeyPress={() => abrakadabra(goal)}>
-              <GoalsList handleDelete={() => { handleDelete(goal.name); }} {...goal} />
+      <div className="goals-container">
+        <div className="goals-list">
+          <div className="goals-main">
+            <div className="goals-top">
+              <div className="goals-div-title">Your Current Goals</div>
+              <BsPiggyBank size={25} />
             </div>
-          ))}
-        </div>
-        <div className="add-new">
-          <div>
-            Add a new Goal
+            <div>
+              {currentGoals.map((goal: any) => (
+                <div key={goal.name} role="button" tabIndex={0} onClick={() => abrakadabra(goal)} onKeyPress={() => abrakadabra(goal)}>
+                  <GoalsList handleDelete={() => { handleDelete(goal.name); }} {...goal} />
+                </div>
+              ))}
+            </div>
           </div>
-          <div role="button" tabIndex={0} onClick={() => updateShow(true)} onKeyPress={() => updateShow(true)}>
-            <IoIosAddCircleOutline size={25} />
+          <div className="add-new">
+            <div role="button" tabIndex={0} onClick={() => updateShow(true)} onKeyPress={() => updateShow(true)}>
+              Add a new goal
+              <IoIosAddCircleOutline size={25} />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="goals-analytics">
-        <div className="current-goal-title">
-          <div>
+        <div className="goals-analytics">
+          <div className="current-goal-title">
             {edit
               ? (
                 <input
@@ -203,79 +201,80 @@ function Goals() {
                   onChange={(e) => { updateName(e.target.value); }}
                 />
               ) : userPickedGoal.name}
+            <div className="icon-style">
+              <div role="button" tabIndex={0} onClick={() => updateEdit(true)} onKeyPress={() => updateEdit(true)}>
+                <FaRegEdit size={25} color="#696969" />
+              </div>
+              <div role="button" tabIndex={0} onClick={() => handleDelete(userPickedGoal.name)} onKeyPress={() => handleDelete(userPickedGoal.name)}>
+                <GrClose size={25} color="#696969" />
+              </div>
+            </div>
           </div>
-          <div className="icon-style">
-            <div role="button" tabIndex={0} onClick={() => updateEdit(true)} onKeyPress={() => updateEdit(true)}>
-              <FaRegEdit size={25} color="#696969" />
+          <div className="chart-space">
+            <div className="description">
+              <GoalChart {...userPickedGoal} />
             </div>
-            <div role="button" tabIndex={0} onClick={() => handleDelete(userPickedGoal.name)} onKeyPress={() => handleDelete(userPickedGoal.name)}>
-              <GrClose size={25} color="#696969" />
-            </div>
-          </div>
-        </div>
-        <div className="chart-space">
-          <div className="description">
-            <GoalChart {...userPickedGoal} />
-          </div>
-          <div className="forecast">
-            <div> Description </div>
-            <div>
-              {edit
-                ? (
-                  <input
-                    type="text"
-                    defaultValue={userPickedGoal.description}
-                    onChange={(e) => { updateDescription(e.target.value); }}
-                  />
-                ) : userPickedGoal.description}
-            </div>
-            <div> Current Goal: </div>
-            <div>
-              {edit
-                ? (
-                  <input
-                    type="text"
-                    defaultValue={userPickedGoal.goalAmount}
-                    onChange={(e) => { updateGoal(e.target.value); }}
-                  />
-                ) : userPickedGoal.goalAmount}
-            </div>
-            <div> Current Amount Saved: </div>
-            <div>
-              {edit
-                ? (
-                  <input
-                    type="text"
-                    defaultValue={userPickedGoal.currentAmount}
-                    onChange={(e) => { updateCurrent(e.target.value); }}
-                  />
-                ) : userPickedGoal.currentAmount}
-            </div>
-            {edit
-              ? <button type="submit" onClick={() => { handleFullUpdate(); }}> submit </button> : (
-                <div>
-                  <div> Amout to reach goal: </div>
-                  <div>
-                    {(userPickedGoal.goalAmount - userPickedGoal.currentAmount).toFixed(2)}
-                  </div>
-                  <div>
+            <div className="forecast">
+              <h3> Description </h3>
+              <div>
+                {edit
+                  ? (
                     <input
                       type="text"
-                      defaultValue="Add amount here"
-                      onChange={(e) => { updateNumber(e.target.value); }}
+                      defaultValue={userPickedGoal.description}
+                      onChange={(e) => { updateDescription(e.target.value); }}
                     />
+                  ) : userPickedGoal.description}
+              </div>
+              <h4> Current Goal: </h4>
+              <div>
+                {edit
+                  ? (
+                    <input
+                      type="text"
+                      defaultValue={userPickedGoal.goalAmount}
+                      onChange={(e) => { updateGoal(e.target.value); }}
+                    />
+                  ) : `$${userPickedGoal.goalAmount}`}
+              </div>
+              <h4> Current Amount Saved: </h4>
+              <div>
+                {edit
+                  ? (
+                    <input
+                      type="text"
+                      defaultValue={userPickedGoal.currentAmount}
+                      onChange={(e) => { updateCurrent(e.target.value); }}
+                    />
+                  ) : `$${userPickedGoal.currentAmount}`}
+              </div>
+              {edit
+                ? <button type="submit" onClick={() => { handleFullUpdate(); }}> submit </button> : (
+                  <div>
+                    <h4> Amount to reach goal: </h4>
+                    <div>
+                      $
+                      {(userPickedGoal.goalAmount - userPickedGoal.currentAmount).toFixed(2)}
+                    </div>
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="Add amount here"
+                        onChange={(e) => { updateNumber(e.target.value); }}
+                      />
+                    </div>
+                    <button type="submit" onClick={() => { handleUpdate(); }}> Submit </button>
                   </div>
-                  <button type="submit" onClick={() => { handleUpdate(); }}> submit </button>
-                </div>
-              )}
+                )}
+            </div>
           </div>
         </div>
+        <AddGoalModal
+          show={show}
+          handleClose={() => { handleClose(); }}
+          getGoals={() => { getGoals(); }}
+        />
       </div>
-      <AddGoalModal
-        show={show}
-        handleClose={() => { handleClose(); }}
-        getGoals={() => { getGoals(); }}
-      />
     </div>
   );
 }
