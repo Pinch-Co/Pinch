@@ -15,7 +15,7 @@
   .subscriptions-inner-container {
     @include flexCenter(row);
     justify-content: space-between;
-    height: 85%;
+    height: 80%;
     width: 95%;
 
     @media all and (max-width: 2800px) {
