@@ -168,7 +168,6 @@ function BudgetBreakdown() {
         each.value = parseInt(inputs[i + 1].value, 10);
       }
       if (each.name !== '' && each.value) {
-        console.log(each);
         updatedBudget.push(each);
       }
     }
