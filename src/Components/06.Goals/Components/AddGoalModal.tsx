@@ -69,10 +69,11 @@ function AddGoalModal(props: openclose) {
           <form className="goal-input-group">
             <div className="goal-input-title"> Goal Description: </div>
             <div className="goal-input-box-desc">
-              <input
+              <textarea
+                rows={4}
                 className="goal-input-field"
-                type="text"
                 placeholder="Description"
+                name="Description"
                 onChange={(e) => { updateDescription(e.target.value); }}
               />
             </div>
