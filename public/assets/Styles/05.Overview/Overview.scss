@@ -38,7 +38,6 @@ $border: none;
       height: 95%;
     }
 
-
     .overview-side-panel {
       @include flexCenter(column);
       justify-content: flex-start;
@@ -50,7 +49,7 @@ $border: none;
         height: 15%;
         text-align: center;
         font-size: 1.3em;
-        color:rgb(97, 97, 97);
+        color: rgb(97, 97, 97);
         padding: 1em;
         border: $border;
         border-radius: 20px;
@@ -102,7 +101,7 @@ $border: none;
           }
           .bank-icon {
             font-size: 2.3em;
-            color:rgb(130, 130, 130);
+            color: rgb(130, 130, 130);
           }
         }
         .account-mini-container {
@@ -168,32 +167,79 @@ $border: none;
 
         &:hover {
           background-color: rgb(233, 233, 233);
-          outline: 2px solid  rgb(144, 213, 200);
+          outline: 2px solid rgb(144, 213, 200);
         }
-        .overview-text {
-          @include flexCenter(column);
+
+        .goalchart-mini-container {
+          @include flexCenter(row);
           justify-content: space-evenly;
-          align-items: flex-start;
           height: 100%;
-          width: 50%;
-          padding: 0.5em;
-          padding-left: 2em;
-          margin: 0em;
-          .snapshot-overall-title {
-            font-size: 1.3em;
-            color: rgb(116, 116, 116);
-            margin: 0;
+          width: 100%;
+          position: relative;
+
+          .click-message {
+            position: absolute;
+            @include flexCenter(column);
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(233, 233, 233, 0.5);
+            color: rgb(33, 142, 134);
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: 0.5s ease;
+            opacity: 0;
+
+            &:hover {
+              opacity: 1;
+            }
           }
-        }
-        .overview-graphic {
-          height: 50%;
-          width: 35%;
-          padding: 0.5em;
+
+          .inner-container {
+            @include flexCenter(row);
+            justify-content: space-evenly;
+            height: 100%;
+            width: 90%;
+
+            .overview-text {
+              @include flexCenter(column);
+              justify-content: space-evenly;
+              align-items: flex-start;
+              height: 95%;
+              width: 50%;
+              padding: 0.5em;
+              padding-left: 2em;
+              margin: 0em;
+              .snapshot-overall-title {
+                font-size: 1.3em;
+                color: rgb(116, 116, 116);
+                margin-top: 0.5em;
+                margin-bottom: 0em;
+              }
+              .snaps {
+                @include flexCenter(row);
+                justify-content: flex-start;
+                width: 100%;
+
+                .snapshot-text {
+                  font-size: 1.1em;
+                  color: rgb(96, 96, 96);
+                  margin-right: 0.5em;
+                }
+
+                .snapshot-amount {
+                  font-size: 1.2em;
+                  font-weight: bold;
+                  color: rgb(32, 152, 134);
+                }
+              }
+            }
+          }
         }
       }
     }
   }
-
 }
 
 img.graphic {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {
-  ResponsiveContainer,
+  // ResponsiveContainer,
   PieChart,
   Pie,
   Cell,
@@ -26,23 +26,21 @@ function GoalChart(props: ChartProps) {
   ];
 
   return (
-    <ResponsiveContainer>
-      <PieChart width={300} height={300}>
-        <Pie
-          data={data}
-          innerRadius={70}
-          outerRadius={100}
-          fill="#8884d8"
-          paddingAngle={5}
-          dataKey="value"
-          label
-        >
-          {data.map((entry, index) => (
-            <Cell key={entry.name} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-      </PieChart>
-    </ResponsiveContainer>
+    <PieChart width={300} height={300}>
+      <Pie
+        data={data}
+        innerRadius={70}
+        outerRadius={100}
+        fill="#8884d8"
+        paddingAngle={5}
+        dataKey="value"
+        label
+      >
+        {data.map((entry, index) => (
+          <Cell key={entry.name} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
+    </PieChart>
   );
 }
 

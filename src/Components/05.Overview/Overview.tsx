@@ -4,6 +4,7 @@ import axios from 'axios';
 import { RiBankLine } from 'react-icons/ri';
 import { motion } from 'framer-motion';
 import AppContext from '../SharedComponents/06.Context/AppContext';
+import GoalMini from './GoalMini';
 
 function parseBalance(array: any) {
   const allAccounts: any = {
@@ -61,8 +62,6 @@ function Overview() {
         .catch((error) => console.log('error getting accounts', error));
     }
   }, [access_token]);
-
-  // console.log('accounts', accounts);
 
   return (
     <div className="overview-outter-container">
@@ -156,18 +155,7 @@ function Overview() {
           <div
             className="overview-snapshots"
           >
-            <div className="overview-text">
-              <h5 className="snapshot-overall-title">Goals</h5>
-              <p className="snapshot-description">small description</p>
-              <div>
-                <p className="snapshopt-specific-title">Rainy Day Fund</p>
-                <hr className="line-break" />
-                <p>Savings goal: 500</p>
-              </div>
-            </div>
-            <div className="overview-graphic">
-              <img className="graphic" src="https://www.xelplus.com/wp-content/uploads/2019/09/ProgressCircle-20.png" alt="circle" />
-            </div>
+            <GoalMini />
           </div>
           <div className="overview-snapshots">
             <div className="overview-text">
