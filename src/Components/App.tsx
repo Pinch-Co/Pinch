@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 import * as React from 'react';
 import {
   useState,
@@ -55,8 +56,8 @@ function App() {
             id, accessToken, email, itemId,
           } = result.data.data.getUserInfo;
           setUserObj({
-            id,
-            email,
+            id: id,
+            email: email,
             access_token: accessToken,
             item_id: itemId,
           });
@@ -76,20 +77,22 @@ function App() {
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/additional-info" component={Additionalinfo} />
-            <div>
-              <Header />
-              {switcher
-                ? <Navbar />
-                : null}
-              <ProtectedRoute path="/home/overview" component={Overview} />
-              <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <ProtectedRoute path="/home/settings" component={Settings} />
-              <ProtectedRoute path="/home/goals" component={Goals} />
-              <ProtectedRoute path="/home/budget" component={BudgetBreakdown} />
-              <ProtectedRoute path="/home/subscriptions" component={Subscriptions} />
-              <ProtectedRoute path="/home/credit" component={CreditPayments} />
-              {/* <Route exact path="*" component={NotFound} /> */}
+            <div className="app-page-container">
+              <div>
+                <Header />
+                {switcher
+                  ? <Navbar />
+                  : null}
+                <ProtectedRoute path="/home/overview" component={Overview} />
+                <Route exact path="/" component={Home} />
+                <Route exact path="/home" component={Home} />
+                <ProtectedRoute path="/home/settings" component={Settings} />
+                <ProtectedRoute path="/home/goals" component={Goals} />
+                <ProtectedRoute path="/home/budget" component={BudgetBreakdown} />
+                <ProtectedRoute path="/home/subscriptions" component={Subscriptions} />
+                <ProtectedRoute path="/home/credit" component={CreditPayments} />
+                {/* <Route exact path="*" component={NotFound} /> */}
+              </div>
               <Footer />
             </div>
           </Switch>

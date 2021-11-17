@@ -5,11 +5,17 @@ import ToolsOffered from './ToolsOffered';
 
 function Home() {
   return (
-    <>
-      <AboutUs />
-      <ToolsOffered />
-      <SignUp />
-    </>
+    <div className="nl-home-container">
+      <div className="nl-home-inner-container">
+        <div>
+          <AboutUs />
+        </div>
+        <div>
+          <ToolsOffered />
+        </div>
+        <SignUp />
+      </div>
+    </div>
   );
 }
 

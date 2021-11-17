@@ -14,11 +14,22 @@
 @import "../04.Settings/UserSettings/UserSettings.scss";
 @import "../07.BudgetBreakdown/BudgetBreakdown.scss";
 @import "../06.Goals/Goals.scss";
+@import "../08.Subscriptions/Subscriptions.scss";
+@import "../08.Subscriptions/Subchart/SubCharts.scss";
 
 body,
 html {
   padding: 0;
   margin: 0;
-  // overflow-y: hidden;
-  // overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+.app-page-container {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

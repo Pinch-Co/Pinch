@@ -10,7 +10,6 @@ function Navbar() {
         <Link className="navbar-links" id="link" to="/home/goals">Goals</Link>
         <Link className="navbar-links" id="link" to="/home/budget">Budget Breakdown</Link>
         <Link className="navbar-links" id="link" to="/home/subscriptions">Subscriptions</Link>
-        {/* <Link className="navbar-links" id="link" to="/home/credit">Credit Payments</Link> */}
       </div>
     </div>
   );

@@ -1,3 +1,27 @@
 @import 'ToolsOffered/ToolsOffered';
 @import 'AboutUs/AboutUs';
 @import 'SignUp/SignUp';
+
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+.nl-home-container {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+
+  .nl-home-inner-container {
+    @include flexCenter(column);
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+}

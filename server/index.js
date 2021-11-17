@@ -43,8 +43,6 @@ passport.deserializeUser((id, done) => {
   UserModel.findOne({ '_id': id })
     .then((result) => {
       const matchingUser = result;
-      // console.log('matching user', matchingUser);
-      console.log('Successfully found matching user');
       done(null, matchingUser);
     })
     .catch((error) => console.log(error));
@@ -62,7 +60,6 @@ passport.use(
   }),
 );
 
-// apollo server connection
 const server = new ApolloServer({
   typeDefs,
   resolvers,

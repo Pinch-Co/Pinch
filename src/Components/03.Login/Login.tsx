@@ -22,7 +22,7 @@ function Login(props: OverviewProps) {
   const [password, setPassword] = useState<string>('');
   const [validation, setErrors] = useState<Verrors>();
   // eslint-disable-next-line no-unused-vars
-  const [err, setErr] = useState<string>('');
+  const [err, setErr] = useState<boolean>(false);
   const history = useHistory();
 
   const {
@@ -95,7 +95,10 @@ function Login(props: OverviewProps) {
             history.push('/home/overview');
           });
         })
-        .catch((error) => console.log('there was an error', error));
+        .catch((error) => {
+          setErr(!err);
+          console.log('there was an error', error);
+        });
     } else {
       setErrors(returnedValidation);
     }
@@ -115,9 +118,7 @@ function Login(props: OverviewProps) {
                 <div className="login-error-div">
                   <FiAlertTriangle className="alert-icon" />
                   <p className="login-error-message">
-                    {err}
-                    {' '}
-                    : email or password may be incorrect, please try again.
+                    Email or password may be incorrect, please try again.
                   </p>
                 </div>
               ) : null}

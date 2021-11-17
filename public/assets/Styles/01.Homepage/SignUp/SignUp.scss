@@ -1,85 +1,109 @@
-.sign-up {
-  background-color: #D1E0DE;
-  font-family: 'Roboto';
-  color: #696969;
-  font-size: 1.5em;
+@mixin flexCenter($direction) {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 40px;
-  margin-bottom: 40px;
-  @media screen and (max-width: 1000px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height: 500px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+ }
+
+ .sign-up-container {
+  width: 100%;
+  height: 40%;
+  margin-bottom: 7em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3cpath d='M1031.287254480076 136.96926820015562L1076.3344966459697 40.365145625526296 934.6831319054467 91.92202603426182z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1274.5971853118895 269.23615229483266L1142.4879770702926 238.73633835706488 1111.9881631325247 370.8455465986618 1244.0973713741216 401.34536053642967z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1188.48480842877-38.34553216393317L1140.8418526192484 32.288054543840985 1270.6137105856703 68.43569490423647z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1080.1601666740983-23.104999345339667L996.6872495366223-17.268004366291137 1047.179200573933 105.02287385039865z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M142.4752890509165 350.66128550555516L8.807076565726192 276.56778543350214 68.3817889788635 484.3294979907455z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1298.5766577912757 541.6931193014591L1362.8440318302253 597.5598952277928 1414.5105087002512 473.2254462062015z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M558.2068068459927 591.9455707188496L632.4193341295859 509.52420916058804 471.681028150397 439.41609901432895z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M348.0431271581593 168.0353285509789L329.6521621505155 271.7575436189841 416.71907579063236 241.77800104878514z' fill='rgba(78%2c 187%2c 179%2c 0.66)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+
+  .sign-up-logo-container {
+    @include flexCenter(row);
+    width: 100%;
+    height: 20%;
+
+    @media all and (max-width: 750px) {
+      @include flexCenter(column);
+      justify-content: space-evenly;
+      height: auto;
+    }
+
+    .free-secure-reliable {
+      height: 100%;
+      @include flexCenter(column);
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      @media all and (max-width: 750px) {
+        @include flexCenter(row);
+        justify-content: space-evenly;
+        height: auto;
+        width: 90%;
+      }
+
+      .tid-bit {
+        font-family: "Roboto";
+        font-size: 2em;
+        margin: 0.5em;
+        color: rgb(133, 133, 133);
+
+        @media all and (max-width: 400px) {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    .paragraph-container {
+      width: 35%;
+      margin-right: 1em;
+
+      @media all and (max-width: 750px) {
+        width: 65%;
+      }
+      .paragraph-size {
+        font-family: "Roboto";
+        font-size: 1.3em;
+        line-height: 1.4em;
+        color: rgb(123, 123, 123);
+        text-align: center;
+        @media all and (max-width: 750px) {
+          font-size: 1.1em;
+          line-height: 1.4em;
+        }
+      }
+
+      .sign-up-section {
+        @include flexCenter(column);
+        justify-content: space-between;
+        width: 100%;
+
+        .make-the-button-center {
+          height: auto;
+          width: auto;
+
+          .button-sign-up {
+            @include flexCenter(column);
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 60px;
+            border-radius: 15px;
+            background-color: #37b2aa;
+            color: white;
+            font-size: 1.3em;
+            font-weight: bold;
+            transition: 0.5s ease;
+
+            &:hover {
+              background-color: #268882;
+            }
+          }
+        }
+      }
+    }
   }
 
-  .container-logo-words {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    @media screen and (max-width: 1000px) {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
-    }
-  }
-  .logo-smoll {
-    width: 200px;
-    height: 200px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-  .column-words {
-    height: 250px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    @media screen and (max-width: 630px) {
-      width: 40%;
-    }
-  }
-  .underline {
-    border-bottom: solid #696969 3px;
-    padding-bottom: 5px;
-  }
-  .column-description {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding-bottom: 10px;
-    @media screen and (max-width: 1000px) {
-      height:40%;
-    }
-  }
-  .pargaph-size {
-    font-size: 1em;
-  }
-  .make-the-button-center {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  .button-sign-up {
-    width: 400px;
-    background-color: #1EB2AA;
-    border-radius: 50px;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 1.3em;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-  }
-  .button-sign-up:hover {
-      background-color: white;
-      color: #1EB2AA;
-  }
-}
+ }
+
+ img.logo-smoll {
+  height: 230px;
+  width: 230px;
+  margin-right: 1em;
+ }
+
+

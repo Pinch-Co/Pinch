@@ -6,37 +6,44 @@
   font-family: "Avenir";
 }
 
-$border: 1px solid rgb(155, 155, 155);
+$border: none;
 
 .overview-outter-container {
+  @include flexCenter(column);
+  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 1.5em;
-  padding-right: 4em;
-  padding-left: 4em;
-
-  @media all and (max-width: 2200px) {
-    padding-left: 10em;
-    padding-right: 10em;
-  }
-
-  @media all and (max-width: 1600px) {
-    padding-left: 5em;
-    padding-right: 5em;
-  }
+  margin: 50px 0 50px;
 
   .overview-column-container {
     @include flexCenter(row);
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
+    width: 90%;
     height: 100%;
+    padding: 0.5em;
     // border: $border;
+    @media all and (max-width: 2500px) {
+      width: 70%;
+      height: 85%;
+    }
+
+    @media all and (max-width: 1800px) {
+      width: 80%;
+      height: 85%;
+    }
+
+    @media all and (max-width: 1300px) {
+      width: 90%;
+      height: 95%;
+    }
+
+
     .overview-side-panel {
       @include flexCenter(column);
       justify-content: flex-start;
       align-items: center;
-      height: 100vh;
+      height: 100%;
       width: 30%;
       .overview-welcome-bubble {
         width: 100%;
@@ -48,7 +55,18 @@ $border: 1px solid rgb(155, 155, 155);
         border: $border;
         border-radius: 20px;
         margin-bottom: 1em;
-        box-shadow: -2px 4px 26px -13px rgba(114, 114, 114, 0.75);
+        // box-shadow: -2px 4px 26px -13px rgb(135, 213, 199);
+        box-shadow: -1px 4px 14px 0px rgb(135, 213, 199);
+
+        @media all and (max-width: 2500px) {
+          font-size: 1.7em;
+        }
+        @media all and (max-width: 1900px) {
+          font-size: 1.5em;
+        }
+        @media all and (max-width: 1300px) {
+          font-size: 1.2em;
+        }
       }
       .overview-accounts-container {
         @include flexCenter(column);
@@ -56,7 +74,24 @@ $border: 1px solid rgb(155, 155, 155);
         width: 100%;
         height: 100%;
         padding: 1em;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
         border: $border;
+
+        @media all and (max-height: 470px) {
+          overflow-y: scroll;
+
+          &::-webkit-scrollbar {
+            width: 4px;
+          }
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgb(227, 227, 227);
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: #36c2bb;
+            outline: none;
+          }
+        }
+
         .accounts-title-section {
           @include flexCenter(row);
           justify-content: space-between;
@@ -85,6 +120,27 @@ $border: 1px solid rgb(155, 155, 155);
             text-align: center;
             font-weight: bold;
           }
+
+          .account-container {
+            width: 100%;
+            height: auto;
+            @include flexCenter(column);
+            justify-content: flex-start;
+            background-color: transparent;
+            margin: 0;
+
+            .account-div {
+              @include flexCenter(row);
+              justify-content: space-between;
+              width: 100%;
+              height: 25px;
+
+              .account-text {
+                font-size: 0.8em;
+                color: rgb(58, 58, 58);
+              }
+            }
+          }
         }
       }
     }
@@ -98,15 +154,22 @@ $border: 1px solid rgb(155, 155, 155);
       @include flexCenter(column);
       justify-content: space-between;
       width: 65%;
-      height: 100vh;
+      height: 100%;
       .overview-snapshots {
         @include flexCenter(row);
         justify-content: space-between;
         align-items: flex-start;
         width: 100%;
         height: 32%;
-        // margin-bottom: 1.2em;
-        border: $border;
+        margin-bottom: 1em;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        border: none;
+        transition: 0.5s ease;
+
+        &:hover {
+          background-color: rgb(233, 233, 233);
+          outline: 2px solid  rgb(144, 213, 200);
+        }
         .overview-text {
           @include flexCenter(column);
           justify-content: space-evenly;
@@ -115,9 +178,11 @@ $border: 1px solid rgb(155, 155, 155);
           width: 50%;
           padding: 0.5em;
           padding-left: 2em;
+          margin: 0em;
           .snapshot-overall-title {
             font-size: 1.3em;
             color: rgb(116, 116, 116);
+            margin: 0;
           }
         }
         .overview-graphic {
