@@ -38,12 +38,25 @@ $border: none;
       height: 95%;
     }
 
+    @media all and (max-width: 900px) {
+      @include flexCenter(column);
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      height: 95%;
+    }
+
     .overview-side-panel {
       @include flexCenter(column);
       justify-content: flex-start;
       align-items: center;
       height: 100%;
       width: 30%;
+
+      @media all and (max-width: 900px) {
+        width: 80%;
+      }
+
       .overview-welcome-bubble {
         width: 100%;
         height: 15%;
@@ -65,6 +78,10 @@ $border: none;
         }
         @media all and (max-width: 1300px) {
           font-size: 1.2em;
+        }
+
+        @media all and (max-width: 900px) {
+          width: 65%;
         }
       }
       .overview-accounts-container {
@@ -89,6 +106,10 @@ $border: none;
             background-color: #36c2bb;
             outline: none;
           }
+        }
+
+        @media all and (max-width: 900px) {
+          margin-bottom: 3em;
         }
 
         .accounts-title-section {
@@ -137,6 +158,11 @@ $border: none;
               .account-text {
                 font-size: 0.8em;
                 color: rgb(58, 58, 58);
+
+                @media all and (max-width: 900px) {
+                  font-size: 1.1em;
+                  color: rgb(58, 58, 58);
+                }
               }
             }
           }
@@ -154,6 +180,11 @@ $border: none;
       justify-content: space-between;
       width: 65%;
       height: 100%;
+
+      @media all and (max-width: 900px) {
+        width: 90%;
+      }
+
       .overview-snapshots {
         @include flexCenter(row);
         justify-content: space-between;
@@ -172,10 +203,14 @@ $border: none;
 
         .goalchart-mini-container {
           @include flexCenter(row);
-          justify-content: space-evenly;
+          justify-content: flex-start;
           height: 100%;
           width: 100%;
           position: relative;
+
+          @media all and (max-width: 1050px) {
+            justify-content: center;
+          }
 
           .click-message {
             position: absolute;
@@ -195,47 +230,6 @@ $border: none;
               opacity: 1;
             }
           }
-
-          .inner-container {
-            @include flexCenter(row);
-            justify-content: space-evenly;
-            height: 100%;
-            width: 90%;
-
-            .overview-text {
-              @include flexCenter(column);
-              justify-content: space-evenly;
-              align-items: flex-start;
-              height: 95%;
-              width: 50%;
-              padding: 0.5em;
-              padding-left: 2em;
-              margin: 0em;
-              .snapshot-overall-title {
-                font-size: 1.3em;
-                color: rgb(116, 116, 116);
-                margin-top: 0.5em;
-                margin-bottom: 0em;
-              }
-              .snaps {
-                @include flexCenter(row);
-                justify-content: flex-start;
-                width: 100%;
-
-                .snapshot-text {
-                  font-size: 1.1em;
-                  color: rgb(96, 96, 96);
-                  margin-right: 0.5em;
-                }
-
-                .snapshot-amount {
-                  font-size: 1.2em;
-                  font-weight: bold;
-                  color: rgb(32, 152, 134);
-                }
-              }
-            }
-          }
         }
       }
     }
@@ -245,4 +239,10 @@ $border: none;
 img.graphic {
   width: 200px;
   height: 200px;
+}
+
+img.sub-logo {
+  width: 35px;
+  height: 40px;
+  object-fit: contain;
 }

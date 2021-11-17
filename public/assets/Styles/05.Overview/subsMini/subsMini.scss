@@ -1,0 +1,134 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+.inner-subs-container {
+  @include flexCenter(row);
+  justify-content: space-evenly;
+  height: 80%;
+  width: 90%;
+
+  @media all and (max-width: 650px) {
+    height: 95%;
+    width: 100%;
+    @include flexCenter(column);
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .goal-div {
+    width: 50%;
+    height: 80%;
+
+    @media all and (max-width: 700px) {
+      display: none;
+    }
+  }
+
+  .overview-text-subs {
+    @include flexCenter(column);
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 85%;
+    width: 55%;
+    padding: 0.1em;
+    padding-left: 1em;
+    padding-right: 2em;
+    margin: 0em;
+
+    @media all and (max-width: 650px) {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .subs-overall-title {
+      font-size: 1.3em;
+      color: rgb(116, 116, 116);
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+    }
+    .snaps-sub {
+      @include flexCenter(row);
+      justify-content: flex-start;
+      width: 100%;
+      height: auto;
+
+      @media all and (max-width: 1100px) {
+        @include flexCenter(column);
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      @media all and (max-width: 650px) {
+        @include flexCenter(row);
+        justify-content: center;
+      }
+
+      .subs-text {
+        font-size: 1.1em;
+        color: rgb(96, 96, 96);
+        margin-right: 0.5em;
+        margin-bottom: 0.5em;
+
+        @media all and (max-width: 1100px) {
+          font-size: 0.9em;
+          margin-right: 0em;
+          margin-bottom: 0.1em;
+        }
+
+        @media all and (max-width: 650px) {
+          font-size: 0.9em;
+          margin-right: 0em;
+          margin-bottom: 0.1em;
+          width: 80%;
+          height: auto;
+        }
+      }
+
+      .snapshot-amount {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: rgb(32, 152, 134);
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+
+  .sub-container-snapshot {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    height: 70%;
+    width: 45%;
+
+    @media all and (max-width: 650px) {
+      grid-column-gap: 10px;
+      grid-row-gap: 10px;
+      width: 80%;
+      height: 55%;
+    }
+
+    .sub-box {
+      @include flexCenter(row);
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 0.2em;
+      border-radius: 10px;
+      border: 1px solid rgb(206, 206, 206);
+
+      .sub-name {
+        font-size: 1em;
+        color: rgb(99, 99, 99);
+      }
+    }
+  }
+}

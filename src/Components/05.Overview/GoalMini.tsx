@@ -56,33 +56,35 @@ function GoalMini() {
       >
         Click to view more
       </p>
-      <div className="inner-container">
-        <div className="overview-text">
-          <h5 className="snapshot-overall-title">Goals</h5>
-          <div className="snaps">
-            <p className="snapshot-text">Description:</p>
-            <p className="snapshot-text">{allGoals.description}</p>
+      <div className="inner-goals-container">
+        <div className="overview-goal-text">
+          <h5 className="goal-overall-title">Goals</h5>
+          <div className="snaps-goal">
+            <p className="goal-text">Description:</p>
+            <p className="goal-text">{allGoals.description}</p>
           </div>
-          <div className="snaps">
-            <p className="snapshot-text">Goal Name:</p>
-            <p className="snapshot-text">{allGoals.name}</p>
+          <div className="snaps-goal">
+            <p className="goal-text">Goal Name:</p>
+            <p className="goal-text">{allGoals.name}</p>
           </div>
-          <div className="snaps">
-            <p className="snapshot-text">Savings Goal:</p>
-            <p className="snapshot-amount">
+          <div className="snaps-goal">
+            <p className="goal-text">Savings Goal:</p>
+            <p className="goal-amount">
               $
               {allGoals.goalAmount}
             </p>
           </div>
-          <div className="snaps">
-            <p className="snapshot-text">Savings Goal:</p>
-            <p className="snapshot-amount">
+          <div className="snaps-goal">
+            <p className="goal-text">Savings Goal:</p>
+            <p className="goal-amount">
               $
               {allGoals.currentAmount}
             </p>
           </div>
         </div>
-        <GoalChart {...allGoals} />
+        <div className="goal-div">
+          <GoalChart {...allGoals} />
+        </div>
       </div>
     </div>
   );
