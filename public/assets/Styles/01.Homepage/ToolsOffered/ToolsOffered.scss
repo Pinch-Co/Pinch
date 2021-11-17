@@ -4,11 +4,11 @@
   align-items: center;
   flex-direction: $direction;
   font-family: "Avenir";
-}
+ }
 
-// https://bgjar.com/animated-shape
+ // https://bgjar.com/animated-shape
 
-.tool-outter-container {
+ .tool-outter-container {
   @include flexCenter(column);
   justify-content: center;
   align-items: center;
@@ -42,14 +42,28 @@
     font-family: "Roboto";
     overflow-x: hidden;
 
+    @media screen and (max-width: 950px) {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: 1fr;
+      grid-column-gap: 15px;
+      grid-row-gap: 20px;
+      margin-top: 1em;
+    }
+
     .tool-section {
       @include flexCenter(column);
-      justify-content: cen;
+      justify-content: center;
       height: 70%;
       width: 90%;
       padding: 1em;
-      // border: 1px solid rgb(114, 114, 114);
-      // box-shadow: 0px 3px 10px 0px rgba(135, 135, 135, 0.75);
+
+      @media screen and (max-width: 950px) {
+        justify-self: center;
+        width: 75%;
+        height: auto;
+      }
+
 
       .tool-text-container {
         @include flexCenter(column);
@@ -83,10 +97,10 @@
       }
     }
   }
-}
+ }
 
-img.tool-image {
+ img.tool-image {
   height: 200px;
   width: 370px;
   border: 1px solid rgb(148, 148, 148);
-}
+ }
