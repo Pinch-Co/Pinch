@@ -7,9 +7,13 @@ function Home() {
   return (
     <div className="nl-home-container">
       <div className="nl-home-inner-container">
-        <AboutUs />
-        <ToolsOffered />
-        <SignUp />
+        <div>
+          <AboutUs />
+        </div>
+        <div>
+          <ToolsOffered />
+        </div>
+        {/* <SignUp /> */}
       </div>
     </div>
   );
