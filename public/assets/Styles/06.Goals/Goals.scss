@@ -41,10 +41,12 @@
       justify-content: space-between;
       width: 37%;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      padding: 20px;
       @media screen and (max-width: 1000px) {
-        width: 96%;
+        width: 100%;
         margin-bottom: 30px;
+      }
+      .goals-list-inner {
+        margin: 20px;
       }
       .goals-main {
         display: flex;
@@ -61,6 +63,9 @@
             margin-bottom: 10px;
           }
         }
+      }
+      .goals-list-container {
+        width: 100%;
       }
       .add-new {
         margin-top: 10px;
@@ -115,15 +120,17 @@
       width: 40%;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
       @media screen and (max-width: 700px) {
-        width: 80%;
+        width: 100%;
       }
     }
     .forecast {
       width: 60%;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      padding: 30px;
       @media screen and (max-width: 700px) {
-        width: 80%;
+        width: 100%;
+      }
+      .forecast-inner {
+        margin: 30px;
       }
     }
     .forecast div {

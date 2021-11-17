@@ -177,23 +177,25 @@ function Goals() {
     <div className="goals-page">
       <div className="goals-container">
         <div className="goals-list">
-          <div className="goals-main">
-            <div className="goals-top">
-              <div className="goals-div-title">Your Current Goals</div>
-              <BsPiggyBank size={25} />
+          <div className="goals-list-inner">
+            <div className="goals-main">
+              <div className="goals-top">
+                <div className="goals-div-title">Your Current Goals</div>
+                <BsPiggyBank size={25} />
+              </div>
+              <div>
+                {currentGoals.map((goal: any) => (
+                  <div className="goals-list-container" key={goal.name} role="button" tabIndex={0} onClick={() => abrakadabra(goal)} onKeyPress={() => abrakadabra(goal)}>
+                    <GoalsList handleDelete={() => { handleDelete(goal.name); }} {...goal} />
+                  </div>
+                ))}
+              </div>
             </div>
-            <div>
-              {currentGoals.map((goal: any) => (
-                <div key={goal.name} role="button" tabIndex={0} onClick={() => abrakadabra(goal)} onKeyPress={() => abrakadabra(goal)}>
-                  <GoalsList handleDelete={() => { handleDelete(goal.name); }} {...goal} />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="add-new">
-            <div role="button" tabIndex={0} onClick={() => updateShow(true)} onKeyPress={() => updateShow(true)}>
-              Add a new goal
-              <IoIosAddCircleOutline className="goal-add-icon" size={25} />
+            <div className="add-new">
+              <div role="button" tabIndex={0} onClick={() => updateShow(true)} onKeyPress={() => updateShow(true)}>
+                Add a new goal
+                <IoIosAddCircleOutline className="goal-add-icon" size={25} />
+              </div>
             </div>
           </div>
         </div>
@@ -233,7 +235,7 @@ function Goals() {
           </div>
           <div className="chart-space">
             <div className="forecast">
-              <div>
+              <div className="forecast-inner">
                 <form className="goal-input-group">
                   <div className="goal-input-title"> Description </div>
                   {edit

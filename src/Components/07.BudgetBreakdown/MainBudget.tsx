@@ -19,7 +19,7 @@ const MainBudget: React.FC<Props> = ({
   editBudget, income, setNewIncome, sortExpenses, setEditBudget, total,
   setNewBudget, budget, deleteExpense, editAddExpense, deleteBudget,
 }) => (
-  <>
+  <div className="bb-budget-div">
     <div className="bb-budget-top">
       <div className="bb-budget-top-left">
         <h1>Budget Breakdown</h1>
@@ -111,7 +111,7 @@ const MainBudget: React.FC<Props> = ({
           </div>
         )}
     </div>
-  </>
+  </div>
 );
 
 export default MainBudget;
