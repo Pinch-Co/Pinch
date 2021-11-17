@@ -13,7 +13,7 @@ function Home() {
         <div>
           <ToolsOffered />
         </div>
-        {/* <SignUp /> */}
+        <SignUp />
       </div>
     </div>
   );
