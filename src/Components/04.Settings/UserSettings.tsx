@@ -4,11 +4,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import AppContext from '../SharedComponents/06.Context/AppContext';
 
 function UserSettings() {
   const [err, setErr] = useState('');
   const [email, setEmail] = useState<string>('');
   const [pass, setPassword] = useState<string>('');
+  const { userObj } = React.useContext(AppContext);
   const history = useHistory();
 
   useEffect(() => {
@@ -16,7 +18,7 @@ function UserSettings() {
     axios.post(
       '/graphql',
       JSON.stringify({
-        query: `query {getUserInfo(id: "617b4ab18042428e32405a6e") {
+        query: `query {getUserInfo(id: "${userObj.id}") {
           email
           password
         }

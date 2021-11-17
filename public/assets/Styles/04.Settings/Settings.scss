@@ -104,7 +104,7 @@
     @include flexCenter(column);
     justify-content: flex-start;
     width: 30;
-    height: 90%;
+    height: 100%;
     @media screen and (max-width: 800px) {
       width: 25%;
     }
@@ -153,11 +153,13 @@
   }
 
   .settings-content-container {
-    border: 1px solid rgb(161, 163, 163);
     @include flexCenter(column);
     justify-content: flex-start;
     width: 70;
     height: 90%;
+    border: none;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+
     @media screen and (max-width: 900px) {
       width: 60;
     }

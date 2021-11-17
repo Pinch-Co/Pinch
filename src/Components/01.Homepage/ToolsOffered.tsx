@@ -44,7 +44,7 @@ function ToolsOffered() {
             className="tool-section"
           >
             <div className="tool-text-container">
-              <img className="tool-image" src="/assets/images/goals.png" alt="screenshot of pinch goals tool" />
+              <img className="tool-image" src="/assets/images/goals2.png" alt="screenshot of pinch goals tool" />
             </div>
           </div>
         )}
@@ -70,7 +70,7 @@ function ToolsOffered() {
             className="tool-section"
           >
             <div className="tool-text-container">
-              <img className="tool-image" src="/assets/images/subscriptions.png" alt="screenshot of pinch goals tool" />
+              <img className="tool-image" src="/assets/images/subscriptions2.png" alt="screenshot of pinch goals tool" />
             </div>
           </div>
         )}
@@ -96,7 +96,7 @@ function ToolsOffered() {
             className="tool-section"
           >
             <div className="tool-text-container">
-              <img className="tool-image" src="/assets/images/budgets.png" alt="screenshot of pinch goals tool" />
+              <img className="tool-image" src="/assets/images/budgets2.png" alt="screenshot of pinch goals tool" />
             </div>
           </div>
         )}
