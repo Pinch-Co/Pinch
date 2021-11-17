@@ -19,11 +19,14 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 30px;
+    padding: 10px 30px 30px 30px;
+    border-radius: 5px;
     z-index: 2;
+    @media screen and (max-width: 1000px) {
+      width: 90%;
+    }
     .goal-input-group {
       align-items: flex-start;
-      // margin: 0 20px 20px 0;
       margin-bottom: 20px;
       flex-wrap: nowrap;
       font-size: 20px;
@@ -38,7 +41,7 @@
       .goal-input-box {
         display: flex;
         align-items: center;
-        max-width: 300px;
+        width: 90%;
         background: #fff;
         border: 1px solid #a0a0a0;
         border-radius: 4px;
@@ -52,14 +55,12 @@
       .goal-input-box-desc {
         display: flex;
         align-items: center;
-        width: 100%;
+        width: 85%;
         background: #fff;
         border: 1px solid #a0a0a0;
         border-radius: 4px;
         padding-left: 0.35rem;
-        overflow: hidden;
-        font-family: sans-serif;
-        overflow-wrap: break-word;
+        font-family: "Roboto";
         &:focus-within {
           border-color: #777;
         }
@@ -78,6 +79,7 @@
         padding: 0.5rem;
         resize: both;
         overflow-wrap: break-word;
+        font-family: "Roboto";
       }
     }
   }

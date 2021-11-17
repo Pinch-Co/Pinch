@@ -35,7 +35,6 @@
       width: 95%;
     }
 
-
     .subscriptions-list-container {
       @include flexCenter(column);
       justify-content: flex-start;
@@ -68,7 +67,7 @@
 
         .circle-icon {
           font-size: 1.5em;
-          color:rgb(101, 101, 101);
+          color: rgb(101, 101, 101);
         }
       }
 
@@ -145,7 +144,7 @@
                 object-fit: contain;
                 width: 30%;
                 margin-right: 2em;
-              };
+              }
             }
           }
         }
@@ -281,6 +280,5 @@
         }
       }
     }
-
   }
 }

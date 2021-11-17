@@ -41,10 +41,12 @@
       justify-content: space-between;
       width: 37%;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      padding: 20px;
       @media screen and (max-width: 1000px) {
         width: 96%;
         margin-bottom: 30px;
+      }
+      .goals-list-inner {
+        margin: 20px;
       }
       .goals-main {
         display: flex;
@@ -55,12 +57,19 @@
           flex-direction: row;
           justify-content: space-between;
           .goals-div-title {
+<<<<<<< HEAD
             color:rgb(97, 97, 97);
+=======
+            color: rgb(97, 97, 97);
+>>>>>>> 14c5da434634753b68092aa59424560d85d319ce
             font-size: 30px;
             font-weight: bold;
             margin-bottom: 10px;
           }
         }
+      }
+      .goals-list-container {
+        width: 100%;
       }
       .add-new {
         margin-top: 10px;
@@ -92,7 +101,11 @@
       margin-bottom: 20px;
       font-size: 30px;
       // font-weight: bold;
+<<<<<<< HEAD
       color:rgb(97, 97, 97);;
+=======
+      color: rgb(97, 97, 97);
+>>>>>>> 14c5da434634753b68092aa59424560d85d319ce
     }
     .icon-style {
       display: flex;
@@ -121,9 +134,11 @@
     .forecast {
       width: 60%;
       box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-      padding: 30px;
       @media screen and (max-width: 700px) {
         width: 80%;
+      }
+      .forecast-inner {
+        margin: 30px;
       }
     }
     .forecast div {
@@ -141,7 +156,11 @@
       .goal-input-title {
         font-size: 25px;
         margin-bottom: 0px;
+<<<<<<< HEAD
         color:rgb(97, 97, 97);;
+=======
+        color: rgb(97, 97, 97);
+>>>>>>> 14c5da434634753b68092aa59424560d85d319ce
       }
       .goal-input-box {
         display: flex;
