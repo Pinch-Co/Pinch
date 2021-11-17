@@ -17,6 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - run: git config --global url."https://github.com/".insteadOf ssh://git@github.com/
       - name: Install modules
         run: npm install
       - name: Run Build
