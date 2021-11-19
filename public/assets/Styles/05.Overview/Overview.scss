@@ -1,0 +1,248 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+$border: none;
+
+.overview-outter-container {
+  @include flexCenter(column);
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 50px 0 50px;
+
+  .overview-column-container {
+    @include flexCenter(row);
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    height: 100%;
+    padding: 0.5em;
+    // border: $border;
+    @media all and (max-width: 2500px) {
+      width: 70%;
+      height: 85%;
+    }
+
+    @media all and (max-width: 1800px) {
+      width: 80%;
+      height: 85%;
+    }
+
+    @media all and (max-width: 1300px) {
+      width: 90%;
+      height: 95%;
+    }
+
+    @media all and (max-width: 900px) {
+      @include flexCenter(column);
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      height: 95%;
+    }
+
+    .overview-side-panel {
+      @include flexCenter(column);
+      justify-content: flex-start;
+      align-items: center;
+      height: 100%;
+      width: 30%;
+
+      @media all and (max-width: 900px) {
+        width: 80%;
+      }
+
+      .overview-welcome-bubble {
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        font-size: 1.3em;
+        color: rgb(97, 97, 97);
+        padding: 1em;
+        border: $border;
+        border-radius: 20px;
+        margin-bottom: 1em;
+        // box-shadow: -2px 4px 26px -13px rgb(135, 213, 199);
+        box-shadow: -1px 4px 14px 0px rgb(135, 213, 199);
+
+        @media all and (max-width: 2500px) {
+          font-size: 1.7em;
+        }
+        @media all and (max-width: 1900px) {
+          font-size: 1.5em;
+        }
+        @media all and (max-width: 1300px) {
+          font-size: 1.2em;
+        }
+
+        @media all and (max-width: 900px) {
+          width: 65%;
+        }
+      }
+      .overview-accounts-container {
+        @include flexCenter(column);
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        padding: 1em;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        border: $border;
+
+        @media all and (max-height: 470px) {
+          overflow-y: scroll;
+
+          &::-webkit-scrollbar {
+            width: 4px;
+          }
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgb(227, 227, 227);
+          }
+          &::-webkit-scrollbar-thumb {
+            background-color: #36c2bb;
+            outline: none;
+          }
+        }
+
+        @media all and (max-width: 900px) {
+          margin-bottom: 3em;
+        }
+
+        .accounts-title-section {
+          @include flexCenter(row);
+          justify-content: space-between;
+          width: 100%;
+          .overview-accounts-title {
+            font-size: 2.1em;
+            color: rgb(97, 97, 97);
+          }
+          .bank-icon {
+            font-size: 2.3em;
+            color: rgb(130, 130, 130);
+          }
+        }
+        .account-mini-container {
+          @include flexCenter(column);
+          justify-content: space-evenly;
+          width: 100%;
+          height: auto;
+          padding: 0.5em;
+          .account-type-title {
+            @include flexCenter(row);
+            justify-content: center;
+            width: 100%;
+            height: 30px;
+            background-color: #8fcec6;
+            text-align: center;
+            font-weight: bold;
+          }
+
+          .account-container {
+            width: 100%;
+            height: auto;
+            @include flexCenter(column);
+            justify-content: flex-start;
+            background-color: transparent;
+            margin: 0;
+
+            .account-div {
+              @include flexCenter(row);
+              justify-content: space-between;
+              width: 100%;
+              height: 25px;
+
+              .account-text {
+                font-size: 0.8em;
+                color: rgb(58, 58, 58);
+
+                @media all and (max-width: 900px) {
+                  font-size: 1.1em;
+                  color: rgb(58, 58, 58);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .account-line-break {
+      width: 97%;
+      color: rgb(97, 97, 97);
+    }
+
+    .overview-snapshot-container {
+      @include flexCenter(column);
+      justify-content: space-between;
+      width: 65%;
+      height: 100%;
+
+      @media all and (max-width: 900px) {
+        width: 90%;
+      }
+
+      .overview-snapshots {
+        @include flexCenter(row);
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        height: 32%;
+        margin-bottom: 1em;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        border: none;
+        transition: 0.5s ease;
+
+        &:hover {
+          background-color: rgb(233, 233, 233);
+          outline: 2px solid rgb(144, 213, 200);
+        }
+
+        .goalchart-mini-container {
+          @include flexCenter(row);
+          justify-content: flex-start;
+          height: 100%;
+          width: 100%;
+          position: relative;
+
+          @media all and (max-width: 1050px) {
+            justify-content: center;
+          }
+
+          .click-message {
+            position: absolute;
+            @include flexCenter(column);
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(233, 233, 233, 0.5);
+            color: rgb(33, 142, 134);
+            font-size: 1.5em;
+            font-weight: bold;
+            transition: 0.5s ease;
+            opacity: 0;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+img.graphic {
+  width: 200px;
+  height: 200px;
+}
+
+img.sub-logo {
+  width: 35px;
+  height: 40px;
+  object-fit: contain;
+}

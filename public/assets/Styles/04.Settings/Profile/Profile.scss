@@ -1,0 +1,214 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+.tabs-contents {
+  width: 600px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @media screen and (max-width: 900px) {
+    width: 500px;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 450px;
+  }
+  @media screen and (max-width: 700px) {
+    width: 410px;
+  }
+
+  @media screen and (max-width: 680px) {
+    width: 380px;
+  }
+
+  @media screen and (max-width: 650px) {
+    width: 340px;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 310px;
+  }
+
+  @media screen and (max-width: 565px) {
+    width: 300px;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 290px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 250px;
+  }
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(231, 225, 225, 0.3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #36c2bb;
+    outline: 1px solid rgb(130, 142, 155);
+  }
+
+  .tabs-header-section {
+    @include flexCenter(column);
+    justify-content: space-evenly;
+    width: 100%;
+    height: 90px;
+    padding: 0.5em;
+  }
+
+  .tabs-header-title {
+    @include flexCenter(row);
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1.3em;
+  }
+
+  .tabs-section-cutoff {
+    color: rgb(98, 100, 100);
+    width: 95%;
+  }
+
+  .blurb {
+    font-size: 0.9em;
+    color: rgb(110, 112, 112);
+  }
+
+  .tabs-information-section {
+    @include flexCenter(column);
+    align-items: flex-start;
+    width: 100%;
+
+    .section-divider-title {
+      color: rgb(82, 85, 85);
+      margin-left: 2em;
+      margin-top: 1em;
+    }
+
+    .tabs-question-section {
+      width: 100%;
+      padding: 0.9em;
+      color: rgb(103, 105, 105);
+    }
+
+    .info-section-question-title {
+      padding-left: 1em;
+      margin-bottom: 6px;
+      color: rgb(103, 105, 105);
+    }
+
+    .info-section-inputs {
+      @include flexCenter(row);
+      justify-content: flex-start;
+      // align-items: flex-start;
+      padding-left: 3em;
+      @media screen and (max-width: 710px) {
+        @include flexCenter(column);
+        align-items: flex-start;
+        padding-left: 1em;
+      }
+    }
+
+    .info-section-inputs-mini {
+      @include flexCenter(row);
+      justify-content: space-evenly;
+      margin-right: 1.2em;
+    }
+
+    .infor-input-option {
+      margin-right: 7px;
+    }
+
+    .info-section-dropdown {
+      width: 90%;
+      padding: 1em;
+    }
+
+    select#education {
+      margin-left: 3em;
+      width: 87%;
+      height: 30px;
+      color: rgb(103, 105, 105);
+      @media screen and (max-width: 710px) {
+        margin-left: 1em;
+      }
+    }
+
+    select#income {
+      margin-left: 3em;
+      width: 87%;
+      height: 30px;
+      color: rgb(103, 105, 105);
+      @media screen and (max-width: 710px) {
+        margin-left: 1em;
+      }
+    }
+
+    select#residential-status {
+      margin-left: 3em;
+      width: 87%;
+      height: 30px;
+      color: rgb(103, 105, 105);
+      @media screen and (max-width: 710px) {
+        margin-left: 1em;
+      }
+    }
+
+    .info-section-household {
+      @include flexCenter(row);
+      justify-content: space-evenly;
+    }
+
+    select#adults {
+      margin-left: 1em;
+      width: 40%;
+      height: 30px;
+      color: rgb(103, 105, 105);
+    }
+
+    select#children {
+      margin-left: 2em;
+      width: 40%;
+      height: 30px;
+      color: rgb(103, 105, 105);
+    }
+  }
+}
+
+// -------------check box styling ---- //
+.custom-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.custom-checkbox .checkmark {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(145, 144, 144);
+  display: inline-block;
+  border-radius: 10px;
+  background: rgb(113, 199, 187)
+    url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png)
+    center/1250% no-repeat;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-size: 60%;
+}
+
+.custom-checkbox input {
+  display: none;
+}

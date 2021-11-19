@@ -1,0 +1,59 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+.account-container {
+  @include flexCenter(row);
+  justify-content: flex-start;
+  width: 95%;
+  height: 150px;
+  margin: 1em;
+  background-color: rgb(205, 223, 223);
+  color: rgb(93, 94, 94);
+
+  .bank-logo {
+    width: 120px;
+    height: 120px;
+    margin-left: 1em;
+  }
+
+  .bank-logo > img {
+    object-fit: contain;
+    width: 120px;
+    height: 120px;
+  }
+
+  .vertical-divider {
+    border: 1px solid rgb(180, 182, 182);
+    height: 85%;
+    margin-left: 15px;
+    margin-right: 10px;
+  }
+
+  .account-text-info {
+    @include flexCenter(column);
+    justify-content: flex-start;
+    align-items: left;
+    width: 95%;
+    height: 100%;
+    padding-top: 1em;
+    padding-right: 1em;
+    line-height: 2em;
+  }
+
+  .account-name-block {
+    @include flexCenter(row);
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .bank-title {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+  }
+}

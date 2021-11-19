@@ -1,0 +1,42 @@
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  font-family: "Avenir";
+}
+
+.notification-section {
+  width: 100%;
+  padding: 1em;
+}
+
+.section-divider-title {
+  padding-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.notif-input-container {
+  @include flexCenter(column);
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 3em;
+  padding-top: 1em;
+
+  .notif-input-title {
+    color: rgb(85, 85, 85);
+    margin-bottom: 0.5em;
+  }
+
+  input.notif-input {
+    width: 60%;
+    height: 30px;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline-color: rgb(113, 199, 187);
+    outline-style: solid;
+  }
+}

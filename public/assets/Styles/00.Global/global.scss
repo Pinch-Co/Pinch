@@ -1,0 +1,38 @@
+@import "../01.Homepage/Homepage.scss";
+@import "../02.Signup/Signup.scss";
+@import "../02.Signup/password-modal/password.scss";
+@import "../02.Signup/additional-info/additionalInfo.scss";
+@import "../03.Login/Login.scss";
+@import "../SharedComponents/01.Header/Header.scss";
+@import "../SharedComponents/03.Footer/Footer.scss";
+@import "../SharedComponents/02.Navbar/Navbar.scss";
+@import "../05.Overview/Overview.scss";
+@import "../04.Settings/Settings.scss";
+@import "../04.Settings/Profile/Profile.scss";
+@import "../04.Settings/YourAccount/YourAccount.scss";
+@import "../04.Settings/Notifications/Notifications.scss";
+@import "../04.Settings/UserSettings/UserSettings.scss";
+@import "../07.BudgetBreakdown/BudgetBreakdown.scss";
+@import "../06.Goals/Goals.scss";
+@import "../08.Subscriptions/Subscriptions.scss";
+@import "../08.Subscriptions/Subchart/SubCharts.scss";
+@import "../05.Overview/goalsMini/goalsMini";
+@import "../05.Overview/subsMini/subsMini";
+@import "../05.Overview/budgeMini/budgeMini.scss";
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.app-page-container {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
