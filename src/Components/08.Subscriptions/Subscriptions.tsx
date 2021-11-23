@@ -29,6 +29,11 @@ function parseSubs(array: any): Subscription[] {
       });
     }
   });
+  allSubscriptions.sort((a, b) => {
+    const firstDate = Date.parse(a.date);
+    const secondDate = Date.parse(b.date);
+    return firstDate - secondDate;
+  });
   return allSubscriptions;
 }
 
