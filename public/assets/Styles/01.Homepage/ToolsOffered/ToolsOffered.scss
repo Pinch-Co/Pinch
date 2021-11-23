@@ -4,11 +4,11 @@
   align-items: center;
   flex-direction: $direction;
   font-family: "Avenir";
- }
+}
 
- // https://bgjar.com/animated-shape
+// https://bgjar.com/animated-shape
 
- .tool-outter-container {
+.tool-outter-container {
   @include flexCenter(column);
   justify-content: center;
   align-items: center;
@@ -35,9 +35,9 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    grid-column-gap: 15px;
+    grid-column-gap: 10px;
     grid-row-gap: 0px;
-    width: 100%;
+    width: 95%;
     height: 60%;
     font-family: "Roboto";
     overflow-x: hidden;
@@ -47,7 +47,7 @@
       grid-template-columns: repeat(1, 1fr);
       grid-template-rows: 1fr;
       grid-column-gap: 15px;
-      grid-row-gap: 20px;
+      grid-row-gap: 10px;
       margin-top: 1em;
     }
 
@@ -64,7 +64,6 @@
         height: auto;
       }
 
-
       .tool-text-container {
         @include flexCenter(column);
         align-items: center;
@@ -76,7 +75,7 @@
         padding: 0.6em;
         &:hover {
           box-shadow: 0px 3px 10px 0px rgba(135, 135, 135, 0.75);
-          outline: 1px solid  rgb(144, 213, 200);
+          outline: 1px solid rgb(144, 213, 200);
         }
         .tool-title {
           width: 100%;
@@ -95,20 +94,18 @@
           margin: 0;
         }
       }
+
+      .tool-image-container {
+        @include flexCenter(column);
+        align-items: center;
+      }
     }
   }
- }
+}
 
- img.tool-image {
-<<<<<<< HEAD
-  // height: 200px;
-  // width: 370px;
-  border: 1px solid rgb(148, 148, 148);
-  object-fit: contain;
-=======
-  height: 200px;
-  width: 370px;
-  border: 1px solid rgb(148, 148, 148);
+img.tool-image {
+  height: 90%;
+  width: 99%;
+  border: 1px solid rgb(104, 104, 104);
   // object-fit: contain;
->>>>>>> f5a77f2e3e46d25a1dd0f793813cd2ae179b221a
- }
+}
