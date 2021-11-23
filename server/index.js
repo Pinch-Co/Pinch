@@ -10,7 +10,6 @@ const passport = require('passport');
 const { ApolloServer } = require('apollo-server-express');
 const { GraphQLLocalStrategy, buildContext } = require('graphql-passport');
 const { UserModel } = require('../database/index.ts');
-// const User = require('./User');
 const typeDefs = require('./typeDefs');
 const resolvers = require('./resolvers');
 
