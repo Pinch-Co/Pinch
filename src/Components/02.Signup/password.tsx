@@ -34,7 +34,6 @@ function PasswordChecker(props: PasswordProps) {
       color: '#5d5d5d',
     },
   };
-  // console.log('password', passwort);
   if (passwort.length >= 8) {
     charLengthStyles.container.color = '#20b2aa';
   }
