@@ -2,7 +2,6 @@
 /* eslint-disable camelcase */
 import axios from 'axios';
 import React, { useState, useContext, useEffect } from 'react';
-import { AiOutlinePlusCircle } from 'react-icons/ai';
 import { BsFillArrowDownLeftCircleFill } from 'react-icons/bs';
 import AppContext from '../SharedComponents/06.Context/AppContext';
 import SubGraph from './SubGraph';
@@ -88,16 +87,12 @@ function Subscriptions() {
     });
     setPick(specificSub);
   };
-
-  // console.log('list', list);
-
   return (
     <div className="subscriptions-outter-container">
       <div className="subscriptions-inner-container">
         <div className="subscriptions-list-container">
           <div className="list-header-container">
             <div className="your-subscriptions-title">Your Current Subscriptions</div>
-            <AiOutlinePlusCircle className="circle-icon" />
           </div>
           <div className="subscriptions-list">
             {list.map((singleSub: any) => (
