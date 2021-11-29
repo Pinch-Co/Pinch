@@ -90,9 +90,11 @@ function Goals() {
       }), { headers })
       .then((result) => {
         if (result.data.data.getUserInfo.goals && result.data.data.getUserInfo.goals.length > 0) {
-          console.log('Get goal', result.data.data.getUserInfo.goals);
           updateGoals(result.data.data.getUserInfo.goals);
           pickedGoal(result.data.data.getUserInfo.goals[0]);
+        } else {
+          updateGoals(exampleGoals.getUserInfo.goals);
+          pickedGoal(exampleGoals.getUserInfo.goals[0]);
         }
       })
       .catch((error) => { throw (error); });

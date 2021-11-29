@@ -138,7 +138,6 @@ function BudgetBreakdown() {
         if (a.value > b.value) { return 1; }
         return -1;
       });
-      console.log(sortedBudget);
       setBudget(sortedBudget);
     }
   };

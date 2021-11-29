@@ -23,5 +23,5 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
   },
   // CHANGE THIS WHEN DEPLOYING
-  mode: 'development',
+  mode: 'production',
 };

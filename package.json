@@ -8,6 +8,7 @@
     "test": "jest",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
     "build-ci": "webpack",
+    "build-prod": "webpack",
     "build-app": "webpack --watch",
     "build-style": "sass --watch public/assets/styles/input.scss:public/assets/styles/output.css",
     "fix-lock": "npm install --package-lock-only"
@@ -30,8 +31,6 @@
     "apollo-server-express": "^2.25.2",
     "axios": "^0.21.4",
     "body-parser": "^1.19.0",
-    "bulma": "^0.9.3",
-    "clearbit": "^1.3.5",
     "concurrently": "^6.3.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
