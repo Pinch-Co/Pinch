@@ -1,4 +1,4 @@
-![Logo](https://i.imgur.com/hXk0YiD.png?2)
+![Logo](https://i.imgur.com/MI5gkUq.png)
 
 # Pinch
 
