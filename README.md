@@ -4,8 +4,11 @@
 
 Pinch is a personal finance web app that allows you to track savings goals, create budgets, and follow your subscriptions or recurring costs
 
-Click here to see deployed site: https://mycatonline.com
+SIGN IN WITH ADMIN ACCOUNT: 
+email: admin@admin.com
+password: Password1!
 
+Click here to see deployed site: https://mycatonline.com
 
 ## Authors
 
